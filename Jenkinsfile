@@ -7,8 +7,10 @@ pipeline {
 		    
 		    sh 'mvn clean'
 		    sh 'mvn install' 
-		    sh 'sudo /root/script/edocs.sh stop'
-		    sh 'sudo /root/script/edocs.sh start'
+		    sh 'rm -rf /home/edocs.travel/public_html/*'
+                    sh 'cp -rf /home/jenkins/workspace/EDOCS_TRAVEL/* /home/edocs.travel/public_html/'
+		    sh 'nohup java -jar /home/jenkins/workspace/EDOCS_TRAVEL/target/edocs-0.0.1-SNAPSHOT.jar'
+		    
                 }
         }
     }
