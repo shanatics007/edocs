@@ -1127,13 +1127,13 @@
     border-bottom:1px solid #7C152A !important
 }
 .toggle-click-open{
-    color:#231f20
+    color:#1d3367;
 }
 .toggle-click-open:after{
     content:url("#")
 }
 .toggle-click-open:hover{
-    color:#7C152A
+    color:#1d3367;
 }
 .toggle-box{
     position:relative;
@@ -2320,7 +2320,7 @@ th{
     width:164px;
     margin-top:30px;
     height:164px;
-    background:url("images/banner_2.jpg");
+    background:url("/images/banner 1.png");
     background-size:cover
 }
 .top-content-follow-card-destination{
@@ -7724,7 +7724,7 @@ th{
     width:250px;
     margin-top:30px;
     height:164px;
-    background:url("../images/banner_2.jpg");
+    background:url("/images/visa12.png");
     background-size:cover
 }
 .top-content-follow-card-destination{
@@ -10777,7 +10777,7 @@ ul li,ol li{
 }
 .visa-questions-description{
     font:400 16px/24px Roboto;
-    color:#231f20;
+    color:#1d3367;
     overflow:hidden
 }
 .display-none{

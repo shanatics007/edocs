@@ -6,18 +6,14 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script type="text/javascript" async="" src="/js/ecommerce.js"></script>
-<!--  <script type="text/javascript" async="" src="js/hotjar-2876277.js"></script> -->
-<script type="text/javascript" async="" src="/js/analytics.js"></script>
-<script type="text/javascript" async="" src="/js/analytics.js"></script>
-<script async="" src="/js/gtm.js"></script>
-<script async="" src="/js/tag.js"></script>
+
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 <title>Edocs Travel</title>
-
+<script src="js/home.js"></script>
+	<script src="js/select2.min.js"></script>
 <link rel="stylesheet" href="/css/home.css" type="text/css">
 <style>
 @media ( max-width : 992px) {
@@ -42,7 +38,7 @@ section#onlineapplysection {
 }
 
 p.description-steps-eta-planning {
-    font-size: 20px !important;
+    font-size: 18px !important;
     color: #1d3367 !important;
     text-align: start !important;
 }
@@ -52,6 +48,24 @@ p.description-steps-eta-planning {
 <style>
 .cookie-info-text {
 	color: #969696;
+}
+p.toexpand {
+    color: #1d3367;
+}
+h2.description-steps-h3 {
+    color: #1d3367;
+}
+.destinations-list li a{
+ color: #1d3367;
+}
+.insurance-banner-section h3{
+	color: #1d3367;
+}
+.insurance-banner-section p{
+	color: #1d3367;
+}
+.insurance-banner-section .insurance-checklist-wrapper{
+	color: #1d3367;
 }
 
 .toggle-box .toggle-li ul {
@@ -72,7 +86,7 @@ p.description-steps-eta-planning {
   font-size: 18px;
   border: none;
   outline: none;
-  background-color: red;
+  background-color: #1d3367;
   color: white;
   cursor: pointer;
   padding: 15px;
@@ -143,6 +157,9 @@ span.description-steps-text-bottom {
     margin-bottom: 15px;
     margin-top: 15px;
 }
+.insurance-banner-section .insurance-price{
+	color: #1d3367;
+}
 
 
 </style>
@@ -183,7 +200,7 @@ span.description-steps-text-bottom {
 
 	<div>
 		<section class="applyonline" id="onlineapplysection"
-			style="background: url(#), rgb(33, 55, 106); width: auto; height: 500px;">
+			style="background: url('/images/banner-bg.png'), rgb(33, 55, 106); width: auto; height: 500px;">
 
 			<div class="top-content-follow-card-h2">CHECK VISA REQUIREMENTS</div>
 			<h4 style="    color: rgb(176, 143, 111);width: 100%;text-align: center;font-size: 20px;">AND APPLY ONLINE</h4>
@@ -502,13 +519,7 @@ span.description-steps-text-bottom {
 			</div>
 		</div>
 	</section>
-
-
-
 	<%@include file="footer.jsp"%>
-
-	<script src="js/home.js"></script>
-	<script src="js/select2.min.js"></script>
 	<script>
 	
          document.querySelector('#select-country').addEventListener('change', function () {
@@ -580,16 +591,6 @@ span.description-steps-text-bottom {
       </script>
 
 	<script>
-         var languages = {
-                         'en': 'https://evisa.express/',
-             'de': 'https://evisa.express/de',
-                         'en': 'https://evisa.express/',
-             'pl': 'https://evisa.express/pl',
-                         'en': 'https://evisa.express/',
-             'es': 'https://evisa.express/es',
-                         'en': 'https://evisa.express/',
-             'cn': 'https://evisa.express/cn',
-                     }
 
          window.onscroll = function() {scrollFunction()};
 

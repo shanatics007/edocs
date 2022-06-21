@@ -6,19 +6,12 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script type="text/javascript" async="" src="/js/ecommerce.js"></script>
-<!--  <script type="text/javascript" async="" src="js/hotjar-2876277.js"></script> -->
-<script type="text/javascript" async="" src="/js/analytics.js"></script>
-<script type="text/javascript" async="" src="/js/analytics.js"></script>
-<script async="" src="/js/gtm.js"></script>
-<script async="" src="/js/tag.js"></script>
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
 <title>Edocs Travel</title>
-
-
+<script src="/js/home.js"></script>
+<script src="/js/select2.min.js"></script>
 <link rel="stylesheet" href="/css/home.css" type="text/css">
 <link rel="stylesheet" href="/css/india.css" type="text/css">
 
@@ -150,14 +143,22 @@ ul#transieninfo {
     margin-left: 50px;
     margin-right: 50px;
 }
+ul#formprocesslist {
+    list-style-type: initial;
+}
 #airports{
     margin-right: 30px;
      margin-left: 30px;
      color: #1d3367;
+     padding-bottom: 50px;
+}
+ul {
+    list-style-type: none;
 }
 .toggle-click-closed{
 	color: rgb(29 51 103);
 }
+
 
 }
 @-webkit-keyframes glowing {
@@ -255,7 +256,7 @@ span.description-steps-text-bottom {
 
 	<div>
 		<section class="applyonline" id="onlineapplysection"
-			style="background-image: url('../images/indiabanner.jpg'); width: auto; height: 500px;">
+			style="background-image: url('/images/indiabanner.jpg'); width: auto; height: 500px;">
 
 			<div class="top-content-follow-card-h2">APPLY FOR INDIAN VISA
 				ONLINE</div>
@@ -322,35 +323,36 @@ span.description-steps-text-bottom {
 						style="background-color: #ffff; padding:50px !important;">
 						<div class="description-steps">
 							<p class="description-steps-eta-planning">
-								<b>India e-Visa</b> is an electronic visa introduced by the
-								Government of India in 2014 to speed up the time of obtaining a
-								visa and allow all eligible travelers to enter the country for
-								visits related to tourism, business, and medical treatment.  
+							The online tourist 
+								<b>visa for India</b> is an electronic travel authorization that allows citizens of eligible countries to visit India. The tourist e-Visa for India was launched in October 2014 to 
+								simplify the process of obtaining a visa and attract more foreign visitors. 
 							</p>
-							<p class="description-steps-eta-planning">There are five
-								types of the Indian e-Visa available that differ according to
-								the traveler's purpose of visit or the length of the validity
-								period. The tourist Indian e-Visa is a single-entry travel
-								authorization that stays effective for one month (30 days) from
-								issuing and allows its holders to visit India for up to 30 days.
+							<p class="description-steps-eta-planning">
+							The Indian tourist visa or e-Tourist visa allows the holder to visit India for touristic purposes. Some of the reasons to travel to India with this type of visa are:
+							<ul id="indiaformvisa">
+							<li>Engaging in tourism activism</li>
+							<li>Visiting friends and family</li>
+							<li>Attending a yoga retreat</li>
+							</ul>
+							
 							</p>
-							<p class="description-steps-eta-planning">The remaining types
-								of the Indian e-Visa are multiple-entry visas that allow a stay
-								from 60 to 180 days with a validity period ranging from 4 months
-								up to 5 years from the date of issue, depending on the selected
-								type (Business/Medical/One-Year/Five-Year e-Visa).  </p>
+							
+							<p class="description-steps-eta-planning">
+							There are five types of the Indian e-Visa 
+							available that differ according to the traveler's
+							 purpose of visit or the length of the validity period. 
+							The tourist Indian e-Visa is a single-entry travel authorization
+							 that stays effective for one month (30 days) from issuing and 
+							allows its holders to visit India for up to 30 days.
+							</p>
+							<p class="description-steps-eta-planning">
+							The remaining types of the Indian e-Visa are multiple-entry visas that allow a stay from 60 to 180 days with a validity period ranging from 4 months up 
+							to 5 years from the date of issue, depending on the selected type 
+							  </p>
 							<p class="description-steps-eta-planning">Applicants need to
-								fill out the application form with personal and passport
-								information, upload a few supporting documents, and make a
-								secure online payment to complete the process of applying
-								online.</p>
-							<p class="description-steps-eta-planning">The approved online
-								visa to India will be sent to the applicant's email address in
-								72 hours or even less.</p>
-							<p class="description-steps-eta-planning">For almost all
-								eligible citizens, Indian e-Visa costs 129 Euro; for citizens of
-								Russia, Ukraine, the United States, Great Britain, and
-								Mozambique, the fee is 149 Euro.</p>
+							The approved online visa to India will be sent to the applicant's email address in 72 hours or even less.
+							</p>
+							
 						</div>
 					</section>
 					<section class="description padding" style="padding: 50px !important; background: #ffff;">
@@ -387,59 +389,87 @@ span.description-steps-text-bottom {
 								<div class="small-line"></div>
 								<h2 class="description-steps-h3"
 									style="color: #1d3367 !important; text-align: center;">
-									India e-Visa types</h2>
+									Types Of India e-Visa Information</h2>
 							</div>
 							<p class="description-steps-eta-planning"
 								style="padding-right: 80px; padding-left: 80px;">
-								There are <b>five types of e-Visa for India: </b> Tourist,
-								Business, Medical, One-Year, and 5-Year one. Continue reading to
-								learn more about each travel authorization available.
+								The Indian Government issues various types of visa for foreign nationals,
+								 depending on the purpose of travel to India. 
+								In this article, we look at the different types of Indian visa.
 							</p>
 
 							<ul style="padding-left: 100px; padding-right: 100px; padding-bottom: 50px; color:#1d3367;">
 								<li>
+								<h3 style="font-size: 20px; color: #1d3367; font-weight: 600; ">
+								Business Visa
+								</h3>
 									<p>
-										The<b>e-Tourist Visa is a single-entry visa,</b> issued for
-										purposes of tourism, such as holiday trips and visiting family
-										or friends. It stays <b>valid for 30 days</b> from issuing and
-										makes it possible for its holders to stay in India for up to <b>30
-											days.</b>
+										<b> Indian business visa</b> 
+										s provided to foreign nationals travelling to India for business 
+										purposes like exploring business opportunities,
+										 incorporation of an Indian company, attending meetings, etc., 
+										 the Business visa is initially granted for a period of six months 
+										 to one year, five years or ten year – based on the requirement of 
+										 the visa applicant. Anyone travelling on a business visa to India can 
+										 only stay for a maximum of six months for each visit. To obtain an Indian 
+										 business visa, a letter from the sponsor is required, indicating the nature 
+										 of the applicant’s business, duration of stay and a guarantee to meet 
+										 maintenance expense.
 									</p>
 								</li>
 								<li>
+								<h3 style="font-size: 20px; color: #1d3367; font-weight: 600;">
+								Tourist Visa
+								</h3>
 									<p>
-										The <b>e-Business Visa is a multiple-entry visa</b> that
-										allows you to participate in business meetings, conferences,
-										or negotiations, as well as other business activities. It is
-										valid for 1 year from the date of issue. A business traveler
-										may stay up to <b>180 days total</b> during that period,
-										either consecutively or throughout <b>numerous visits.</b>
+										The <b>Indian tourist visa</b> 
+										is provided for travellers visiting India for exploring places 
+										or visiting family members or friends. Also, the tourist visa holds 
+										a validity of six months to ten years. The maximum amount of stay 
+										permitted in each visit 
+										is six months, irrespective of the visa duration.
 									</p>
 								</li>
 								<li>
+								<h3 style="font-size: 20px; color: #1d3367; font-weight: 600;">
+								Employment Visatypes Of Indian Visa
+								</h3>
 									<p>
-										The<b>e-Medical Visa</b>is<b>a triple-entry visa</b> that
-										allows the holder to undergo medical treatment in India. It is
-										valid for 4 months from the date of issue. Its holders may
-										stay in India for up to <b>60 days in total,</b> either
-										consecutively or spread over <b>3 visits.</b>
+										Any applicants who wish to work in India can obtain an
+										<b>employment visa.</b>
+										Application for employment vis must 
+										be accompanied by an appointment letter, 
+										employment contract and proof of registration of 
+										company/entity in India. Employment visa is provided 
+										for a period of one year, with provision for extension. 
+										The maximum period for an employment visa is five years 
+										from the date of issue of visa.
 									</p>
 								</li>
 								<li>
+								<h3 style="font-size: 20px; color: #1d3367; font-weight: 600;">
+								Student Visa
+								</h3>
 									<p>
-										<b>One-Year eVisa for 129 EUR</b> - is a multiple-entry travel
-										authorization that allows <b>numerous leisure-related </b>
-										visits to India within its one-year validity period.
+									Any students wishing to pursue an education in India can obtain a
+									<b>student visa.</b>
+									 To obtain a student visa requires a letter confirming admission from an educational institution in India. However, for admission to medical or paramedical courses and for admission to graduate or post-graduate courses, requires a letter of approval or a “no objection” certificate 
+									 from the Ministry of Health or Ministry of Human Resources Development.
 									</p>
 								</li>
 
 								<li>
+								<h3 style="font-size: 20px; color: #1d3367; font-weight: 600;">
+								Research Visa
+								</h3>
 									<p>
-										<b>Five-Year eVisa for 149 EUR</b> - is a multiple-entry
-										travel authorization that allows numerous 90-day
-										leisure-related visits during its five-year validity period.
-										Citizens from <b>the USA and Japan</b> can stay in India with
-										the 5-year eVisa for 180 days with each visit.
+										Any travelers engaged in research and development activities can obtain
+										<b>research visa.</b>
+										To obtain a research visa, the application must 
+										be made with approval from the Ministry of Human 
+										Resources Development. Therefore, research visas 
+										are provided with validity as required to complete 
+										the research or development activities in India.
 
 									</p>
 								</li>
@@ -660,34 +690,18 @@ span.description-steps-text-bottom {
 								form</h2>
 						</div>
 						<div class="formdetails">
-						<p>At Evisa Express, our mission is simple: to connect you
-							with the e-Visa you need.</p>
-
-						<p>
-							We've developed <b>a simple and efficient application process</b>
-						</p>
-						to maximize ease and security. 96% of the submitted applications
-						by travelers using our services are successfully approved!
+						<p>To apply for an e-Tourist visa for India, travelers complete the online form. The following basic information is required:</p>
 						</div>
-						<h3 style="font-size: 20px; color: #1d3367; font-weight: 600; margin-left: 50px;">The application form</h3>
-						<p style="color: #1d3367; font-size: 18px; text-align: start; margin-left: 50px;">Select the purpose of your travel (business,
-							medical/hospitalization, or tourism) and click "Apply Online."</p>
 						<ul id="formprocesslist">
+							<li>Full name</li>
 							<li>
-								<p>
-									<b>First, provide basic information</b> in the application
-									form, including your email address, planned dates of arrival
-									and departure, and the port of entry you have chosen.
-
-								</p>
-
+								Date and place of birth
 							</li>
 							<li>
-								<p>
-									<b>Next, upload a photo of your passport's bio-data page
-										and the applicant's face photo</b> (that can be taken using a
-									phone or a PC camera).
-								</p>
+								Contact information
+							</li>
+							<li>
+								Passport details
 							</li>
 						</ul>
 						<div class="imponotice">
@@ -697,20 +711,14 @@ span.description-steps-text-bottom {
 							</p>
 						</div>
 
-						<h3 style="font-size: 20px; color: #1d3367; font-weight: 600;margin-left: 50px;">Payment and processing</h3>
+						
 						<div class="pymnetprocessing">
 							<p>
-								When you've finished entering information and uploading the
-								supporting documents, you'll be directed to <b>complete an
-									online payment.</b> Then, a confirmation number will be sent
-								directly to the email address provided in the application form.
+								There are also a series of eligibility and security questions. To finalize the request, the tourist visa fees are paid securely online by debit or credit card.
 							</p>
 
 							<p>
-								The entire India e-Visa processing time will take a maximum of <b>3
-									business days.</b> However, the average time of application
-								approval when using our services is just <b>51 hours!</b>
-
+								Most e-Tourist visa applications are approved in 2-4 business days. Travelers receive the visa for India by email.
 							</p>
 						</div>
 					</section>
@@ -722,9 +730,7 @@ span.description-steps-text-bottom {
 								<h2 class="description-steps-h3">Validity period</h2>
 							</div>
 							<p class="description-steps-eta-planning">
-								The electronic Indian visa for <b>business purposes </b> stays
-								valid for <b>one year</b> from the issue date. However, <b>the
-									medical one</b> has <b>a 4-month validity period.</b>
+								The tourist visa for India that you can apply for on this website is valid for 30 days. This means that you can arrive in India within a period of 30 days, which starts from the moment your application is approved. The validity period is also stated on the visa.
 							</p>
 
 							<p class="description-steps-eta-planning">
@@ -748,34 +754,23 @@ span.description-steps-text-bottom {
 								<h2 class="description-steps-h3">Transit information</h2>
 							</div>
 							<p class="description-steps-eta-planning">
-								Are you flying to India simply for the purpose of immediately
-								continuing on to another country? If so, you <b>do not need
-									an electronic visa, as long as: </b>
-							<ul id="transieninfo">
-								<li>
-									<p>
-										You are in possession of <b>an onward ticket</b> to the
-										country of your final destination
-									</p>
-
-								</li>
-								<li>
-									<p>
-										Your layover time in India <b>does not exceed 24 hours</b>
-									</p>
-								</li>
-								<li>
-									<p>
-										You <b>will not leave the transit area </b> of the Indian
-										airport while waiting for your connecting flight
-									</p>
-								</li>
-
-							</ul>
+								Indian visa requirements state that all non-visa-exempt travelers who are passing through an Indian airport for more than 24 hours, or who intend to leave the airport Transit Area, are required to have a visa to transit through India. 
+								</p>
 							<div>
+								<p class="description-steps-eta-planning">
+									Therefore, an India transit visa is required for connecting flights with a wait time of over 24 hours, as determined by scheduled arrival and departure times. 
+									
+								</p>
+								<p class="description-steps-eta-planning">
+									Even though the traveler has a connecting flight within 24 hours of 
+									arriving in India, they may be required to leave the airport Transit 
+									Area for one reason or another. For example, it may be necessary to clear immigration to recheck luggage for the connecting flight, or because the 
+									travel wishes to stay in a hotel outside the transit area. 
+									
+								</p>
 								<p class="description-steps-eta-planning" style="padding-bottom: 50px;">
-									Travelers who do not meet the requirements above <b>must
-										apply for an e-Visa</b> in order to transit through India.
+									In such cases, it will be necessary to obtain a transit visa for India in advance through the Indian electronic visa application online.
+									
 								</p>
 							</div>
 						</div>
@@ -788,21 +783,21 @@ span.description-steps-text-bottom {
 								<div class="small-line"></div>
 								<h2 class="description-steps-h3">Requirements on arrival</h2>
 							</div>
-							<p style=" color: #1d3367; font-size: 18px; margin-right: 50px; margin-left: 50px;">Travelers are required to have the following documents
-								upon entering India:
+							<p style=" color: #1d3367; font-size: 18px; margin-right: 50px; margin-left: 50px;">
+							The visa on arrival is part of the e-Visa India program. Every traveler that arrives in India with a valid India e-Visa will also receive a visa on arrival in the form of a sticker. The sticker is placed on a page in the passport when going through immigration control.
 							<ul id="transieninfo"> 
 								<li>
 									<p>
 
-										<b>a valid passport.</b> Please note that the passport must be
-										<b>alid for at least six months</b> past the planned date of
+										<b>A valid passport.</b> Please note that the passport must be
+										<b>valid for at least six months</b> past the planned date of
 										arrival to India.
 									</p>
 
 								</li>
 								<li>
 									<p>
-										<b>a print-out copy of your e-Visa.</b> You will receive the
+										<b>A print-out copy of your e-Visa.</b> You will receive the
 										approved entry permit at your email address <b>in PDF form
 										</b> within a maximum of <b>72 hours.</b>
 									</p>
@@ -810,11 +805,9 @@ span.description-steps-text-bottom {
 
 							</ul>
 							<div>
-								<p class="description-steps-eta-planning" style="padding-bottom: 50px;">Present these
-									documents at the Indian airport, seaport, or any border
-									crossing through which you enter the country. The Indian
-									customs officials will give your passport a new stamp
-									confirming your entry into the country.</p>
+								<p class="description-steps-eta-planning" style="padding-bottom: 50px;">
+								In order to receive the visa on arrival for India sticker, the traveler must show their printed copy of their e-Visa for India along with the passport. Be mindful that there are three main categories of e-Visa for India: the e-Tourist visa, e-Business visa, and the e-Medical visa.
+								</p>
 							</div>
 						</div>
 					</section>
@@ -946,7 +939,7 @@ span.description-steps-text-bottom {
 						</div>
 						<ul class="toggle-box">
 							<li class="toggle-li">
-								<h3 class="visa-questions-click toggle-click-closed">the
+								<h3 class="visa-questions-click toggle-click-closed">The
 									e-Tourist visa</h3>
 								<div class="height" style="width: 100%">
 									<p class="visa-questions-description">
@@ -958,7 +951,7 @@ span.description-steps-text-bottom {
 								</div>
 							</li>
 							<li class="toggle-li">
-								<h3 class="visa-questions-click toggle-click-closed">the
+								<h3 class="visa-questions-click toggle-click-closed">The
 									e-Business visa</h3>
 								<div class="height">
 									<p class="visa-questions-description">
@@ -972,17 +965,17 @@ span.description-steps-text-bottom {
 								</div>
 							</li>
 							<li class="toggle-li">
-								<h3 class="visa-questions-click toggle-click-closed">the
-									e-Medical visa</h3>
+								<h3 class="visa-questions-click toggle-click-closed">The
+									e-Student visa</h3>
 								<div class="height">
 									<p class="visa-questions-description">
 										– a photo of the <strong>bio-data page</strong> of the
 										applicant's passport<br> – a&nbsp;<strong>photograph
 											of the applicant's face</strong> that can be taken using a phone or a
 										PC camera<br> – a&nbsp;<strong>written document
-										</strong>from the hospital or other institution confirming cooperation
+										</strong>from the  institution confirming cooperation
 										and providing basic details of the stay length and type of
-										treatment that the applicant is going to undergo
+										education that the applicant is going to undergo
 									</p>
 								</div>
 							</li>
@@ -1029,7 +1022,7 @@ span.description-steps-text-bottom {
 							</div>
 							<ul class="description-steps-ul">
 								<li class="description-steps-ul-step display-flex" style="display: block !important;">
-									<div class="step-icon step-icon-1" style="margin: auto; background-image: url(../images/document.png);"></div>
+									<div class="step-icon step-icon-1" style="margin: auto; background-image: url(/images/easy-application-process.png);"></div>
 									<div class="description-steps-text" style="margin: auto;">
 										<span class="description-steps-text-main">Easy
 											application process</span><span
@@ -1040,7 +1033,7 @@ span.description-steps-text-bottom {
 									</div>
 								</li>
 								<li class="description-steps-ul-step display-flex" style="display: block !important;">
-									<div class="step-icon step-icon-2"  style="margin: auto; background-image: url(../images/team.png);"></div>
+									<div class="step-icon step-icon-2"  style="margin: auto; background-image: url(/images/qualified-team-of-experts.png);"></div>
 									<div class="description-steps-text" style="margin: auto;">
 										<span class="description-steps-text-main padding-right50">Qualified
 											team of experts</span>
@@ -1050,7 +1043,7 @@ span.description-steps-text-bottom {
 									</div>
 								</li>
 								<li class="description-steps-ul-step display-flex" style="display: block !important;">
-									<div class="step-icon step-icon-3" style="margin: auto;   background-image: url(../images/guarantee.png);"></div>
+									<div class="step-icon step-icon-3" style="margin: auto;   background-image: url(/images/guarantee-of-service.png);"></div>
 									<div class="description-steps-text" style="margin: auto;">
 										<span class="description-steps-text-main">Guarantee of
 											service</span><span class="description-steps-text-bottom" style="text-align: center;">If
@@ -1128,9 +1121,6 @@ span.description-steps-text-bottom {
 
 
 	<%@include file="footer.jsp"%>
-
-	<script src="js/home.js"></script>
-	<script src="js/select2.min.js"></script>
 	<script>
 		document.querySelector('#select-country').addEventListener(
 				'change',
