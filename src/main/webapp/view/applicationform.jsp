@@ -233,39 +233,39 @@ label#radiolabel {
              <select id="portArrival" onchange="validate();">
              
 			<option value="port"></option>
-			<option value="Banglore">I don't have a ticket</option>
-			<option value="Hyderabad">Bagdora</option>
-			<option value="Delhi">Bangalore</option>
-			<option value="Mumbai">Bhubaneshwar Airport</option>
-			<option value="Pune">Chandigarh Airport</option>
-			<option value="Goa">Chennai Airport</option>
-			<option value="Goa">Cochin Airport</option>
-			<option value="Goa">Coimbatore Airport</option>
-			<option value="Goa">Delhi</option>
-			<option value="Goa">Gaya</option>
-			<option value="Goa">Goa Airport</option>
-			<option value="Goa">Guwahati Airport</option>
-			<option value="Goa">Hyderabad</option>
-			<option value="Goa">Jaipur</option>
-			<option value="Goa">Kalkuta</option>
-			<option value="Goa">Lucknow</option>
-			<option value="Goa">Madurai Airport</option>
-			<option value="Goa">Mangalore Airport</option>
-			<option value="Goa">Mumbai Airport</option>
-			<option value="Goa">Nagpur Airport</option>
-			<option value="Goa">Portblair Airport</option>
-			<option value="Goa">Pune Airport</option>
-			<option value="Goa">Tiruchirapalli</option>
-			<option value="Goa">Trivandrum</option>
-			<option value="Goa">Varanasi</option>
-			<option value="Goa">Vishakhapatnam</option>
-			<option value="Goa">Chennai Seaport</option>
-			<option value="Goa">Cochin Seaport</option>
-			<option value="Goa">Goa Seaport</option>
-			<option value="Goa">Mangalore Seaport</option>
-			<option value="Goa">Mumbai Seaport</option>
-			<option value="Goa">Ahmedabad</option>
-			<option value="Goa">Amritsar</option>
+			<option value="I don't have a ticket">I don't have a ticket</option>
+			<option value="Bagdora">Bagdora</option>
+			<option value="Bangalore">Bangalore</option>
+			<option value="Bhubaneshwar Airport">Bhubaneshwar Airport</option>
+			<option value="Chandigarh Airport">Chandigarh Airport</option>
+			<option value="Chennai Airport">Chennai Airport</option>
+			<option value="Cochin Airport">Cochin Airport</option>
+			<option value="Coimbatore Airport">Coimbatore Airport</option>
+			<option value="Delhi">Delhi</option>
+			<option value="Gaya">Gaya</option>
+			<option value="Goa Airport">Goa Airport</option>
+			<option value="Guwahati Airport">Guwahati Airport</option>
+			<option value="Hyderabad">Hyderabad</option>
+			<option value="Jaipur">Jaipur</option>
+			<option value="Kalkuta">Kalkuta</option>
+			<option value="Lucknow">Lucknow</option>
+			<option value="Madurai Airport">Madurai Airport</option>
+			<option value="Mangalore Airport">Mangalore Airport</option>
+			<option value="Mumbai Airport">Mumbai Airport</option>
+			<option value="Nagpur Airport">Nagpur Airport</option>
+			<option value="Portblair Airport">Portblair Airport</option>
+			<option value="Pune Airport">Pune Airport</option>
+			<option value="Tiruchirapalli">Tiruchirapalli</option>
+			<option value="Trivandrum">Trivandrum</option>
+			<option value="Varanasi">Varanasi</option>
+			<option value="Vishakhapatnam">Vishakhapatnam</option>
+			<option value="Chennai Seaport">Chennai Seaport</option>
+			<option value="Cochin Seaport">Cochin Seaport</option>
+			<option value="Goa Seaport">Goa Seaport</option>
+			<option value="Mangalore Seaport">Mangalore Seaport</option>
+			<option value="Mumbai Seaport">Mumbai Seaport</option>
+			<option value="Ahmedabad">Ahmedabad</option>
+			<option value="Amritsar">Amritsar</option>
 			
 			
 			</select>
@@ -424,15 +424,15 @@ label#radiolabel {
              <div class="col-sm-10">
              <select id="purposeTraval" onchange="validate();">
 			<option value="port"></option>
-			<option value="Banglore">Transit</option>
-			<option value="Hyderabad">Tourism(30 days)</option>
-			<option value="Delhi">Tourism(1 year)</option>
-			<option value="Mumbai">Tourism(5 year)</option>
-			<option value="Pune">Business</option>
-			<option value="Goa">Medical treatment of self</option>
-			<option value="Goa">Medical attendent</option>
-			<option value="Goa">Ayurveda</option>
-			<option value="Goa">Abroad</option>
+			<option value="Transi">Transit</option>
+			<option value="Tourism(30 days)">Tourism(30 days)</option>
+			<option value="Tourism(1 year)">Tourism(1 year)</option>
+			<option value="Tourism(5 year)">Tourism(5 year)</option>
+			<option value="Business">Business</option>
+			<option value="Medical treatment of self">Medical treatment of self</option>
+			<option value="Medical attendent">Medical attendent</option>
+			<option value="Ayurveda">Ayurveda</option>
+			<option value="Abroad">Abroad</option>
 			</select>
             </div>
              <div class="col-sm-2">

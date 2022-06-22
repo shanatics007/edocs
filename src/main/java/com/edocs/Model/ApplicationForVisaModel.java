@@ -42,6 +42,8 @@ public class ApplicationForVisaModel {
 	@Column(name="contact_phone_number")
 	String contactPhoneNumber;
 	
+	@Column(name="nationality")
+	String nationality;
 	
 	
 	public int getPkid() {
@@ -99,6 +101,13 @@ public class ApplicationForVisaModel {
 	public void setContactPhoneNumber(String contactPhoneNumber) {
 		this.contactPhoneNumber = contactPhoneNumber;
 	}
+	public String getNationality() {
+		return nationality;
+	}
+	public void setNationality(String nationality) {
+		this.nationality = nationality;
+	}
+	
 	
 
 }
