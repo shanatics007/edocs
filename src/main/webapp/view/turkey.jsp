@@ -239,9 +239,9 @@ span.description-steps-text-bottom {
 				<div class="height">
 					<ul class="mobile-menu-country-list">
 
-						<li><a href="#">India</a></li>
+						<li><a href="/en/india">India</a></li>
 
-						<li><a href="#">Turkey</a></li>
+						<li><a href="/en/turkey">Turkey</a></li>
 
 					</ul>
 				</div></li>
@@ -269,7 +269,7 @@ span.description-steps-text-bottom {
 			<div class="top-content-follow-card-destination"
 				style="width: 30%; margin: auto; padding-top: 40px;">
 
-				<a href="/en/india/applicationform">
+				<a href="/en/turkey/applicationform">
 					<button type="button" class="btn btn-primary">APPLY ONLINE</button>
 				</a>
 
@@ -319,7 +319,7 @@ span.description-steps-text-bottom {
 
 					</div>
 
-					<a href="/en/india/applicationform"><button type="button"
+					<a href="/en/turkey/applicationform"><button type="button"
 							id="applyhere">APPLY ONLINE</button></a>
 					<section class="description padding mobile-pt-0"
 						style="background-color: #ffff; padding:50px !important;">

@@ -16,10 +16,10 @@ public class ApplicationForVisaModel {
 	@Id
 	@Column(name="pkid")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE , generator = "seqVisaApp")
-	double pkid;
+	int pkid;
 	
-	@Column(name="travel_country")
-	String travelCountry;
+	@Column(name="travel_airports")
+	String travelAirports;
 	
 	@Column(name="purpose_for_travel")
 	String purposeForTravel;
@@ -42,25 +42,21 @@ public class ApplicationForVisaModel {
 	@Column(name="contact_phone_number")
 	String contactPhoneNumber;
 	
-	@Column(name="nationality")
-    String nationality;
-	
-	@Column(name="insurance")
-	String insurance;
-	
-	@Column(name="insurance_start_date")
-	String insuranceStartDate;
-	
-	@Column(name="insurance_end_date")
-	String insuranceEndDate;
 	
 	
-	public String getTravelCountry() {
-		return travelCountry;
+	public int getPkid() {
+		return pkid;
 	}
-	public void setTravelCountry(String travelCountry) {
-		this.travelCountry = travelCountry;
+	public void setPkid(int pkid) {
+		this.pkid = pkid;
 	}
+	public String getTravelAirports() {
+		return travelAirports;
+	}
+	public void setTravelAirports(String travelAirports) {
+		this.travelAirports = travelAirports;
+	}
+	
 	public String getPurposeForTravel() {
 		return purposeForTravel;
 	}
@@ -103,23 +99,6 @@ public class ApplicationForVisaModel {
 	public void setContactPhoneNumber(String contactPhoneNumber) {
 		this.contactPhoneNumber = contactPhoneNumber;
 	}
-	
-	public String getNationality() {
-		return nationality;
-	}
-	public void setNationality(String nationality) {
-		this.nationality = nationality;
-	}
-	public String getInsurance() {
-		return insurance;
-	}
-	public void setInsurance(String insurance) {
-		this.insurance = insurance;
-	}
-	
-	
-	
-	
 	
 
 }
