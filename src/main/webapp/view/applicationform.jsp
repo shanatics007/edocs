@@ -698,7 +698,7 @@ label#radiolabel {
   	function submitApplication(){
 		if($('#accept-terms-track').prop('checked') && $('#accept-gdpr-track').prop('checked')){
 			if(validate()){
-				var url ="application/saveApplication";
+				var url ="/application/saveApplication";
 				var dateofArrival = $('#dayArrival').val()+'-'+$('#montharrival').val()+'-'+$('#yearlist').val();
 				var dateofBirth = $('#dayDOB').val()+'-'+$('#dayMonth').val()+'-'+$('#yearlistdob').val();
 				$.ajax({
