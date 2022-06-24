@@ -10,10 +10,11 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
       <title>Edocs Travel</title>
        
-       <link rel="stylesheet" href="css/default.css"> 
-    <link rel="stylesheet" href="css/home.css">
-      <script async="" src="./login_files/modules.e20d55506f3679282458.js" charset="utf-8"></script>
-      
+       <link rel="stylesheet" href="/css/default.css"> 
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/login.css">
+     
+      <script src="/js/home.js"></script>
       <script src="jquery-3.6.0.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -76,14 +77,16 @@
                            </div>
                            <div class="input-box-bottom">
                               <div class="actual-input">
-                                 <div class="text-input-single"><input type="password" placeholder="required" id="userPass"></div>
+                                 <div class="text-input-single">
+                                 <input type="password" placeholder="required" id="userPass"></div>
                                  <!---->
                               </div>
                             
                            </div>
                         </div>
                         <div class="input-box">
-                           <div class="input-box-bottom button-container submit-input-container"><button class="btn" id="loginbuttonId" onclick="login();">
+                           <div class="input-box-bottom button-container submit-input-container">
+                           <button class="btn" id="loginbuttonId" onclick="login();">
                               Log in
                               </button>
                               

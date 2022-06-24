@@ -11,11 +11,11 @@
 <html lang="en">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-     
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
       <title>Edocs Travel</title>
       
-      <link rel="stylesheet" href="css/default.css">
-       <link rel="stylesheet" href="css/home.css">
+      <link rel="stylesheet" href="/css/default.css">
+       <link rel="stylesheet" href="/css/login.css">
      
       <link rel="stylesheet" type="text/css" href="./Evisa Express_files/destinations-sprite.css">
       <script async="" src="js/modules.e20d55506f3679282458.js" charset="utf-8"></script>
@@ -26,31 +26,13 @@
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
+    <script src="/js/home.js"></script>
+    <link rel="stylesheet" href="/css/home.css">
      </head>
    <body>
       <div id="overlay" class="hidden mobileMenuOverlay"></div>
       	<%@include file="header.jsp"%>
-      <div class="mobile-menu right5000">
-         <div class="mobile-menu-top"><span class="mobile-menu-account in-header"><img src="./Evisa Express_files/user.svg" alt=""><a id="menu-mobile-login" class="mobile-menu-font" href="https://evisa.express/en/account/login" rel="nofollow">Log in</a></span><span class="mobile-menu-close">close</span></div>
-         <ul class="toggle-box">
-            <li class="toggle-li">
-               <a id="menu-mobile-get-visa" class="mobile-menu-font toggle-click-closed">get visa</a>
-               <div class="height">
-                  <ul class="mobile-menu-country-list">
-                     
-                     <li><a href="#">India</a></li>
-                     
-                     <li><a href="#">Turkey</a></li>
-                  </ul>
-               </div>
-            </li>
-            <li class="toggle-li"><a id="menu-mobile-groups" class="mobile-menu-font" href="#">Passenger Locator Forms</a></li>
-            <li class="toggle-li"><a id="menu-mobile-groups" class="mobile-menu-font" href="#" rel="nofollow">Travel Insurance</a></li>
-            <li class="toggle-li"><a id="menu-mobile-groups" class="mobile-menu-font" href="#">Check Entry Requirements</a></li>
-           
-         </ul>
-      </div>
+     
       <section class="main-site-content account-page height-max">
          <div class="container">
             <div class="form-centered">
@@ -202,27 +184,7 @@
      	
      	
      	
-     	<!-- Modal -->
-<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-     <!--  <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div> -->
-      <div class="modal-body">
-        
-         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-      <div class="modal-footer">
-       
-       
-      </div>
-    </div>
-  </div>
-</div>
+     
      	
       <script>
          var languages = {

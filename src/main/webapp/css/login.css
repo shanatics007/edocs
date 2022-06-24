@@ -209,3 +209,21 @@ html.lb-disable-scrolling {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
+@media ( max-width : 599px) {
+
+ #userEmail{
+ width: 100% !important;
+     
+ }
+ #userPass{
+ 	width: 100% !important;
+ 	    
+ }
+ .error-mark{
+    display: none !important;
+ }
+ .success-mark{
+   display: none !important;
+ }
+ 
+}

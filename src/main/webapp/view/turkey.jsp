@@ -23,6 +23,9 @@
 		background-color: #c3b19e;
 	}
 }
+.top-background {
+		background-image: url('/images/background 2.jpg');
+	}
 
 @media ( min-width : 992px) {
 	.top-background {
@@ -281,36 +284,7 @@ span.description-steps-text-bottom {
 		<div class="top-background"></div>
 		<div class="container">
 			<div class="row">
-				<div class="col-md-4 padding-card">
-					<div class="top-content-follow-card follow-card-upper"
-						style="display: none;">
-						<div class="top-content-follow-card-logo-2"></div>
-						<div class="top-content-follow-card-h2">APPLY FOR TURKEY
-							VISA ONLINE</div>
-
-						<div class="top-content-follow-card-logo"></div>
-						<div class="top-content-follow-card-destination">
-							<span class="top-content-follow-card-destination-small-text">Your
-								Destination</span>
-							<div class="drop-down">
-								<input type="text" name="noPassword" id="select-country"
-									placeholder="Select a country"
-									class="initial-input input-drop-down" autocomplete="no">
-								<ul class="drop-down-ul display-none"
-									style="bottom: initial; max-height: 300px;">
-
-									<li class="drop-down-ul-element"><a href="#"
-										class="a-no-active"><span data-key="india">India</span></a></li>
-
-									<li class="drop-down-ul-element"><a href="#"
-										class="a-no-active"><span data-key="turkey">Turkey</span></a></li>
-
-								</ul>
-							</div>
-						</div>
-						<div class="top-content-follow-card-icon"></div>
-					</div>
-				</div>
+		
 				<div class="col-md-12">
 					<div class="top-content-text padding">
 						<h1
@@ -322,7 +296,7 @@ span.description-steps-text-bottom {
 					<a href="/en/turkey/applicationform"><button type="button"
 							id="applyhere">APPLY ONLINE</button></a>
 					<section class="description padding mobile-pt-0"
-						style="background-color: #ffff; padding:50px !important;">
+						style="background-color: #ffff; padding:50px;">
 						<div class="description-steps">
 							<p class="description-steps-eta-planning">
 							
@@ -348,11 +322,11 @@ span.description-steps-text-bottom {
 							
 						</div>
 					</section>
-					<section class="description padding" style="padding: 50px !important; background: #ffff;">
+					<section class="description padding" style="padding: 50px; background: #ffff;">
 						<div class="description-steps">
 							<div class="d-flex">
 								<h2 class="description-steps-h3"
-									style="color: rgb(29, 51, 103); text-align: center;">
+									style="color: rgb(29, 51, 103); text-align: center; font-weight: 600;">
 									IMPORTANT UPDATE </h2>
 							</div>
 							<div class="stepsdescription">
@@ -379,11 +353,11 @@ span.description-steps-text-bottom {
 
 
 					<section class="gallery-big padding-rwd" style="margin: 35px 0px 0px 0px !important">
-						<div class="steps" style="background-color: #ffffff;">
+						<div class="steps" id="impinfo" style="background-color: #ffffff;">
 							<div class="d-flex">
 								<div class="small-line"></div>
 								<h2 class="description-steps-h3"
-									style="color: #1d3367 !important; text-align: center;">
+									style="color: #1d3367 !important; text-align: center; font-weight: 600;">
 									Important Information</h2>
 							</div>
 							<p class="description-steps-eta-planning"
@@ -400,7 +374,7 @@ span.description-steps-text-bottom {
 								
 							</p>
 
-							<ul style="padding-left: 100px; list-style-type: initial; padding-right: 100px; padding-bottom: 50px; color:#1d3367;">
+							<ul id="impinfolist" style="padding-left: 100px; list-style-type: initial; padding-right: 100px; padding-bottom: 50px; color:#1d3367;">
 								<li>
 								Travelers transiting through Turkey are not required to obtain an electronic visa. However, transiters must remain within the transit area of the airport while awaiting their connecting flight. Otherwise, you need an electronic entry permit
 								
@@ -1068,7 +1042,7 @@ span.description-steps-text-bottom {
 						<div class="description-steps">
 							<div class="d-flex">
 								<div class="small-line"></div>
-								<h3 class="description-steps-h3">Benefits of Evisa Express</h3>
+								<h3 class="description-steps-h3" style="font-weight: 600;">Benefits of Evisa Express</h3>
 							</div>
 							<ul class="description-steps-ul">
 								<li class="description-steps-ul-step display-flex" style="display: block !important;">
@@ -1112,7 +1086,7 @@ span.description-steps-text-bottom {
 					<section class="description padding" style="margin-bottom: 50px; background: #ffffff;">
 						<div class="description-steps" style="padding-bottom: 50px;">
 							<div class="d-flex">
-								<h2 class="description-steps-h3" style="color: rgb(29 51 103); text-align: center; padding-bottom: 50px;">
+								<h2 class="description-steps-h3" style="color: rgb(29 51 103); text-align: center; font-weight: 600; padding-bottom: 50px;">
 								Three easy steps to get your e-Visa
 								</h2>
 							</div>
@@ -1121,21 +1095,27 @@ span.description-steps-text-bottom {
 							<div class="col-sm-4" id="stepscolumn">
 							<div class="step-icon step-icon-1"></div>
 							<div class="description-steps-text">
+							<div id="stepshead"> 
 										<span class="description-steps-text-main">Fill Up The
 											Application Form</span> 
-											
+									</div>
+									<div id="stepsparagraph">
 											<span class="description-steps-text-bottom">You
 											need to mention the data like email address, aim to visit the
 											destination, passport details, and more. One might also make
 											out the additional documents as essential.&nbsp;</span>
+									</div>
 									</div>
 							</div>
 							
 							<div class="col-sm-4" id="stepscolumn">
 							<div class="step-icon step-icon-2"></div>
 							<div class="description-steps-text">
+							<div id="stepshead">
 										<span class="description-steps-text-main">Register An
 											Online Payment</span> 
+								</div>
+								<div id="stepsparagraph">
 											<span class="description-steps-text-bottom">Pay
 											the handling for the EDOCS Travel fee for using available
 											methods for the online transaction option. Once registered,
@@ -1143,18 +1123,22 @@ span.description-steps-text-bottom {
 											the next step.&nbsp;</span>
 									</div>
 							</div>
+							</div>
 							
 							<div class="col-sm-4" id="stepscolumn">
 							<div class="step-icon step-icon-3"></div>
 								<div class="description-steps-text">
+								<div id="stepshead">
 										<span class="description-steps-text-main">Check For The Inbox</span> 
 										</div>
+										<div id="stepsparagraph">
 											<span class="description-steps-text-bottom">EDOCS
 											Travel will instantly make out approval for the application
 											with an email box. Make sure for the email address after the
 											application form once you receive it. All of these would come
 											without any delay or issues.&nbsp;</span>
-									
+									</div>
+							</div>
 							</div>
 							</div>
 						

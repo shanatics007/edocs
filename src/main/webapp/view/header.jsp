@@ -1,7 +1,7 @@
 <div class="menu-desktop-wrapper">
          <nav class="menu-desktop">
             <div class="container">
-               <a class="menu-logo" href="/"><img  src="/images/edocs-trave-logo.png" class="desktop-logo" style="width: 250px; height:60px;"><img src="images/edocs-trave-logo.png" class="mobile-logo" loading="lazy"  style="display:none;"></a>
+               <a class="menu-logo" href="/"><img  src="/images/edocs-trave-logo.png" class="desktop-logo" style="width: 250px; height:60px;"><img src="/images/edocs-trave-logo.png" class="mobile-logo" loading="lazy"  style="display:none;"></a>
                <div class="menu-left-side">
                   <ul class="menu-options">
                      <li class="dropdown-wrapper">

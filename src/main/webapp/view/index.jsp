@@ -16,12 +16,7 @@
 	<script src="js/select2.min.js"></script>
 <link rel="stylesheet" href="/css/home.css" type="text/css">
 <style>
-@media ( max-width : 992px) {
-	.top-background {
-		background-color: #c3b19e;
-	}
-	
-}
+
 @media ( min-width : 1330px) {
 section#onlineapplysection {
     margin-left: 60px;
@@ -30,15 +25,20 @@ section#onlineapplysection {
 	
 }
 
-@media ( min-width : 992px) {
-	.top-background {
-		background-image: url('images/background 2.jpg');
+
+@media ( max-width : 599px) {
+	
+	
+	p.description-steps-eta-planning {
+    	font-size: 14px !important;
+   
 	}
+	
 	
 }
 
 p.description-steps-eta-planning {
-    font-size: 18px !important;
+    font-size: 16px !important;
     color: #1d3367 !important;
     text-align: start !important;
 }
@@ -57,6 +57,7 @@ h2.description-steps-h3 {
 }
 .destinations-list li a{
  color: #1d3367;
+ width:0px !important;
 }
 .insurance-banner-section h3{
 	color: #1d3367;
@@ -97,6 +98,11 @@ h2.description-steps-h3 {
   -moz-animation: glowing 1500ms infinite;
   -o-animation: glowing 1500ms infinite;
   animation: glowing 1500ms infinite;
+}
+
+.description-steps-text {
+    text-align: center;
+     padding-bottom: 15px;
 }
 
 @-webkit-keyframes glowing {
@@ -141,7 +147,7 @@ span.description-steps-text-bottom {
 #stepscolumn{
 	 border: 1px;
     box-shadow: 0px 0px 10px;
-    margin: 0px 10px;
+    margin: 10px 10px !important;
     display: inline-grid;
 	
 }
@@ -200,14 +206,14 @@ span.description-steps-text-bottom {
 
 	<div>
 		<section class="applyonline" id="onlineapplysection"
-			style="background: url('/images/banner-bg.png'), rgb(33, 55, 106); width: auto; height: 500px;">
+			style="background: url('/images/banner-bg.png'), rgb(33, 55, 106); width: auto; height: 600px;">
 
 			<div class="top-content-follow-card-h2">CHECK VISA REQUIREMENTS</div>
 			<h4 style="    color: rgb(176, 143, 111);width: 100%;text-align: center;font-size: 20px;">AND APPLY ONLINE</h4>
 
 			<div class="top-content-follow-card-logo" style="margin: auto; "></div>
 			<div class="top-content-follow-card-destination"
-				style="width: 30%; margin: auto; padding-top:40px;">
+				style="margin: auto; padding-top:40px;">
 				<span class="top-content-follow-card-destination-small-text">Your
 					Destination</span>
 				<div class="drop-down">
@@ -232,50 +238,20 @@ span.description-steps-text-bottom {
 
 
 	<section class="main-site-content">
-		<div class="top-background"></div>
+	<div class="top-background" style="background-image: url('/images/background 2.jpg');"></div>
 		<div class="container">
 			<div class="row" >
-				<div class="col-md-4 padding-card">
-					<div class="top-content-follow-card follow-card-upper"
-						style="display: none;">
-						<div class="top-content-follow-card-logo-2"></div>
-						<div class="top-content-follow-card-h2">CHECK VISA
-							REQUIREMENTS</div>
-						<span class="top-content-follow-card-small-text">AND APPLY
-							ONLINE</span>
-						<div class="top-content-follow-card-logo"></div>
-						<div class="top-content-follow-card-destination">
-							<span class="top-content-follow-card-destination-small-text">Your
-								Destination</span>
-							<div class="drop-down">
-								<input type="text" name="noPassword" id="select-country"
-									placeholder="Select a country"
-									class="initial-input input-drop-down" autocomplete="no">
-								<ul class="drop-down-ul display-none"
-									style="bottom: initial; max-height: 300px;">
-
-									<li class="drop-down-ul-element"><a href="/en/india"
-										class="a-no-active"><span data-key="india">India</span></a></li>
-
-									<li class="drop-down-ul-element"><a href="/en/turkey"
-										class="a-no-active"><span data-key="turkey">Turkey</span></a></li>
-
-								</ul>
-							</div>
-						</div>
-						<div class="top-content-follow-card-icon"></div>
-					</div>
-				</div>
 				<div class="col-md-12">
 					<div class="top-content-text padding">
-						<h1 style="color: #ffff; font-size: 50px; font-weight: 600; text-align: center;">Edocs
+						<h1 id="headsection" style="color: #ffff; font-size: 50px; font-weight: 600; text-align: center;">Edocs
 							Travel - Electronic Visa Service</h1>
-						<p style="color: #ffff; font-size: 20px;text-align: center; font-weight: 600;">YOU
-							FOCUS ON THE TRIP, AND WE ARE HERE TO FOCUS ON THE VISA OPTIONS </p>
+						
 					</div>
 					
 					<a href="#onlineapplysection"><button type="button" id="applyhere">APPLY ONLINE</button></a>
-					<section class="description padding mobile-pt-0">
+					<section class="description padding mobile-pt-0" style="background-color: #ffffff; padding-top: 20px; padding-bottom: 50px; margin-bottom: 35px;">
+						<p style="color: #1d3367; font-size: 20px;text-align: center; font-weight: 600;">YOU
+							FOCUS ON THE TRIP, AND WE ARE HERE TO FOCUS ON THE VISA OPTIONS </p>
 						<div class="description-steps">
 							<p class="description-steps-eta-planning">We help to serve
 								the people after assisting with electronic visa. It comes from
@@ -291,7 +267,7 @@ span.description-steps-text-bottom {
 								handle every situation on your side.</p>
 						</div>
 					</section>
-					<section class="description padding">
+					<section class="description padding" style="background-color: #ffffff; padding-top: 20px; padding-bottom: 50px;">
 						<div class="description-steps">
 							<div class="d-flex">
 								<h2 class="description-steps-h3" style="color: rgb(29 51 103); text-align: center;">APPLY FOR THE VISA IN 3
@@ -313,9 +289,10 @@ span.description-steps-text-bottom {
 							<div class="col-sm-4" id="stepscolumn">
 							<div class="step-icon step-icon-1"></div>
 							<div class="description-steps-text">
+							<div>
 										<span class="description-steps-text-main">Fill Up The
 											Application Form</span> 
-											
+											</div>
 											<span class="description-steps-text-bottom">You
 											need to mention the data like email address, aim to visit the
 											destination, passport details, and more. One might also make
@@ -326,8 +303,10 @@ span.description-steps-text-bottom {
 							<div class="col-sm-4" id="stepscolumn">
 							<div class="step-icon step-icon-2"></div>
 							<div class="description-steps-text">
+							<div>
 										<span class="description-steps-text-main">Register An
 											Online Payment</span> 
+							</div>
 											<span class="description-steps-text-bottom">Pay
 											the handling for the EDOCS Travel fee for using available
 											methods for the online transaction option. Once registered,
@@ -339,6 +318,7 @@ span.description-steps-text-bottom {
 							<div class="col-sm-4" id="stepscolumn">
 							<div class="step-icon step-icon-3"></div>
 								<div class="description-steps-text">
+								<div>
 										<span class="description-steps-text-main">Check For The Inbox</span> 
 										</div>
 											<span class="description-steps-text-bottom">EDOCS
@@ -347,6 +327,7 @@ span.description-steps-text-bottom {
 											application form once you receive it. All of these would come
 											without any delay or issues. </span>
 									
+							</div>
 							</div>
 							</div>
 						
@@ -360,7 +341,7 @@ span.description-steps-text-bottom {
 						</div>
 					</section>
 					
-					<section class="gallery-big padding-rwd">
+					<section class="gallery-big padding-rwd" style=" margin-top: 35px;">
 						<div class="steps" style="background-color: #ffffff;">
 						<div class="d-flex">
 							<div class="small-line"></div>
@@ -371,7 +352,7 @@ span.description-steps-text-bottom {
 							<strong>Before applying</strong>, please make sure that you have
 							the following:
 						</p>
-						<div class="row" style="margin-bottom: 30px;"> 
+						<div class="row" style="margin-bottom: 30px;" id="docsRow"> 
 						<div class="col-sm-6">
 						<div class="gallery-big-container-description">
 							<h3 class="gallery-big-container-description-title">A Valid
@@ -389,7 +370,7 @@ span.description-steps-text-bottom {
 						</div>
 						
 						
-						<div class="row" style="margin-bottom: 30px;">
+						<div class="row" style="margin-bottom: 30px;" id="docsRow">
 						<div class="col-sm-6">
 						<div class="gallery-big-container requirements-02"></div>
 						</div>
@@ -405,7 +386,7 @@ span.description-steps-text-bottom {
 						</div>
 						</div>
 						
-						<div class="row" style="margin-bottom: 30px;">
+						<div class="row" style="margin-bottom: 30px;" id="docsRow">
 						<div class="col-sm-6">
 						<div class="gallery-big-container-description">
 							<h3 class="gallery-big-container-description-title">An
@@ -424,8 +405,77 @@ span.description-steps-text-bottom {
 					</div>
 						<div class="button-container btn-length"></div>
 					</section>
-					<section class="description padding" style="background-color: white;">
-						<div class="description-steps" style="margin-top: 25px; padding:10px">
+					
+					
+					
+					<section class="gallery-big padding-rwd" id="mobilestepsview" style="display: none;">
+						<div class="steps" style="background-color: #ffffff;">
+						<div class="d-flex">
+							<div class="small-line"></div>
+							<h2 class="description-steps-h3" style="color:#1d3367 !important; text-align: center;">Requirements To Meet For
+								The EDOCS Travel</h2>
+						</div>
+						<p class="description-steps-eta-planning" style="text-align: center !important;">
+							<strong>Before applying</strong>, please make sure that you have
+							the following:
+						</p>
+						<div class="row" style="margin-bottom: 30px;" id="docsRow"> 
+						<div class="col-sm-6">
+						<div class="gallery-big-container-description">
+							<h3 class="gallery-big-container-description-title">A Valid
+								Passport </h3>
+							<p class="toexpand">All the candidates should have a valid
+								passport for application online. It is advised that you should
+								exceed the validity of the visa for up to 6 months. It might
+								come with the arrival of the country with the destination. </p>
+							<span class="arrowText expand">READ MORE</span>
+						</div>
+						</div>
+						<div class="col-sm-6">
+						<div class="gallery-big-container requirements-01"></div>
+						</div>
+						</div>
+						
+						
+						<div class="row" style="margin-bottom: 30px;" id="docsRow">
+						
+						<div class="col-sm-6">
+						<div class="gallery-big-container-description">
+							<h3 class="gallery-big-container-description-title">Means Of
+								Online Payment </h3>
+							<p class="toexpand">You have to make a credit or debit card
+								with access to online payment methods. You can handle any of it
+								to make EDOCS Travel fees.</p>
+							<span class="arrowText expand">READ MORE</span>
+						</div>
+						</div>
+						<div class="col-sm-6">
+						<div class="gallery-big-container requirements-02"></div>
+						</div>
+						</div>
+						
+						<div class="row" style="margin-bottom: 30px;" id="docsRow">
+						<div class="col-sm-6">
+						<div class="gallery-big-container-description">
+							<h3 class="gallery-big-container-description-title">An
+								Active Email Address </h3>
+							<p class="toexpand">Ensure that the email address you enter
+								in the form is active. Therefore you can easily access the
+								further details. What if it is not functioning? You can make out
+								for the EDOCS Travel once after arrival for the email box.</p>
+							<span class="arrowText expand">READ MORE</span>
+						</div>
+						</div>
+						<div class="col-sm-6">
+						<div class="gallery-big-container requirements-03"></div>
+						</div>
+						</div>
+					</div>
+						<div class="button-container btn-length"></div>
+					</section>
+					
+					<section class="description padding" style="background-color: white;  margin-top: 35px;">
+						<div class="description-steps" style="padding:10px">
 							<p class="description-steps-eta-planning">
 								<strong>Please note</strong> that it comes with basic
 								requirements. Every destination can come with different visa
@@ -444,7 +494,7 @@ span.description-steps-text-bottom {
 						</div>
 					</section> -->
 					<section class="destinations-list-section">
-					<div class="d-flex" style="text-align: center; color: #1d3367;">
+					<div class="d-flex" id="destinationId" style="text-align: center; color: #1d3367;">
 							<div class="small-line"></div>
 							<h2 class="description-steps-h3">Choose your destination
 								country</h2>

@@ -16,16 +16,14 @@
 <link rel="stylesheet" href="/css/india.css" type="text/css">
 
 <style>
-@media ( max-width : 992px) {
-	.top-background {
-		background-color: #c3b19e;
-	}
-}
 
-@media ( min-width : 992px) {
-	.top-background {
-		background-image: url('/images/background 2.jpg');
-	}
+
+@media ( max-width : 599px) {
+	
+}
+@media ( min-width : 599px) {
+	background-image: url('/images/background 2.jpg');
+	
 }
 
 @media ( min-width : 1330px) {
@@ -42,8 +40,8 @@ p.description-steps-eta-planning {
 	font-size: 18px !important;
 	color: #1d3367 !important;
 	text-align: start !important;
-	margin-left: 50px;
-    margin-right: 50px;
+	margin-left: 0px !important;
+   
 }
 section.gallery-big.padding-rwd {
     margin: 50px 0px 0px 0px;
@@ -124,7 +122,7 @@ ul.toggle-box {
 	color: #1d3367;
     font-size: 18px;
     text-align: start;
-    margin-left: 50px;
+	list-style-type: initial !important;
     padding-bottom: 50px;
 }
 .listofports{
@@ -218,6 +216,7 @@ span.description-steps-text-bottom {
 	margin-bottom: 15px;
 	margin-top: 15px;
 }
+
 </style>
 
 </head>
@@ -276,39 +275,10 @@ span.description-steps-text-bottom {
 		</section>
 	</div>
 	<section class="main-site-content">
-		<div class="top-background"></div>
+		<div class="top-background" style="background-image: url('/images/background 2.jpg');"></div>
 		<div class="container">
 			<div class="row">
-				<div class="col-md-4 padding-card">
-					<div class="top-content-follow-card follow-card-upper"
-						style="display: none;">
-						<div class="top-content-follow-card-logo-2"></div>
-						<div class="top-content-follow-card-h2">APPLY FOR INDIAN
-							VISA ONLINE</div>
-
-						<div class="top-content-follow-card-logo"></div>
-						<div class="top-content-follow-card-destination">
-							<span class="top-content-follow-card-destination-small-text">Your
-								Destination</span>
-							<div class="drop-down">
-								<input type="text" name="noPassword" id="select-country"
-									placeholder="Select a country"
-									class="initial-input input-drop-down" autocomplete="no">
-								<ul class="drop-down-ul display-none"
-									style="bottom: initial; max-height: 300px;">
-
-									<li class="drop-down-ul-element"><a href="#"
-										class="a-no-active"><span data-key="india">India</span></a></li>
-
-									<li class="drop-down-ul-element"><a href="#"
-										class="a-no-active"><span data-key="turkey">Turkey</span></a></li>
-
-								</ul>
-							</div>
-						</div>
-						<div class="top-content-follow-card-icon"></div>
-					</div>
-				</div>
+		
 				<div class="col-md-12">
 					<div class="top-content-text padding">
 						<h1
@@ -320,7 +290,7 @@ span.description-steps-text-bottom {
 					<a href="/en/india/applicationform"><button type="button"
 							id="applyhere">APPLY ONLINE</button></a>
 					<section class="description padding mobile-pt-0"
-						style="background-color: #ffff; padding:50px !important;">
+						style="background-color: #ffff; padding:50px;">
 						<div class="description-steps">
 							<p class="description-steps-eta-planning">
 							The online tourist 
@@ -355,7 +325,7 @@ span.description-steps-text-bottom {
 							
 						</div>
 					</section>
-					<section class="description padding" style="padding: 50px !important; background: #ffff;">
+					<section class="description padding" style="padding: 50px; background: #ffff;">
 						<div class="description-steps">
 							<div class="d-flex">
 								<h2 class="description-steps-h3"
@@ -384,11 +354,11 @@ span.description-steps-text-bottom {
 					</section>
 
 					<section class="gallery-big padding-rwd" style="margin: 35px 0px 0px 0px !important">
-						<div class="steps" style="background-color: #ffffff;">
+						<div class="steps" id="typesetpedvisa" style="background-color: #ffffff;">
 							<div class="d-flex">
 								<div class="small-line"></div>
 								<h2 class="description-steps-h3"
-									style="color: #1d3367 !important; text-align: center;">
+									style="color: #1d3367 !important; text-align: center; font-weight: 700;">
 									Types Of India e-Visa Information</h2>
 							</div>
 							<p class="description-steps-eta-planning"
@@ -398,7 +368,7 @@ span.description-steps-text-bottom {
 								In this article, we look at the different types of Indian visa.
 							</p>
 
-							<ul style="padding-left: 100px; padding-right: 100px; padding-bottom: 50px; color:#1d3367;">
+							<ul id="typesvisalist" style="padding-left: 100px; padding-right: 100px; padding-bottom: 50px; color:#1d3367;">
 								<li>
 								<h3 style="font-size: 20px; color: #1d3367; font-weight: 600; ">
 								Business Visa
@@ -484,11 +454,11 @@ span.description-steps-text-bottom {
 						<div class="d-flex">
 							<div class="small-line"></div>
 							<h2 class="description-steps-h3"
-								style="color: #1d3367 !important; text-align: center;">
+								style="color: #1d3367 !important; text-align: center; font-weight: 600;">
 								List of eligible countries</h2>
 						</div>
 
-						<p style="color: #1d3367; font-size: 20px;">
+						<p style="color: #1d3367; font-size: 18px;">
 							All citizens of countries on the following list <b>are
 								required to carry an India e-Visa</b> in order to enter this country
 							for purposes of tourism, business, or medical treatment.
@@ -499,12 +469,12 @@ span.description-steps-text-bottom {
 
 						<div class="row" style="color:#1d3367;">
 
-							<div class="col-sm-3">
-								<ul>
+							<div class="col-sm-3 col-md-3 col-xs-6">
+								<ul style="padding: 0px !important;">
 									<li>Albania</li>
 									<li>Andorra</li>
 									<li>Angola</li>
-									<li>Antigua and Barbud</li>
+									<li>Antigua</li>
 									<li>Argentina</li>
 									<li>Armenia</li>
 									<li>Australia</li>
@@ -515,7 +485,7 @@ span.description-steps-text-bottom {
 									<li>Belize</li>
 									<li>Belgium</li>
 									<li>Bolivia</li>
-									<li>Bosnia and Herzegovina</li>
+									<li>Bosnia </li>
 									<li>Botswana</li>
 									<li>Brazil</li>
 									<li>Brunei</li>
@@ -536,15 +506,15 @@ span.description-steps-text-bottom {
 									<li>Denmark</li>
 									<li>Djibouti</li>
 									<li>Dominica</li>
-									<li>Dominican Republic</li>
+									<li>Dominican</li>
 									<li>Ecuador</li>
 									<li>El Salvado</li>
 									<li>Eritrea</li>
 									<li>Estonia</li>
 								</ul>
 							</div>
-							<div class="col-sm-3">
-								<ul>
+							<div class="col-sm-3 col-md-3 col-xs-6">
+								<ul style="padding: 0px !important;"> 
 									<li>Eswatini</li>
 									<li>Fiji</li>
 									<li>Finland</li>
@@ -585,11 +555,12 @@ span.description-steps-text-bottom {
 									<li>Luxembourg</li>
 									<li>Macau</li>
 									<li>Macedonia</li>
-									<li>Madagascar</li>
+									
 								</ul>
 							</div>
-							<div class="col-sm-3">
-								<ul>
+							<div class="col-sm-3 col-md-3 col-xs-6">
+								<ul style="padding: 0px !important;">
+									<li>Madagascar</li>
 									<li>Malawi</li>
 									<li>Malaysia</li>
 									<li>Mali</li>
@@ -628,13 +599,14 @@ span.description-steps-text-bottom {
 									<li>Rwanda</li>
 									<li>Saint Kitts and Nevis</li>
 									<li>Saint Lucia</li>
-									<li>Saint Vincent and the Grenadines</li>
-									<li>Samoa</li>
+									<li>Saint Vincent</li>
+									
 								</ul>
 
 							</div>
-							<div class="col-sm-3">
-								<ul>
+							<div class="col-sm-3 col-md-3 col-xs-6">
+								<ul style="padding: 0px !important;">
+									<li>Samoa</li>
 									<li>San Marino</li>
 									<li>Senegal</li>
 									<li>Serbia</li>
@@ -686,7 +658,7 @@ span.description-steps-text-bottom {
 					<section class="destinations-list-section" style="background: #ffff; margin: 35px 0px 0px 0px !important;">
 						<div class="d-flex" style="text-align: center; color: #1d3367;">
 							<div class="small-line"></div>
-							<h2 class="description-steps-h3" style="color: #1d3367;">India e-Visa application
+							<h2 class="description-steps-h3" style="color: #1d3367; font-weight: 600;">India e-Visa application
 								form</h2>
 						</div>
 						<div class="formdetails">
@@ -724,10 +696,10 @@ span.description-steps-text-bottom {
 					</section>
 
 					<section class="gallery-big padding-rwd">
-						<div class="steps" style="background-color: #ffffff;">
+						<div class="steps" id="validitysteps" style="background-color: #ffffff;">
 							<div class="d-flex">
 								<div class="small-line"></div>
-								<h2 class="description-steps-h3">Validity period</h2>
+								<h2 class="description-steps-h3" style="font-weight: 600;">Validity period</h2>
 							</div>
 							<p class="description-steps-eta-planning">
 								The tourist visa for India that you can apply for on this website is valid for 30 days. This means that you can arrive in India within a period of 30 days, which starts from the moment your application is approved. The validity period is also stated on the visa.
@@ -748,10 +720,10 @@ span.description-steps-text-bottom {
 
 
 					<section class="gallery-big padding-rwd">
-						<div class="steps" style="background-color: #ffffff;">
+						<div class="steps" id="transitinfo" style="background-color: #ffffff;">
 							<div class="d-flex">
 								<div class="small-line"></div>
-								<h2 class="description-steps-h3">Transit information</h2>
+								<h2 class="description-steps-h3" style="font-weight: 600;">Transit information</h2>
 							</div>
 							<p class="description-steps-eta-planning">
 								Indian visa requirements state that all non-visa-exempt travelers who are passing through an Indian airport for more than 24 hours, or who intend to leave the airport Transit Area, are required to have a visa to transit through India. 
@@ -778,12 +750,12 @@ span.description-steps-text-bottom {
 
 
 					<section class="gallery-big padding-rwd">
-						<div class="steps" style="background-color: #ffffff;">
+						<div class="steps" id="arrivalrequirements" style="background-color: #ffffff;">
 							<div class="d-flex">
 								<div class="small-line"></div>
-								<h2 class="description-steps-h3">Requirements on arrival</h2>
+								<h2 class="description-steps-h3" style="font-weight: 600;">Requirements on arrival</h2>
 							</div>
-							<p style=" color: #1d3367; font-size: 18px; margin-right: 50px; margin-left: 50px;">
+							<p id="arrivalpara" style=" color: #1d3367; font-size: 18px; margin-right: 50px; margin-left: 50px;">
 							The visa on arrival is part of the e-Visa India program. Every traveler that arrives in India with a valid India e-Visa will also receive a visa on arrival in the form of a sticker. The sticker is placed on a page in the passport when going through immigration control.
 							<ul id="transieninfo"> 
 								<li>
@@ -804,7 +776,7 @@ span.description-steps-text-bottom {
 								</li>
 
 							</ul>
-							<div>
+							<div id="arrivalparaaa">
 								<p class="description-steps-eta-planning" style="padding-bottom: 50px;">
 								In order to receive the visa on arrival for India sticker, the traveler must show their printed copy of their e-Visa for India along with the passport. Be mindful that there are three main categories of e-Visa for India: the e-Tourist visa, e-Business visa, and the e-Medical visa.
 								</p>
@@ -815,10 +787,10 @@ span.description-steps-text-bottom {
 
 
 					<section class="gallery-big padding-rwd">
-						<div class="steps" style="background-color: #ffffff;">
+						<div class="steps" id="portevisaaccept" style="background-color: #ffffff;">
 							<div class="d-flex">
 								<div class="small-line"></div>
-								<h2 class="description-steps-h3">Ports accepting e-Visas</h2>
+								<h2 class="description-steps-h3" style="font-weight: 600;">Ports accepting e-Visas</h2>
 							</div>
 							
 							<div class="listofports">
@@ -829,10 +801,10 @@ span.description-steps-text-bottom {
 								<p>Below is a list of airports and seaports that accept
 									online India visas to use.</p>
 							</div>
-							<h3 style="color: #1d3367; margin-right: 50px; font-size: 20px;margin-left: 50px">Airports:</h3>
+							<h3 id="aiportsheadId" style="color: #1d3367; margin-right: 50px; font-size: 20px;margin-left: 50px">Airports:</h3>
 							<div class="row" id="airports">
-								<div class="col-sm-4">
-									<ul>
+								<div class="col-sm-4 col-md-4 col-xs-6">
+									<ul id="arporistlistt">
 										<li>Ahmedabad</li>
 										<li>Amritsar</li>
 										<li>Bagdogra</li>
@@ -847,8 +819,8 @@ span.description-steps-text-bottom {
 									</ul>
 
 								</div>
-								<div class="col-sm-4">
-									<ul>
+								<div class="col-sm-4 col-md-4 col-xs-6">
+									<ul id="arporistlistt">
 										<li>Delhi</li>
 										<li>Gaya</li>
 										<li>Goa</li>
@@ -863,8 +835,8 @@ span.description-steps-text-bottom {
 									</ul>
 
 								</div>
-								<div class="col-sm-4">
-									<ul>
+								<div class="col-sm-4 col-md-4 col-xs-6">
+									<ul id="arporistlistt">
 										<li>Mumbai</li>
 										<li>Nagpur</li>
 										<li>Portblair</li>
@@ -878,26 +850,26 @@ span.description-steps-text-bottom {
 								</div>
 
 							</div>
-							<h3 style="color: #1d3367; margin-right: 50px; font-size: 20px;margin-left: 50px">Seaports:</h3>
+							<h3 id="aiportsheadId" style="color: #1d3367; margin-right: 50px; font-size: 20px;margin-left: 50px">Seaports:</h3>
 							<div class="row" id="airports">
-								<div class="col-sm-4">
-									<ul>
+								<div class="col-sm-4 col-md-4 col-xs-4">
+									<ul id="arporistlistt">
 										<li>Chennai</li>
 										<li>Cochin</li>
 
 									</ul>
 
 								</div>
-								<div class="col-sm-4">
-									<ul>
+								<div class="col-sm-4 col-md-4 col-xs-4">
+									<ul id="arporistlistt">
 										<li>Goa</li>
 										<li>Mangalore</li>
 
 									</ul>
 
 								</div>
-								<div class="col-sm-4">
-									<ul>
+								<div class="col-sm-4 col-md-4 col-xs-4">
+									<ul id="arporistlistt">
 										<li>Mumbai</li>
 									</ul>
 
@@ -909,12 +881,12 @@ span.description-steps-text-bottom {
 
 
 					<section class="gallery-big padding-rwd">
-						<div class="steps" style="background-color: #ffffff;">
+						<div class="steps" id="evisasample" style="background-color: #ffffff;">
 							<div class="d-flex">
 								<div class="small-line"></div>
-								<h2 class="description-steps-h3">Indian e-Visa Sample</h2>
+								<h2 class="description-steps-h3" style="font-weight: 600;">Indian e-Visa Sample</h2>
 							</div>
-							<p style="color: #1d3367; margin-right: 50px; font-size: 18px;margin-left: 50px;">
+							<p id="samplevisapara" style="color: #1d3367; margin-right: 50px; font-size: 18px;margin-left: 50px;">
 								The following document is an <b>India e-Visa sample</b> that is
 								presented below to give you an insight on how will the entry
 								permit look like once you receive it.
@@ -926,13 +898,13 @@ span.description-steps-text-bottom {
 						</div>
 					</section>
 
-					<section class="gallery-big padding-rwd" style="background-color: #ffff;">
+					<section class="gallery-big padding-rwd" id="documentvisa" style="background-color: #ffff;">
 						<div class="d-flex">
 							<div class="small-line">
 								<strong>&nbsp;</strong>
 							</div>
-							<h2 class="description-steps-h3">Required Documents</h2>
-							<p class="visa-questions-description" style="color: #1d3367; margin-right: 50px; font-size: 18px;margin-left: 50px;">
+							<h2 class="description-steps-h3" style="font-weight: 600;">Required Documents</h2>
+							<p class="visa-questions-description" id="documentrequiredId" style="color: #1d3367; margin-right: 50px; font-size: 18px;margin-left: 50px;">
 								Citizens of the eligible countries&nbsp;are required to attach <strong>the
 									following documents</strong> to their applications:
 							</p>
@@ -988,7 +960,7 @@ span.description-steps-text-bottom {
 							<div class="small-line">
 								<strong>&nbsp;</strong>
 							</div>
-							<h2 class="description-steps-h3">Important Information</h2>
+							<h2 class="description-steps-h3" style="font-weight: 600;">Important Information</h2>
 							<ul id="imponoticevisa">
 								<li>applicants' passports <strong>must
 										stay&nbsp;valid for at least six months</strong> from the intended date
@@ -1018,7 +990,7 @@ span.description-steps-text-bottom {
 						<div class="description-steps">
 							<div class="d-flex">
 								<div class="small-line"></div>
-								<h3 class="description-steps-h3">Benefits of Evisa Express</h3>
+								<h3 class="description-steps-h3" style="font-weight: 600; padding-top: 30px;" >Benefits of Evisa Express</h3>
 							</div>
 							<ul class="description-steps-ul">
 								<li class="description-steps-ul-step display-flex" style="display: block !important;">
@@ -1062,7 +1034,7 @@ span.description-steps-text-bottom {
 					<section class="description padding" style="margin-bottom: 50px; background: #ffffff;">
 						<div class="description-steps" style="padding-bottom: 50px;">
 							<div class="d-flex">
-								<h2 class="description-steps-h3" style="color: rgb(29 51 103); text-align: center; padding-bottom: 50px;">
+								<h2 class="description-steps-h3" style="color: rgb(29 51 103); text-align: center; font-weight: 600; padding-bottom: 50px;">
 								Three easy steps to get your e-Visa
 								</h2>
 							</div>
@@ -1071,21 +1043,27 @@ span.description-steps-text-bottom {
 							<div class="col-sm-4" id="stepscolumn">
 							<div class="step-icon step-icon-1"></div>
 							<div class="description-steps-text">
+							<div id="stepshead"> 
 										<span class="description-steps-text-main">Fill Up The
 											Application Form</span> 
-											
+									</div>
+									<div id="stepsparagraph">
 											<span class="description-steps-text-bottom">You
 											need to mention the data like email address, aim to visit the
 											destination, passport details, and more. One might also make
 											out the additional documents as essential.&nbsp;</span>
+									</div>
 									</div>
 							</div>
 							
 							<div class="col-sm-4" id="stepscolumn">
 							<div class="step-icon step-icon-2"></div>
 							<div class="description-steps-text">
+							<div id="stepshead">
 										<span class="description-steps-text-main">Register An
 											Online Payment</span> 
+								</div>
+								<div id="stepsparagraph">
 											<span class="description-steps-text-bottom">Pay
 											the handling for the EDOCS Travel fee for using available
 											methods for the online transaction option. Once registered,
@@ -1093,18 +1071,22 @@ span.description-steps-text-bottom {
 											the next step.&nbsp;</span>
 									</div>
 							</div>
+							</div>
 							
 							<div class="col-sm-4" id="stepscolumn">
 							<div class="step-icon step-icon-3"></div>
 								<div class="description-steps-text">
+								<div id="stepshead">
 										<span class="description-steps-text-main">Check For The Inbox</span> 
 										</div>
+										<div id="stepsparagraph">
 											<span class="description-steps-text-bottom">EDOCS
 											Travel will instantly make out approval for the application
 											with an email box. Make sure for the email address after the
 											application form once you receive it. All of these would come
 											without any delay or issues.&nbsp;</span>
-									
+									</div>
+							</div>
 							</div>
 							</div>
 						

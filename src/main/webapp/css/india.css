@@ -8,6 +8,23 @@
     background-size: cover;
 }
 
+.top-content-text.padding {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+div#validitysteps {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+div#transitinfo{
+	 padding-left: 60px;
+    padding-right: 60px;
+}
+#arrivalparaaa{
+	padding-left: 60px;
+    padding-right: 60px;
+	
+}
 button.btn.btn-primary {
     overflow: visible;
     width: 100%;
@@ -24,4 +41,166 @@ ul#indiaformvisa {
 }
 #transieninfo{
 	    list-style-type: initial;
+}
+@media (max-width: 599px){
+section#onlineapplysection {
+    margin-left: 0px;
+    margin-right: 0px;
+    background-image: url(/images/indiabanner.jpg);
+ }
+ 
+	.top-background {
+	    background-image: url(/images/background 2.jpg);
+	}
+	p.description-steps-eta-planning{
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+	}
+	ul#indiaformvisa{
+	margin-left: 0px !important;
+	}
+	
+	section.description.padding.mobile-pt-0 {
+    padding: 30px !important;
+}
+
+section.description.padding{
+	padding: 30px !important;
+}
+.main-site-content .description-steps-h3{
+	padding-top: 10px !important;
+	
+}
+h2.description-steps-h3{
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+}
+.formdetails{
+	padding:0px !important;
+	
+}
+ul#formprocesslist {
+    margin: 0px !important;
+}
+.imponotice {
+    margin: 0px !important;
+}
+.pymnetprocessing {
+    margin: 0px !important;
+}
+section.gallery-big.padding-rwd {
+	 display: block !important;
+}
+#typesetpedvisa{
+	padding: 30px !important;
+	
+}
+p.description-steps-eta-planning{
+	padding:0px !important;
+	
+	
+}
+#typesvisalist{
+	padding:0px !important;
+}
+#validitysteps{
+	
+padding-bottom: 32px;
+padding-left: 32px;
+padding-right: 32px;
+}
+#transitinfo{
+padding-bottom: 32px;
+padding-left: 32px;
+padding-right: 32px;
+}
+
+#arrivalrequirements{
+	padding-bottom: 32px;
+padding-left: 32px;
+padding-right: 32px;
+	
+}
+#arrivalpara{
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+}
+ul#transieninfo{
+		margin-left: 0px !important;
+	margin-right: 0px !important;
+	
+}
+.listofports{
+	
+	margin-left: 0px !important;
+}
+#portevisaaccept{
+		padding-bottom: 32px;
+	padding-left: 32px;
+	padding-right: 32px;
+	
+}
+#airports{
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+}	
+#evisasample{
+	padding-bottom: 32px;
+	padding-left: 32px;
+	padding-right: 32px;
+}
+#samplevisapara{
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+	
+}
+.visa-questions-description{
+	    width: 100% !important;
+}
+#documentvisa{
+	
+	padding-bottom: 32px !important ;
+	padding-left: 32px !important;
+	padding-right: 32px !important;
+}
+#documentrequiredId{
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+	
+}
+ul.toggle-box {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+#stepscolumn{
+	margin-bottom: 20px !important;
+}
+div#stepshead {
+    text-align: center;
+}
+div#stepsparagraph {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#arporistlistt{
+	padding-left: 0px !important;
+}
+div#validitysteps{
+	padding-right: 30px ;
+	padding-left: 30px ;
+}
+div#transitinfo{
+	padding-right: 30px ;
+	padding-left: 30px ;
+	
+}
+#arrivalparaaa{
+	padding-right: 0px ;
+	padding-left: 0px ;
+}
+#aiportsheadId{
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+}
 }

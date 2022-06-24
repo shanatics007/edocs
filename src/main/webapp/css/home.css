@@ -1514,9 +1514,7 @@ summary{
     .col-sm-offset-7{
         margin-left:58.33333333%
     }
-    .col-sm-offset-6{
-        margin-left:50%
-    }
+   
     .col-sm-offset-5{
         margin-left:41.66666667%
     }
@@ -1800,7 +1798,7 @@ th{
 }
 .menu-desktop .container .menu-logo{
     position:relative;
-    width:250px;
+ 
     height:100%;
     -moz-transition:height 0.3s ease;
     -o-transition:height 0.3s ease;
@@ -2237,7 +2235,7 @@ th{
         margin-top:0
     }
     .menu-desktop .desktop-logo{
-        opacity:0
+        opacity:1;
     }
     .menu-desktop .mobile-logo{
         opacity:1;
@@ -2319,8 +2317,8 @@ th{
 .top-content-follow-card-logo{
     width:164px;
     margin-top:30px;
-    height:164px;
-    background:url("/images/banner 1.png");
+    height:250px;
+    background:url("/images/passport.png");
     background-size:cover
 }
 .top-content-follow-card-destination{
@@ -2379,11 +2377,9 @@ th{
         padding:40px 0
     }
     .top-content-follow-card-logo{
-        display:none
+        display:block !important;
     }
-    .top-content-follow-card-destination{
-        padding:0 100px
-    }
+   
 }
 @media (max-width: 650px){
     .col-md-4.padding-card{
@@ -2419,9 +2415,7 @@ th{
     }
 }
 @media (max-width: 480px){
-    .top-content-follow-card-destination{
-        padding:0 16px
-    }
+   
 }
 .e-visa-logo{
     background:url("/img/sign_en.png") center no-repeat;
@@ -2785,9 +2779,9 @@ th{
 .destinations-list li{
     display:inline-flex;
     align-items:center;
-    height:40px;
+ 
     width:25%;
-    padding-left:100px;
+  
     margin-bottom:10px;
     break-inside:avoid
 }
@@ -4665,6 +4659,44 @@ th{
         font-size:20px;
         font-weight:400
     }
+     .col-sm-4{
+         width: auto !important;
+    margin: 0px 0 !important;
+     
+     }
+     .row{
+     	display: block !important;
+     }
+    .col-sm-6{
+    width: 100% !important;
+    }
+    .gallery-big-container{
+    	height: 370px !important;
+    }
+    #destinationId{
+   text-align: start !important;
+
+    }
+    .destinations-list li{
+    margin-left: 0px !important;;
+    }
+    a.menu-logo {
+    
+	    width: 50% !important;
+	    margin: auto !important; 
+	}
+	img.mobile-logo{
+	    display: block !important;
+	        width: 100%;
+	
+	}
+	img.desktop-logo{
+	 display: none;
+	}
+	h2.description-steps-h3 {
+    margin-left: 10px;
+    margin-right: 10px;
+}
 }
 .open-insurance-info{
     color:#231F20;
@@ -4838,20 +4870,16 @@ body>section{
         flex-direction:column;
         justify-content:flex-end
     }
-    .main-site-content .top-content-text h1{
-        margin-top:0
-    }
+   
 }
-.main-site-content .description-steps-h3{
-    padding-top:20px
-}
+
 
 .main-site-content .description{
     background-color:initial
 }
 .top-background{
     width:100%;
-    height:500px;
+    height:400px;
     min-height:310px;
     position:absolute;
     background-repeat:no-repeat;
@@ -4889,31 +4917,13 @@ body>section{
         padding-top:0
     }
     .main-site-content .description-steps-h3{
-        padding-top:10px
+       margin-top:10px
     }
    
-    .main-site-content .description-steps{
-        margin-top:25px
-    }
+   
 }
-@media (max-width: 991px){
-    .description.mobile-pt-0{
-        padding-top:0 !important
-    }
-}
-@media (max-width: 991px) and (max-height: 800px){
-    .top-background{
-        height:50vh
-    }
-    .top-content-follow-card-logo-2{
-        top:-60%
-    }
-}
-@media (max-width: 991px) and (max-height: 480px){
-    .top-content-follow-card-logo-2{
-        top:-48%
-    }
-}
+
+
 @media (max-width: 650px){
     
     .top-content-follow-card{
@@ -5098,7 +5108,6 @@ ul li,ol li{
     font:500 32px/40px KonkretGroteskPro, Fallback, sans-serif;
     color:#231f20;
     position:relative;
-    padding-top:60px;
     margin:0
 }
 
@@ -5179,7 +5188,7 @@ ul li,ol li{
 }
 @media (max-width: 650px){
     .description-steps-eta-planning{
-        display:none
+        display:block;
     }
     .description-steps-ul-step{
         padding:15px 0 15px 10px
@@ -5188,7 +5197,7 @@ ul li,ol li{
         margin-top:0
     }
     .step-icon{
-        width:74px;
+        width:100%;
         height:85px;
         background-repeat:no-repeat;
         background-position:center
@@ -5378,9 +5387,7 @@ ul li,ol li{
         margin:0 -80px 0 -10px
     }
 }
-.gallery-big{
-    margin:30px -16px 20px -8px
-}
+
 .gallery-big-container{
     width:100%;
     height:350px;
@@ -5758,6 +5765,80 @@ ul li,ol li{
         margin-right:39px
     }
 }
+@media (max-width: 991px)
+{
+.top-content-follow-card-logo {
+    display: block !important;
+}
+}
+@media (min-width: 600px){
+	section#onlineapplysection{
+	margin-left: 60px;
+    margin-right: 60px;
+	}
+	.main-site-content{
+		margin-left: 60px;
+    margin-right: 60px;
+	}
+	.top-content-follow-card-destination{
+		    width: 30% !important;
+	}
+	 {
+  
+}
+	
+}
+@media (max-width: 599px){
+	.top-content-follow-card-destination{
+		    width: 80% !important;
+		    padding:0px !important;
+		    padding-top:40px !important;
+	}
+	section#onlineapplysection {
+   
+    background: url(imagebanner-bg.png), rgb(33, 55, 106);
+  }
+  section#mobilestepsview {
+    display: block !important;
+}
+
+section.gallery-big.padding-rwd {
+	 display: none;
+}
+.ee-form-inner{
+	margin: 0 !important;
+}
+ 
+	.top-background {
+    background-image: url(/images/background 2.jpg) ;
+   
+	}
+	.top-background{
+    height:  850px !important;
+    }
+    .col-sm-6 {
+        margin-left: 0px !important;
+    }
+    #applyhere{
+    right: 10px !important;
+    }
+    #headsection{
+    	font-size: 30px !important;
+    }
+	img.signal-iduna-logo {
+    width: 50%;
+}
+.button-container {
+    width: 100% ;
+    margin: auto !important;
+    margin-bottom: 30px !important;
+    margin-top: 30px !important;
+}
+.insurance-banner-section .button-container a{
+	text-align: center;
+}
+}
+
 @media (max-width: 991px){
     .getvisa .travel-destination .bottom-image{
         margin-top:111px
@@ -6921,9 +7002,7 @@ summary{
     .col-sm-offset-7{
         margin-left:58.33333333%
     }
-    .col-sm-offset-6{
-        margin-left:50%
-    }
+   
     .col-sm-offset-5{
         margin-left:41.66666667%
     }
@@ -7207,7 +7286,6 @@ th{
 }
 .menu-desktop .container .menu-logo{
     position:relative;
-    width:250px;
     height:100%;
     -moz-transition:height 0.3s ease;
     -o-transition:height 0.3s ease;
@@ -7482,7 +7560,7 @@ th{
     opacity:1
 }
 .menu-desktop .mobile-logo{
-    opacity:0
+    opacity:1
 }
 .menu-desktop.navbar-tiny .desktop-logo{
     opacity:0
@@ -7642,7 +7720,7 @@ th{
         margin-top:0
     }
     .menu-desktop .desktop-logo{
-        opacity:0
+        opacity:1;
     }
     .menu-desktop .mobile-logo{
         opacity:1;
@@ -7723,15 +7801,15 @@ th{
 .top-content-follow-card-logo{
     width:250px;
     margin-top:30px;
-    height:164px;
-    background:url("/images/visa12.png");
+    height:250px;
+    background:url("/images/passport.png");
     background-size:cover
 }
 .top-content-follow-card-destination{
     width:100%;
     margin-top:30px;
     margin-bottom:24px;
-    padding:0 25px;
+
     position:relative
 }
 .top-content-follow-card-destination .drop-down .initial-input{
@@ -7785,9 +7863,7 @@ th{
     .top-content-follow-card-logo{
         display:none
     }
-    .top-content-follow-card-destination{
-        padding:0 100px
-    }
+   
 }
 @media (max-width: 650px){
     .col-md-4.padding-card{
@@ -8190,9 +8266,9 @@ th{
 .destinations-list li{
     display:inline-flex;
     align-items:center;
-    height:40px;
+   
     width:25%;
-    padding-left:100px;
+  
     margin-bottom:10px;
     break-inside:avoid
 }
@@ -8480,7 +8556,7 @@ th{
 }
 @media screen and (max-width: 650px){
     .ee-form-actual{
-        width:90%
+        width:100%
     }
 }
 .ee-form-steps{
@@ -10244,20 +10320,16 @@ body>section{
         flex-direction:column;
         justify-content:flex-end
     }
-    .main-site-content .top-content-text h1{
-        margin-top:0
-    }
+   
 }
-.main-site-content .description-steps-h3{
-    padding-top:20px;
-}
+
 
 .main-site-content .description{
     background-color:initial
 }
 .top-background{
     width:100%;
-    height:500px;
+    height:400px;
     min-height:310px;
     position:absolute;
     background-repeat:no-repeat;
@@ -10298,19 +10370,13 @@ body>section{
         padding-top:10px
     }
    
-    .main-site-content .description-steps{
-        margin-top:60px;
-    }
+  
 }
 @media (max-width: 991px){
-    .description.mobile-pt-0{
-        padding-top:0 !important
-    }
+    
 }
 @media (max-width: 991px) and (max-height: 800px){
-    .top-background{
-        height:50vh
-    }
+   
     .top-content-follow-card-logo-2{
         top:-60%
     }
@@ -10505,7 +10571,7 @@ ul li,ol li{
     font:500 32px/40px KonkretGroteskPro, Fallback, sans-serif;
     color:#231f20;
     position:relative;
-    padding-top:60px;
+    
     margin:0
 }
 
@@ -10551,6 +10617,16 @@ ul li,ol li{
         padding-right:0 !important;
         max-width:270px
     }
+    .top-background{
+    height: 680px !important;
+    }
+    .gallery-big {
+    padding: 0px !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    
+}
+
 }
 .description-steps-text-bottom{
     font:400 16px/24px Roboto;
@@ -10573,15 +10649,16 @@ ul li,ol li{
 .description-privacy a{
     color:#7C152A
 }
-@media (max-width: 1200px){
+@media (max-width: 1024px){
+	
   
 }
-@media (max-width: 991px){
-    
+@media (max-width: 680px){
+     	    height: 830px !important
 }
 @media (max-width: 650px){
     .description-steps-eta-planning{
-        display:none
+        display:block;
     }
     .description-steps-ul-step{
         padding:15px 0 15px 10px
@@ -10590,7 +10667,7 @@ ul li,ol li{
         margin-top:0
     }
     .step-icon{
-        width:74px;
+        width:100%;
         height:85px;
         background-repeat:no-repeat;
         background-position:center
@@ -11400,9 +11477,6 @@ ul li,ol li{
 .required-documents .toggle-li h3,.required-documents .toggle-li h2{
     margin:0
 }
-.required-documents .description-steps-h3{
-    margin-top:20px
-}
 .required-documents .required-documents{
     margin-left:56px;
     padding-left:64px;
@@ -11598,4 +11672,6 @@ ul li,ol li{
     text-decoration:none;
     font-weight:700
 }
- 
+ .account-page.height-max, .feedbackPage.height-max {
+    min-height: fit-content;
+}

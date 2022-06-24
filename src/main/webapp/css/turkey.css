@@ -18,4 +18,16 @@ button.btn.btn-primary {
     font-size: 25px;
     font-weight: 600;
 }
-
+@media (max-width: 599px){
+	#impinfo{
+	padding-left: 30px;
+	padding-right: 30px;
+	}
+	#impinfolist{
+	padding-left: 20px !important;
+	padding-right: 20px !important;
+	}
+	.main-site-content .description-steps {
+    margin-top: 10px !important;
+}
+}	

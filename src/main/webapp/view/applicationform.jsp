@@ -104,6 +104,36 @@ label#radiolabel {
     margin-left: 0px !important;
 
 }
+
+@media (max-width: 599px){
+	.container{
+	 margin-left: 30px !important;
+    margin-right: 30px !important;
+	}
+	.ee-form-actual {
+    padding-bottom: 50px !important;
+	}
+	select#dayArrival {
+    margin-bottom: 20px;
+ }	
+ select#montharrival{
+  margin-bottom: 20px;
+ }
+ select#dayDOB{
+ margin-bottom: 20px;
+ }
+ select#dayMonth{
+ margin-bottom: 20px;
+ }
+ .input-box[type="FileInput"], .input-box[type="SubmitInput"]{
+ 	width: 50% !important;
+ 	margin: auto;
+ }
+ #formheadrId{
+ margin-left: 20px;
+ }
+  
+}
  </style>
    </head>
    <body>
