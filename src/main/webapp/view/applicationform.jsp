@@ -31,7 +31,7 @@
    		 margin: auto;
 	}
 	.row {
-    margin-bottom: 30px;
+    margin-bottom: 0px;
     margin-top: 1rem;
 }
 select{
@@ -132,6 +132,10 @@ label#radiolabel {
  #formheadrId{
  margin-left: 20px;
  }
+ .col-sm-2{
+ display: none !important;
+ }
+ 
   
 }
  </style>
@@ -255,8 +259,13 @@ label#radiolabel {
             <div class="success-mark" id="dateofArrivalSucess" style="display:none;"><i class="icon-ok"></i></div>
             
             </div>
-            
             </div>
+            <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
+            <span id="datearrivalerror" style="display: none;">Please choose Day, Month and Year</span>
+            </div>
+              
+              
+             
             <label id="portArrivalLabel"> Port of Arrival </label> 
             <div class="row" id="portArrivalRow">
              <div class="col-sm-10">
@@ -306,6 +315,9 @@ label#radiolabel {
             
             </div>
             </div>
+             <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
+            <span id="arrirvalporsterrors" style="display: none;">Please select Port of Arrival</span>
+            </div>
             <label> Given name(s) </label> 
             <div class="row">
             <div class="col-sm-10">
@@ -319,6 +331,9 @@ label#radiolabel {
             
             </div>
             </div>
+              <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
+            <span id="nameerrors" style="display: none;">Please fill the given name</span>
+            </div>
             <label> Surname(s) </label> 
             <div class="row">
             <div class="col-sm-10">
@@ -331,7 +346,9 @@ label#radiolabel {
         
             </div>
             </div>
-            
+               <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
+            <span id="surnameeorr" style="display: none;">Please fill the surname</span>
+            </div>
             
              <label> Date of birth </label> 
                <div class="row">
@@ -403,7 +420,9 @@ label#radiolabel {
             
             </div>
             </div>
-            
+              <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
+            <span id="doberrorr" style="display: none;">Please Choose Date of Birth</span>
+            </div>
              <label> E-mail address </label> 
              <div>
                <span>at this email you will receive your visa</span>
@@ -417,6 +436,9 @@ label#radiolabel {
             <div class="success-mark" id="emailSucess" style="display:none;"><i class="icon-ok"></i></div>
              
             </div>
+            </div>
+              <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
+            <span id="emailerrors" style="display: none;">please Enter Correct Email</span>
             </div>
              <label> E-mail address(re-enter) </label> 
              <div>
@@ -435,7 +457,9 @@ label#radiolabel {
             
             </div>
             </div>
-            
+              <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
+            <span id="emailnotmatcherror" style="display: none;">Email not matched,please enter correct email </span>
+            </div>
             
              <label> Phone number </label> 
              <div class="row">
@@ -447,6 +471,9 @@ label#radiolabel {
             <div class="success-mark" id="phoneSucess" style="display:none;"><i class="icon-ok"></i></div>
             
             </div>
+            </div>
+             <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
+            <span id="phnoerror" style="display: none;">Please enter phone number</span>
             </div>
             
              <label> Purpose of travel </label> 
@@ -470,6 +497,9 @@ label#radiolabel {
             <div class="success-mark" id="travelpuposeSucess" style="display:none;"><i class="icon-ok"></i></div>
             </div>
             </div>
+             <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
+            <span id="travelpurposeError" style="display: none;">Please choose purpose of travel</span>
+            </div>
             
             <label> Nationality </label> 
             <div class="row">
@@ -483,6 +513,9 @@ label#radiolabel {
              <div class="error-mark" id="nationalityError" style="display:none;"><i class="icon-error"></i></div>
             <div class="success-mark" id="nationalitySucess" style="display:none;"><i class="icon-ok"></i></div>
             </div>
+            </div>
+             <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
+            <span id="nationalityerrors" style="display: none;">Please choose nationality</span>
             </div>
             </div>
         
@@ -802,33 +835,39 @@ label#radiolabel {
 			if($('#dayArrival').val()!="Day" && $('#montharrival').val()!="Month" && $('#yearlist').val()!="Year" ){
 			 $('#dateofArrivalSucess').css('display','block');
 			 $('#dateofArrivalError').css('display','none');
+			 $('#datearrivalerror').css('display','none');
 
 			}else{
 
 				 $('#dateofArrivalError').css('display','block');
 				 $('#dateofArrivalSucess').css('display','none');
+				 $('#datearrivalerror').css('display','block');
 				 isvalidated=false;
 				}
 			
 			if($('#portArrival').val()!='port'){
 				 $('#portofArrivalError').css('display','none');
 				 $('#portofArrivalSucess').css('display','block');
+				 $('#arrirvalporsterrors').css('display','none');
 			
 				}else{
 					 $('#portofArrivalSucess').css('display','none');
 					 $('#portofArrivalError').css('display','block');
+					 $('#arrirvalporsterrors').css('display','block');
 					 isvalidated=false;
 				}
 
 			if($('#firstNameID').val()=="" || $('#firstNameID').val().length==0){
 				 $('#firstNameError').css('display','block');
 				 $('#firstNameSucess').css('display','none');
+				 $('#nameerrors').css('display','block');
 				 isvalidated=false;
 
 				}else{
 					
 					 $('#firstNameSucess').css('display','block');
 					 $('#firstNameError').css('display','none');
+					 $('#nameerrors').css('display','none');
 					 
 
 					}
@@ -836,22 +875,26 @@ label#radiolabel {
 			if($('#lastNameID').val()=="" || $('#lastNameID').val().length==0){
 				 $('#lastNameError').css('display','block');
 				 $('#lastNameSucess').css('display','none');
+				 $('#surnameeorr').css('display','block');
 				 isvalidated=false;
 				}else{
 					
 					 $('#lastNameSucess').css('display','block');
 					 $('#lastNameError').css('display','none');
+					 $('#surnameeorr').css('display','none');
 					 
 					}
 			
 			if($('#dayDOB').val()!="Day" && $('#dayMonth').val()!="Month" && $('#yearlistdob').val()!="Year" ){
 				 $('#dobSucess').css('display','block');
 				 $('#dobError').css('display','none');
+				 $('#doberrorr').css('display','none');
 
 				}else{
 
 					 $('#dobError').css('display','block');
 					 $('#dobSucess').css('display','none');
+					 $('#doberrorr').css('display','block');
 					 isvalidated=false;
 					}
 			
@@ -862,12 +905,14 @@ label#radiolabel {
 				 if (validRegex.test(emailvalidate)==true && emailvalidate.length !=0 ) {
 					 $('#emailError').css('display','none');
 					 $('#emailSucess').css('display','block');
+					 $('#emailerrors').css('display','none');
 					 
 				
 				 }else{
 		
 					 $('#emailError').css('display','block');
 					 $('#emailSucess').css('display','none');
+					 $('#emailerrors').css('display','block');
 					 isvalidated=false;
 					 
 							 
@@ -876,11 +921,13 @@ label#radiolabel {
 
 					 $('#cnfemailError').css('display','none');
 					 $('#cnfemailSucess').css('display','block');
+					 $('#emailnotmatcherror').css('display','none');
 					 
 					}else{
 
 						 $('#cnfemailError').css('display','block');
 						 $('#cnfemailSucess').css('display','none');
+						 $('#emailnotmatcherror').css('display','block');
 						 isvalidated=false;
 					}
 
@@ -889,10 +936,12 @@ label#radiolabel {
 				if($('#phoneNoId').val().length !=0 && $('#phoneNoId').val().match(phoneno)){
 					 $('#phoneError').css('display','none');
 					 $('#phoneSucess').css('display','block');
+					 $('#phnoerror').css('display','none');
 					
 				}else{
 					 $('#phoneError').css('display','block');
 					 $('#phoneSucess').css('display','none');
+					 $('#phnoerror').css('display','block');
 					 isvalidated=false;
 
 					}	
@@ -900,19 +949,23 @@ label#radiolabel {
 				if($('#purposeTraval').val()!='port'){
 					 $('#travelpuposeError').css('display','none');
 					 $('#travelpuposeSucess').css('display','block');
+					 $('#travelpurposeError').css('display','none');
 				
 					}else{
 						 $('#travelpuposeSucess').css('display','none');
 						 $('#travelpuposeError').css('display','block');
+						 $('#travelpurposeError').css('display','block');
 						 isvalidated=false;
 					}
 				if($('#countrylist').val()!='port'){
 					 $('#nationalityError').css('display','none');
 					 $('#nationalitySucess').css('display','block');
+					 $('#nationalityerrors').css('display','none');
 				
 					}else{
 						 $('#nationalitySucess').css('display','none');
 						 $('#nationalityError').css('display','block');
+						 $('#nationalityerrors').css('display','block');
 						 isvalidated=false;
 					}
 
