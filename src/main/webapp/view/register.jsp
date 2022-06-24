@@ -306,12 +306,14 @@
     			 $('#userEmail').css('border',' 1px solid black');
     			
     			 $('#emailsucess').css('display','block');
+    			
     			   // document.form1.text1.focus();
     		 }else{
 
     			 $('#emailerror').css('display','block');
     			 $('#invalidatEmail').css('display','block');
     			 $('#emailsucess').css('display','none');
+    			 return false;
     					 
     			 }
     		 
@@ -322,10 +324,12 @@
     			 $('#userPass').css('border',' 1px solid black');
     			 $('#passSucess').css('display','block');
     			 
+    			 
     		 }else{
     			 $('#passSucess').css('display','none');
     			 $('#passError').css('display','block');
     			 $('#invalidatPass').css('display','block');
+    			 return false;
     		 }
     		 if(confirmPass==pass){
     			 $('#cnfpassError').css('display','none');
@@ -337,6 +341,7 @@
     			 $('#cnfpassSucess').css('display','none');
     			 $('#cnfpassError').css('display','block');
     			 $('#invalidatCnfPass').css('display','block');
+    			 return false;
     			 
     		 }
 		

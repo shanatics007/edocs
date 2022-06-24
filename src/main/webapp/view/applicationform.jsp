@@ -843,6 +843,7 @@ label#radiolabel {
 				 $('#dateofArrivalSucess').css('display','none');
 				 $('#datearrivalerror').css('display','block');
 				 isvalidated=false;
+				 return false;
 				}
 			
 			if($('#portArrival').val()!='port'){
@@ -855,6 +856,7 @@ label#radiolabel {
 					 $('#portofArrivalError').css('display','block');
 					 $('#arrirvalporsterrors').css('display','block');
 					 isvalidated=false;
+					 return false;
 				}
 
 			if($('#firstNameID').val()=="" || $('#firstNameID').val().length==0){
@@ -862,6 +864,7 @@ label#radiolabel {
 				 $('#firstNameSucess').css('display','none');
 				 $('#nameerrors').css('display','block');
 				 isvalidated=false;
+				 return false;
 
 				}else{
 					
@@ -877,6 +880,7 @@ label#radiolabel {
 				 $('#lastNameSucess').css('display','none');
 				 $('#surnameeorr').css('display','block');
 				 isvalidated=false;
+				 return false;
 				}else{
 					
 					 $('#lastNameSucess').css('display','block');
@@ -896,6 +900,7 @@ label#radiolabel {
 					 $('#dobSucess').css('display','none');
 					 $('#doberrorr').css('display','block');
 					 isvalidated=false;
+					 return false;
 					}
 			
 				var emailvalidate = $('#emailID').val();
@@ -914,6 +919,7 @@ label#radiolabel {
 					 $('#emailSucess').css('display','none');
 					 $('#emailerrors').css('display','block');
 					 isvalidated=false;
+					 return false;
 					 
 							 
 				}
@@ -929,6 +935,7 @@ label#radiolabel {
 						 $('#cnfemailSucess').css('display','none');
 						 $('#emailnotmatcherror').css('display','block');
 						 isvalidated=false;
+						 return false;
 					}
 
 				var phoneno = /^\d{10}$/;
@@ -943,6 +950,7 @@ label#radiolabel {
 					 $('#phoneSucess').css('display','none');
 					 $('#phnoerror').css('display','block');
 					 isvalidated=false;
+					 return false;
 
 					}	
 
@@ -956,6 +964,7 @@ label#radiolabel {
 						 $('#travelpuposeError').css('display','block');
 						 $('#travelpurposeError').css('display','block');
 						 isvalidated=false;
+						 return false;
 					}
 				if($('#countrylist').val()!='port'){
 					 $('#nationalityError').css('display','none');
@@ -967,6 +976,7 @@ label#radiolabel {
 						 $('#nationalityError').css('display','block');
 						 $('#nationalityerrors').css('display','block');
 						 isvalidated=false;
+						 return false;
 					}
 
 				return  isvalidated;
