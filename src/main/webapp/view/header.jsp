@@ -12,6 +12,12 @@
                           
                            <li style="border-right: none;">
                            <a href="/en/turkey" title="Visa for Turkey" style="color: #1d3367 !important;">Turkey</a></li>
+                           
+                            <li><a href="/en/pakistan" title="Visa for pakistan" style="color: #1d3367 !important;">Pakistan</a></li>
+                            
+                             <li><a href="/en/thailand" title="Visa for thailand" style="color: #1d3367 !important;">Thailand</a></li>
+                             
+                              <li><a href="/en/united-arab-emirates" title="Visa for UAE" style="color: #1d3367 !important;">United Arab Emirates</a></li>
                         
                         </ul>
                      </li>

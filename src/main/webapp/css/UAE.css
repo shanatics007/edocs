@@ -1,0 +1,319 @@
+@charset "UTF-8";
+.top-content-follow-card-logo {
+    width: 200px;
+    margin-top: 30px;
+    height: 164px;
+    background: url(../images/united-arab-emirates.png);
+    background-size: cover;
+}
+h2.headingText {font-size: 32px;}
+
+.description-steps-h3{
+	font-weight: 600;	
+}
+ul{
+	list-style-type:disc !important;
+	
+	
+}
+.visa-questions-description {
+    font: 400 16px / 24px Roboto;
+    color: rgb(29, 51, 103);
+    overflow:inherit !important;
+}
+#uaetypes {
+    margin-left: 80px;
+    margin-right: 80px;
+    padding-left: 50px;
+    padding-right: 50px;
+    color: #1d3367;
+}
+
+
+padding-bottom: 50px; 
+color: #1d3367;
+}
+
+.UlclassFroSecond{
+	padding-left: 100px;
+	 padding-right: 100px; 
+	 padding-bottom: 50px; 
+	 color: #1d3367;
+}
+.Requirements-on-arrival{
+ color: #1d3367; 
+ font-size: 20px; 
+ margin-right: 50px; 
+ margin-left: 50px; 
+ padding-left: 5%;
+}
+
+.questions-description{
+	color: #1d3367; margin-right: 50px; font-size: 18px; margin-left: 50px;"
+	
+}
+.visa-questions-description{
+font-size: 18px !important;
+    color: #1d3367 !important;
+    text-align: start !important;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+div#Stepsid {
+    padding: 60px;
+}
+section#description-steps-ids {
+    padding: 60px;
+}
+
+#Requirements-arrival-id{
+color: #1d3367; font-size: 18px; margin-right: 50px; margin-left: 50px; padding-left: 5%;	
+}
+.Requirements-arrival-classs{
+	color: #1d3367; 
+	font-size: 18px; 
+	margin-right: 50px; 
+	margin-left: 50px; 
+}
+div#requirementarrivl {
+    padding: 60px;
+}
+
+.SampleImageid {
+    color: #1d3367;
+    margin-right: 50px;
+    font-size: 18px;
+    margin-left: 50px;
+    
+}
+div#requireddoc {
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 40px;
+}
+#listeligibleId{
+	list-style-type: none !important;
+}
+ul#documentrequiredId{
+	margin-left: 25px !important;
+    margin-right: 25px !important;
+}
+div#impinfo {
+    padding: 60px;
+}
+.RequireDocs {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 30px;
+}
+.docsRequred {
+    color: #1d3367;
+    margin-right: 50px;
+    font-size: 18px;
+    margin-left: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+#impinfo{
+	 padding-left: 60px;
+    padding-right: 60px;	
+}
+#impinfolist {
+    list-style-type: initial;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 18px;
+    color: #1d3367;
+    padding-bottom: 25px;
+}
+@media (max-width: 599px){
+	
+	#onlineapplysection {
+     margin-left: 0px !important; 
+     margin-right: 0px !important; 
+}
+#uaetypes{
+	margin-left: 25px;
+    margin-right: 25px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.visa-questions-description{
+	margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+div#requireddoc{
+	 padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+}
+
+
+.main-site-content {
+     margin-left: 0px !important; 
+     margin-right: 0px !important;
+}
+
+#uaetypes{
+	padding-left: 0px important; 
+  	padding-right: 0px important; 
+}
+.UlclassFroSecond{
+	padding-left: 0px important;
+	 padding-right: 0px important; 
+	
+}
+.ListPadingRemove {
+    padding-left: 0px !important;
+}
+
+.countyListedinfo{
+	padding-bottom: 50px !important;
+}
+
+.formdetails{
+	 margin-left: 0px !important;
+     margin-right: 0px !important;
+}
+
+#Stepsid,#BenefitsEvisaExpress,#impinfo,#documentvisa,#EvisaSampleIds,#requirementarrivl,#infotransit,#validitystepspak,#description-steps-ids{
+	
+	padding:30px  !important;
+}
+#notcitis{
+	margin-right: 0px  !important;
+    
+     margin-left: 0px  !important;
+}
+.Requirements-on-arrival{
+	margin-right: 0px !important;
+	 margin-left: 0px !important;
+}	
+.questions-description {
+ 	margin-right: 0px !important;
+	 margin-left: 0px !important;
+    
+}
+
+#Requirements-arrival-id{
+margin-right: 0px !important;
+	 margin-left: 0px !important;
+}
+.Requirements-arrival-classs{
+	 margin-right: 0px !important;
+	 margin-left: 0px !important;
+}
+.SampleImageid{
+ margin-right: 0px !important;
+	 margin-left: 0px !important;
+	
+}
+}
+@media (max-width: 650px){
+	
+button.btn.btn-primary {
+    overflow: visible;
+    width: 100%;
+    height: 50px;
+    background-color: #1d3367;
+    color: #ffff;
+    font-size: 19px;
+    font-weight: 600;
+}
+.description-steps-eta-planning {
+    font-size: 18px !important;
+    color: #1d3367 !important;
+    text-align: start !important;
+    margin-right: 0px !important;
+	 margin-left: 0px !important;
+	 padding-right: 0px !important;
+	 padding-left: 0px !important;
+}
+#typesuaevisa {
+    margin-left: 45px !important;
+    margin-right: 45px !important;
+}
+#uaetypes {
+	 
+}
+.formdetails {
+     padding-left: 0px !important;
+     padding-right: 0px !important;
+     margin-left: 0px !important; 
+     margin-right: 0px !important;
+}
+#formprocesslist {
+    margin-left: 60px;
+    margin-right: 60px;
+    color: #1d3367;
+}
+.imponotice {
+	margin-left: 0px !important; 
+    margin-right: 0px !important;
+    padding-left: 0px !important;
+     padding-right: 0px !important;
+}
+#validitystepspak {
+    padding-right: 45px;
+    padding-left: 45px;
+}
+#infotransit {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.RequireDocs {
+     padding-left: 0px !important; 
+     padding-right: 0px !important;
+    padding-bottom: 0px;
+    padding-top: 15px;   
+} 
+.Requirements-arrival-classs {
+    color: #1d3367;
+    font-size: 18px;
+     margin-right: 0px !important; 
+     margin-left: 0px !important; 
+    padding-left: 50px;
+    padding-right: 50px;
+}
+#RequireddocId{
+    color: #1d3367;
+    font-size: 18px;
+     margin-right: 0px !important;
+     margin-left: 0px !important;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.docsRequred {
+    color: #1d3367;
+    margin-right: 0px !important; 
+    font-size: 18px;
+    margin-left: 0px !important; 
+    padding-left: 50px;
+    padding-right: 50px;
+}
+#impinfolist {
+    list-style-type: initial;
+    margin-left: 0px !important;
+     margin-right: 0px !important;  
+    padding-right: 50px;
+    font-size: 18px;
+    color: #1d3367;
+    padding-bottom: 25px;
+    padding-left: 10%;
+}
+.SampleImageid {
+    color: #1d3367;
+     margin-right: 0px !important;
+    font-size: 18px;
+     margin-left: 0px !important;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+ 

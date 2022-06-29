@@ -1,0 +1,125 @@
+@charset "UTF-8";
+
+label {font-size: 32px;}
+
+h2.headingText {font: 500 32px / 40px KonkretGroteskPro, Fallback, sans-serif;
+    color: rgb(35, 31, 32);
+    position: relative;
+    margin: 0px;}
+    
+    h2.description-steps-h3 {padding-top: 40px;}
+    
+    .destinations-list-section {
+
+    padding: auto;
+    padding: inherit;
+        padding-right: inherit;
+        padding-left: inherit;
+    padding-left: 63px;
+    padding-right: 96px;
+
+}
+
+ul#validityper {
+    list-style-type: disc;
+    padding-left: 15%;
+}
+ul#transieninfo {
+    color: #1d3367;
+    /* margin-left: 50px; */
+    margin-right: 50px;
+    line-height: 0px;
+    padding-left: 15%;
+}
+
+.visa-questions-description {
+
+    list-style-type: disc;
+        overflow: inherit;
+}
+
+h3#benifitId {padding-top: 30px;}
+.top-content-follow-card-logo {
+    width: 200px;
+    margin-top: 30px;
+    height: 164px;
+    background: url(../images/pakistan.png);
+    background-size: cover;
+}
+#validitystepspak{
+	  padding-bottom: 25px;
+	
+}
+
+div#infotransit {
+    padding-bottom: 25px;
+}
+
+ul#validityper {
+    color: #1c3367;
+}
+div#requirementarrivl {
+    padding-bottom: 25px;
+}
+#portacceptings{
+	 padding-bottom: 25px;
+}
+
+#requireddoc{
+	padding-bottom: 25px;
+}
+
+h2.headingText {
+    font-weight: 500;
+}
+
+@media (max-width:599px) {
+	div#pakEvisatypes {
+	padding: 30px;
+	
+	}
+ul#pktypes {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+}
+#typepakvisahead{
+	padding-left: 0px!important;
+	margin-left: 0px !important;
+}
+div#typespakevisa {
+    margin-left: 0px;
+    padding-left: 0px;
+    margin-right: 0px;
+}
+#pakeligible{
+	padding-left: 0px !important;
+	
+}
+.destinations-list-section{
+	padding-left: 30px !important;
+	padding-right: 30px !important;
+}
+ .main-site-content .description-steps-h3{
+	 padding-top: 30px !important;
+	}
+div#validitystepspak {
+    padding: 30px !important;
+}
+div#infotransit {
+    padding: 30px;
+}
+div#portacceptings {
+    padding: 30px !important;
+}
+
+#paksamplevisapara{
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+}
+#samplevisasetsp{
+	padding: 30px !important;	
+}
+}
+
+
+

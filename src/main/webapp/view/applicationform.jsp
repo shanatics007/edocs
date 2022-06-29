@@ -1015,6 +1015,18 @@ label#radiolabel {
 			$('#portArrivalLabel').css('display','none');
 			$('#portArrivalRow').css('display','none');	
           }  
+        else if(window.location.href.includes("thailand")){
+        	  $('#portArrivalLabel').css('display','none');
+  			  $('#portArrivalRow').css('display','none');	
+          } 
+        else if(window.location.href.includes("pakistan")){
+        	  $('#portArrivalLabel').css('display','none');
+  			  $('#portArrivalRow').css('display','none');	
+          } 
+        else if(window.location.href.includes("united-arab-emirates")){
+        	  $('#portArrivalLabel').css('display','none');
+  			  $('#portArrivalRow').css('display','none');	
+          }  
    
     $.ajax({
 			type : 'GET',

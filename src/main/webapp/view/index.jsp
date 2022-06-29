@@ -27,14 +27,23 @@ section#onlineapplysection {
 
 
 @media ( max-width : 599px) {
-	
-	
 	p.description-steps-eta-planning {
     	font-size: 14px !important;
    
 	}
 	
 	
+}
+@media ( max-width : 768px) {
+.top-content-follow-card-destination{
+	width: 50% !important;
+
+}
+
+}
+.top-content-follow-card-destination{
+	width: 30%;
+
 }
 
 p.description-steps-eta-planning {
@@ -190,6 +199,12 @@ span.description-steps-text-bottom {
 						<li><a href="/en/india" style="color: #1d3367 !important;">India</a></li>
 
 						<li><a href="/en/turkey" style="color: #1d3367 !important;">Turkey</a></li>
+						
+						<li><a href="/en/pakistan" style="color: #1d3367 !important;">Pakistan</a></li>
+						
+						<li><a href="/en/thailand" style="color: #1d3367 !important;">Thailand</a></li>
+						
+						<li><a href="/en/united-arab-emirates" style="color: #1d3367 !important;">United Arab Emirates</a></li>
 
 					</ul>
 				</div></li>
@@ -228,6 +243,15 @@ span.description-steps-text-bottom {
 
 						<li class="drop-down-ul-element"><a href="/en/turkey"
 							class="a-no-active"><span>Turkey</span></a></li> 
+						
+						<li class="drop-down-ul-element"><a href="/en/pakistan"
+							class="a-no-active"><span>Pakistan</span></a></li> 
+							
+						<li class="drop-down-ul-element"><a href="/en/thailand"
+							class="a-no-active"><span>Thailand</span></a></li> 
+							
+						<li class="drop-down-ul-element"><a href="/en/united-arab-emirates"
+							class="a-no-active"><span>United-Arab-Emirates</span></a></li> 
 
 					</ul>
 				</div>

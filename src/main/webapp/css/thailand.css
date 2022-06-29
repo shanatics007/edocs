@@ -1,0 +1,308 @@
+@charset "UTF-8";
+
+.TypesThailandEvisa {
+    margin-left: 80px;
+    margin-right: 80px;
+}
+.typeofEvisa{
+	  margin-left: 80px;
+	  margin-right: 80px;
+	
+}
+
+#reqireddocumnet{
+	padding-left:15px;
+}
+
+.description-steps-h3{
+	font-weight: 600 !important;
+	
+}
+.ListEligibleCountriesHeading {
+    text-align: center;
+    color: #1d3367; 
+    font-size: 16px;
+}
+.countyListedinfo{
+	
+padding-bottom: 30px;	
+}
+
+.destinations-list-section{
+	background: #ffff;
+    margin: 35px 0px 0px 0px !important;
+	
+}
+
+#thailandvalidity{
+	 background-color: #ffffff; 
+	 padding: 60px;
+    padding-top: 20px !important;
+	 
+	}	
+#evisathailandform{
+	color: #1d3367;
+    font-size: 18px;
+    text-align: start;
+    margin-left: 50px;
+    margin-bottom: 50px;
+    margin-right: 50px;
+    padding-bottom: 35px;
+}
+.stepAppliForm {
+    margin-left: 32px;
+        line-height: 20px;
+}
+div#arrivalstepsid {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+.tranIdfrom{
+	 margin-left: 50px;
+	 color: #1c3367;
+	 margin-right: 50px;
+}
+p#arrivalrequirement {
+    padding-right: 25px;
+    padding-left: 25px;
+}
+ul.TypesThailandEvisa {
+    color: #1c3367;
+}
+ul.typeofEvisa {
+    color: #1c3367;
+}
+.top-content-follow-card-logo {
+    width: 200px;
+    margin-top: 30px;
+    height: 164px;
+    background: url(../images/thailand.png);
+    background-size: cover;
+}
+.description-steps {
+	margin-top: -52px;
+	    
+	}
+	
+	
+	.benefits-of-evisa {
+ 
+    margin-top: 80px;
+}
+#reqireddocumnet{
+margin-left: 0px !important;
+margin-right: 0px !important;	
+}
+
+
+#description-steps-Ids {
+    margin-left: 0px !important;
+    padding-left: 17px;
+}
+
+
+
+ul.UlClassFroImptant {
+    padding-left: 80px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-right: 80px;
+    padding-bottom: 50px
+}
+
+.requridacs {
+    margin-top: 4px;
+    margin-left: 50px;
+    line-height: 15px;
+    color: #1c3367;
+    margin-right: 50px;
+   
+}
+p.description-steps-eta-planning.TransitClass {
+    padding-bottom: 0px !important;
+}
+#description-steps-first {
+  padding-left: 26px;
+  padding-right: 26px;
+}
+#transieninfo-Id{
+	padding-left:15px;
+}
+.description.padding.mobile-pt-0 {
+    background-color: #ffff;
+    padding: 50px;
+    padding-top: 100px;
+}
+
+.gallery-big.padding-rwd {
+    margin: 35px 0px 0px 0px !important;
+}
+
+#thailnadsteps{
+	 background-color: #ffffff;
+	 padding: 60px;
+    padding-top: 20px!important;
+}
+#eligible-countries-id{
+	background-color: white; margin-top: 35px;
+}
+
+@media ( max-width : 768px){
+	.top-content-follow-card-destination {
+    width: 50% !important;
+}
+
+button.btn.btn-primary {
+
+    height: 40px !important; 
+   
+}
+h1 {
+    font-size: 44px !important;
+}
+.pymnetprocessing {
+   
+    padding-bottom: 0px !important;
+}
+	
+	
+p.description-steps-eta-planning {
+    padding-left: 48px !important;
+    padding-right: 75px !important;
+    margin-left:0px !important;
+    margin-right:0px !important;
+  
+}
+	
+.TypesThailandEvisa {
+    margin-left: 100px;
+}	
+	
+	
+.typeofEvisa {
+    margin-left: 100px;
+}	
+	
+	.description.padding.mobile-pt-0 {
+    padding: 0px !important;
+    margin-top: 6%;
+    
+}
+
+#description-steps-first{
+	
+	padding-top:20px;
+}
+	
+#description-steps-last{
+		padding-bottom:20px;
+	
+}	
+
+
+p#escription-steps-eta-Evisa {
+    padding-bottom: 20px;
+}
+
+}
+
+
+@media ( max-width : 599px){
+button.btn.btn-primary{
+   
+    font-size: 0.95rem !important;
+}  
+section#onlineapplysection {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.stepAppliForm {
+    margin-left: -27px;
+}
+.TypesThailandEvisa {
+    margin-left: 0px;
+}
+#thailnadsteps{
+	padding: 30px !important;
+}
+.typeofEvisa{
+	margin: 0px !important;
+}
+#evisathailandform{
+	margin: 0px !important;
+	padding: 0px !important;
+	padding-bottom: 30px !important;
+
+}
+#thailandvalidity{
+	padding: 30px !important;
+}	
+#transitinfo{
+	padding: 30px !important;
+}
+.tranIdfrom{
+	margin: 0px !important;
+}
+
+#arrivalrequirement{
+		margin: 0px!important;
+}
+#arrivalstepsid{
+	padding: 30px !important;		
+}
+
+.requridacs{
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+}
+.UlClassFroImptant{
+	padding-left: 0px !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    padding-right: 0px !important;
+    	
+}
+#impinfo{
+		padding: 30px !important;
+	}
+	
+	#PortsId {
+    padding: 30px;
+}
+
+
+}	
+
+@media screen and (max-width: 650px) {
+    section.main-site-content {
+        margin:0 !important;
+    }
+    p.description-steps-eta-planning {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+}
+
+@media screen and (max-width: 376px){
+
+	#imponoticevisa{
+	 margin-left: 0px !important;
+	
+	}
+	#impinfo{
+		padding: 30px !important;
+	}
+	
+	#PortsId {
+    padding: 30px;
+}
+	
+	
+}
+
+
+
+
+
+
+

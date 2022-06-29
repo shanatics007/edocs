@@ -20,6 +20,25 @@ public class CountryController {
 		return "turkey";
 	}
 	
+	@RequestMapping("/pakistan")
+	public String pakistanVisa() {
+		
+		return "pakistan";
+	}
+	
+	@RequestMapping("/thailand")
+	public String thailandVisa() {
+		
+		return "thailand";
+	}
+	
+	@RequestMapping("/united-arab-emirates")
+	public String uaeVisa() {
+		
+		return "UAE";
+	}
+	
+	
 	@RequestMapping("/india/applicationform")
 	public String indiaVisaApplicationForm() {
 		
@@ -31,12 +50,28 @@ public class CountryController {
 		
 		return "applicationform";
 	}
-	
-	@RequestMapping("/applicationform123")
-	public String testVisaApplicationForm() {
+	@RequestMapping("/pakistan/applicationform")
+	public String pakistanVisaApplicationForm() {
 		
-		return "applicationForm123";
+		return "applicationform";
 	}
+	
+	@RequestMapping("/thailand/applicationform")
+	public String thailandVisaApplicationForm() {
+		
+		return "applicationform";
+	}
+	
+	@RequestMapping("/united-arab-emirates/applicationform")
+	public String uaeVisaApplicationForm() {
+		
+		return "applicationform";
+	}
+	
+	
+	
+	
+	
 	
 
 }
