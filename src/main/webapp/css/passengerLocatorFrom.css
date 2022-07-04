@@ -39,9 +39,8 @@ div#portevisaaccept {
     padding-bottom: 0px;
     padding-top: 40px;
 }
-section.gallery-big.padding-rwd {
-    
-    
+div#validitysteps {
+    margin-top: 50px;
 }
 #validitysteps {
 	color: #1d3367 !important;
@@ -69,7 +68,9 @@ element.style {
 p.description-steps-eta-planning {
     color: #1c3367;
 }
-
+section.gallery-big.padding-rwd {
+    margin-top: 50px;
+}
 
 
 @media ( max-width : 599px){
