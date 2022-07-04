@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+
+h1#definationId {
+    text-align: center;
+    font-weight: 600;
+}
+h1#concluId{
+	text-align: center;
+    font-weight: 600;
+	
+}
+h1#ivsId{
+	text-align: center;
+    font-weight: 600;
+	
+	
+}
+h1#caluId{
+	text-align: center;
+    font-weight: 600;
+	
+}
+h1#cokpoliId{
+	text-align: center;
+    font-weight: 600;
+	
+}
+h1#withagreId{
+	text-align: center;
+    font-weight: 600;
+	
+	
+}
+h1#invocId{
+	text-align: center;
+    font-weight: 600;
+	
+	
+	
+}
+h1#complainfinalId{
+	text-align: center;
+    font-weight: 600;
+	
+	
+}
+#sectionId{
+    background-color: #ffff;
+    padding: 50px;
+    padding-left: 80px;
+    padding-right: 80px;
+    margin-bottom: 50px;
+	
+}

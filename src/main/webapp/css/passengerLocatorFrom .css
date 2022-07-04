@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+
+
+
+
+div#typesetpedvisa {
+	color: #1d3367 !important;
+    padding-top: 30px;
+    padding-bottom: 30px;
+      padding-left: 60px;
+    padding-right: 60px;
+    text-align: justify;
+    
+}
+
+section.destinations-list-section {
+	color: #1d3367 !important;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    padding-left: 60px;
+    padding-right: 60px;
+     text-align: justify;
+      text-align: justify;
+}
+b {
+    margin-left: 60px;
+}
+div#portevisaaccept {
+    margin: 50px 0 50px 0;
+}
+p {
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+div#portevisaaccept {
+	color: #1d3367 !important;
+    padding-bottom: 0px;
+    padding-top: 40px;
+}
+section.gallery-big.padding-rwd {
+    padding-top: 30px;
+    margin-bottom: 30px;
+}
+#validitysteps {
+	color: #1d3367 !important;
+    padding-left:60px;
+    padding-right:60px;
+    padding-bottom:30px;
+    padding-top:30px;
+    text-align: justify;
+}
+ section.description.padding.mobile-pt-0 {
+    padding-left: 60px;
+    padding-right: 60px;
+    
+ 
+
+}
+}
+
+element.style {
+    background-color: #ffffff;
+    padding: 60px;
+}
+.description-steps {}
+
+p.description-steps-eta-planning {
+    color: #1c3367;
+}
+
+
+
+@media ( max-width : 599px){
+	
+b {
+    margin-left: 0px;
+}
+section#destination-ist {
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+div#airports {
+	padding-left: 50px;
+	}	
+	
+	
+	
+	
+}

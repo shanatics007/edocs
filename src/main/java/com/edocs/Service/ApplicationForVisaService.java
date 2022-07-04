@@ -1,9 +1,11 @@
 package com.edocs.Service;
 
+import java.util.HashMap;
+
 import com.edocs.Model.ApplicationForVisaModel;
 
 public interface ApplicationForVisaService {
 	
-	public ApplicationForVisaModel registerApplication(ApplicationForVisaModel model);
+	public HashMap<Object, Object> registerApplication(ApplicationForVisaModel model);
 
 }

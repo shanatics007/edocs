@@ -42,7 +42,7 @@ public class UserServiceImpl implements UserService {
 			Optional<UserModel> user = userRepos.findOneByUserEmail(userModel.getUserEmail());
 			if (user.isPresent()) {
 				response.put("message", "Email already registered!");
-				response.put("status", false);
+				response.put("status", true);
 				
 			} else {
 			
@@ -58,6 +58,7 @@ public class UserServiceImpl implements UserService {
 		return response;
 	}
 
+	
 	@Override
 	public HashMap<String, Object> userSignIn(UserModel usermodel) {
 		HashMap<String, Object> response = new HashMap();

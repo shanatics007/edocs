@@ -760,6 +760,7 @@ label#radiolabel {
   	<script>
   	function submitApplication(){
 		if($('#accept-terms-track').prop('checked') && $('#accept-gdpr-track').prop('checked')){
+			$('.checkmark').css('border','none');
 			if(validate()){
 				var url ="/application/saveApplication";
 				var dateofArrival = $('#dayArrival').val()+'-'+$('#montharrival').val()+'-'+$('#yearlist').val();
@@ -788,17 +789,21 @@ label#radiolabel {
 						if(data.status==false){
 							Swal.fire({
 								  title: "<img src='/images/fail1234.png' style='width:150px;'>", 
-								  html: "Email already registerd..!",  
+								  html: "Register before apply",  
 								  confirmButtonText: "Ok", 
+								 
+								}).then(function() {
+								    window.location = "/register";
 								});
 
 						}else{
-
-							Swal.fire({
+							var param ="hash="+data.hash;
+							window.location.href = "/payment/?"+param;
+							/* Swal.fire({
 								  title: "<img src='/images/sucess1234.png' style='width:150px;'>", 
 								  html: "Your Application submitted sucessfully",  
 								  confirmButtonText: "Ok", 
-								});
+								}); */
 							
 							}
 						
@@ -812,9 +817,10 @@ label#radiolabel {
 					validate();
 				}
 		}else{
-
+				
 			$('#accept-terms-track').blur();
      		 $('#accept-gdpr-track').blur();
+     		$('.checkmark').css('border','1px solid red');
 
 
 			}
@@ -832,13 +838,26 @@ label#radiolabel {
   	<script>
 	function validate(){
 	var isvalidated =true;
+
+			
 			if($('#dayArrival').val()!="Day" && $('#montharrival').val()!="Month" && $('#yearlist').val()!="Year" ){
-			 $('#dateofArrivalSucess').css('display','block');
-			 $('#dateofArrivalError').css('display','none');
-			 $('#datearrivalerror').css('display','none');
+			var arrivalDate = new Date($('#dayArrival').val()+'-'+$('#montharrival').val()+'-'+$('#yearlist').val());
+			var currentDate = new Date();
+			if(arrivalDate<=currentDate){
+			$('#datearrivalerror').text("The provided date is too early")
+			$('#dateofArrivalError').css('display','block');
+			return false;
+				
+			}else{
+				 $('#dateofArrivalSucess').css('display','block');
+				 $('#dateofArrivalError').css('display','none');
+				 $('#datearrivalerror').css('display','none');
+
+				}	
 
 			}else{
-
+				
+				$('#datearrivalerror').text("Please choose Day, Month and Year")
 				 $('#dateofArrivalError').css('display','block');
 				 $('#dateofArrivalSucess').css('display','none');
 				 $('#datearrivalerror').css('display','block');

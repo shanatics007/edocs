@@ -1,0 +1,34 @@
+@charset "UTF-8";
+div#typesetpedvisa {
+    margin-bottom: 50px;
+}
+#paddingId {
+    padding-left: 100px;
+    padding-right: 100px;
+    color: #1c3367;
+}
+#personalId{
+	font-size: 20px; 
+	color: #1d3367; 
+	font-weight: 600;"
+}
+#dataproId{
+	font-size: 20px; 
+	color: #1d3367; 
+	font-weight: 600;"
+}
+@media (max-width: 599px ) {
+	
+#paddingId {
+    padding-left: 40px;
+    padding-right: 40px;
+    color: #1c3367;
+}
+#typesvisalist {
+padding-left: 40px !important;
+    padding-right: 40px !important;
+    padding-bottom: 50px;
+    color: #1d3367;
+    list-style-type: none;
+}
+}

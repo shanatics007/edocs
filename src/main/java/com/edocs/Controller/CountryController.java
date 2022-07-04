@@ -70,6 +70,49 @@ public class CountryController {
 	
 	
 	
+	@RequestMapping("/why-evisa-express")
+	public String whyEdocsTravel() {
+		
+		return "whyEvisa";
+		
+	}
+	@RequestMapping("/contact")
+	public String contact() {
+		
+		return "contact";
+		
+	}
+	
+	@RequestMapping("/privacy-policy")
+	public String privacyPolicy() {
+		
+		return "privacyandpolicy";
+		
+	}
+	
+	@RequestMapping("/passenger-locator-form")
+	public String passengerLocatorForms() {
+		
+		return "passengerLocatorForm";
+		
+	}
+	
+	@RequestMapping("/travel-entry-requirements")
+	public String travelentryrequirements() {
+		
+		return "checkEntryRequirement";
+		
+	}
+
+	@RequestMapping("/terms-of-service")
+	public String termsandcondition() {
+		
+		return "termsandcondition";
+		
+	}
+
+	
+	
 	
 	
 	

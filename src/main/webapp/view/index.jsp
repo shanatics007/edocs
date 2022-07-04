@@ -209,12 +209,12 @@ span.description-steps-text-bottom {
 					</ul>
 				</div></li>
 			<li class="toggle-li"><a id="menu-mobile-groups"
-				class="mobile-menu-font" href="#" style="color: #1d3367 !important;">Passenger Locator Forms</a></li>
+				class="mobile-menu-font" href="/en/passenger-locator-form" style="color: #1d3367 !important;">Passenger Locator Forms</a></li>
 			<li class="toggle-li"><a id="menu-mobile-groups" 
 				class="mobile-menu-font" href="#" rel="nofollow" style="color: #1d3367 !important;">Travel
 					Insurance</a></li>
 			<li class="toggle-li"><a id="menu-mobile-groups"
-				class="mobile-menu-font" href="#" style="color: #1d3367 !important;">Check Entry Requirements</a></li>
+				class="mobile-menu-font" href="/en/travel-entry-requirements" style="color: #1d3367 !important;">Check Entry Requirements</a></li>
 
 		</ul>
 	</div>

@@ -21,9 +21,9 @@
                         
                         </ul>
                      </li>
-                     <li><a href="#" title="Passenger Locator Forms" style="color: #1d3367 !important;">Passenger Locator Forms</a></li>
+                     <li><a href="/en/passenger-locator-form" title="Passenger Locator Forms" style="color: #1d3367 !important;">Passenger Locator Forms</a></li>
                      <li><a href="#" title="Travel Insurance" rel="nofollow" style="color: #1d3367 !important;">Travel Insurance</a></li>
-                     <li><a href="#" title="Check Entry Requirements" style="color: #1d3367 !important;">Check Entry Requirements</a></li>
+                     <li><a href="/en/travel-entry-requirements" title="Check Entry Requirements" style="color: #1d3367 !important;">Check Entry Requirements</a></li>
                    <li><a href="/login" style="color: #1d3367 !important;">Log In</a></li>
                   </ul>
                </div>

@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+#entryRequirId {
+	background-color: #ffff;
+	padding: 50px;
+	}
+	
+#visaRequirId {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+/* .row {
+    padding-left: 50px;
+    padding-right: 50px;
+} */
+div#typesetpedvisa {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+section#lastsectiononlineapply {
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+ul#typesvisalist{
+	    list-style-type: none;
+    padding-inline-start: 0px;
+        color: #1d3367;
+}
+ul#entryRequirement {
+    list-style-type: disc;
+        color: #1c3367;
+}
+ul#visaRequirId {
+    list-style-type: disc;
+}
+div#checklist {
+    padding: 50px;
+}
+/* div#checklist {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-inline-start: 100px;
+    color: #1d3367;
+    
+} */
+ @media (max-width: 599px){
+ul#typesvisalist {
+    list-style-type: none;
+     
+}
+@media (max-width: 599px)
+div#checkcurrent {
+    color: #1d3367;
+    padding: 0px !important;
+}
+div#checklist {
+        color: #1d3367;
+    padding-left: 50px;
+    padding-right: 50px;
+}

@@ -1,5 +1,7 @@
 package com.edocs.Controller;
 
+import java.util.HashMap;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,7 +21,7 @@ public class ApplicationforVisaController {
 	private ApplicationForVisaService applicationForVisaService;
 	
 	@PostMapping("/saveApplication")
-	public ApplicationForVisaModel applicationSave(@RequestBody ApplicationForVisaModel model) {
+	public HashMap<Object, Object> applicationSave(@RequestBody ApplicationForVisaModel model) {
 		
 		return applicationForVisaService.registerApplication(model);
 	}

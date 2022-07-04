@@ -45,6 +45,12 @@ public class ApplicationForVisaModel {
 	@Column(name="nationality")
 	String nationality;
 	
+	@Column(name="user_id")
+	long userId;
+	
+   @Column(name="auth_key")
+	String confirmAuthKey;
+	
 	
 	public int getPkid() {
 		return pkid;
@@ -107,6 +113,19 @@ public class ApplicationForVisaModel {
 	public void setNationality(String nationality) {
 		this.nationality = nationality;
 	}
+	public long getUserId() {
+		return userId;
+	}
+	public void setUserId(long userId) {
+		this.userId = userId;
+	}
+	public String getConfirmAuthKey() {
+		return confirmAuthKey;
+	}
+	public void setConfirmAuthKey(String confirmAuthKey) {
+		this.confirmAuthKey = confirmAuthKey;
+	}
+	
 	
 	
 
