@@ -308,13 +308,9 @@ span.description-steps-text-bottom {
 
 
 					<section class="gallery-big padding-rwd"
-						style="margin: 35px 0px 0px 0px !important">
+						style="margin: 50px 0px 0px 0px !important">
 						<div class="steps" id="typesetpedvisa"
 							style="background-color: #ffffff;">
-
-
-
-
 
 							<div class="d-flex">
 								<div class="small-line"></div>
@@ -360,7 +356,7 @@ span.description-steps-text-bottom {
 
 
 					<section class="destinations-list-section" id="destination-ist"
-						style="background: #ffff; margin: 35px 0px 0px 0px !important;">
+						style="background: #ffff; margin: 50px 0px 0px 0px !important;">
 						<div class="d-flex" style="text-align: center; color: #1d3367;">
 							<div class="small-line"></div>
 							<h2 class="description-steps-h3"

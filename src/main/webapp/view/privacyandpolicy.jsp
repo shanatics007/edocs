@@ -451,8 +451,7 @@ span.description-steps-text-bottom {
 		<section class="applyonline" id="onlineapplysection"
 			style="background-image: url('/images/privacyandpolicy.jpg'); width: auto; height: 500px;">
 
-			<div class="top-content-follow-card-h2">APPLY FOR INDIAN VISA
-				ONLINE</div>
+			
 			<h4
 				style="color: rgb(176, 143, 111); width: 100%; text-align: center; font-size: 20px;"></h4>
 

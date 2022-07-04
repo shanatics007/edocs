@@ -10,6 +10,8 @@ div#typesetpedvisa {
     padding-bottom: 30px;
       padding-left: 60px;
     padding-right: 60px;
+    text-align: justify;
+    
 }
 
 section.destinations-list-section {
@@ -18,6 +20,8 @@ section.destinations-list-section {
     padding-top: 30px;
     padding-left: 60px;
     padding-right: 60px;
+     text-align: justify;
+      text-align: justify;
 }
 b {
     margin-left: 60px;
@@ -36,19 +40,24 @@ div#portevisaaccept {
     padding-top: 40px;
 }
 section.gallery-big.padding-rwd {
-    padding-top: 30px;
-    margin-bottom: 30px;
+    
+    
 }
-div#validitysteps {
+#validitysteps {
 	color: #1d3367 !important;
-    padding-left: 60px;
-    padding-right: 60px;
-    padding-bottom: 30px;
-    padding-top: 30px;
+    padding-left:60px;
+    padding-right:60px;
+    padding-bottom:30px;
+    padding-top:30px;
+    text-align: justify;
 }
  section.description.padding.mobile-pt-0 {
     padding-left: 60px;
     padding-right: 60px;
+    
+ 
+
+}
 }
 
 element.style {

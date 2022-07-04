@@ -179,7 +179,7 @@ input[type=message]:focus{
 @media(max-width :599px){
 	.top-background {
     width: 100%;
-    height: 490px !important;
+    height: 550px !important;
 	}
 	.contact-form.padding .col-sm-6 {
     padding-left: 16px;
@@ -197,7 +197,7 @@ div#typesetpedvisa {
 @media(max-width :799px){
 	.top-background {
     width: 100%;
-    height: 530px !important;
+    height: 560px !important;
 	}
 	.contact-form.padding .col-sm-6 {
     padding-left: 16px;
