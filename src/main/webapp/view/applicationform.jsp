@@ -53,7 +53,18 @@ label {
     font-weight: 500;
     color: #1d3367;
 }
+div#VisaandpriceId {
+    border-bottom: 1px solid #D8D9CF;
+    display: none;
+}
 
+span#priceidinDoller {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 22px;
+    color: #B08F6F;
+}
 #formheadrId{
     font-size: 20px;
     font-weight: 500;
@@ -134,6 +145,9 @@ label#radiolabel {
  }
  .col-sm-2{
  display: none !important;
+ }
+ .ee-form-sidebar{
+ width: 100% !important;
  }
  
   
@@ -481,15 +495,7 @@ label#radiolabel {
              <div class="col-sm-10">
              <select id="purposeTraval" onchange="validate();">
 			<option value="port"></option>
-			<option value="Transi">Transit</option>
-			<option value="Tourism(30 days)">Tourism(30 days)</option>
-			<option value="Tourism(1 year)">Tourism(1 year)</option>
-			<option value="Tourism(5 year)">Tourism(5 year)</option>
-			<option value="Business">Business</option>
-			<option value="Medical treatment of self">Medical treatment of self</option>
-			<option value="Medical attendent">Medical attendent</option>
-			<option value="Ayurveda">Ayurveda</option>
-			<option value="Abroad">Abroad</option>
+			
 			</select>
             </div>
              <div class="col-sm-2">
@@ -554,14 +560,10 @@ label#radiolabel {
                <div id="ee-form-step2" style="display: none;"></div>
                <div id="ee-form-step3" style="display: none;"></div>
                <!---->
-            </div>
-           
-         </div>
-         
-         
-         <!-- previos details commented -->
-         
-         <!-- <div class="ee-form-sidebar">
+               
+               
+               
+          <div class="ee-form-sidebar">
             <div class="ee-form-info ee-form-info--hidden">
                <div class="ee-errors" style="display: none;">
                   <div class="error-title">
@@ -582,10 +584,25 @@ label#radiolabel {
                   </div>
                   <div class="form-info-subheader"><span>
                      Destination
-                     </span> <span>
-                     India
+                     </span> <span id="CountrySummary">
+                    
                      </span>
                   </div>
+                  
+             
+                  <div class="form-info-subheader" id="VisaandpriceId"><span>
+                     Visa
+                     </span> <span id="priceidinDollerVisa">
+                    
+                     </span>
+                  </div>
+                  
+                  <!-- <div class="form-choose-currency-wrapper" id="VisaandpriceId" style="display: none;"><span>
+                        Visa
+                        </span> 
+                        <span></span> 
+                        <span id="priceidinDoller"></span>
+                     </div> -->
                  
                </div>
                <div class="form-pricebox">
@@ -593,16 +610,18 @@ label#radiolabel {
                   <div class="form-info-element sidebar-citizenship-not-chosen">
                      <div class="form-choose-currency-wrapper"><span>
                         Full price
-                        </span> <span></span> <span></span>
+                        </span> 
+                        <span></span> 
+                        <span id="priceidinDoller"></span>
                      </div>
-                     <div>
+                     <div id="priceshow">
                         Price will be shown after the required fields are filled
                      </div>
-                     <div>
+                     <div id="ulpriceshow">
                         <ul>
-                           Price depends on the following fields:
-                           <li><span>Nationality</span></li>
-                           <li><span>Purpose for travel</span></li>
+                          <span> Price depends on the following fields:</span>
+                           <li id="nationalityId"><span>Nationality</span></li>
+                           <li id="purposeTravelId"><span>Purpose for travel</span></li>
                         </ul>
                      </div>
                   </div>
@@ -643,10 +662,15 @@ label#radiolabel {
                      5 days a week from 8am to 4pm. Please prepare your passport number.
                   </p>
                </div>
-               <div class="more-details">Details</div>
+              
             </div>
-         </div> -->
+         </div>
+            </div>
+           
+         </div>
          
+         
+        
          
       </div>
   
@@ -827,11 +851,32 @@ label#radiolabel {
 
 
 		}
+
+
+  	function changePricing(){
+  	  	
+  		var urlString  = window.location.href.split('/');
+  	  	var toCountry = urlString[4]; 
+  	  	var fromCountry = $("#countrylist").val();
+  	  	var travel_purpose = $('#purposeTraval').val(); 	  	
+  	  	var param = "?fromCountry="+fromCountry+"&toCountry="+toCountry+"&travel_purpose="+travel_purpose;
+  		 $.ajax({
+  			type : 'GET',
+  			url : '/country/getCountryVisaPrices'+param,
+  			async : true,
+  			success : function(data) {
+  				console.log(data)
+  				$('#priceidinDoller').text(data +" USD");
+  				$('#priceidinDollerVisa').text(data +" USD");
+  				$('#VisaandpriceId').css('display','flex');
+  					
+  			},	
+  			error : function(data) {
+  				console.log("error when gettig data");
+  			}
+  		}); 
 	
-	
-
-
-
+  	 }
 
   	</script>
   	
@@ -865,18 +910,23 @@ label#radiolabel {
 				 return false;
 				}
 			
+			if(window.location.href.includes("india")){
+			
 			if($('#portArrival').val()!='port'){
 				 $('#portofArrivalError').css('display','none');
 				 $('#portofArrivalSucess').css('display','block');
 				 $('#arrirvalporsterrors').css('display','none');
 			
 				}else{
+					
 					 $('#portofArrivalSucess').css('display','none');
 					 $('#portofArrivalError').css('display','block');
 					 $('#arrirvalporsterrors').css('display','block');
+					 
 					 isvalidated=false;
-					 return false;
+					 
 				}
+			}
 
 			if($('#firstNameID').val()=="" || $('#firstNameID').val().length==0){
 				 $('#firstNameError').css('display','block');
@@ -974,11 +1024,13 @@ label#radiolabel {
 					}	
 
 				if($('#purposeTraval').val()!='port'){
+					$('#purposeTravelId').css('display','none')
 					 $('#travelpuposeError').css('display','none');
 					 $('#travelpuposeSucess').css('display','block');
 					 $('#travelpurposeError').css('display','none');
 				
 					}else{
+						$('#purposeTravelId').css('display','block')
 						 $('#travelpuposeSucess').css('display','none');
 						 $('#travelpuposeError').css('display','block');
 						 $('#travelpurposeError').css('display','block');
@@ -986,21 +1038,36 @@ label#radiolabel {
 						 return false;
 					}
 				if($('#countrylist').val()!='port'){
+					$('#nationalityId').css('display','none')
 					 $('#nationalityError').css('display','none');
 					 $('#nationalitySucess').css('display','block');
 					 $('#nationalityerrors').css('display','none');
 				
 					}else{
+						$('#nationalityId').css('display','block')
 						 $('#nationalitySucess').css('display','none');
 						 $('#nationalityError').css('display','block');
 						 $('#nationalityerrors').css('display','block');
 						 isvalidated=false;
 						 return false;
 					}
+				
+					if(($('#purposeTraval').val()!='port') && ($('#countrylist').val()!='port')){
+						$('#priceshow').css('display','none');
+						$('#ulpriceshow').css('display','none');
+						
+						changePricing();
+						
+					}else{
+							return false;
+						}
+
+				
 
 				return  isvalidated;
 				
 	}
+
 
 	
     window.onload = function () {
@@ -1033,38 +1100,71 @@ label#radiolabel {
         if(window.location.href.includes("turkey")) {
 			$('#portArrivalLabel').css('display','none');
 			$('#portArrivalRow').css('display','none');	
+			$('#arrirvalporsterrors').css('display','none !important');	
           }  
         else if(window.location.href.includes("thailand")){
         	  $('#portArrivalLabel').css('display','none');
-  			  $('#portArrivalRow').css('display','none');	
+  			  $('#portArrivalRow').css('display','none');
+  			$('#arrirvalporsterrors').css('display','none !important');		
           } 
         else if(window.location.href.includes("pakistan")){
         	  $('#portArrivalLabel').css('display','none');
   			  $('#portArrivalRow').css('display','none');	
+  			$('#arrirvalporsterrors').css('display','none !important');	
           } 
         else if(window.location.href.includes("united-arab-emirates")){
         	  $('#portArrivalLabel').css('display','none');
-  			  $('#portArrivalRow').css('display','none');	
+  			  $('#portArrivalRow').css('display','none');
+  			$('#arrirvalporsterrors').css('display','none !important');		
           }  
    
     $.ajax({
 			type : 'GET',
-			url : 'https://trial.mobiscroll.com/content/countries.json',	
+			url : '/country/getCountryList',	
 			async : true,
 			success : function(data) {
 				 $.each(data, function(index,element) {
-					 $('#countrylist').append('<option value="'+element.text+'">'+element.text+'</option>')
 					 
+					 $('#countrylist').append('<option value="'+element.countryCode+'">'+element.countryName+'</option>')
 					
 				 });
-				
+					
 			},	
 			error : function(data) {
 				console.log("error when gettig data");
 			}
 		}); 
+
+    	var urlString  = window.location.href.split('/');
+    	var country = urlString[4];
+    	
+    	$('#CountrySummary').text(capitalizeFirstLetter(country));
+    $.ajax({
+		type : 'GET',
+		url : '/getTravelTypes/'+country,	
+		async : true,
+		success : function(data) {
+			 $.each(data, function(index,element) {
+				 $('#purposeTraval').append('<option value="'+element.travelType+'">'+element.travelType+'</option>')
+				 
+				
+			 });
+			
+		},	
+		error : function(data) {
+			console.log("error when gettig data");
+		}
+	}); 
     }
 
+    function capitalizeFirstLetter(str) {
+        const capitalized = str.replace(/^./, str[0].toUpperCase());
+        return capitalized;
+    }
+
+	
+
+   
 
   	</script>
   	
