@@ -429,11 +429,15 @@ span.description-steps-text-bottom {
 				class="mobile-menu-font toggle-click-closed">get visa</a>
 				<div class="height">
 					<ul class="mobile-menu-country-list">
+						<li><a href="/en/india">India</a></li>
 
-						<li><a href="#">India</a></li>
-
-						<li><a href="#">Turkey</a></li>
-
+						<li><a href="/en/turkey">Turkey</a></li>
+						
+						<li><a href="/en/thailand">Thailand</a></li>
+						
+						<li><a href="/en/united-arab-emirates">United-Arab-Emirates</a></li>
+						
+						<li><a href="/en/pakistan">Pakistan</a></li>
 					</ul>
 				</div></li>
 			<li class="toggle-li"><a id="menu-mobile-groups"
