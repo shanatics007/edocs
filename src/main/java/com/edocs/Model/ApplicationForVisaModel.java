@@ -50,8 +50,37 @@ public class ApplicationForVisaModel {
 	
    @Column(name="auth_key")
 	String confirmAuthKey;
-	
-	
+   @Column(name="price")
+   String price;
+   @Column(name="is_Payment")
+   boolean isPayment;
+   
+   
+   
+   
+	public ApplicationForVisaModel() {
+	super();
+	// TODO Auto-generated constructor stub
+}
+	public ApplicationForVisaModel(int pkid, String travelAirports, String purposeForTravel, String plannedDateOfTravel,
+		String firstName, String lastName, String dateOfBirth, String email, String contactPhoneNumber,
+		String nationality, long userId, String confirmAuthKey, String price, boolean isPayment) {
+	super();
+	this.pkid = pkid;
+	this.travelAirports = travelAirports;
+	this.purposeForTravel = purposeForTravel;
+	this.plannedDateOfTravel = plannedDateOfTravel;
+	this.firstName = firstName;
+	this.lastName = lastName;
+	this.dateOfBirth = dateOfBirth;
+	this.email = email;
+	this.contactPhoneNumber = contactPhoneNumber;
+	this.nationality = nationality;
+	this.userId = userId;
+	this.confirmAuthKey = confirmAuthKey;
+	this.price = price;
+	this.isPayment = isPayment;
+}
 	public int getPkid() {
 		return pkid;
 	}
@@ -125,8 +154,17 @@ public class ApplicationForVisaModel {
 	public void setConfirmAuthKey(String confirmAuthKey) {
 		this.confirmAuthKey = confirmAuthKey;
 	}
+	public String getPrice() {
+		return price;
+	}
+	public void setPrice(String price) {
+		this.price = price;
+	}
+	public boolean isPayment() {
+		return isPayment;
+	}
+	public void setPayment(boolean isPayment) {
+		this.isPayment = isPayment;
+	}
 	
-	
-	
-
 }

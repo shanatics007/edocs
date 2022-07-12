@@ -8,4 +8,5 @@ public interface ApplicationForVisaService {
 	
 	public HashMap<Object, Object> registerApplication(ApplicationForVisaModel model);
 
+	
 }

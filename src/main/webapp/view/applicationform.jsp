@@ -1,6 +1,81 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ page import="java.util.HashMap" %>
+ <%@ page import="com.edocs.Model.ApplicationForVisaModel" %>
+ <%@ page import="java.util.Date" %>
+ <%@ page import=" java.time.LocalDate" %>
+  <%@ page import="java.time.Month"%>
+  <%@ page import="java.time.format.DateTimeFormatter "%>
+  <%@ page import="java.util.Calendar"%>
+  
+ <%    
+ String travelAirports=null;
+ int pkId;
+ String applicationId=null;
+ String plannedDateOfTravel=null;
+ String travelPurpose = null;
+ String firstName = null;
+ String lastName = null;
+ String email = null;
+ String contactPhoneNumber = null;
+ String nationality=null;
+ String price=null;
+ String dateOfBirth=null;
+ boolean checkUser=false;
+ 
+ String dayDOB = null;
+ String dayMonth = null;
+ String yearlistdob = null;
+ 
+ String dayArrival = null;
+ String montharrival = null;
+ String yearlist = null;
+ String authKey = null;
+ long userId=0;
 
+ 
+if (request.getSession().getAttribute("formDetails") != null) {
+	HashMap<Object, Object> appVisamodel =(HashMap<Object, Object>) request.getSession().getAttribute("formDetails");
+	//ApplicationForVisaModel test =request.getSession().getAttribute("formDetails");
+	System.out.println("AppData:"+appVisamodel.get("data"));
+	ApplicationForVisaModel ApplnFormData = (ApplicationForVisaModel)appVisamodel.get("data");
+	if(ApplnFormData!=null){
+	
+	checkUser=true;
+	 pkId = ApplnFormData.getPkid();
+	 applicationId = Integer.toString(pkId);
+	 travelAirports = ApplnFormData.getTravelAirports();
+	 plannedDateOfTravel = ApplnFormData.getPlannedDateOfTravel();
+	 String [] dateOfTravel = plannedDateOfTravel.split("-");
+	
+	 dayArrival = dateOfTravel[0];
+	 montharrival = dateOfTravel[1];
+	 yearlist = dateOfTravel[2];
+	
+	 travelPurpose = ApplnFormData.getPurposeForTravel();
+	 firstName = ApplnFormData.getFirstName();
+	 lastName =  ApplnFormData.getLastName();
+	 email = ApplnFormData.getEmail();
+	 contactPhoneNumber = ApplnFormData.getContactPhoneNumber();
+	nationality = ApplnFormData.getNationality();
+	 userId = ApplnFormData.getUserId();
+	 price = ApplnFormData.getPrice();
+	 authKey = ApplnFormData.getConfirmAuthKey();
+
+   	dateOfBirth = ApplnFormData.getDateOfBirth();
+	String [] dateBirth =  dateOfBirth.split("-");
+	 
+	 dayDOB = dateBirth[0];
+	 dayMonth = dateBirth[1];
+	 yearlistdob = dateBirth[2];
+	 
+	}else{
+		
+		checkUser=false;
+	}
+} 
+ 
+%> 
     <!DOCTYPE html>
 <!-- saved from url=(0038)https://evisa.express/en/account/login -->
 <html lang="en">
@@ -24,11 +99,11 @@
        <script async="" src="/js/tag.js"></script>
        <script async="" src="/js/vendor.js"></script>
        
-       <style>
+ <style>
        
-       .newform {
-   		 width: 80%;
-   		 margin: auto;
+ .newform {
+   width: 80%;
+   margin: auto;
 	}
 	.row {
     margin-bottom: 0px;
@@ -63,7 +138,7 @@ span#priceidinDoller {
     align-items: center;
     font-weight: 700;
     font-size: 22px;
-    color: #B08F6F;
+    color: #1d3367;
 }
 #formheadrId{
     font-size: 20px;
@@ -109,6 +184,11 @@ label#radiolabel {
 }
 .error-mark{
 	text-align: inherit !important;
+}
+.notValidVisa {
+    font-size: 18px;
+    color: red;
+    display: none;
 }
 
 .ee-form-actual{
@@ -209,6 +289,9 @@ label#radiolabel {
                <div id="ee-form-step1">
                 <h1 id="formheadrId"> Basic Information</h1> 
                <div class="newform">
+             <input type="hidden" id="applicationId">
+             <input type="hidden" id="authKeyId">
+             <input type="hidden" id="usersId">
              
                <label> Date of Arrival </label> 
                <div class="row">
@@ -530,6 +613,8 @@ label#radiolabel {
              <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
             <span id="nationalityerrors" style="display: none;">Please choose nationality</span>
             </div>
+            
+            <div class="notValidVisa">Sorry, E-visa not available. please contact the nearest embassy</div>
             </div>
         
               </div>
@@ -812,6 +897,11 @@ label#radiolabel {
 						"contactPhoneNumber":$('#phoneNoId').val(),
 						"purposeForTravel": $('#purposeTraval').val(),
 						"nationality": $('#countrylist').val(),
+						"price": $('#priceidinDoller').text(),
+						"isPayment":false,
+						"pkid":$('#applicationId').val(),
+						"confirmAuthKey":$('#authKeyId').val(),
+						"userId":$('#usersId').val(),
 						
 						
 					}),
@@ -873,10 +963,14 @@ label#radiolabel {
   			async : true,
   			success : function(data) {
   				console.log(data)
+  				if(data!=0){
+  					$('.notValidVisa').css('display','none');
   				$('#priceidinDoller').text(data +" USD");
   				$('#priceidinDollerVisa').text(data +" USD");
   				$('#VisaandpriceId').css('display','flex');
-  					
+  				}else{
+					$('.notValidVisa').css('display','block');
+  	  				}	
   			},	
   			error : function(data) {
   				console.log("error when gettig data");
@@ -884,6 +978,26 @@ label#radiolabel {
   		}); 
 	
   	 }
+
+	 function setSessionValues(){
+		
+		$('#portArrival').val('<%=travelAirports%>');
+		$('#firstNameID').val('<%=firstName%>');
+		$('#lastNameID').val('<%=lastName%>');
+		$('#emailID').val('<%=email%>');
+		$('#phoneNoId').val('<%=contactPhoneNumber%>');
+		$('#dayArrival').val('<%=dayArrival%>');
+		$('#montharrival').val('<%=montharrival%>');
+		$('#yearlist').val('<%=yearlist%>');
+		$('#dayDOB').val('<%=dayDOB%>');
+		$('#dayMonth').val('<%=dayMonth%>');
+		$('#yearlistdob').val('<%=yearlistdob%>');
+		$('#applicationId').val('<%=applicationId%>');
+		$('#authKeyId').val('<%=authKey%>');
+		$('#usersId').val('<%=userId%>');
+	
+
+	}
 
   	</script>
   	
@@ -1043,6 +1157,7 @@ label#radiolabel {
 						 $('#travelpurposeError').css('display','block');
 						 isvalidated=false;
 						 return false;
+						 
 					}
 				if($('#countrylist').val()!='port'){
 					$('#nationalityId').css('display','none')
@@ -1162,6 +1277,12 @@ label#radiolabel {
 			console.log("error when gettig data");
 		}
 	}); 
+
+    var checkFormStatus = "<%=checkUser%>";
+    
+    if(checkFormStatus=="true"){
+    	setSessionValues();
+      }
     }
 
     function capitalizeFirstLetter(str) {
@@ -1169,9 +1290,6 @@ label#radiolabel {
         return capitalized;
     }
 
-	
-
-   
 
   	</script>
   	
