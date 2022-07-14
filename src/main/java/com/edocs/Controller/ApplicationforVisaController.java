@@ -2,6 +2,7 @@ package com.edocs.Controller;
 
 import java.util.HashMap;
 
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,6 @@ public class ApplicationforVisaController {
 	public HashMap<Object, Object> applicationSave(@RequestBody ApplicationForVisaModel model,HttpSession session) {
 		HashMap<Object, Object> appVisamodel = applicationForVisaService.registerApplication(model);
 		session.setAttribute("formDetails", appVisamodel);
-		
 		
 		return appVisamodel;
 	}

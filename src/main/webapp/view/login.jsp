@@ -193,6 +193,8 @@
 							  title: "<img src='images/sucess1234.png' style='width:150px;'>", 
 							  html: "You have login sucessfully",  
 							  confirmButtonText: "Ok", 
+								}) .then(function() {
+								    window.location = "/en/account";
 							});
 					}else{
 
@@ -211,7 +213,9 @@
 								  title: "<img src='images/fail1234.png' style='width:150px;'>", 
 								  html: "Please Verify your Email on registered Email",  
 								  confirmButtonText: "Ok", 
-								});
+							});
+								  
+							
 							}
 			
 					}

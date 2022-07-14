@@ -11,12 +11,14 @@
  <%    
  
  
- int applicationId;
+ int applicationId=0;
  String price=null;
  boolean checkUser=false;
- long userId ;
+ long userId=0 ;
  String firstName = null;
  String lastName = null;
+ boolean paymentStatus = false;
+ String from_country="";
  
  if (request.getSession().getAttribute("formDetails") != null) {
 		HashMap<Object, Object> appVisamodel =(HashMap<Object, Object>) request.getSession().getAttribute("formDetails");
@@ -31,6 +33,7 @@
 		 price = ApplnFormData.getPrice();
 		 firstName = ApplnFormData.getFirstName();
 		 lastName = ApplnFormData.getLastName();
+		 from_country=ApplnFormData.getNationality();
 		}else{
 			
 			checkUser=false;
@@ -115,19 +118,7 @@ iframe#_hjRemoteVarsFrame {
 			            <input type="text" inputmode="numeric" id="card_number" minlength="10" maxlength="19" placeholder="0000 0000 0000 0000" autocomplete="off" required="">
 			            <div id="card_number_info" class="input-info"></div>
 			        </div>
-			        <div class="input-group row card-holders">
-			            <div class="col-md-6">
-			                <label>First name</label>
-			                <input type="text" id="card_holder_first_name" placeholder="required" autocomplete="off"  required="" class="input-success">
-			                <div class="input-info card_holder_info"></div>
-			            </div>
-			            <div class="col-md-6">
-			                <label>Surname</label>
-			                <input type="text" id="card_holder_second_name" placeholder="required" autocomplete="off"  required="" class="input-success">
-			                <div class="input-info card_holder_info"></div>
-			            </div>
-			        </div>
-			        <div class="input-group row">
+			        			        <div class="input-group row">
 			            <div class="col-md-6">
 			                <label>Expiration date</label>
 			                <select class="col-lg-5" id="card_expiry_mm" name="card_expiration_month" autocomplete="off" required="">
@@ -170,152 +161,108 @@ iframe#_hjRemoteVarsFrame {
 			            <input type="hidden" name="card_type" id="card_type" value="">
 			            <input type="hidden" name="payment" value="ingenico-card" id="payment-method">
 			        </div>
+			        <div class="input-group row card-holders">
+			            <div class="col-md-6">
+			                <label>First name</label>
+			                <input type="text" id="card_holder_first_name" placeholder="required" autocomplete="off"  required="" class="input-success">
+			                <div class="input-info card_holder_info"></div>
+			            </div>
+			            <div class="col-md-6">
+			                <label>Surname</label>
+			                <input type="text" id="card_holder_second_name" placeholder="required" autocomplete="off"  required="" class="input-success">
+			                <div class="input-info card_holder_info"></div>
+			            </div>
+			        </div>
+			        
+			          <div class="input-group">
+			            <label>Address</label>
+			            <input type="text" inputmode="numeric" id="billing_address" minlength="10" maxlength="19" placeholder="Street,apt,address" autocomplete="off" required="">
+			            
+			        </div>
+			        
+			          <div class="input-group">
+			            <label>City</label>
+			            <input type="text" inputmode="numeric" id="billing_city" minlength="10" maxlength="19" placeholder="city" autocomplete="off" required="">
+			           
+			        </div>
+			        
+			         <div class="input-group row card-holders">
+			            <div class="col-md-6">
+			                <label>State</label>
+			                <input type="text" id="billing_state" placeholder="state" autocomplete="off"  required="" class="input-success">
+			                <div class="input-info card_holder_info"></div>
+			            </div>
+			            <div class="col-md-6">
+			                <label>ZipCode</label>
+			                <input type="text" id="billing_zipcode" placeholder="zipcode" minlength="5" maxlength="5" autocomplete="off"  required="" class="input-success">
+			                <div class="input-info card_holder_info"></div>
+			            </div>
+			        </div>	
+			           <div class="input-group">
+			            <label>Country</label>
+			             <select id="countrylist">
+						<option value="port"></option>
+						</select>
+			           
+			        </div>	
+			        
+
 			        <button type="submit" id="payment-form--submit" style="display: none;"></button>
 			    </form>
 			</li>
          </ul>
          </div>
          <div class="buttons-block buttons-center order-lg-3">
-                <button type="button" class="payment-btn big-button button-success" id="pay-btn">
+                <button type="button" class="payment-btn big-button button-success" id="pay-btn" onclick="makePayment();">
                     <div class="loader"></div>
                     Make a payment                </button>
             </div>
       </div>
    </div>
         
-        
-<!--         <div class="col-lg-4 order-lg-12 order-sm-1 payment-data-row row">
-            <div class="destination-logo logo-evisaexpress">
-                <img src="./Evisa.Express Payment_files/india.svg">
-            </div>
-
-            <div class="show-details phone ">Details:</div>
-
-            <div class="details-container payment-details order-sm-12 order-lg-1">
-                <div class="title desktop-title">
-                    Details:
-                </div>
-
-                <p translate="no">
-                    Application no:<span id="hexId">3CF/3D0/AA2</span>
-                </p>
-                                <p>
-                    Type of visa:<span>Transit</span>
-                </p>
-                                <p translate="no">
-                    Name:<span>test</span>
-                </p>
-                <p translate="no">
-                    Surname:<span>user</span>
-                </p>
-                <p class="email-address">
-                    <span class="email-address__text">Your email:</span>
-                    <span class="email-address__content" translate="no">test212@gmail.com</span>
-                </p>
-                <input type="hidden" id="language" value="en">
-                <input type="hidden" id="defaultUsdProvider" value="ingenico-card">
-                <input type="hidden" id="defaultEurProvider" value="ingenico-card">
-                <input type="hidden" id="defaultCurrency" value="EUR">
-                <input type="hidden" id="selectedCurrency" value="EUR">
-                <input type="hidden" id="usd_price" data-amount="154.00">
-                <input type="hidden" id="eur_price" data-amount="129.00">
-                <input type="hidden" id="description" value="3CF/3D0/AA2 India Transit">
-                <input type="hidden" id="destination" value="india">
-                <input type="hidden" id="hash" value="0b6bc34d3859d220ef142fa2419e54d67abc6203af4283ba7376fe8ba8b39d2d581744b01e">
-                <input type="hidden" id="bankTransfer" value="0">
-                <input type="hidden" id="returnUrl" value="https://secure-payment.evisa.express/redirect?hash=0b6bc34d3859d220ef142fa2419e54d67abc6203af4283ba7376fe8ba8b39d2d581744b01e">
-                <input type="hidden" id="currentDate" value="2022-06-30 07:58:24">
-                <input id="backbuttonstate" type="text" value="0" style="display:none;">
-            </div>
-            <div class="total-cost order-sm-1 order-lg-2 ">
-                                <div class="total-cost-line">
-                    <span class="total-cost-text">Total cost:</span>
-                    <div class="amount">
-                        <span id="price-amount" translate="no">129.00</span>
-                        <span id="price-currency" translate="no" class="prices-list" style="cursor: pointer;">EUR</span>
-                        <div id="price-currency-arrow" class="" style="margin-left: 5px;" translate="no">
-                            <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>icon/16/arrow_down</title><desc>Created with Sketch.</desc><defs></defs><g id="icon/16/arrow_down" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polyline id="Path-2" stroke="#000" stroke-width="2" points="2 5 8 11.0031738 14 5"></polyline></g></svg>
-                        </div>
-                        <div id="currency-changer" class="hidden">
-                            <ul>
-                                <li translate="no" data-currency="EUR">EUR</li>
-                                <li translate="no" data-currency="USD">USD</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="show-details no-phone">Details:</div>
-            </div>
-            <div class="buttons-block buttons-center order-lg-3">
-                <button type="button" class="payment-btn big-button button-success" id="pay-btn">
-                    <div class="loader"></div>
-                    Make a payment                </button>
-            </div>
-            <div class="container errors-box">
-                <div class="error-title"></div>
-                <div class="error-message"></div>
-            </div>
-
-            <div class="small-logo">
-                <div class="security-icons">
-                    <div class="icon-ssl"></div>
-                    <div class="icon-pci"></div>
-                </div>
-                <div class="logo-evisa-express"></div>
-            </div>
-        </div> -->
     </div>
 </div>
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-    ym(56069170, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-    });
+<script>
 
-    
-</script>
+function makePayment(){
+	var url ="/payment/makePayment";
+	$.ajax({
+		type : "POST",
+		url : url,	
+		headers: {
+                'Content-Type': 'application/json'
+            },
+		data: JSON.stringify ({
 
-	<script>
-  	function submitApplication(){
-		
-				var url ="/application/saveApplication";
-				
-				$.ajax({
-					type : "POST",
-					url : url,	
-					 headers: {
-		                    'Content-Type': 'application/json'
-		                },
-					data: JSON.stringify ({
-						
-						
-					}),
-					async : true,
-					success : function(data) {
-						if(data.status==false){
-							
-
-						}else{
-							var param ="hash="+data.hash;
-							window.location.href = "/payment/?"+param;
-						
-							}
-						
-					},	
-					error : function(data) {
-						console.log("error when gettig data");
-					}
-				});
-
-			}
-
+			"userId":<%=userId%>,
+			"applicationId":<%=applicationId%>,
+			"price":       "<%=price%>",
+			"paymentStatus":false,
+			"cardNumber": $('#card_number').val(),
+			"month":     $('#card_expiry_mm').val(),
+			"year"	:    $('#card_expiry_yy').val(),
+			"ccid" :	 $('#card_cvv').val(),
+			"firstName": $('#card_holder_first_name').val(),
+			"lastName": $('#card_holder_second_name').val(),
+			"invoice": <%=applicationId%>,
+			"billingCountry":$('#billing_country').val(),
+			"billingAddress": $('#billing_address').val(),
+			"billingState": $('#billing_state').val(),
+			"billingZipcode": $('#billing_zipcode').val(),
+			"billingCity": $('#billing_city').val(),
+		}),
+		async : true,
+		success : function(data) {
+			
+				window.location.href = "/en/confirmation";
+		},	
+		error : function(data) {
+			console.log("error when gettig data");
 		}
+	});
+
+}
+  		
 </script>
 
 <script>
@@ -325,8 +272,31 @@ window.onload = function () {
     $('#card_holder_first_name').val('<%=firstName%>');
     $('#card_holder_second_name').val('<%=lastName%>');
     
+
+    $.ajax({
+		type : 'GET',
+		url : '/country/getCountryList',	
+		async : true,
+		success : function(data) {
+			 $.each(data, function(index,element) {
+				 
+				 $('#countrylist').append('<option value="'+element.countryCode+'">'+element.countryName+'</option>')
+				 $('#countrylist').val('<%=from_country%>');
+			 });
+				
+		},	
+		error : function(data) {
+			console.log("error when gettig data");
+		}
+	}); 
+    
+    
     
 }
+
+
+
+
 
 </script>
 

@@ -1,15 +1,17 @@
 package com.edocs.Controller;
 
 import java.util.HashMap;
-
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.edocs.Model.ApplicationForVisaModel;
 import com.edocs.Model.UserModel;
 import com.edocs.Service.UserService;
 
@@ -43,6 +45,18 @@ public class UserController {
 	public HashMap<String, Object> forgotPassword(@RequestBody String jsonStr) {
 		
 		return userService.forgotPassword(jsonStr);
+		
+	}
+	
+	@GetMapping("/getUnpaidApplication")
+	public List<ApplicationForVisaModel> getUnpaidApplication(@RequestParam String email){
+		return userService.getUnpaideApplication(email);
+		
+	}
+	
+	@GetMapping("/getPaidApplication")
+	public List<ApplicationForVisaModel> getPaidApplication(@RequestParam String email){
+		return userService.getPaidApplication(email);
 		
 	}
 	

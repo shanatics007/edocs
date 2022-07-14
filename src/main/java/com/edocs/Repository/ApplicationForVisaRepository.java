@@ -1,5 +1,6 @@
 package com.edocs.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -12,4 +13,13 @@ public interface ApplicationForVisaRepository extends JpaRepository<ApplicationF
 	@Query(nativeQuery = true,value = "SELECT * FROM edocs.ed_visa_application where pkid=?1")
 	Optional<ApplicationForVisaModel> findByApplicationId(int applId);
 	
+	@Query(nativeQuery = true,value = "SELECT * FROM edocs.ed_visa_application where is_payment=0 and email=?1")
+	List<ApplicationForVisaModel> getUnpaidAppliation(String email);
+		
+	@Query(nativeQuery = true,value = "SELECT * FROM edocs.ed_visa_application where is_payment=1 and email=?1")
+	List<ApplicationForVisaModel> getPaidAppliation(String email);
+	
+	
+	@Query(nativeQuery = true,value = "update edocs.ed_visa_application set is_payment=1 where pkid=?1")
+	ApplicationForVisaModel updatePaymentstatus(int applicationId);
 }

@@ -3,6 +3,7 @@ package com.edocs.Service;
 import java.util.Date;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -11,10 +12,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
 import com.edocs.Model.Mail;
-
-
+import com.edocs.Model.ApplicationForVisaModel;
 import com.edocs.Model.AuthenticationForgotpass;
 import com.edocs.Model.UserModel;
+import com.edocs.Repository.ApplicationForVisaRepository;
 import com.edocs.Repository.ForgotPasswordRepository;
 import com.edocs.Repository.UserRepository;
 import com.edocs.Utilities.MailUtilities;
@@ -33,6 +34,9 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	MailService mailService;
+	
+	@Autowired
+	private ApplicationForVisaRepository appRepos;
 	
 	@Override
 	public HashMap<Object, Object> userSignUp(UserModel userModel) {
@@ -180,6 +184,20 @@ public class UserServiceImpl implements UserService {
 			resp.put("message", "Internal Server Error");
 		}
 		return resp;
+	}
+
+
+	@Override
+	public List<ApplicationForVisaModel> getUnpaideApplication(String email) {
+		List<ApplicationForVisaModel> appmodelData = appRepos.getUnpaidAppliation(email);
+		return appmodelData;
+	}
+
+
+	@Override
+	public List<ApplicationForVisaModel> getPaidApplication(String email) {
+		List<ApplicationForVisaModel> applicationData = appRepos.getPaidAppliation(email);
+		return applicationData;
 	}
 
 }

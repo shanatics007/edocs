@@ -121,15 +121,15 @@ public class CountryController {
 		
 	}
 
-	
-	
-	@RequestMapping("/testApp")
-	public String applicationtest() {
-		
-		return "applicationForm123";
-		
+	@RequestMapping("/account")
+	public String userAccount() {
+		return "userAccount";
 	}
 	
+	@RequestMapping("/confirmation")
+	public String confirmation() {
+		return "confirmation";
+	}
 	
 	
 

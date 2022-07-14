@@ -2,35 +2,58 @@ package com.edocs.Model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
 @Table(name="payment_details")
+@Entity
 public class PaymentModel {
 	@Id
 	@Column(name="pkid")
-	int pkid;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int pkid;
+	
 	@Column(name="user_id")
-	long userId;
+	private long userId;
+	
 	@Column(name="application_id")
-	int applicationId;
+	private int applicationId;
+	
 	@Column(name="payment_id")
-	String paymentId;
+	private String paymentId=null;
 	@Column(name="price")
-	String price;
+	private String price;
 	@Column(name="payment_status")
-	boolean paymentStatus;
-	public PaymentModel(int pkid, long userId, int applicationId, String paymentId, String price,
-			boolean paymentStatus) {
-		super();
-		this.pkid = pkid;
-		this.userId = userId;
-		this.applicationId = applicationId;
-		this.paymentId = paymentId;
-		this.price = price;
-		this.paymentStatus = paymentStatus;
-	}
+	private boolean paymentStatus;
+	@Column(name="card_type")
+	private String cardType = "";
+	@Column(name="card_number")
+	private String cardNumber = "";
+	@Column(name="month")
+	private String month = "";
+	@Column(name="year")
+	private String year = "";
+	@Column(name="invoice_id")
+	private String invoice = "";
+	@Column(name="ccid")
+	private String ccid = "";
+	@Column(name="first_name")
+	private String firstName;
+	@Column(name="last_name")
+	private String lastName;
+	@Column(name="billing_country")
+	private String billingCountry = "";
+	@Column(name="billing_address")
+	private String billingAddress="";
+	@Column(name="billing_state")
+	private String billingState="";
+	@Column(name="billing_zipcode")
+	private String billingZipcode;
+	@Column(name="billing_city")
+	private String billingCity;
+	
 	public int getPkid() {
 		return pkid;
 	}
@@ -66,6 +89,84 @@ public class PaymentModel {
 	}
 	public void setPaymentStatus(boolean paymentStatus) {
 		this.paymentStatus = paymentStatus;
+	}
+	public String getCardType() {
+		return cardType;
+	}
+	public void setCardType(String cardType) {
+		this.cardType = cardType;
+	}
+	public String getCardNumber() {
+		return cardNumber;
+	}
+	public void setCardNumber(String cardNumber) {
+		this.cardNumber = cardNumber;
+	}
+	public String getMonth() {
+		return month;
+	}
+	public void setMonth(String month) {
+		this.month = month;
+	}
+	public String getYear() {
+		return year;
+	}
+	public void setYear(String year) {
+		this.year = year;
+	}
+	public String getInvoice() {
+		return invoice;
+	}
+	public void setInvoice(String invoice) {
+		this.invoice = invoice;
+	}
+	public String getCcid() {
+		return ccid;
+	}
+	public void setCcid(String ccid) {
+		this.ccid = ccid;
+	}
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public String getBillingCountry() {
+		return billingCountry;
+	}
+	public void setBillingCountry(String billingCountry) {
+		this.billingCountry = billingCountry;
+	}
+	public String getBillingAddress() {
+		return billingAddress;
+	}
+	public void setBillingAddress(String billingAddress) {
+		this.billingAddress = billingAddress;
+	}
+	public String getBillingState() {
+		return billingState;
+	}
+	public void setBillingState(String billingState) {
+		this.billingState = billingState;
+	}
+	public String getBillingZipcode() {
+		return billingZipcode;
+	}
+	public void setBillingZipcode(String billingZipcode) {
+		this.billingZipcode = billingZipcode;
+	}
+	public String getBillingCity() {
+		return billingCity;
+	}
+	public void setBillingCity(String billingCity) {
+		this.billingCity = billingCity;
 	}
 	
 	

@@ -6,5 +6,4 @@ import com.edocs.Model.PaymentModel;
 
 public interface PaymentRepository extends JpaRepository<PaymentModel, Integer>{
 
-	
 }

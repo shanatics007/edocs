@@ -8,5 +8,5 @@ public interface ApplicationForVisaService {
 	
 	public HashMap<Object, Object> registerApplication(ApplicationForVisaModel model);
 
-	
+	public ApplicationForVisaModel updatePaymentStatus(int applicationId);
 }
