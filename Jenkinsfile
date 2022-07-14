@@ -4,7 +4,7 @@ pipeline {
         stage('build') {
             when { branch 'main' }
                 steps {
-		    
+		
 		    sh 'mvn clean'
 		    sh 'mvn install' 
 		    sh '/home/edocs.travel/script/stop.sh stop'
