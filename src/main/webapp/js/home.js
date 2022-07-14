@@ -8750,19 +8750,7 @@
                 }
                 document.querySelector(".destinations-list-search input") && e.length > 0 && n && (r(), document.querySelector(".destinations-list-search input").addEventListener("input", r), window.addEventListener("resize", r))
             },
-            setBannerInsurancePrice: function() {
-                var t, e = new FormData,
-                    n = new XMLHttpRequest;
-                if (e.append("onlyInsurance", "1"), window.priceUrl && (n.open("POST", window.priceUrl, !1), n.send(e), 4 === n.readyState))
-                    if (200 === n.status) t = JSON.parse(n.responseText).insurance, document.querySelector("#insuranceBannerPrice") && (document.querySelector("#insuranceBannerPrice").innerHTML = t.toFixed(2));
-                    else {
-                        var r = new XMLHttpRequest,
-                            i = window.location.href + " app.js: Cannot get insurance price";
-                        r.open("POST", "/logger", !0), r.setRequestHeader("Content-Type", "application/json;charset=UTF-8"), r.send(JSON.stringify({
-                            message: i
-                        }))
-                    }
-            },
+           
             showInsuranceInfo: function() {
                 var t = document.getElementsByClassName("insurance-info-wrapper");
                 if ("undefined" === t) return void console.error("cannot find insurance container");
@@ -8957,13 +8945,11 @@
         }()
     }
     document.addEventListener("DOMContentLoaded", (function() {
-        a.toggleOnClick(), a.dropDown(), a.menu(), a.starRating(), a.savePurposeToForm(), a.initializeDestinationsListSearch(), a.setBannerInsurancePrice(), h(document.querySelectorAll('[data-on-click="closeLocaleSettings"]')).forEach((function(t) {
+        a.toggleOnClick(), a.dropDown(), a.menu(), a.starRating(), a.savePurposeToForm(), a.initializeDestinationsListSearch(),   h(document.querySelectorAll('[data-on-click="closeLocaleSettings"]')).forEach((function(t) {
             t.addEventListener("click", a.hideLanguageSettings)
         })), h(document.querySelectorAll('[data-on-click="openLocaleSettings"]')).forEach((function(t) {
             t.addEventListener("click", a.showLanguageSettings)
-        })), document.querySelector("#languageSettings").addEventListener("click", (function(t) {
-            t.target === document.querySelector("#languageSettings") && a.hideLanguageSettings()
-        }));
+        })) ;
         var t = window.location.search.slice(1).split("&").map((function(t) {
                 var e = t.split("=");
                 return {
