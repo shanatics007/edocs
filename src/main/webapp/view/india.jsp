@@ -14,7 +14,7 @@
 <script src="/js/select2.min.js"></script>
 <link rel="stylesheet" href="/css/home.css" type="text/css">
 <link rel="stylesheet" href="/css/india.css" type="text/css">
-
+<link rel="icon" href="/images/favicon-1.png" type="image/x-icon">
 <style>
 
 

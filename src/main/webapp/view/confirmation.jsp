@@ -46,6 +46,7 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="icon" href="/images/favicon-1.png" type="image/x-icon">
 <title>Edocs Travel</title>
 <script src="/js/home.js"></script>
 <script src="/js/select2.min.js"></script>

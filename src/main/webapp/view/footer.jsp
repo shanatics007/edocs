@@ -19,8 +19,12 @@
                   <li><a href="/en/terms-of-service" rel="nofollow">Terms of Service</a></li>
                </ul>
                <ul class="e-visa-footer-icons">
+               <li><a rel="nofollow" href="#" title="Twitter"><img src="/images/twitter.png" width="32" height="32" alt=""></a></li>
+                  <li><a rel="nofollow" href="#" title="Whatsapp"><img src="/images/whatsapp.png" width="32" height="32" alt=""></a></li>
+                  <li><a rel="nofollow" href="#" title="LinkedIn"><img src="/images/discord.png" width="32" height="32" alt=""></a></li>
                   <li><a rel="nofollow" href="#" title="Facebook"><img src="/images/facebook.svg" width="32" height="32" alt=""></a></li>
                   <li><a rel="nofollow" href="#" title="LinkedIn"><img src="/images/linkedinn.png" width="32" height="32" alt=""></a></li>
+                  
                </ul>
             </div>
          </footer>

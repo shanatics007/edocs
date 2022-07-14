@@ -16,7 +16,7 @@
       
       <link rel="stylesheet" href="/css/default.css">
        <link rel="stylesheet" href="/css/login.css">
-     
+     <link rel="icon" href="/images/favicon-1.png" type="image/x-icon">
       <link rel="stylesheet" type="text/css" href="./Evisa Express_files/destinations-sprite.css">
       <script async="" src="js/modules.e20d55506f3679282458.js" charset="utf-8"></script>
       <!-- jQuery library -->

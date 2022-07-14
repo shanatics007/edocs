@@ -15,13 +15,11 @@
 <link rel="stylesheet" href="/css/home.css" type="text/css">
 <link rel="stylesheet" href="/css/india.css" type="text/css">
 <link rel="stylesheet" href="/css/whyEvisa.css" type="text/css">
-
+<link rel="icon" href="/images/favicon-1.png" type="image/x-icon">
 <style>
 
 
-@media ( max-width : 599px) {
-	
-}
+
 @media ( min-width : 599px) {
 	background-image: url('/images/background 2.jpg');
 	

@@ -87,7 +87,7 @@ if (request.getSession().getAttribute("formDetails") != null) {
        
        <link rel="stylesheet" href="/css/default.css"> 
     <link rel="stylesheet" href="/css/home.css">
-      
+      <link rel="icon" href="/images/favicon-1.png" type="image/x-icon">
       
       <script src="jquery-3.6.0.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -1293,10 +1293,7 @@ label#radiolabel {
 
   	</script>
   	
-  	<script>
-  	
-  	
-  	</script>
+  
   	
   </body>
 </html>

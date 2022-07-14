@@ -13,7 +13,7 @@
        <link rel="stylesheet" href="/css/default.css"> 
     <link rel="stylesheet" href="/css/home.css">
     <link rel="stylesheet" href="/css/login.css">
-     
+     <link rel="icon" href="/images/favicon-1.png" type="image/x-icon">
       <script src="/js/home.js"></script>
       <script src="jquery-3.6.0.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -188,14 +188,14 @@
 				success : function(data) {
 					
 					if(data.status==true){
-						
-						Swal.fire({
+						window.location = "/en/account";
+						/* Swal.fire({
 							  title: "<img src='images/sucess1234.png' style='width:150px;'>", 
 							  html: "You have login sucessfully",  
 							  confirmButtonText: "Ok", 
 								}) .then(function() {
 								    window.location = "/en/account";
-							});
+							}); */
 					}else{
 
 						if(data.message=="User not found")	{

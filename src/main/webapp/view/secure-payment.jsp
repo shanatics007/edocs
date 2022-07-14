@@ -49,7 +49,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Edocs Travel Payment</title>
     <link rel="stylesheet" href="/css/payment.css">
-    <link rel="icon" href="https://secure-payment.evisa.express/assets/images/favicon/favicon_16x16.ico" type="image/x-icon">
+   <link rel="icon" href="/images/favicon-1.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="cache-control" content="max-age=0">
     <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">

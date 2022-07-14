@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="/css/home.css" type="text/css">
 <link rel="stylesheet" href="/css/turkey.css" type="text/css">
 <link rel="stylesheet" href="/css/UAE.css" type="text/css">
-
+<link rel="icon" href="/images/favicon-1.png" type="image/x-icon">
 
 <style>
 @media ( max-width : 992px) {

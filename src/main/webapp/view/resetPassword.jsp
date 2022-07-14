@@ -10,7 +10,7 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <title>Edocs Travel</title>
-
+<link rel="icon" href="/images/favicon-1.png" type="image/x-icon">
 <link rel="stylesheet" href="/css/default.css">
 <link rel="stylesheet" href="/css/home.css">
 <script async="" src="./login_files/modules.e20d55506f3679282458.js"

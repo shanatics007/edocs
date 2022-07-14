@@ -3,6 +3,8 @@ package com.edocs.Controller;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,9 +38,12 @@ public class UserController {
 	}
 	
 	@PostMapping("/signin")
-	public HashMap<String, Object> customerSignIn(@RequestBody UserModel user) {
+	public HashMap<String, Object> customerSignIn(@RequestBody UserModel user,HttpSession session) {
+		HashMap<String, Object> loginDetails = userService.userSignIn(user);
+		session.setAttribute("userLogin", loginDetails);
 		
-		return userService.userSignIn(user);
+		return loginDetails;
+		
 		
 	}
 	@PostMapping("/forgotpassword")

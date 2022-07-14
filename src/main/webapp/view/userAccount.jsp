@@ -1,5 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="java.util.HashMap" %>
+ <%@ page import="com.edocs.Model.UserModel" %>
+ <%@ page import="java.util.Date" %>
+ <%@ page import=" java.time.LocalDate" %>
+  <%@ page import="java.time.Month"%>
+  <%@ page import="java.time.format.DateTimeFormatter "%>
+  <%@ page import="java.util.Calendar"%>
+  
+ <%    
+ String email = "";
+ 
+ if (request.getSession().getAttribute("userLogin") != null) {
+		HashMap<Object, Object> userDetails =(HashMap<Object, Object>) request.getSession().getAttribute("userLogin");
+		UserModel user = (UserModel)userDetails.get("data");
+		email= user.getUserEmail();
+ }
+ 
+ %>
+	
 
 <!DOCTYPE html>
 
@@ -10,18 +29,19 @@
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Edocs Travel</title>
-<script src="/js/home.js"></script>
+
 <script src="/js/select2.min.js"></script>
+<script src="/js/home.js"></script>
+ <link rel="icon" href="/images/favicon-1.png" type="image/x-icon">
 <link rel="stylesheet" href="/css/home.css" type="text/css">
 <link rel="stylesheet" href="/css/india.css" type="text/css">
 <link rel="stylesheet" href="/css/contact.css" type="text/css">
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <style>
 
 
-@media ( max-width : 599px) {
-	
-}
+
 @media ( min-width : 599px) {
 	background-image: url('/images/background 2.jpg');
 	
@@ -160,29 +180,7 @@ ul {
 
 
 }
-@-webkit-keyframes glowing {
-  0% { background-color: #1d3367; -webkit-box-shadow: 0 0 3px #1d3367; }
-  50% { background-color: #FF0000; -webkit-box-shadow: 0 0 15px #FF0000; }
-  100% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
-}
 
-@-moz-keyframes glowing {
-  0% { background-color: #1d3367; -moz-box-shadow: 0 0 3px #1d3367; }
-  50% { background-color: #FF0000; -moz-box-shadow: 0 0 15px #FF0000; }
-  100% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
-}
-
-@-o-keyframes glowing {
-  0% { background-color: #1d3367; box-shadow: 0 0 3px #1d3367; }
-  50% { background-color: #FF0000; box-shadow: 0 0 15px #FF0000; }
-  100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
-}
-
-@keyframes glowing {
-  0% { background-color: #1d3367; box-shadow: 0 0 3px #1d3367; }
-  50% { background-color: #FF0000; box-shadow: 0 0 15px #FF0000; }
-  100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
-}
 .description-steps-text-main {
 	color: #1d3367;
 	margin-top: 10px;
@@ -218,6 +216,572 @@ span.description-steps-text-bottom {
 	margin-top: 15px;
 }
 
+
+.account-page .applications-wrapper .my-applications .my-applications-menu, .feedbackPage .applications-wrapper .my-applications .my-applications-menu {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+}
+
+.account-page .applications-wrapper .my-applications .my-applications-menu li a.active, .feedbackPage .applications-wrapper .my-applications .my-applications-menu li a.active {
+    background: #1c3367;
+}
+
+.account-page .applications-wrapper .my-applications .my-applications-menu li a, .feedbackPage .applications-wrapper .my-applications .my-applications-menu li a {
+    display: block;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    text-decoration: none;
+    background: #D8D9CF;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font: 14px KonkretGroteskPro, Fallback, sans-serif;
+    font-weight: 700;
+}
+
+.account-page .applications-wrapper .my-applications .applications-table, .feedbackPage .applications-wrapper .my-applications .applications-table {
+    width: 100%;
+    border: 1px solid #7C152A;
+    font-family: 'Roboto', Fallback, sans-serif;
+}
+
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    background-color: transparent;
+}
+
+.account-page .applications-wrapper .my-applications .applications-table td:first-child, .account-page .applications-wrapper .my-applications .applications-table th:first-child, .feedbackPage .applications-wrapper .my-applications .applications-table td:first-child, .feedbackPage .applications-wrapper .my-applications .applications-table th:first-child {
+    padding-left: 20px;
+}
+
+
+
+.account-page .applications-wrapper .my-applications .applications-table td:first-child, .account-page .applications-wrapper .my-applications .applications-table th:first-child, .feedbackPage .applications-wrapper .my-applications .applications-table td:first-child, .feedbackPage .applications-wrapper .my-applications .applications-table th:first-child {
+    padding-left: 20px;
+}
+.account-page .applications-wrapper .my-applications .applications-table th, .feedbackPage .applications-wrapper .my-applications .applications-table th {
+    padding: 10px 5px;
+    background: #fff;
+    font-size: 12px;
+    font-weight: 400;
+    color: #7C152A;
+}
+
+.account-page .applications-wrapper .my-applications .applications-table th, .feedbackPage .applications-wrapper .my-applications .applications-table th {
+    padding: 10px 5px;
+    background: #fff;
+    font-size: 12px;
+    font-weight: 400;
+    color: #7C152A;
+}
+
+.account-page .applications-wrapper .my-applications .applications-table th, .feedbackPage .applications-wrapper .my-applications .applications-table th {
+    padding: 10px 5px;
+    background: #fff;
+    font-size: 12px;
+    font-weight: 400;
+    color: #7C152A;
+}
+
+.account-page .applications-wrapper .my-applications .applications-table tbody tr:nth-child(2n+1), .feedbackPage .applications-wrapper .my-applications .applications-table tbody tr:nth-child(2n+1) {
+    background: #F0F1ED;
+    /* height: 20px; */
+}
+.account-page .applications-wrapper .my-applications .applications-table tbody tr td.status-red, .feedbackPage .applications-wrapper .my-applications .applications-table tbody tr td.status-red {
+    color: #D81E44;
+}
+
+.account-page .applications-wrapper .my-applications .applications-table tbody tr, .feedbackPage .applications-wrapper .my-applications .applications-table tbody tr {
+    background: #fff;
+    height: 15px;
+}
+
+.account-page .applications-wrapper .new-application .application-creator, .feedbackPage .applications-wrapper .new-application .application-creator {
+    position: relative;
+    display: flex;
+    min-height: 400px;
+    margin-bottom: 10px;
+}
+
+.account-page .applications-wrapper .new-application .application-creator .input-box-bottom.button-container.button-container-open, .feedbackPage .applications-wrapper .new-application .application-creator .input-box-bottom.button-container.button-container-open {
+    min-height: 400px;
+    display:block !important;
+}
+
+
+}
+.account-page .applications-wrapper .new-application .application-creator .button-container button, .feedbackPage .applications-wrapper .new-application .application-creator .button-container button {
+    height: 48px;
+    padding: 12px 15px;
+}
+
+.account-page .applications-wrapper .new-application .button-container button.active, .account-page .applications-wrapper .new-application .button-container a.active, .feedbackPage .applications-wrapper .new-application .button-container button.active, .feedbackPage .applications-wrapper .new-application .button-container a.active {
+    background: #1c3367;
+    border-color:#1c3367;
+}
+.account-page .button-green, .feedbackPage .button-green {
+    border: 2px solid #4C967D;
+    background: #4C967D;
+}
+.account-page .button-no-arrow, .feedbackPage .button-no-arrow {
+    text-align: center;
+    background-image: none;
+    text-transform: uppercase;
+}
+.button-container button, .button-container a, .button-container .btn {
+    display: block;
+    outline: none;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    background: #7C152A;
+    text-align: left;
+    color: #fff;
+    font-family: KonkretGroteskPro, Fallback, sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background-image: url(/img/icon/16/arrow_right_white.svg);
+    background-repeat: no-repeat;
+    background-position: 97%;
+    cursor: pointer;
+}
+button, input {
+    overflow: visible;
+}
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+button, select {
+    text-transform: none;
+}
+button, input, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+
+
+.account-page .applications-wrapper .new-application .application-creator .application-creator-content, .feedbackPage .applications-wrapper .new-application .application-creator .application-creator-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    z-index: 10;
+    width: 100%;
+    padding: 10px 30px 30px 30px;
+    background: #fff;
+    border: 1px solid #B08F6F;
+}
+
+* {
+    box-sizing: border-box;
+}
+user agent stylesheet
+div {
+    display: block;
+}
+.account-page, .feedbackPage {
+    font-family: 'Roboto', Fallback, sans-serif;
+}
+
+.account-page .applications-wrapper .new-application .application-creator .application-creator-content header, .feedbackPage .applications-wrapper .new-application .application-creator .application-creator-content header {
+    font: 500 16px 'Roboto', Fallback, sans-serif;
+    margin: 10px 0;
+}
+
+.account-page .applications-wrapper .new-application .application-creator .application-creator-content .input-box, .feedbackPage .applications-wrapper .new-application .application-creator .application-creator-content .input-box {
+    width: 100%;
+    margin: 0;
+}
+.input-box {
+    margin-left: 64px;
+    margin-bottom: 32px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: Roboto;
+}
+
+
+.main-site-content{
+	background:none !important;
+}
+
+.account-menu-wrapper {
+    
+    background-color:#1c3367;
+}
+
+.account-page .applications-wrapper .new-application .application-creator .application-creator-content .button-container button, .account-page .applications-wrapper .new-application .application-creator .application-creator-content .button-container a, .feedbackPage .applications-wrapper .new-application .application-creator .application-creator-content .button-container button, .feedbackPage .applications-wrapper .new-application .application-creator .application-creator-content .button-container a {
+    margin-top: 25px;
+    text-transform: uppercase;
+}
+.account-page .applications-wrapper .new-application .application-creator .button-container button, .feedbackPage .applications-wrapper .new-application .application-creator .button-container button {
+    height: 48px;
+    padding: 12px 15px;
+}
+.button-container .btn--disabled {
+    background: #D8D9CF;
+}
+.button-container .btn--disabled {
+    background: #D8D9CF;
+}
+
+.account-page .applications-wrapper .new-application .application-creator .application-creator-content .input-box .actual-input, .feedbackPage .applications-wrapper .new-application .application-creator .application-creator-content .input-box .actual-input {
+    width: 100%;
+}
+.input-box .input-box-bottom .actual-input {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.account-page .applications-wrapper .new-application .application-creator .application-creator-content .button-container, .feedbackPage .applications-wrapper .new-application .application-creator .application-creator-content .button-container {
+    margin-bottom: 0;
+}
+.account-page .applications-wrapper .new-application .application-creator .application-creator-content>:last-child, .feedbackPage .applications-wrapper .new-application .application-creator .application-creator-content>:last-child {
+    margin-top: auto;
+}
+.account-page .applications-wrapper .new-application .application-creator .button-container:not(.button-container-open), .feedbackPage .applications-wrapper .new-application .application-creator .button-container:not(.button-container-open) {
+    align-self: flex-start;
+}
+.account-page .applications-wrapper .new-application .application-creator .button-container, .feedbackPage .applications-wrapper .new-application .application-creator .button-container {
+    margin-bottom: 0;
+}
+.account-page .applications-wrapper .new-application .button-container, .feedbackPage .applications-wrapper .new-application .button-container {
+    margin-bottom: 30px;
+    flex-direction: column;
+}
+
+.account-page .applications-wrapper .my-applications .my-applications-menu li, .feedbackPage .applications-wrapper .my-applications .my-applications-menu li {
+    padding: 0;
+    flex: 1;
+}
+
+.account-page .mtb-30, .feedbackPage .mtb-30 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.top-content-follow-card-destination {
+  
+    padding: 0px 0px !important;
+   
+}
+
+a#countryDropDown {
+    background: white;
+}
+
+#countryHref{
+    background: white;
+}
+
+.top-content-follow-card-destination .drop-down .drop-down-ul .a-no-active {
+    background: white;
+}
+
+ul.e-visa-footer-links {
+    float: left;
+    padding-left: 15px;
+}
+
+
+.account-page .mtb-30, .feedbackPage .mtb-30 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.account-page .settings-header, .feedbackPage .settings-header {
+    /* font: 26px KonkretGroteskPro, Fallback, sans-serif; */
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.account-page .settings-section, .feedbackPage .settings-section {
+    width: 710px;
+    border-top: 2px solid #1c3367;
+    padding: 25px 0;
+    display: flex;
+    align-items: flex-start;
+}
+
+.account-page .settings-section .settings-icon, .feedbackPage .settings-section .settings-icon {
+    width: 80px;
+}
+
+.account-page .settings-section .settings-content, .feedbackPage .settings-section .settings-content {
+    width: 100%;
+    display: flex;
+}
+
+.account-page .settings-section .settings-content .settings-fields, .feedbackPage .settings-section .settings-content .settings-fields {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.account-page .settings-section .settings-content .settings-fields header, .feedbackPage .settings-section .settings-content .settings-fields header {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.account-page .settings-section .settings-content .settings-fields .input-box:last-child, .feedbackPage .settings-section .settings-content .settings-fields .input-box:last-child {
+    margin-bottom: 0;
+}
+
+.account-page .settings-section .settings-content .settings-fields .input-box .input-box-top, .feedbackPage .settings-section .settings-content .settings-fields .input-box .input-box-top {
+    margin-bottom: 2px;
+}
+.input-box .input-box-top {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+}
+
+.account-page .settings-section .settings-content .settings-fields .input-box .input-box-top .input-box-label, .feedbackPage .settings-section .settings-content .settings-fields .input-box .input-box-top .input-box-label {
+    font-size: 12px;
+}
+.input-box .input-box-top .input-box-label {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.account-page .settings-section .settings-content .settings-fields .input-box .input-box-bottom, .feedbackPage .settings-section .settings-content .settings-fields .input-box .input-box-bottom {
+    position: relative;
+}
+.input-box .input-box-bottom {
+    display: flex;
+    position: relative;
+}
+
+.account-page .settings-section .settings-content .settings-fields .input-box .input-box-bottom .actual-input, .feedbackPage .settings-section .settings-content .settings-fields .input-box .input-box-bottom .actual-input {
+    width: 100%;
+    flex-direction: column;
+}
+.input-box .input-box-bottom .actual-input {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.input-box .input-box-bottom .actual-input .text-input-single {
+    width: 100%;
+}
+
+.input-box .input-box-bottom .actual-input .text-input-single input {
+    border: 1px solid black;
+    height: 48px;
+    width: 100%;
+}
+.input-box input {
+    font-size: 16px;
+    padding: 12px 16px;
+    font-weight: 400;
+}
+
+.account-page .settings-section .settings-content .settings-button-wrapper, .feedbackPage .settings-section .settings-content .settings-button-wrapper {
+    width: 240px;
+    margin-left: 90px;
+    align-self: flex-end;
+}
+
+.account-page .settings-section .input-box, .feedbackPage .settings-section .input-box {
+    margin: 0;
+    width: 100%;
+}
+.input-box {
+    margin-left: 64px;
+    margin-bottom: 32px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: Roboto;
+}
+
+.account-page .settings-section .settings-content .settings-button-wrapper .input-box .submit-input-container, .feedbackPage .settings-section .settings-content .settings-button-wrapper .input-box .submit-input-container {
+    width: 100%;
+    margin: 0;
+}
+.input-box .input-box-bottom {
+    display: flex;
+    position: relative;
+}
+.submit-input-container {
+    width: 100%;
+    margin: 0 auto;
+    text-transform: uppercase;
+}
+
+.button-container .btn--disabled {
+    background: #D8D9CF;
+}
+
+
+.account-page .settings-section .settings-content .settings-fields .input-box, .feedbackPage .settings-section .settings-content .settings-fields .input-box {
+    margin-bottom: 16px;
+}
+.account-page .settings-section .input-box, .feedbackPage .settings-section .input-box {
+    margin: 0;
+    width: 100%;
+}
+
+.submit-input-container.button-container .btn {
+    width: 60%;
+    text-align: center;
+}
+
+
+.e-visa-footer-links a {
+    font: 700 14px KonkretGroteskPro, Fallback, sans-serif;
+    letter-spacing: 1px;
+    color: white;
+}
+
+
+.settings-icon img {
+    border: 0;
+    vertical-align: middle;
+    width: 25px;
+}
+@media (min-width: 600px){
+	.top-content-follow-card-destination {
+    width: 100% !important;
+}
+}
+
+@media (max-width: 599px){
+.top-content-follow-card-destination {
+    width: 100% !important;
+   
+}
+}
+@media screen and (max-width: 768px){
+
+    .account-page .settings-section .settings-content {
+    flex-direction: column;
+}
+
+}
+
+@media screen and (max-width: 768px){
+
+    .account-page .settings-section .settings-content .settings-button-wrapper {
+    width: 300px;
+    align-self: flex-start;
+    margin: 30px 0 0 0;
+}
+}
+
+
+@media (max-width: 768px){
+
+    .container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+}
+
+@media screen and (max-width: 400px){
+
+    .account-page .settings-section .settings-icon, .feedbackPage .settings-section .settings-icon {
+    width: 40px;
+    margin-right: 10px;
+}
+}
+
+@media screen and (max-width: 768px){
+    .account-page .settings-section .settings-content {
+    flex-direction: column;
+}
+}
+
+@media screen and (max-width: 768px){
+    .account-page .settings-section .settings-content .settings-button-wrapper {
+    width: 300px;
+    align-self: flex-start;
+    margin: 30px 0 0 0;
+}
+
+}
+
+@media screen and (max-width: 425px){
+    .submit-input-container.button-container {
+    display: flex;
+    flex-direction: column;
+}
+}
+
+@media screen and (max-width: 425px){
+    .submit-input-container.button-container .btn {
+    width: 100%;
+}
+}
+
+@media screen and (max-width: 768px){
+    .account-page .settings-section .settings-content {
+    flex-direction: column;
+}
+}
+
+@media screen and (max-width: 768px){
+    .account-page .settings-section .settings-content .settings-button-wrapper {
+    width: 300px;
+    align-self: flex-start;
+    margin: 30px 0 0 0;
+}
+}
+
+@media screen and (max-width: 710px){
+    .account-page .settings-section {
+    width: 100%;
+}
+}
+
+@media screen and (max-width: 650px){
+    .account-page .account-menu-wrapper .e-visa-footer-links {
+    text-align: left;
+    justify-content: flex-start;
+    margin: 0 0 12px 0;
+}
+}
+@media screen and (max-width: 460px){
+    .account-page .account-menu-wrapper .e-visa-footer-links li {
+    margin-right: 0;
+    padding-left: 15px;
+}
+}
+
+
+#showsUserSetting{
+display: none;
+}
+.top-content-follow-card-destination .drop-down .drop-down-ul li:hover .a-no-active{
+		color:black !important;
+}
+.main-site-content{
+	height: 700px;
+}
 </style>
 
 </head>
@@ -259,422 +823,282 @@ span.description-steps-text-bottom {
 		</ul>
 	</div>
 
-	<section class="main-site-content">
-		<div class="top-background" style="background-image: url('/images/banner_contact.jpg');"></div>
-		<div class="container">
-			<div class="row">
-		
-				<div class="col-md-12">
-					<div class="top-content-text padding">
-						
-
-					</div>
-
-					<section class="description padding mobile-pt-0" style="padding:50px;">
-						<section class="privacy-policy-card">
-							<h1 class="contact-form-h1">Contact</h1>
-							<div class="text-black-22px" style="text-align: center;">If you need help, our expert
-								department is at your disposal:</div>
-							<div class="text-black-22px e-mail" style="text-align:center;">
-								<span style="color:black;">E-mail: </span><a class="insert-support-address" style="color:#1c3367;text-align:center;"
-									href="mailTo:support@evisa.express">support@evisa.express</a>
-							</div>
-							<div class="text-black-22px telephone">
-								<span>Helpline:</span>
-								<ul class="helpline-numbers">
-									<li><span class="phone-code">EN</span><span
-										class="phone-number insert-number" href="tel:+442031293603"><span
-											class="phone-lang-name">en</span> +44 2031 293 603</span></li>
-									<li><span class="phone-code">DE</span><span
-										class="phone-number insert-phone-1" href="tel:+4930209930611"><span
-											class="phone-lang-name">de</span> +49 30209930611</span></li>
-									<li><span class="phone-code">PL</span><span
-										class="phone-number insert-phone-2" href="tel:+48324310011"><span
-											class="phone-lang-name">pl</span> +48 32 431 00 11</span></li>
-									<li><span class="phone-code">ES</span><span
-										class="phone-number insert-phone-3" href="tel:+442031293603"><span
-											class="phone-lang-name">es</span> +44 2031 293 603</span></li>
-									<li><span class="phone-code">CN</span><span
-										class="phone-number insert-phone-4" href="tel:+861085241270"><span
-											class="phone-lang-name">cn</span> +86 10 852 41 270</span></li>
-								</ul>
-							</div>
-							<div class="text-white-14px">5 days a week from 8am to 4pm
-								(GMT+1)</div>
-						</section>
-					</section>
+	
+	<section class="main-site-content account-page white-bg">
+		<div class="account-menu-wrapper">
+			<div class="container">
+				<ul class="e-visa-footer-links">
+					<li><a id="menu-mobile-account-index" class="col-3 my-account-tab-menu-active" href="#section1">My applications</a></li>
+					<li><a id="menu-mobile-account-index" class="col-3 my-account-tab-menu" href="#section2">Settings applications</a></li>
+					<li><a id="menu-mobile-account-index" class="col-3 my-account-tab-menu" href="#section3">Log Out</a></li>
 					
+				</ul>
+			</div>
+		</div>
 
-					<section class="gallery-big padding-rwd">
-						<div class="steps" id="typesetpedvisa" style="background-color: #ffffff;margin:50px 0 50px 0;">
-							<section class="contact-form padding">
-								<div class="left-side">
-									<h3 class="description-steps-h3">
-										<div class="small-line"></div>
-										Inquiries form
-									</h3>
-									<div class="contact-form-container" style="position: relative">
-										<form method="post" accept-charset="utf-8"
-											action="/ajax/form.json">
-											<div style="display: none;">
-												<input type="hidden" name="_method" value="POST"><input
-													type="hidden" name="_csrfToken" autocomplete="off"
-													value="8f4032c58de8f7d0336b77bfa1e4aa9bbbfb764d2be8d5c6a4fa828f83661979c87a461eb6317fbdca872fe425d7b0159d3d71584f06a31ccc100f73d1014565">
+		<section>
+				<div class="container" id="container1">
+			<div class="mtb-30">
+				<div>
+					<div class="applications-wrapper">
+						<div class="my-applications col-md-8">
+							
+							<ul class="my-applications-menu">
+								<li><a class="my-account-tab-menu active" href="#"> active <span id="activeTotalId"></span></a></li>
+								<li><a class="my-account-tab-menu" href="#"> finished</a></li>
+							</ul>
+							<div class="tab-content" id="activeContent">
+								<div>
+									<table class="applications-table">
+										<thead>
+											<tr>
+																								<th>ID</th>
+												<th class="pl-10"><span>country</span></th>
+												<th><span>status</span></th>
+												<th class="hide-465"><span>applicant</span></th>
+												<th class="hide-465"><span>date</span></th>
+												<th>actions</th>
+											</tr>
+										</thead>
+										<tbody id="activetBody">
+											
+										</tbody>
+										
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="new-application col-md-4">
+							<div class="application-creator">
+								<div
+									class="input-box-bottom button-container button-container-open">
+									<button class="active button-no-arrow button-green">new
+										application</button>
+									<div class="application-creator-content" style="">
+								
+										<header>Destination:</header>
+										<div class="top-content-follow-card-destination"
+											style="margin-top: -5px;">
+
+											<div class="drop-down">
+												<input type="text" name="noPassword" id="select-country"
+													placeholder="Select a country"
+													class="initial-input input-drop-down" autocomplete="no"
+													style="border-bottom: 1px solid;">
+												<ul class="drop-down-ul display-none"
+													style="bottom: initial; max-height: 300px;">
+
+													<li class="drop-down-ul-element" id="countryHref"><a href="/en/india"
+														class="a-no-active" id="countryDropDown"><span>India</span></a></li>
+
+													<li class="drop-down-ul-element" id="countryHref"><a href="/en/turkey"
+														class="a-no-active" id="countryDropDown"><span>Turkey</span></a></li>
+
+													<li class="drop-down-ul-element" id="countryHref"><a
+														href="/en/pakistan" class="a-no-active" id="countryDropDown"><span>Pakistan</span></a></li>
+
+													<li class="drop-down-ul-element" id="countryHref"><a
+														href="/en/thailand" class="a-no-active" id="countryDropDown"><span>Thailand</span></a></li>
+
+													<li class="drop-down-ul-element" id="countryHref"><a
+														href="/en/united-arab-emirates" class="a-no-active" id="countryDropDown"><span>United-Arab-Emirates</span></a></li>
+
+												</ul>
 											</div>
-											<div class="row">
-												<div class="col-sm-6">
-													<input type="hidden" name="username" id="username"><input
-														type="hidden" name="check" id="check"
-														value="5Ie3KCG6FsqFUPR5ha5g"><input type="hidden"
-														name="form" id="form" value="Contact Page">
-													<div class="input-container">
-														<label class="drop-down-label" for="name">Name</label>
-														<div class="input text">
-															<input type="text" name="name"
-																class="initial-input input-normal"
-																placeholder="Your name" id="name">
-														</div>
-														<span class="error-message"></span>
-													</div>
-												</div>
-												<div class="col-sm-6">
-													<div class="input-container">
-														<label class="drop-down-label" for="email">E-mail</label>
-														<div class="input email">
-															<input type="email" name="email"
-																class="initial-input input-normal"
-																placeholder="Your e-mail address" id="email">
-														</div>
-														<span class="error-message"></span>
-													</div>
-												</div>
+										</div>
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		</section>
+		<section id="showsUserSetting">
+				<div class="container">
+			<div class="mtb-30">
+				<div>
+					<h2 class="settings-header">Personal account</h2>
+					<div class="settings-section">
+						<div class="settings-icon">
+							<img src="/images/user.png">
+							<!---->
+						</div>
+						<div class="settings-content">
+							<div class="settings-fields">
+								<header>Account information:</header>
+								<div class="input-box">
+									<div class="input-box-top">
+										<div class="input-box-label">Full name</div>
+									</div>
+									<div class="input-box-bottom">
+										<div class="actual-input">
+											<div class="text-input-single">
+												<input type="text">
 											</div>
-											<div class="row">
-												<div class="col-sm-6">
-													<div class="input-container">
-														<label class="drop-down-label" for="destination">Destination</label>
-														<div class="drop-down" style="margin-top: 0px;">
-															<input type="text" name="destination" id="destination"
-																placeholder="Select a country"
-																class="initial-input input-drop-down" autocomplete="no">
-															<ul class="drop-down-ul display-none"
-																id="destinationList" style="z-index: 1;">
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="armenia">Armenia</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="australia">Australia</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="azerbaijan">Azerbaijan</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="bahamas">Bahamas</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="bahrain">Bahrain</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="bangladesh">Bangladesh</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="benin">Benin</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="brazil">Brazil</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="cambodia">Cambodia</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="canada">Canada</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="colombia">Colombia</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="djibouti">Djibouti</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="east-africa">East
-																			Africa</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="egypt">Egypt</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="ethiopia">Ethiopia</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="europe">European
-																			Union</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="gabon">Gabon</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="georgia">Georgia</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="guinea">Guinea</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="india">India</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="iran">Iran</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="japan">Japan</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="kazakhstan">Kazakhstan</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="kenya">Kenya</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="kuwait">Kuwait</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="kyrgyzstan">Kyrgyzstan</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="laos">Laos</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="lesotho">Lesotho</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="madagascar">Madagascar</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="malawi">Malawi</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="malaysia">Malaysia</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="mexico">Mexico</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="moldova">Moldova</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="myanmar">Myanmar</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="nepal">Nepal</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="new-zealand">New
-																			Zealand</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="nigeria">Nigeria</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="oman">Oman</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="pakistan">Pakistan</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="qatar">Qatar</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="romania">Romania</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="russia">Russia</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="rwanda">Rwanda</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="saudi-arabia">Saudi
-																			Arabia</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="singapore">Singapore</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="south-korea">South
-																			Korea</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="sri-lanka">Sri
-																			Lanka</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="tajikistan">Tajikistan</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="tanzania">Tanzania</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="thailand">Thailand</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="turkey">Turkey</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="usa">USA</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="uganda">Uganda</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="ukraine">Ukraine</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span
-																		data-key="united-arab-emirates">United Arab
-																			Emirates</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="united-kingdom">United
-																			Kingdom</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="uzbekistan">Uzbekistan</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="vietnam">Vietnam</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="zambia">Zambia</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="zimbabwe">Zimbabwe</span></a></li>
-															</ul>
-														</div>
-														<span class="error-message"></span>
-													</div>
+											
+										</div>
+										
+									</div>
+								</div>
+							</div>
+							<div class="settings-button-wrapper">
+								<div class="input-box">
+									<div
+										class="input-box-bottom button-container submit-input-container">
+										<button disabled="disabled" class="btn btn--disabled">save
+											data</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!---->
+					<div class="settings-section">
+						<div class="settings-icon">
+							<img src="/images/padlock.png">
+						</div>
+						<div class="settings-content">
+							<div class="settings-fields">
+								<div class="input-box">
+									<header>Change password</header>
+									<!---->
+									<div class="input-box">
+										<div class="input-box-top">
+											<div class="input-box-label">Current password</div>
+										</div>
+										<div class="input-box-bottom">
+											<div class="actual-input">
+												<div class="text-input-single">
+													<input type="password">
 												</div>
-												<div class="col-sm-6">
-													<div class="input-container">
-														<label class="drop-down-label" for="nationality">Nationality
-															of your passport</label>
-														<div class="input text">
-															<input type="text" name="nationality"
-																class="initial-input input-normal"
-																placeholder="Type nationality" id="nationality">
-														</div>
-														<span class="error-message"></span>
-													</div>
+												<!---->
+											</div>
+											<!---->
+										</div>
+									</div>
+									<div class="input-box">
+										<div class="input-box-top">
+											<div class="input-box-label">Password</div>
+											<div class="input-box-hint">At least 8 characters,
+												including at least 1 uppercase letter, 1 lowercase letter
+												and a number.</div>
+										</div>
+										<div class="input-box-bottom">
+											<div class="actual-input">
+												<div class="text-input-single">
+													<input type="password">
 												</div>
+												<!---->
 											</div>
-											<div class="input-container text-area-container">
-												<label class="drop-down-label" for="message">Message</label>
-												<div class="input textarea">
-													<textarea name="message"
-														class="initial-input contact-form-textarea input-normal"
-														placeholder="Please describe your issue" id="message"
-														rows="5" style="height:120px;"></textarea>
+											<!---->
+										</div>
+									</div>
+									<div class="input-box">
+										<div class="input-box-top">
+											<div class="input-box-label">Confirm password</div>
+											<div class="input-box-hint">The two passwords must
+												match.</div>
+										</div>
+										<div class="input-box-bottom">
+											<div class="actual-input">
+												<div class="text-input-single">
+													<input type="password">
 												</div>
-												<span class="error-message"></span>
+												<!---->
 											</div>
-											<div class="row zero">
-												<div class="contact-button-wrapper">
-													<div class="button-container">
-														<button id="send-form" type="submit">SEND</button>
-													</div>
-												</div>
-											</div>
-										</form>
-										<div class="contact-form-loading">
-											<div>
-												<img src="https://evisa.express/img/ajax-loader.gif">
-											</div>
+											<!---->
 										</div>
 									</div>
 								</div>
-							</section>
+							</div>
+							<div class="settings-button-wrapper">
+								<div class="input-box">
+									<div
+										class="input-box-bottom button-container submit-input-container">
+										<button disabled="disabled" class="btn btn--disabled">
+											<span>Change password</span>
+											<!---->
+										</button>
+									</div>
+								</div>
+							</div>
 						</div>
-
-					</section>
-					
+					</div>
 				</div>
+				
 			</div>
 		</div>
+		
+		</section>
+		
+		
+
 	</section>
-
-
 	<%@include file="footer.jsp"%>
 	<script>
-		document.querySelector('#select-country').addEventListener(
-				'change',
-				function() {
-					var destinationKey = this.getAttribute('data-key');
-					if (destinationKey !== null) {
-						window.location.href = '/en/india'.replace("india",
-								destinationKey);
-					}
-				});
+	document.querySelector('#select-country').addEventListener('change', function () {
+        var destinationKey = this.getAttribute('data-key').toLowerCase();
+        if (destinationKey !== null) {
+            window.location.href = '/en/india/applicationform'.replace("india", destinationKey);
+        }
+    });
+
+
+	$(document).on(
+			"click",
+			".my-account-tab-menu",
+			function() {
+				var sectionId = $(this).attr("id");
+				var section = $(this).children().attr(
+						"href");
+				$(".my-account-section").css("display",
+						"none");
+				$(".my-account-tab-menu").removeClass(
+						"my-account-tab-menu-active");
+				displaySection(sectionId, section);
+			});
 	</script>
-	<script>
-		function toggleExpandText(expand) {
-			if ($('.toexpand').hasClass('expanded')) {
-				expand.innerText = "READ LESS"
-			} else {
-				expand.innerText = "READ MORE"
+	
+<script>
+
+	window.onload = function () {
+		$('#loginLinkId').css('display','none')
+		var param = "email=<%=email%>"
+		$.ajax({
+			type : 'GET',
+			url : '/user/getUnpaidApplication/?'+param,	
+			async : true,
+			success : function(data) {
+				$('#activeTotalId').text(' ('+data.length+')')
+				 $.each(data, function(index,element) {
+					 
+					 if(element.payment==0){
+						 element.payment="Unpaid";
+					}else{
+						element.payment="Paid";
+						}
+				 $('#activetBody').append(
+						 
+						 '<tr><td>'+element.pkid+'</td><td>'+element.nationality+'</td>'
+						 +'<td style="color:red;">'+element.payment+'</td><td>'+element.firstName+' '+element.lastName+'</td><td>'+element.plannedDateOfTravel+'</td><td style="color:red; font-size:20px; text-align: center;">$</td></tr>'
+	
+						 )
+						
+					 });
+					
+			},	
+			error : function(data) {
+				console.log("error when gettig data");
 			}
-		}
-		document
-				.addEventListener(
-						'DOMContentLoaded',
-						function() {
-							var suffix = document
-									.querySelector('.insert-number-with-suffix').dataset.suffix;
-							var insertNumberWithSuffix = document
-									.querySelectorAll('.insert-number-with-suffix');
-							for (var i = 0; i < insertNumberWithSuffix.length; i++) {
-								insertNumberWithSuffix[i].setAttribute('href',
-										'tel:+44 2031 293 603'
-												.replace(/ /g, ""));
-								insertNumberWithSuffix[i].innerHTML = '<span class="phone-lang-name">en</span> +44 2031 293 603 '
-										+ suffix;
-							}
+		}); 
+	}
+	
 
-							var insertNumber = document
-									.querySelectorAll('.insert-number');
-							for (var i = 0; i < insertNumber.length; i++) {
-								insertNumber[i].setAttribute('href',
-										'tel:+44 2031 293 603'
-												.replace(/ /g, ""));
-								insertNumber[i].innerHTML = '<span class="phone-lang-name">en</span> +44 2031 293 603';
-							}
+</script>
 
-							const req = new XMLHttpRequest();
-							req.open('POST', '/ajax/get-support-address.json',
-									true);
-							req.onreadystatechange = function(evt) {
-								if (req.readyState == 4) {
-									if (req.status == 200) {
-										var insertSupportAddress = document
-												.querySelectorAll('.insert-support-address');
-										for (var i = 0; i < insertSupportAddress.length; i++) {
-											insertSupportAddress[i].innerText = JSON
-													.parse(req.responseText).email
-													.replace('[]', '@');
-											insertSupportAddress[i]
-													.setAttribute(
-															'href',
-															'mailTo:'
-																	+ (JSON
-																			.parse(req.responseText).email
-																			.replace(
-																					'[]',
-																					'@')));
-										}
-									}
-								}
-							}
-							req.send();
-							var insertPhone = document
-									.querySelectorAll('.insert-phone-' + 1);
-							for (var i = 0; i < insertPhone.length; i++) {
-								insertPhone[i]
-										.setAttribute('href',
-												'tel:+49 30209930611'.replace(
-														/ /g, ""));
-								insertPhone[i].innerHTML = '<span class="phone-lang-name">de</span> +49 30209930611';
-							}
-							var insertPhone = document
-									.querySelectorAll('.insert-phone-' + 2);
-							for (var i = 0; i < insertPhone.length; i++) {
-								insertPhone[i].setAttribute('href',
-										'tel:+48 32 431 00 11'
-												.replace(/ /g, ""));
-								insertPhone[i].innerHTML = '<span class="phone-lang-name">pl</span> +48 32 431 00 11';
-							}
-							var insertPhone = document
-									.querySelectorAll('.insert-phone-' + 3);
-							for (var i = 0; i < insertPhone.length; i++) {
-								insertPhone[i].setAttribute('href',
-										'tel:+34  932 200 330'
-												.replace(/ /g, ""));
-								insertPhone[i].innerHTML = '<span class="phone-lang-name">es</span> +34  932 200 330';
-							}
-							var insertPhone = document
-									.querySelectorAll('.insert-phone-' + 4);
-							for (var i = 0; i < insertPhone.length; i++) {
-								insertPhone[i].setAttribute('href',
-										'tel:+86 10 852 41 270'.replace(/ /g,
-												""));
-								insertPhone[i].innerHTML = '<span class="phone-lang-name">cn</span> +86 10 852 41 270';
-							}
-						});
-	</script>
-
-	<script>
-		var languages = {
-			'en' : 'https://evisa.express/',
-			'de' : 'https://evisa.express/de',
-			'en' : 'https://evisa.express/',
-			'pl' : 'https://evisa.express/pl',
-			'en' : 'https://evisa.express/',
-			'es' : 'https://evisa.express/es',
-			'en' : 'https://evisa.express/',
-			'cn' : 'https://evisa.express/cn',
-		}
-
-		window.onscroll = function() {
-			scrollFunction()
-		};
-
-		function scrollFunction() {
-
-			var mybutton = document.getElementById("applyhere");
-			if (document.body.scrollTop > 20
-					|| document.documentElement.scrollTop > 20) {
-				mybutton.style.display = "block";
-			} else {
-				mybutton.style.display = "none";
-			}
-		}
-	</script>
 </body>
 </html>
