@@ -7,7 +7,7 @@
     %>
     
     <!DOCTYPE html>
-<!-- saved from url=(0041)https://evisa.express/en/account/register -->
+ 
 <html lang="en">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -181,8 +181,8 @@
                      </div> -->
                      <div class="input-box nested-checkbox">
                         <div class="input-box-bottom">
-                           <div class="actual-input">
-                              <div class="checkall-input"><label for="terms"><span>I accept the <a href="https://evisa.express/en/rules/terms-of-service" target="_blank">Terms</a> and <a href="https://evisa.express/pdf/evisa-express-terms-of-service.pdf#page=6" target="_blank">Conditions</a>.</span> <input type="checkbox" id="terms"> <span class="checkmark"></span></label></div>
+                            <div class="actual-input">
+                              <div class="checkall-input"><label for="terms"><span>I accept the <a href="/en/terms-of-service" target="_blank">Terms</a> and <a href="/en/terms-of-service" target="_blank">Conditions</a>.</span> <input type="checkbox" id="terms"> <span class="checkmark"></span></label></div>
                            </div>
                            <div class="input-mark"></div>
                         </div>

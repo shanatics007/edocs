@@ -1578,14 +1578,14 @@ span.description-steps-text-bottom {
 
 	<script>
 		var languages = {
-			'en' : 'https://evisa.express/',
-			'de' : 'https://evisa.express/de',
-			'en' : 'https://evisa.express/',
-			'pl' : 'https://evisa.express/pl',
-			'en' : 'https://evisa.express/',
-			'es' : 'https://evisa.express/es',
-			'en' : 'https://evisa.express/',
-			'cn' : 'https://evisa.express/cn',
+			'en' : 'https://edocs.travel/',
+			'de' : 'https://edocs.travel/de',
+			'en' : 'https://edocs.travel/',
+			'pl' : 'https://edocs.travel/pl',
+			'en' : 'https://edocs.travel/',
+			'es' : 'https://edocs.travel/es',
+			'en' : 'https://edocs.travel/',
+			'cn' : 'https://edocs.travel/cn',
 		}
 
 		window.onscroll = function() {

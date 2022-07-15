@@ -277,27 +277,10 @@ span.description-steps-text-bottom {
 								department is at your disposal:</div>
 							<div class="text-black-22px e-mail" style="text-align:center;">
 								<span style="color:black;">E-mail: </span><a class="insert-support-address" style="color:#1c3367;text-align:center;"
-									href="mailTo:support@evisa.express">support@evisa.express</a>
+									href="mailTo:support@edocs.travel">support@edocs.travel</a>
 							</div>
 							<div class="text-black-22px telephone">
-								<span>Helpline:</span>
-								<ul class="helpline-numbers">
-									<li><span class="phone-code">EN</span><span
-										class="phone-number insert-number" href="tel:+442031293603"><span
-											class="phone-lang-name">en</span> +44 2031 293 603</span></li>
-									<li><span class="phone-code">DE</span><span
-										class="phone-number insert-phone-1" href="tel:+4930209930611"><span
-											class="phone-lang-name">de</span> +49 30209930611</span></li>
-									<li><span class="phone-code">PL</span><span
-										class="phone-number insert-phone-2" href="tel:+48324310011"><span
-											class="phone-lang-name">pl</span> +48 32 431 00 11</span></li>
-									<li><span class="phone-code">ES</span><span
-										class="phone-number insert-phone-3" href="tel:+442031293603"><span
-											class="phone-lang-name">es</span> +44 2031 293 603</span></li>
-									<li><span class="phone-code">CN</span><span
-										class="phone-number insert-phone-4" href="tel:+861085241270"><span
-											class="phone-lang-name">cn</span> +86 10 852 41 270</span></li>
-								</ul>
+								 
 							</div>
 							<div class="text-white-14px">5 days a week from 8am to 4pm
 								(GMT+1)</div>
@@ -317,9 +300,8 @@ span.description-steps-text-bottom {
 										<form method="post" accept-charset="utf-8"
 											action="/ajax/form.json">
 											<div style="display: none;">
-												<input type="hidden" name="_method" value="POST"><input
-													type="hidden" name="_csrfToken" autocomplete="off"
-													value="8f4032c58de8f7d0336b77bfa1e4aa9bbbfb764d2be8d5c6a4fa828f83661979c87a461eb6317fbdca872fe425d7b0159d3d71584f06a31ccc100f73d1014565">
+												<input type="hidden" name="_method" value="POST">
+												
 											</div>
 											<div class="row">
 												<div class="col-sm-6">
@@ -526,7 +508,7 @@ span.description-steps-text-bottom {
 										</form>
 										<div class="contact-form-loading">
 											<div>
-												<img src="https://evisa.express/img/ajax-loader.gif">
+												<img src="https://edocs.travel/img/ajax-loader.gif">
 											</div>
 										</div>
 									</div>
@@ -651,14 +633,14 @@ span.description-steps-text-bottom {
 
 	<script>
 		var languages = {
-			'en' : 'https://evisa.express/',
-			'de' : 'https://evisa.express/de',
-			'en' : 'https://evisa.express/',
-			'pl' : 'https://evisa.express/pl',
-			'en' : 'https://evisa.express/',
-			'es' : 'https://evisa.express/es',
-			'en' : 'https://evisa.express/',
-			'cn' : 'https://evisa.express/cn',
+			'en' : 'https://edocs.travel/',
+			'de' : 'https://edocs.travel/de',
+			'en' : 'https://edocs.travel/',
+			'pl' : 'https://edocs.travel/pl',
+			'en' : 'https://edocs.travel/',
+			'es' : 'https://edocs.travel/es',
+			'en' : 'https://edocs.travel/',
+			'cn' : 'https://edocs.travel/cn',
 		}
 
 		window.onscroll = function() {

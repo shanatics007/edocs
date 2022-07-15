@@ -106,9 +106,7 @@ iframe#_hjRemoteVarsFrame {
 					    </label> -->
 					    <div class="payment-icons">
 					    <img alt="mastercard" src="/images/mastercard.png">
-					    <img alt="mastercard" src="/images/visacard.png">
-					    <img alt="mastercard" src="/images/paypal.png">
-					    <img alt="mastercard" src="/images/american-express.png">
+					    <img alt="mastercard" src="/images/visacard.png"> 
 					      
 					    </div>
 					</li>
@@ -184,19 +182,19 @@ iframe#_hjRemoteVarsFrame {
 			        
 			          <div class="input-group">
 			            <label>City</label>
-			            <input type="text" inputmode="numeric" id="billing_city" minlength="10" maxlength="19" placeholder="city" autocomplete="off" required="">
+			            <input type="text" inputmode="numeric" id="billing_city" minlength="10" maxlength="19" placeholder="City" autocomplete="off" required="">
 			           
 			        </div>
 			        
 			         <div class="input-group row card-holders">
 			            <div class="col-md-6">
 			                <label>State</label>
-			                <input type="text" id="billing_state" placeholder="state" autocomplete="off"  required="" class="input-success">
+			                <input type="text" id="billing_state" placeholder="State" autocomplete="off"  required="" class="input-success">
 			                <div class="input-info card_holder_info"></div>
 			            </div>
 			            <div class="col-md-6">
 			                <label>ZipCode</label>
-			                <input type="text" id="billing_zipcode" placeholder="zipcode" minlength="5" maxlength="5" autocomplete="off"  required="" class="input-success">
+			                <input type="text" id="billing_zipcode" placeholder="Zip Code" minlength="5" maxlength="5" autocomplete="off"  required="" class="input-success">
 			                <div class="input-info card_holder_info"></div>
 			            </div>
 			        </div>	

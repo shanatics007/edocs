@@ -1,37 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!-- saved from url=(0060)https://evisa.express/en/turkey/applicationform?currency=EUR -->
 <html lang="en">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <script type="text/javascript" async="" src="./applicationform_files/ecommerce.js"></script><script type="text/javascript" async="" src="./applicationform_files/hotjar-2876277.js"></script><script type="text/javascript" async="" src="./applicationform_files/analytics.js"></script><script type="text/javascript" async="" src="./applicationform_files/analytics.js"></script><script async="" src="./applicationform_files/gtm.js"></script><script async="" src="./applicationform_files/tag.js"></script><script>
-         if (typeof Symbol === "undefined") {
-             document.write('<script src="https://evisa.express/lib/frontend/symbol-polyfill.min.js"><\/script>');
-         }
-      </script>
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <!-- Yandex.Metrika counter --><script type="text/javascript">
-         (function (m, e, t, r, i, k, a) {
-             m[i] = m[i] || function () {
-                 (m[i].a = m[i].a || []).push(arguments)
-             };
-             m[i].l = 1 * new Date();
-             k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-         })
-         (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-         ym(43982214, "init", {
-             clickmap: true,
-             trackLinks: true,
-             accurateTrackBounce: true,
-             webvisor: true
-         });
-      </script>
-      <noscript>
-         <div><img src="https://mc.yandex.ru/watch/43982214" style="position:absolute; left:-9999px;" alt=""/></div>
-      </noscript>
-      <!-- /Yandex.Metrika counter -->
       <title></title>
       <meta property="og:title" content="">
       <meta name="Description" content="">
@@ -39,62 +13,46 @@
       <meta name="keywords" content="">
       <meta name="author" content="Evisa Express">
       <meta name="robots" content="noindex,follow">
-      <meta name="csrftoken" content="3cf719db7aad91124da0e3d128ca6193d53f5cbbef9a368f11f21d64b109a9be443aff427d62d3dae6dd3f9fa642a95f29ddd3e6067d155d25cb99941a43d4b0">
-      <meta property="og:site_name" content="Evisa Express">
+      <meta property="og:site_name" content="Edocs Travel">
       <meta property="og:type" content="website">
-      <meta property="og:url" content="https://evisa.express/en/turkey/applicationform?currency=EUR">
-      <meta property="og:image" content="https://evisa.express/img/icon/evisaexpress_logo_small.png">
-      <link rel="canonical" href="https://evisa.express/en/turkey/applicationform">
-      <link rel="preconnect" href="https://www.google-analytics.com/" crossorigin="">
-      <link rel="preconnect" href="https://mc.yandex.ru/" crossorigin="">
+      <meta property="og:url" content="https://edocs.travel/en/turkey/applicationform?currency=EUR">
+      <meta property="og:image" content="https://edocs.travel/img/icon/evisaexpress_logo_small.png">
+      <link rel="canonical" href="https://edocs.travel/en/turkey/applicationform">
       <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-      <link rel="preconnect" href="https://www.googletagmanager.com/" crossorigin="">
       <link rel="preload" href="https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2" as="font" type="font/woff2" crossorigin="">
       <link rel="preload" href="https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmSU5fBBc4AMP6lQ.woff2" as="font" type="font/woff2" crossorigin="">
-      <link rel="preload" href="https://evisa.express/font/Brass%20Fonts%20-%20Konkret%20Grotesk%20Pro%20Medium.woff2" as="font" type="font/woff2" crossorigin="">
-      <link rel="preload" href="https://evisa.express/font/Brass%20Fonts%20-%20Konkret%20Grotesk%20Pro%20Bold.woff2" as="font" type="font/woff2" crossorigin="">
+      <link rel="preload" href="https://edocs.travel/font/Brass%20Fonts%20-%20Konkret%20Grotesk%20Pro%20Medium.woff2" as="font" type="font/woff2" crossorigin="">
+      <link rel="preload" href="https://edocs.travel/font/Brass%20Fonts%20-%20Konkret%20Grotesk%20Pro%20Bold.woff2" as="font" type="font/woff2" crossorigin="">
       <!-- favicon -->
-      <link href="https://evisa.express/img/favicon/favicon_16x16.ico" rel="shortcut icon">
-      <link href="https://evisa.express/img/favicon/apple-touch-icons/57x57.png" rel="apple-touch-icon" sizes="57x57">
-      <link href="https://evisa.express/img/favicon/apple-touch-icons/60x60.png" rel="apple-touch-icon" sizes="60x60">
-      <link href="https://evisa.express/img/favicon/apple-touch-icons/72x72.png" rel="apple-touch-icon" sizes="72x72">
-      <link href="https://evisa.express/img/favicon/apple-touch-icons/76x76.png" rel="apple-touch-icon" sizes="76x76">
-      <link href="https://evisa.express/img/favicon/apple-touch-icons/114x114.png" rel="apple-touch-icon" sizes="114x114">
-      <link href="https://evisa.express/img/favicon/apple-touch-icons/120x120.png" rel="apple-touch-icon" sizes="120x120">
-      <link href="https://evisa.express/img/favicon/apple-touch-icons/144x144.png" rel="apple-touch-icon" sizes="144x144">
-      <link href="https://evisa.express/img/favicon/apple-touch-icons/152x152.png" rel="apple-touch-icon" sizes="152x152">
-      <link href="https://evisa.express/img/favicon/apple-touch-icons/180x180.png" rel="apple-touch-icon" sizes="180x180">
-      <link href="https://evisa.express/img/favicon/site.webmanifest" rel="manifest">
-      <link href="https://evisa.express/img/favicon/safari-pinned-tab.svg" rel="mask-icon" color="#5bbad5">
+      <link href="https://edocs.travel/img/favicon/favicon_16x16.ico" rel="shortcut icon">
+      <link href="https://edocs.travel/img/favicon/apple-touch-icons/57x57.png" rel="apple-touch-icon" sizes="57x57">
+      <link href="https://edocs.travel/img/favicon/apple-touch-icons/60x60.png" rel="apple-touch-icon" sizes="60x60">
+      <link href="https://edocs.travel/img/favicon/apple-touch-icons/72x72.png" rel="apple-touch-icon" sizes="72x72">
+      <link href="https://edocs.travel/img/favicon/apple-touch-icons/76x76.png" rel="apple-touch-icon" sizes="76x76">
+      <link href="https://edocs.travel/img/favicon/apple-touch-icons/114x114.png" rel="apple-touch-icon" sizes="114x114">
+      <link href="https://edocs.travel/img/favicon/apple-touch-icons/120x120.png" rel="apple-touch-icon" sizes="120x120">
+      <link href="https://edocs.travel/img/favicon/apple-touch-icons/144x144.png" rel="apple-touch-icon" sizes="144x144">
+      <link href="https://edocs.travel/img/favicon/apple-touch-icons/152x152.png" rel="apple-touch-icon" sizes="152x152">
+      <link href="https://edocs.travel/img/favicon/apple-touch-icons/180x180.png" rel="apple-touch-icon" sizes="180x180">
+      <link href="https://edocs.travel/img/favicon/site.webmanifest" rel="manifest">
+      <link href="https://edocs.travel/img/favicon/safari-pinned-tab.svg" rel="mask-icon" color="#5bbad5">
       <meta name="msapplication-TileColor" content="#da532c">
-      <meta name="msapplication-config" content="https://evisa.express/img/favicon/browserconfig.xml">
+      <meta name="msapplication-config" content="https://edocs.travel/img/favicon/browserconfig.xml">
       <meta name="theme-color" content="#ffffff">
       <!-- /favicon -->
-      <link rel="alternate" href="https://evisa.express/en/turkey/applicationform?currency=EUR" hreflang="en">
-      <link rel="alternate" href="https://evisa.express/en/turkey/applicationform?currency=EUR" hreflang="x-default">
-      <link rel="alternate" href="https://evisa.express/de/turkey/applicationform?currency=EUR" hreflang="de">
-      <link rel="alternate" href="https://evisa.express/pl/turkey/applicationform?currency=EUR" hreflang="pl">
-      <link rel="alternate" href="https://evisa.express/es/turkey/applicationform?currency=EUR" hreflang="es">
-      <link rel="alternate" href="https://evisa.express/cn/turkey/applicationform?currency=EUR" hreflang="zh-CN">
+      <link rel="alternate" href="https://edocs.travel/en/turkey/applicationform?currency=EUR" hreflang="en">
+      <link rel="alternate" href="https://edocs.travel/en/turkey/applicationform?currency=EUR" hreflang="x-default">
+      <link rel="alternate" href="https://edocs.travel/de/turkey/applicationform?currency=EUR" hreflang="de">
+      <link rel="alternate" href="https://edocs.travel/pl/turkey/applicationform?currency=EUR" hreflang="pl">
+      <link rel="alternate" href="https://edocs.travel/es/turkey/applicationform?currency=EUR" hreflang="es">
+      <link rel="alternate" href="https://edocs.travel/cn/turkey/applicationform?currency=EUR" hreflang="zh-CN">
       <link rel="stylesheet" href="/css/default.css">
-      <!--<base href="https://evisa.express/">-->
+      <!--<base href="https://edocs.travel/">-->
       <base href=".">
       <style>.cookie-info-text { color: #969696; }
          .toggle-box .toggle-li ul {font-size: 16px; list-style: disc;}
          .toggle-box .toggle-li ul li {border-bottom: none; padding: 0px}
       </style>
-      <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-         })(window,document,'script','dataLayer','GTM-MXB64MK');
-      </script><!-- End Google Tag Manager --><!-- Global site tag (gtag.js) - Google Analytics --><script async="" src="./applicationform_files/js"></script><script>
-         window.dataLayer = window.dataLayer || [];
-         function gtag(){dataLayer.push(arguments);}
-         gtag('js', new Date());
-         
-         gtag('config', 'UA-140579258-1');
-      </script>
       <link rel="stylesheet" type="text/css" href="./applicationform_files/destinations-sprite.css">
       <script async="" src="./applicationform_files/modules.eaa59710f7e60ac1d235.js" charset="utf-8"></script>
       <style type="text/css">iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;}</style>
@@ -109,7 +67,7 @@
                <div class="menu-logo"><img alt="Evisa Express" src="./applicationform_files/en-logo-turkey.svg" class="desktop-logo"><img alt="Evisa Express" src="./applicationform_files/logo-turkey.svg" class="mobile-logo"></div>
                <div class="menu-right-side">
                   <div class="menu-right-side-upper">
-                     <div class="navbar-upper-item"><a href="https://evisa.express/en/contact"><strong>Customer Service</strong></a><a class="menu-phone insert-number-with-suffix" data-suffix="(GMT+1)" href="tel:+442031293603"><span class="phone-lang-name">en</span> +44 2031 293 603 (GMT+1)</a></div>
+                     <div class="navbar-upper-item"><a href="https://edocs.travel/en/contact"><strong>Customer Service</strong></a><a class="menu-phone insert-number-with-suffix" data-suffix="(GMT+1)" href="tel:+442031293603"><span class="phone-lang-name">en</span> +44 2031 293 603 (GMT+1)</a></div>
                      <button class="navbar-upper-item" data-on-click="openLocaleSettings"><strong style="margin-right: 4px;">English</strong><span class="text-gray"><span class="currency-code">EUR</span> (<span class="currency-sign">€</span>)
                      </span></button>
                   </div>
@@ -128,13 +86,13 @@
          </nav>
       </div>
       <div class="mobile-menu right5000">
-         <div class="mobile-menu-top"><span class="mobile-menu-account in-header"><img src="./applicationform_files/user.svg" alt=""><a id="menu-mobile-login" class="mobile-menu-font" href="https://evisa.express/en/account/login" rel="nofollow">Log in</a></span><span class="mobile-menu-close">close</span></div>
+         <div class="mobile-menu-top"><span class="mobile-menu-account in-header"><img src="./applicationform_files/user.svg" alt=""><a id="menu-mobile-login" class="mobile-menu-font" href="https://edocs.travel/en/account/login" rel="nofollow">Log in</a></span><span class="mobile-menu-close">close</span></div>
          <ul class="toggle-box">
             <div class="mobile-menu-phonenumber">
                <div>Customer Service</div>
                <a class="insert-number-with-suffix" href="tel:+442031293603"><span class="phone-lang-name">en</span> +44 2031 293 603 (GMT+1)</a>
             </div>
-            <button class="mobile-menu-currency-change" data-on-click="openLocaleSettings"><strong style="margin-right: 4px;">English</strong><span class="text-gray"><span class="currency-code">EUR</span> (<span class="currency-sign">€</span>) <span class="text-blue">(change)</span></span></button><a href="https://status.evisa.express/English" class="mobile-menu-check-status">Check Status</a>
+            <button class="mobile-menu-currency-change" data-on-click="openLocaleSettings"><strong style="margin-right: 4px;">English</strong><span class="text-gray"><span class="currency-code">EUR</span> (<span class="currency-sign">€</span>) <span class="text-blue">(change)</span></span></button><a href="https://status.edocs.travel/English" class="mobile-menu-check-status">Check Status</a>
          </ul>
       </div>
       <div id="ee-apply-form" class="ee-apply-form">
@@ -2406,7 +2364,7 @@
                                  <div class="input-box-bottom">
                                     <div class="error-position"><span style="display: none;">0</span></div>
                                     <div id="accept-terms" class="actual-input">
-                                       <div class="checkbox-input ee-complete"><label for="accept-terms-track" class="checkbox-label"><span>I accept the <a href="https://evisa.express/en/rules/terms-of-service" target="_blank">Terms</a> and <a href="https://evisa.express/pdf/evisa-express-terms-of-service.pdf#page=6" target="_blank">Conditions</a>.</span> <input type="checkbox" id="accept-terms-track" name="accept-terms"> <span class="checkmark"></span></label></div>
+                                       <div class="checkbox-input ee-complete"><label for="accept-terms-track" class="checkbox-label"><span>I accept the <a href="https://edocs.travel/en/rules/terms-of-service" target="_blank">Terms</a> and <a href="https://edocs.travel/pdf/evisa-express-terms-of-service.pdf#page=6" target="_blank">Conditions</a>.</span> <input type="checkbox" id="accept-terms-track" name="accept-terms"> <span class="checkmark"></span></label></div>
                                     </div>
                                  </div>
                               </div>
@@ -2655,7 +2613,7 @@
                   <div class="insurance-table-col">Included</div>
                </div>
                <p>Country of residence - the country where the policyholder is currently covered by general health insurance or the country where the policyholder resides with the intention of permanent residence.</p>
-               <div class="insurance-links"><a target="_blank" href="https://evisa.express/pdf/insurance/scope.pdf">Scope and exclusions</a> <a target="_blank" href="https://evisa.express/pdf/insurance/insurance-general-conditions.pdf">General Conditions of Insurance</a> <a target="_blank" href="https://evisa.express/pdf/insurance/ipid.pdf">IPID</a></div>
+               <div class="insurance-links"><a target="_blank" href="https://edocs.travel/pdf/insurance/scope.pdf">Scope and exclusions</a> <a target="_blank" href="https://edocs.travel/pdf/insurance/insurance-general-conditions.pdf">General Conditions of Insurance</a> <a target="_blank" href="https://edocs.travel/pdf/insurance/ipid.pdf">IPID</a></div>
             </div>
          </div>
       </div>
@@ -2663,7 +2621,7 @@
          <div class="notification">
             <div class="container">
                <div class="cookies-text">
-                  <p>Evisa Express uses cookies and similar technologies for statistical and analytical purposes to optimize usage. By continuing to browse the site, you are agreeing to our use of cookies. If you do not change the settings, cookies will be saved in your device's memory. <a href="https://evisa.express/en/rules/cookie-policy" target="_blank">Cookie Policy</a> and <a href="https://evisa.express/en/rules/terms-of-service" target="_blank">Terms of Service.</a></p>
+                  <p>Evisa Express uses cookies and similar technologies for statistical and analytical purposes to optimize usage. By continuing to browse the site, you are agreeing to our use of cookies. If you do not change the settings, cookies will be saved in your device's memory. <a href="https://edocs.travel/en/rules/cookie-policy" target="_blank">Cookie Policy</a> and <a href="https://edocs.travel/en/rules/terms-of-service" target="_blank">Terms of Service.</a></p>
                </div>
                <div class="cookies-confirm">
                   <div class="button-container">
@@ -2693,13 +2651,11 @@
          var csrftoken = document.querySelector('meta[name="csrftoken"]').content;
       </script><script>
          var apiProblem = 0;
-         var homepageLink = "https://evisa.express/en";
-         var emergencyDictionary = {"apiError":"An error occurred","apiErrorMessage":"The data could not be saved at the moment. Please try again later or contact our support.","applicationIdLabel":"Application ID","applicationIdPlaceholder":"xxx\/xxx\/xxx","applicationNumber":"Application number","attention":"Attention","availableCurrencies":"Available payment methods","birthDateLabel":"Date of birth","birthDayPlaceholder":"dd","birthMonthPlaceholder":"mm","birthYearPlaceholder":"yyyy","buttonLabel":"Proceed to your application","delete":"delete","destination":"Destination","details":"Details","documentsAreComplete":"Your documents are complete.","errorOccurred":"An error occurred. Please try again later.","faq":"FAQ","fieldIsRequired":"This field is required","fieldRequired":"This field is required","fillInTheFields":"Please fill all the fields marked red","fillTheForm":"All fields are required","formUnavailableLabel":"The form is unavailable at the moment.","getNextVisa":"get next visa","goToHomepage":"Go to homepage","goToTheHomepage":"or go to homepage","goToYourAccount":"or go to your account","grantCameraPermission":"You need to grant permission for using the camera first","helpline":"Helpline","helplineHours":"5 days a week from 8am to 4pm. Please prepare your passport number.","ifIncorrect":"If the above information is incorrect, please contact us:","incorrectFileType":"The file you uploaded is of incorrect type. Please upload another photo.","noFormFound":"We couldn't find an application matching your criteria.","noInternetConnection":"You don't have internet connection","noOptions":"Oops! No elements found. Consider changing the search query.","or":"or","priceDependsOnCurrency":"Price may vary depending on currency","priceDependsOnFields":"Price depends on the following fields","priceWillBeShown":"Price will be shown after the required fields are filled","product_express_processing":"Express Processing","product_health_card":"Health card","product_insurance":"Insurance","product_visa":"Visa","sendDocuments":"Send documents","summary":"Summary","surnameLabel":"Surname","surnamePlaceholder":"Surname","takeAPhoto":"Take a photo","totalCost":"Full price","tryAgainLaterContact":"Please try again later. <br\/>   If the problem persists please contact <a href=\"mailto:support@evisa.express\" class=\"email\">support@evisa.express<\/a>.","unavailableWithInsurance":"Unavailable With Insurance","upload":"upload","uploadInstructions":"Documents may be obtained by two options: through digital camera\/webcam or by scanning the physical photograph.","uploadInstructionsHeader":"Necessary documents","uploadMainHeader":"upload documents","warning":"Warning","weSorry":"We are sorry!","weThankYou":"Thank you!","loginPageHeader":"Log in"};
+         var homepageLink = "https://edocs.travel/en";
+         var emergencyDictionary = {"apiError":"An error occurred","apiErrorMessage":"The data could not be saved at the moment. Please try again later or contact our support.","applicationIdLabel":"Application ID","applicationIdPlaceholder":"xxx\/xxx\/xxx","applicationNumber":"Application number","attention":"Attention","availableCurrencies":"Available payment methods","birthDateLabel":"Date of birth","birthDayPlaceholder":"dd","birthMonthPlaceholder":"mm","birthYearPlaceholder":"yyyy","buttonLabel":"Proceed to your application","delete":"delete","destination":"Destination","details":"Details","documentsAreComplete":"Your documents are complete.","errorOccurred":"An error occurred. Please try again later.","faq":"FAQ","fieldIsRequired":"This field is required","fieldRequired":"This field is required","fillInTheFields":"Please fill all the fields marked red","fillTheForm":"All fields are required","formUnavailableLabel":"The form is unavailable at the moment.","getNextVisa":"get next visa","goToHomepage":"Go to homepage","goToTheHomepage":"or go to homepage","goToYourAccount":"or go to your account","grantCameraPermission":"You need to grant permission for using the camera first","helpline":"Helpline","helplineHours":"5 days a week from 8am to 4pm. Please prepare your passport number.","ifIncorrect":"If the above information is incorrect, please contact us:","incorrectFileType":"The file you uploaded is of incorrect type. Please upload another photo.","noFormFound":"We couldn't find an application matching your criteria.","noInternetConnection":"You don't have internet connection","noOptions":"Oops! No elements found. Consider changing the search query.","or":"or","priceDependsOnCurrency":"Price may vary depending on currency","priceDependsOnFields":"Price depends on the following fields","priceWillBeShown":"Price will be shown after the required fields are filled","product_express_processing":"Express Processing","product_health_card":"Health card","product_insurance":"Insurance","product_visa":"Visa","sendDocuments":"Send documents","summary":"Summary","surnameLabel":"Surname","surnamePlaceholder":"Surname","takeAPhoto":"Take a photo","totalCost":"Full price","tryAgainLaterContact":"Please try again later. <br\/>   If the problem persists please contact <a href=\"mailto:support@edocs.travel\" class=\"email\">support@edocs.travel<\/a>.","unavailableWithInsurance":"Unavailable With Insurance","upload":"upload","uploadInstructions":"Documents may be obtained by two options: through digital camera\/webcam or by scanning the physical photograph.","uploadInstructionsHeader":"Necessary documents","uploadMainHeader":"upload documents","warning":"Warning","weSorry":"We are sorry!","weThankYou":"Thank you!","loginPageHeader":"Log in"};
          var isEPAPIApplication = false;
-      </script><script src="./applicationform_files/vue.js"></script><iframe id="_hjSafeContext_31344997" src="./applicationform_files/saved_resource.html" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe><script src="./applicationform_files/vendor.js"></script><!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MXB64MK"
-         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-      <!-- End Google Tag Manager (noscript) --><script>
+      </script><script src="./applicationform_files/vue.js"></script><iframe id="_hjSafeContext_31344997" src="./applicationform_files/saved_resource.html" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe><script src="./applicationform_files/vendor.js"></script>
+      
          document.addEventListener('DOMContentLoaded', function () {
              var suffix = document.querySelector('.insert-number-with-suffix').dataset.suffix;
              var insertNumberWithSuffix = document.querySelectorAll('.insert-number-with-suffix');
@@ -2784,14 +2740,14 @@
       </div>
       <script>
          var languages = {
-                         'en': 'https://evisa.express/en/turkey/applicationform?currency=EUR',
-             'de': 'https://evisa.express/de/turkey/applicationform?currency=EUR',
-                         'en': 'https://evisa.express/en/turkey/applicationform?currency=EUR',
-             'pl': 'https://evisa.express/pl/turkey/applicationform?currency=EUR',
-                         'en': 'https://evisa.express/en/turkey/applicationform?currency=EUR',
-             'es': 'https://evisa.express/es/turkey/applicationform?currency=EUR',
-                         'en': 'https://evisa.express/en/turkey/applicationform?currency=EUR',
-             'cn': 'https://evisa.express/cn/turkey/applicationform?currency=EUR',
+                         'en': 'https://edocs.travel/en/turkey/applicationform?currency=EUR',
+             'de': 'https://edocs.travel/de/turkey/applicationform?currency=EUR',
+                         'en': 'https://edocs.travel/en/turkey/applicationform?currency=EUR',
+             'pl': 'https://edocs.travel/pl/turkey/applicationform?currency=EUR',
+                         'en': 'https://edocs.travel/en/turkey/applicationform?currency=EUR',
+             'es': 'https://edocs.travel/es/turkey/applicationform?currency=EUR',
+                         'en': 'https://edocs.travel/en/turkey/applicationform?currency=EUR',
+             'cn': 'https://edocs.travel/cn/turkey/applicationform?currency=EUR',
                      }
       </script><iframe name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame" id="_hjRemoteVarsFrame" src="./applicationform_files/box-63c3a81830bf549dafe40b369003f751.html" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe>
    </body>

@@ -3143,7 +3143,7 @@ th{
     transition:padding-top .3s
 }
 .ee-form-sidebar .ee-form-info{
-    position:fixed;
+    /* position:fixed; */
     width:288px;
     font-weight:400
 }
@@ -8613,7 +8613,7 @@ th{
     transition:padding-top .3s
 }
 .ee-form-sidebar .ee-form-info{
-    position:fixed;
+    /* position:fixed; */
     width:288px;
     font-weight:400
 }

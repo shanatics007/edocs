@@ -9597,7 +9597,7 @@ screen and (max-height: 720px) and (min-width: 992px) {
 }
 
 .ee-form-sidebar .ee-form-info {
-    position: fixed;
+    /* position: fixed; */
     width: 288px;
     font-weight: 400
 }

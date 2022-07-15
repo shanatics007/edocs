@@ -56,7 +56,7 @@ public class NMIPaymentGateway {
 		String acsTransId = paymentInfo.getAcsTransId();
 		String dsTransId = paymentInfo.getDsTransId();
 		String protocolVersion = paymentInfo.getProtocolVersion();		
-		String billing_country="";
+		String billing_country= paymentInfo.getBillingCountry();
 		int eci = Integer.parseInt(ccECI.equals("")?"0":ccECI);				
 		System.out.println("eci: " + eci);		
 		
@@ -86,6 +86,7 @@ public class NMIPaymentGateway {
 		request.put("city", billing_city);
 		request.put("state", billing_state);
 		request.put("zip", billing_zip);
+		request.put("country", billing_country);
 		
 		request.put("cavv", ccCAVV);
 		request.put("eci", ""+  eci);

@@ -77,7 +77,7 @@ if (request.getSession().getAttribute("formDetails") != null) {
  
 %> 
     <!DOCTYPE html>
-<!-- saved from url=(0038)https://evisa.express/en/account/login -->
+ 
 <html lang="en">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -93,9 +93,7 @@ if (request.getSession().getAttribute("formDetails") != null) {
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
      
-       <script async="" src="/js/gtm.js"></script>
        <script async="" src="/js/home.js"></script>
-       <script async="" src="/js/analytics.js"></script>
        <script async="" src="/js/tag.js"></script>
        <script async="" src="/js/vendor.js"></script>
        
@@ -625,11 +623,11 @@ label#radiolabel {
                         <div class="input-box" type="CheckAllInput" name="accept-all-terms" label="Check all (checks all the checkboxes below)" hint="" placeholder="" tooltip="" required="required" validations="" options="" reactions="[object Object]" possiblereactions="" possibledisablingreactions="" possibleemits="check-all">
                            
                         </div>
-                        <div class="input-box nested-checkbox" type="CheckboxInput" name="accept-terms" label="I accept the <a href=&quot;/en/rules/terms-of-service&quot; target=&quot;_blank&quot;>Terms</a> and <a href=&quot;/pdf/evisa-express-terms-of-service.pdf#page=6&quot; target=&quot;_blank&quot;>Conditions</a>." hint="" placeholder="" tooltip="" required="required" validations="" options="" reactions="[object Object]" watch="check-all" possiblereactions="" possibledisablingreactions="" possibleemits="">
+                        <div class="input-box nested-checkbox" type="CheckboxInput" name="accept-terms"  hint="" placeholder="" tooltip="" required="required" validations="" options="" reactions="[object Object]" watch="check-all" possiblereactions="" possibledisablingreactions="" possibleemits="">
                            <div class="input-box-bottom">
                               <div class="error-position"><span style="display: none;">0</span></div>
                               <div id="accept-terms" class="actual-input">
-                                 <div class="checkbox-input"><label for="accept-terms-track" class="checkbox-label"><span>I accept the <a href="/en/rules/terms-of-service" target="_blank">Terms</a> and <a href="/pdf/evisa-express-terms-of-service.pdf#page=6" target="_blank">Conditions</a>.</span> <input type="checkbox" id="accept-terms-track" name="accept-terms"> <span class="checkmark"></span></label></div>
+                                 <div class="checkbox-input"><label for="accept-terms-track" class="checkbox-label"><span>I accept the <a href="/en/rules/terms-of-service" target="_blank">Terms</a> and <a href="/en/rules/terms-of-service" target="_blank">Conditions</a>.</span> <input type="checkbox" id="accept-terms-track" name="accept-terms"> <span class="checkmark"></span></label></div>
                               </div>
                            </div>
                         </div>
@@ -746,14 +744,7 @@ label#radiolabel {
                      </ul>
                   </div>
                </div>
-               <div class="form-sidebar-infoline sidebar-mobile">
-                  <div class="infoline-phone-number">
-                     Helpline <span>+44 2031 293 603</span>
-                  </div>
-                  <p>
-                     5 days a week from 8am to 4pm. Please prepare your passport number.
-                  </p>
-               </div>
+               
               
             </div>
          </div>

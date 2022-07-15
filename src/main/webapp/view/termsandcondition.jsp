@@ -418,7 +418,7 @@ span.description-steps-text-bottom {
 							<p><b>Regulations</b> – the regulations defining the rules of using the The
 							Service and the rules of providing Services by IVS through it.</p>
 							
-							<p><b>The Service</b> – the website with www address EVISA.EXPRESS through
+							<p><b>The Service</b> – the website with www address edocs.travel through
 							which IVS operates to provide the Services.</p>
 							<p><b>Services</b> – the visa
 							services provided by IVS for Users of The Service.</p>
@@ -633,7 +633,7 @@ span.description-steps-text-bottom {
 								District Court in Katowice, Sth Commercial Division, under KRS
 								number 0000623079 is the controller of the personal data.</p>
 							<p><b>Telephone number: +44 2031 293 603</b></p>
-							<p><b>E-mail address:support@evisa.express</b></p>
+							<p><b>E-mail address:support@edocs.travel</b></p>
 
 							<b>Data protection officer </b>
 							<p>The data protection officer at IVS can be contacted by
@@ -916,14 +916,7 @@ A cookie is used to collect information about visitors' ways of using a website.
 
 </p></li>
 </ul>
-
-<p> A cookie installed by Google Universal Analytics to reduce the request rate to limit the storage of date on high traffic websites.</p>
-
-<p>A cookie installed by Yadex Metrica - this cookie is used to calculate data such as:</p>
-
-<p>visitors, sessions, campaign and to keep track of site usage for the site's analytics report. Information stored by a cookie is anonymous, because the cookie assigns a randomly generated number to identify every visitor.
-</p>
-
+ 
 <p>IVS uses cookies and other technologies for statistical purposes to calculate the number of user visits per page and to optimally match the content of the website to user's preferences and easier usage of the website by users. ETACANADAONLINE.COM  </p>
 
 <p>IVS website uses session cookies that are deleted immediately after leaving the website or its sub-pages by the user, as well as persistent cookies, which are stored on the user's end device, and which are not automatically removed after the end of the session. Local storage files are generally not automatically deleted and they are saved in the user's browser memory. </p>
@@ -947,7 +940,7 @@ costs.</p>
 <p>The User may withdraw from the Agreement by submitting a statement of withdrawal from the Agreement to IVS. The statement may be submitted on the form, a template
 of which is included in Annex No. 1 to the Regulations, but it is not mandatory.</p>
 
-<p>To meet the deadline, it is enough to send a statement before the expiry date of the period by post to the address of the IVS office or by e-mail to the address: <b>support@ evisa.express</b></p>
+<p>To meet the deadline, it is enough to send a statement before the expiry date of the period by post to the address of the IVS office or by e-mail to the address: <b>support@ edocs.travel</b></p>
 
 <p>IVS confirms receiving the withdrawal from the Agreement by an e-mail sent to the User.</p>
 
@@ -971,7 +964,7 @@ of which is included in Annex No. 1 to the Regulations, but it is not mandatory.
 
 <ul>
 <li> <b>a)</b> posting a letter to the following address: <b>INTERNATIONAL VISA SERVICE</b> spółka z ograniczoną odpowiedzialnością spółka komandytowa z siedzibą w Katowicach, ul. Graniczna 29, 40-017 Katowice, Polska,  </li>
-<li> <b>b)</b> sending an email to -<b> support@evisa.express</b>  </li>
+<li> <b>b)</b> sending an email to -<b> support@edocs.travel</b>  </li>
 </ul>
 
 <p>IVS deals with the complaint within 14 days since its delivery and sends the response to the address of the sender - User. IVS reserves the right to send a request to the person lodging the complaint in order to clarify the relevant circumstances regarding the complaint. The deadline for considering the complaint may be extended accordingly, due to the waiting time for the User's response.</p>
@@ -1158,14 +1151,14 @@ of which is included in Annex No. 1 to the Regulations, but it is not mandatory.
 
 	<script>
 		var languages = {
-			'en' : 'https://evisa.express/',
-			'de' : 'https://evisa.express/de',
-			'en' : 'https://evisa.express/',
-			'pl' : 'https://evisa.express/pl',
-			'en' : 'https://evisa.express/',
-			'es' : 'https://evisa.express/es',
-			'en' : 'https://evisa.express/',
-			'cn' : 'https://evisa.express/cn',
+			'en' : 'https://edocs.travel/',
+			'de' : 'https://edocs.travel/de',
+			'en' : 'https://edocs.travel/',
+			'pl' : 'https://edocs.travel/pl',
+			'en' : 'https://edocs.travel/',
+			'es' : 'https://edocs.travel/es',
+			'en' : 'https://edocs.travel/',
+			'cn' : 'https://edocs.travel/cn',
 		}
 
 		window.onscroll = function() {
