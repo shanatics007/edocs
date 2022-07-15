@@ -2,7 +2,7 @@ pipeline {
     agent { node { label '164_labels' } }
     stages {
         stage('build') {
-            when { branch 'main' }
+            when { branch 'prod' }
                 steps {
 		
 		    sh 'mvn clean'
