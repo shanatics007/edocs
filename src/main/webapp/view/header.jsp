@@ -1,3 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page import="java.util.HashMap" %>
+ <%@ page import="com.edocs.Model.UserModel" %>
+ <%@ page import="java.util.Date" %>
+ <%@ page import=" java.time.LocalDate" %>
+  <%@ page import="java.time.Month"%>
+  <%@ page import="java.time.format.DateTimeFormatter "%>
+  <%@ page import="java.util.Calendar"%>
+
 <div class="menu-desktop-wrapper">
          <nav class="menu-desktop">
             <div class="container">
@@ -24,7 +34,44 @@
                      <li><a href="/en/passenger-locator-form" title="Passenger Locator Forms" style="color: #1d3367 !important;">Passenger Locator Forms</a></li>
                      <li><a href="#" title="Travel Insurance" rel="nofollow" style="color: #1d3367 !important;">Travel Insurance</a></li>
                      <li><a href="/en/travel-entry-requirements" title="Check Entry Requirements" style="color: #1d3367 !important;">Check Entry Requirements</a></li>
-                   <li><a href="/login" id="loginLinkId" style="color: #1d3367 !important;">Log In</a></li>
+                   
+                   <li>
+                   <%
+	                   if (request.getSession().getAttribute("userLogin") != null) {
+	               		HashMap<Object, Object> userDetails =(HashMap<Object, Object>) request.getSession().getAttribute("userLogin");
+	               		UserModel user = (UserModel)userDetails.get("data");
+	               		
+						long userid1 = user.getUserId();
+						if(userid1 == 0){
+						%>
+							<a href="/login" id="loginLinkId" style="color: #1d3367 !important;">Log In</a>
+						<%}else{%>
+						<ul class="menu-options account-dropdown">
+						<li class="dropdown-wrapper">
+						<a id="menu-desktop-account" href="" class="menu-account-user link-prevent menu-option-dropdown">
+						<img src="https://evisa.express/img/icon/account-personal.svg" alt="">
+						<div class="user-name">My account</div></a>
+						<ul class="menu-dropdown-values hidden">
+						<li>
+						<a id="menu-desktop-account-index" href="/en/account" title="My applications">My applications</a>
+						</li>
+						<li>
+						<a id="menu-desktop-account-settings" href="/en/account" title="Settings">Settings</a></li>
+						<li><a id="menu-desktop-logout" href="/logout">Log out</a>
+						</li>
+						</ul></li>
+						</ul>
+							
+						<%}
+						}else{  %>
+							<a href="/login" id="loginLinkId" style="color: #1d3367 !important;">Log In</a>
+						<% }
+						%>
+						
+						
+                           
+                   </li>
+                  
                   </ul>
                </div>
                <div class="hamburger-menu">

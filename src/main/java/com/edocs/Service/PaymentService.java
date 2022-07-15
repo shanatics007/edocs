@@ -6,5 +6,5 @@ import com.edocs.Model.PaymentModel;
 
 public interface PaymentService {
 
-	public HashMap<Object, Object> savePaymentDetails(PaymentModel model);
+	public HashMap<String, Object> savePaymentDetails(PaymentModel model);
 }

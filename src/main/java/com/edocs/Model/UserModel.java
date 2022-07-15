@@ -17,7 +17,7 @@ public class UserModel {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
 	@Column(name = "user_id", unique = true, nullable = false)
-	private Long userId;
+	private Long userId=0l;
 	
 	
 	@Column(name = "user_email",unique = true)

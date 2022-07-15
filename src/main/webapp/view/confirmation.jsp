@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
  <%@ page import="java.util.HashMap" %>
- <%@ page import="com.edocs.Model.ApplicationForVisaModel" %>
+ <%@ page import="com.edocs.Model.PaymentModel"%>
  <%@ page import="java.util.Date" %>
  <%@ page import=" java.time.LocalDate" %>
-  <%@ page import="java.time.Month"%>
-  <%@ page import="java.time.format.DateTimeFormatter "%>
-  <%@ page import="java.util.Calendar"%>
-  
+ <%@ page import="java.time.Month"%>
+ <%@ page import="java.time.format.DateTimeFormatter"%>
+ <%@ page import="java.util.Calendar"%>
+ 
  <%    
  int applicationId=0;
  String price=null;
@@ -15,20 +15,23 @@
  long userId ;
  String firstName = null;
  String lastName = null;
+ String paymentId = null;
  
- if (request.getSession().getAttribute("formDetails") != null) {
-		HashMap<Object, Object> appVisamodel =(HashMap<Object, Object>) request.getSession().getAttribute("formDetails");
+ if (request.getSession().getAttribute("paymentDetails") != null) {
+		HashMap<Object, Object> paymentModel =(HashMap<Object, Object>) request.getSession().getAttribute("paymentDetails");
 		//ApplicationForVisaModel test =request.getSession().getAttribute("formDetails");
-		System.out.println("AppData:"+appVisamodel.get("data"));
-		ApplicationForVisaModel ApplnFormData = (ApplicationForVisaModel)appVisamodel.get("data");
-		if(ApplnFormData!=null){
+		
+		PaymentModel paymentData = (PaymentModel)paymentModel.get("data");
+		if(paymentData!=null){
 		
 		 checkUser=true;
-		 applicationId = ApplnFormData.getPkid();
-		 userId = ApplnFormData.getUserId();
-		 price = ApplnFormData.getPrice();
-		 firstName = ApplnFormData.getFirstName();
-		 lastName = ApplnFormData.getLastName();
+		 applicationId = paymentData.getPkid();
+		 System.out.println("AppId:"+applicationId);
+		 userId = paymentData.getUserId();
+		 price = paymentData.getPrice();
+		 firstName = paymentData.getFirstName();
+		 lastName = paymentData.getLastName();
+		 paymentId = paymentData.getPaymentId();
 		}else{
 			
 			checkUser=false;
@@ -198,29 +201,7 @@ ul {
 
 
 }
-@-webkit-keyframes glowing {
-  0% { background-color: #1d3367; -webkit-box-shadow: 0 0 3px #1d3367; }
-  50% { background-color: #FF0000; -webkit-box-shadow: 0 0 15px #FF0000; }
-  100% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
-}
 
-@-moz-keyframes glowing {
-  0% { background-color: #1d3367; -moz-box-shadow: 0 0 3px #1d3367; }
-  50% { background-color: #FF0000; -moz-box-shadow: 0 0 15px #FF0000; }
-  100% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
-}
-
-@-o-keyframes glowing {
-  0% { background-color: #1d3367; box-shadow: 0 0 3px #1d3367; }
-  50% { background-color: #FF0000; box-shadow: 0 0 15px #FF0000; }
-  100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
-}
-
-@keyframes glowing {
-  0% { background-color: #1d3367; box-shadow: 0 0 3px #1d3367; }
-  50% { background-color: #FF0000; box-shadow: 0 0 15px #FF0000; }
-  100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
-}
 .description-steps-text-main {
 	color: #1d3367;
 	margin-top: 10px;

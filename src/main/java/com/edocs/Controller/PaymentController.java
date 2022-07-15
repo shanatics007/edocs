@@ -2,6 +2,8 @@ package com.edocs.Controller;
 
 import java.util.HashMap;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,9 +26,11 @@ public class PaymentController {
 	private PaymentService paymentService;
 	
 	@PostMapping("/makePayment")
-	public HashMap<Object, Object> savePaymentDetails(@RequestBody PaymentModel model) {
+	public HashMap<String, Object> savePaymentDetails(@RequestBody PaymentModel model,HttpSession session) {
 		
-		return paymentService.savePaymentDetails(model);
+		HashMap<String, Object> paymentDetails = paymentService.savePaymentDetails(model);
+		session.setAttribute("paymentDetails", paymentDetails);
+		return paymentDetails;
 		
 	}
 }

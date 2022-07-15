@@ -54,6 +54,9 @@ public class ApplicationForVisaModel {
    String price;
    @Column(name="is_Payment")
    boolean isPayment;
+   @Column(name="to_country")
+   String toCountry;
+    
    
    
    
@@ -62,25 +65,28 @@ public class ApplicationForVisaModel {
 	super();
 	// TODO Auto-generated constructor stub
 }
+	
 	public ApplicationForVisaModel(int pkid, String travelAirports, String purposeForTravel, String plannedDateOfTravel,
-		String firstName, String lastName, String dateOfBirth, String email, String contactPhoneNumber,
-		String nationality, long userId, String confirmAuthKey, String price, boolean isPayment) {
-	super();
-	this.pkid = pkid;
-	this.travelAirports = travelAirports;
-	this.purposeForTravel = purposeForTravel;
-	this.plannedDateOfTravel = plannedDateOfTravel;
-	this.firstName = firstName;
-	this.lastName = lastName;
-	this.dateOfBirth = dateOfBirth;
-	this.email = email;
-	this.contactPhoneNumber = contactPhoneNumber;
-	this.nationality = nationality;
-	this.userId = userId;
-	this.confirmAuthKey = confirmAuthKey;
-	this.price = price;
-	this.isPayment = isPayment;
-}
+			String firstName, String lastName, String dateOfBirth, String email, String contactPhoneNumber,
+			String nationality, long userId, String confirmAuthKey, String price, boolean isPayment, String toCountry) {
+		super();
+		this.pkid = pkid;
+		this.travelAirports = travelAirports;
+		this.purposeForTravel = purposeForTravel;
+		this.plannedDateOfTravel = plannedDateOfTravel;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.dateOfBirth = dateOfBirth;
+		this.email = email;
+		this.contactPhoneNumber = contactPhoneNumber;
+		this.nationality = nationality;
+		this.userId = userId;
+		this.confirmAuthKey = confirmAuthKey;
+		this.price = price;
+		this.isPayment = isPayment;
+		this.toCountry = toCountry;
+	}
+
 	public int getPkid() {
 		return pkid;
 	}
@@ -166,5 +172,14 @@ public class ApplicationForVisaModel {
 	public void setPayment(boolean isPayment) {
 		this.isPayment = isPayment;
 	}
+
+	public String getToCountry() {
+		return toCountry;
+	}
+
+	public void setToCountry(String toCountry) {
+		this.toCountry = toCountry;
+	}
+	
 	
 }

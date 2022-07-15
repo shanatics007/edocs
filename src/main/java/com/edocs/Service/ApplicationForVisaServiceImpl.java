@@ -85,5 +85,11 @@ public class ApplicationForVisaServiceImpl implements ApplicationForVisaService 
 		 
 	}
 
+	@Override
+	public ApplicationForVisaModel getApplicationByAuth(String authKey) {
+		
+		return applicationRepos.getAppDetails(authKey);
+	}
+
 
 }

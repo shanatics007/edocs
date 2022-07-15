@@ -29,6 +29,7 @@
 		
 		 checkUser=true;
 		 applicationId = ApplnFormData.getPkid();
+		 System.out.println(applicationId);
 		 userId = ApplnFormData.getUserId();
 		 price = ApplnFormData.getPrice();
 		 String [] str = price.split("USD");
@@ -62,13 +63,7 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <style type="text/css">
-iframe#_hjRemoteVarsFrame {
-	display: none !important;
-	width: 1px !important;
-	height: 1px !important;
-	opacity: 0 !important;
-	pointer-events: none !important;
-}
+
 
 </style>
 
@@ -96,7 +91,9 @@ iframe#_hjRemoteVarsFrame {
             <div class="offset-lg-1 offset-sm-0 col-12 col-lg-10 col-sm-12 payments-box">
                 <div class="payment-method-text">
                     Choose payment method                </div>
-                <input type="hidden" id="token" name="" value="">
+                <input type="hidden" id="userId" name="" value="<%=userId%>">
+                <input type="hidden" id="applicationId" name="" value="<%=applicationId%>">
+                 <input type="hidden" id="priceId" name="" value="<%=price%>">
                 <div class="payment-methods">
                     <ul>
 					  <li data-payment="ingenico-card-form">
@@ -106,7 +103,9 @@ iframe#_hjRemoteVarsFrame {
 					    </label> -->
 					    <div class="payment-icons">
 					    <img alt="mastercard" src="/images/mastercard.png">
-					    <img alt="mastercard" src="/images/visacard.png"> 
+					    <img alt="mastercard" src="/images/visacard.png">
+					    <img alt="mastercard" src="/images/paypal.png">
+					    <img alt="mastercard" src="/images/american-express.png">
 					      
 					    </div>
 					</li>
@@ -234,9 +233,9 @@ function makePayment(){
             },
 		data: JSON.stringify ({
 
-			"userId":<%=userId%>,
-			"applicationId":<%=applicationId%>,
-			"price":       "<%=price%>",
+			"userId":$('#userId').val(),
+			"applicationId":$('#applicationId').val(),
+			"price":       $('#priceId').val(),
 			"paymentStatus":false,
 			"cardNumber": $('#card_number').val(),
 			"month":     $('#card_expiry_mm').val(),
@@ -244,8 +243,8 @@ function makePayment(){
 			"ccid" :	 $('#card_cvv').val(),
 			"firstName": $('#card_holder_first_name').val(),
 			"lastName": $('#card_holder_second_name').val(),
-			"invoice": <%=applicationId%>,
-			"billingCountry":$('#billing_country').val(),
+			"invoice": $('#applicationId').val(),
+			"billingCountry":$('#countrylist').val(),
 			"billingAddress": $('#billing_address').val(),
 			"billingState": $('#billing_state').val(),
 			"billingZipcode": $('#billing_zipcode').val(),
@@ -294,6 +293,27 @@ window.onload = function () {
 				 $('#countrylist').val('<%=from_country%>');
 			 });
 				
+		},	
+		error : function(data) {
+			console.log("error when gettig data");
+		}
+	}); 
+
+	var authUrl = window.location.href;
+	var authKey = authUrl.split('=')[1];
+   
+    $.ajax({
+		type : 'GET',
+		url : '/application/getApplicationDetails/'+authKey,	
+		async : true,
+		success : function(data) {
+			$('#applicationId').val(data.pkid);
+			var price  = data.price.split('USD');
+			$('#priceId').val(price[0]);
+			$('#userId').val(data.userId);
+			$('#card_holder_first_name').val(data.firstName);
+			$('#card_holder_second_name').val(data.lastName);
+			$('#countrylist').val(data.nationality);
 		},	
 		error : function(data) {
 			console.log("error when gettig data");

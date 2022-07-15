@@ -866,6 +866,8 @@ label#radiolabel {
   	
   	<script>
   	function submitApplication(){
+  		var urlString  = window.location.href.split('/');
+    	var country = urlString[4];
 		if($('#accept-terms-track').prop('checked') && $('#accept-gdpr-track').prop('checked')){
 			$('.checkmark').css('border','none');
 			if(validate()){
@@ -893,6 +895,7 @@ label#radiolabel {
 						"pkid":$('#applicationId').val(),
 						"confirmAuthKey":$('#authKeyId').val(),
 						"userId":$('#usersId').val(),
+						"toCountry":country
 						
 						
 					}),

@@ -20,8 +20,8 @@ public class PaymentServiceImpl implements PaymentService {
 	private ApplicationForVisaRepository applicationForVisaRepository;
 
 	@Override
-	public HashMap<Object, Object> savePaymentDetails(PaymentModel model) {
-		HashMap<Object, Object> response = new HashMap<Object, Object>();
+	public HashMap<String, Object> savePaymentDetails(PaymentModel model) {
+		HashMap<String, Object> response = new HashMap<String, Object>();
 			
 		try {
 			
@@ -35,13 +35,11 @@ public class PaymentServiceImpl implements PaymentService {
 			paymentInfo.setMonth(model.getMonth());
 			paymentInfo.setYear(model.getYear());
 			paymentInfo.setInvoice(model.getInvoice());
-			paymentInfo.setBillingCountry(model.getBillingCountry());
 			NMIPaymentGateway paymentGateway = new NMIPaymentGateway("madcap149", "MickMouse2021##");
 			paymentInfo = paymentGateway.doAuth(paymentInfo);
 			if(paymentInfo.getPaymentTransactionID() != "") {
 				model.setPaymentId(paymentInfo.getPaymentTransactionID());
 				response.put("data", paymentRepository.save(model));
-				paymentRepository.save(model);
 				applicationForVisaRepository.updatePaymentstatus(model.getApplicationId());
 				response.put("status", true);
 		}else {

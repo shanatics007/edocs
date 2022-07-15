@@ -19,6 +19,7 @@
  
  %>
 	
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -54,8 +55,6 @@ section#onlineapplysection {
 	
 }
 
-
-
 p.description-steps-eta-planning {
 	font-size: 18px !important;
 	color: #1d3367 !important;
@@ -72,7 +71,7 @@ ul.toggle-box {
 }
 </style>
 
-<base href=".">
+
 <style>
 .cookie-info-text {
 	color: #969696;
@@ -779,7 +778,10 @@ display: none;
 		color:black !important;
 }
 .main-site-content{
-	height: 700px;
+	height: auto;
+}
+ul.drop-down-ul.display-none.display-block {
+    z-index: 999999;
 }
 </style>
 
@@ -827,15 +829,15 @@ display: none;
 		<div class="account-menu-wrapper">
 			<div class="container">
 				<ul class="e-visa-footer-links">
-					<li><a id="menu-mobile-account-index" class="col-3 my-account-tab-menu-active" href="#section1">My applications</a></li>
-					<li><a id="menu-mobile-account-index" class="col-3 my-account-tab-menu" href="#section2">Settings applications</a></li>
-					<li><a id="menu-mobile-account-index" class="col-3 my-account-tab-menu" href="#section3">Log Out</a></li>
+					<li><a id="myApplications-menu" class="col-3 my-account-tab active" href="#myApplications">My applications</a></li>
+					<li><a id="settingId-menu" class="col-3 my-account-tab " href="#setting">Settings</a></li>
+					<li><a id="LogoutId" class="col-3 my-account-tab " href="/logout">Log Out</a></li>
 					
 				</ul>
 			</div>
 		</div>
 
-		<section>
+		<section id="myApplications" class="my-account-section-setting" >
 				<div class="container" id="container1">
 			<div class="mtb-30">
 				<div>
@@ -843,10 +845,14 @@ display: none;
 						<div class="my-applications col-md-8">
 							
 							<ul class="my-applications-menu">
-								<li><a class="my-account-tab-menu active" href="#"> active <span id="activeTotalId"></span></a></li>
-								<li><a class="my-account-tab-menu" href="#"> finished</a></li>
-							</ul>
-							<div class="tab-content" id="activeContent">
+									<li><a class="my-account-tab-menu active"
+										id="actived-menu" href="#actived"> active <span
+											id="activeTotalId"></span></a></li>
+									<li><a class="my-account-tab-menu " id="finished-menu"
+										href="#finished"> finished <span id="finishedTotalId"></span>
+									</a></li>
+								</ul>
+							<div class="tab-content my-account-section" id="actived">
 								<div>
 									<table class="applications-table">
 										<thead>
@@ -860,6 +866,26 @@ display: none;
 											</tr>
 										</thead>
 										<tbody id="activetBody">
+											
+										</tbody>
+										
+									</table>
+								</div>
+							</div>
+							<div class="tab-content my-account-section" id="finished" style="display: none;">
+								<div>
+									<table class="applications-table">
+										<thead>
+											<tr>
+												<th>ID</th>
+												<th class="pl-10"><span>country</span></th>
+												<th><span>status</span></th>
+												<th class="hide-465"><span>applicant</span></th>
+												<th class="hide-465"><span>date</span></th>
+												
+											</tr>
+										</thead>
+										<tbody id="finishtBody">
 											
 										</tbody>
 										
@@ -916,7 +942,7 @@ display: none;
 			</div>
 		</div>
 		</section>
-		<section id="showsUserSetting">
+		<section id="setting" class="my-account-section-setting" style="display:none;">
 				<div class="container">
 			<div class="mtb-30">
 				<div>
@@ -1050,19 +1076,56 @@ display: none;
 	$(document).on(
 			"click",
 			".my-account-tab-menu",
-			function() {
+			function(e) {
 				var sectionId = $(this).attr("id");
-				var section = $(this).children().attr(
+				var section = $(this).attr(
 						"href");
 				$(".my-account-section").css("display",
 						"none");
-				$(".my-account-tab-menu").removeClass(
-						"my-account-tab-menu-active");
+				$(".my-account-tab-menu").removeClass("active")
 				displaySection(sectionId, section);
+				e.preventDefault();
+				e.stopPropagation();
 			});
+
+	function displaySection(secid, sec){
+		$(sec).show();
+		$("#" + secid).addClass("active");
+		
+	}
+
+
+	$(document).on(
+			"click",
+			".my-account-tab",
+			function(e) {
+				var sectionId = $(this).attr("id");
+				var section = $(this).attr(
+						"href");
+				$(".my-account-section-setting").css("display",
+						"none");
+				$(".my-account-tab").removeClass("active")
+				displayHedaerSection(sectionId, section);
+				e.preventDefault();
+				e.stopPropagation();
+			});
+
+	function displayHedaerSection(secid, sec){
+		$(sec).show();
+		$("#" + secid).addClass("active");
+		
+		}
+	function makePendingPayment(authKey){
+		var param ="hash="+authKey;
+		window.location.href = "/payment/?"+param;
+	}
+
+	
 	</script>
 	
-<script>
+	<script>
+	
+	
 
 	window.onload = function () {
 		$('#loginLinkId').css('display','none')
@@ -1082,8 +1145,38 @@ display: none;
 						}
 				 $('#activetBody').append(
 						 
-						 '<tr><td>'+element.pkid+'</td><td>'+element.nationality+'</td>'
-						 +'<td style="color:red;">'+element.payment+'</td><td>'+element.firstName+' '+element.lastName+'</td><td>'+element.plannedDateOfTravel+'</td><td style="color:red; font-size:20px; text-align: center;">$</td></tr>'
+						 '<tr><td>'+element.pkid+'</td><td>'+element.toCountry+'</td>'
+						 +'<td style="color:red;">'+element.payment+'</td><td>'+element.firstName+' '+element.lastName+'</td><td>'+element.plannedDateOfTravel+'</td><td id="pendingdoller" style="color:red; font-size:20px; text-align: center; cursor: pointer;" onclick="makePendingPayment(\''+element.confirmAuthKey+'\');">$</td></tr>'
+	
+						 )
+						
+					 });
+					
+			},	
+			error : function(data) {
+				console.log("error when gettig data");
+			}
+		}); 
+
+		$('#loginLinkId').css('display','none')
+		var param = "email=<%=email%>"
+		$.ajax({
+			type : 'GET',
+			url : '/user/getPaidApplication/?'+param,	
+			async : true,
+			success : function(data) {
+				$('#finishedTotalId').text(' ('+data.length+')')
+				 $.each(data, function(index,element) {
+					 
+					 if(element.payment==0){
+						 element.payment="Unpaid";
+					}else{
+						element.payment="Paid";
+						}
+				 $('#finishtBody').append(
+						 
+						 '<tr><td>'+element.pkid+'</td><td>'+element.toCountry+'</td>'
+						 +'<td style="color:red;">'+element.payment+'</td><td>'+element.firstName+' '+element.lastName+'</td><td>'+element.plannedDateOfTravel+'</td></tr>'
 	
 						 )
 						
@@ -1095,6 +1188,7 @@ display: none;
 			}
 		}); 
 	}
+	
 	
 
 </script>

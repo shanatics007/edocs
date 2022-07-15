@@ -9,4 +9,6 @@ public interface ApplicationForVisaService {
 	public HashMap<Object, Object> registerApplication(ApplicationForVisaModel model);
 
 	public void updatePaymentStatus(int applicationId);
+	
+	public ApplicationForVisaModel getApplicationByAuth(String authKey);
 }

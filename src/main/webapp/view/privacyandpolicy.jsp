@@ -477,60 +477,12 @@ span.description-steps-text-bottom {
 					<div class="top-content-text padding">
 						<h1
 							style="color: #ffff; font-size: 50px; font-weight: 600; text-align: center;">
-							Privacy Policy</h1>
+							Privacy Policy for Edocs Travel</h1>
 
 					</div>
-					<div class="description-steps">
-				<p class="description-steps-eta-planning"style="color: #ffff; font-size: 18px; font-weight: 600; text-align: center;">							
-								We know how important is security of your data so</p>
-				<p class="description-steps-eta-planning"style="color: #ffff; font-size: 18px; font-weight: 600; text-align: center;">							
-								we attach great importance
-								to the highest quality security standards.  </p>
-						</div>
+				
 
-					<!-- <section class="description padding mobile-pt-0"
-						style="background-color: #ffff; padding: 50px;">
-						<div class="top-content-text padding">
-
-							<h1 id="privacyId">Privacy Policy</h1>
-
-						</div>
-
-						<div class="description-steps">
-							<p class="description-steps-eta-planning">We know how
-								important is security of your data so we attach great importance
-								to the highest quality security standards.  </p>
-						</div>
-					</section> -->
-					<!-- <section class="description padding"
-						style="padding: 50px; background: #ffff;">
-						<div class="description-steps">
-							<div class="d-flex">
-								<h2 class="description-steps-h3"
-									style="color: rgb(29, 51, 103); text-align: center;">
-									IMPORTANT UPDATE </h2>
-							</div>
-							<div class="stepsdescription">
-								<p class="description-steps-eta-planning">
-									Since 27th of March, 2022, all travelers planning to visit
-									India must complete <a href="#"> the Air Suvidha Self
-										Declaration Form.</a>
-								</p>
-								<p class="description-steps-eta-planning">Complete the
-									Indian health declaration online within 72 hours from the
-									planned departure to India to receive a PDF confirmation via
-									email.</p>
-
-								<p class="description-steps-eta-planning">Completing the Air
-									Suvidha Self Declaration Form is mandatory and the confirmation
-									of its completion will be checked at the border.</p>
-
-
-							</div>
-
-						</div>
-					</section> -->
-
+					
 					<section class="gallery-big padding-rwd"
 						style="margin: 35px 0px 0px 0px !important">
 						<div class="steps" id="typesetpedvisa"
@@ -539,207 +491,87 @@ span.description-steps-text-bottom {
 								<div class="small-line"></div>
 								<h2 class="description-steps-h3"
 									style="color: #1d3367 !important; text-align: center; font-weight: 600;padding-top: 50px;">
-									Information about the processing of personal data</h2>
+									</h2>
 							</div>
 							<p class="description-steps-eta-planning" id="paddingId">					   					    
-								To comply with the obligations arising from the Regulation (EU) 2016/679
-								of the European Parliament and the Council of 27th April 2016 on
-								protection of natural persons in relation to the processing of
-								personal data and on free flow of such data and repealing
-								Directive 95/46/EC (General Data Protection Regulation)
-								hereinafter referred to as GDPR, INTERNATIONAL VISA SERVICE
-								Limited Liability Company Limited Partnership with the
-								registered office in Katowice, ul. Graniczna 29 (29 Graniczna
-								St.), 40-017 Katowice, NIP: 9542766476, REGON: 364718356,
-								entered by the Katowice-Wschód District Court in Katowice, 8th
-								Commercial Division, under KRS number 0000623079 (hereinafter
-								referred to as IVS), informs about the processing of the
-								client's personal data and the rights the client is entitled to.
-								The following rules are applicable as of May 25th, 2018.</p>
+								At edocs.travel, accessible from <a href="https://www.edocs.travel/"><b style="color: #184ec7;s">www.edocs.travel</b></b></a> one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by edocs.travel and how we use it.</p>
+							<p  class="description-steps-eta-planning" id="paddingId">If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.</p>
 
-							<ul id="typesvisalist"
-								style="padding-left: 100px; padding-right: 100px; padding-bottom: 50px; color: #1d3367;list-style-type: none;">
-								<li>
-									<h4 id="personalId">
-										1.The controller of the personal data</h4>
-										
-									<p>INTERNATIONAL VISA SERVICE Limited Liability Company
-										Limited Partnership with the registered office in Katowice,
-										ul. Graniczna 29 (29 Graniczna St.), 40-017 Katowice, NIP:
-										9542766476, REGON: 364718356, entered by the Katowice-Wschód
-										District Court in Katowice, 8th Commercial Division, under KRS
-										number 0000623079 is the controller of the personal data
-										Telephone number: +44 2031 293 603 E-mail address:
-										support@edocs.travel.</p>
+							<p  class="description-steps-eta-planning" id="paddingId">This Privacy Policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collect in edocs.travel. This policy is not applicable to any information collected offline or via channels other than this website. Our Privacy Policy was created with the help of the <a href="https://www.privacypolicygenerator.info/">Free Privacy Policy Generator</a>.</p>
+							<h2 class="description-steps-eta-planning" id="AddingForCSSH2">Consent</h2>
 
-								</li>
-								<li>
-									<h4 id="dataproId">
-										2.Data protection officer</h4>
-									<p>Aleksander Posmyk is the data protection officer at IVS,
-										telephone +44 2031 293 603.</p>
-								</li>
-								<!-- <li>
-									<h3 style="font-size: 20px; color: #1d3367; font-weight: 600;">
-										Employment Visatypes Of Indian Visa</h3>
-									<p>
-										Any applicants who wish to work in India can obtain an <b>employment
-											visa.</b> Application for employment vis must be accompanied by
-										an appointment letter, employment contract and proof of
-										registration of company/entity in India. Employment visa is
-										provided for a period of one year, with provision for
-										extension. The maximum period for an employment visa is five
-										years from the date of issue of visa.
-									</p>
-								</li> -->
-								<li>
-									<h4 id="personalId">
-										3.Purpose and legal basis of data processing</h4>
-									<p>IVS processes personal data for the purpose of executing
-										a contract to which the person whose data are processed is a
-										party, or to take actions at the request of the data subject
-										before concluding the contract (Article 6 par. 1 letter b of
-										the GDPR).</p>
-									<p>In certain situations, IVS may process personal data due
-										to the need to comply with legal obligations to which IVS is
-										subject (Article 6 par. 1 letter c of the GDPR), or the
-										processing is necessary to protect the vital interests of the
-										data subject or another natural person (Article 6 par. 1
-										letter d of the GDPR), or processing is necessary for the
-										purposes of the legitimate interests pursued by IVS (Article 6
-										par. 1 letter f of the GDPR), in particular, for the purpose
-										related to:</p>
-									<ul id="privacyId">
-										<li>marketing of IVS products and services,</li>
-										<li>monitoring and improvement of the quality of services
-											provided by IVS, including monitoring of telephone
-											conversations and meetings, carrying out customer
-											satisfaction surveys of services provided,</li>
-										<li>if applicable, the conduct of disputable proceedings,
-											as well as proceedings before public authorities and other
-											proceedings, including carrying on enquiry and defence
-											against claims.</li>
-									</ul>
-									<p>In all other situations, personal data are processed
-										solely on the basis of the consent granted for the purpose
-										specified in its content (Article 6 par. 1 letter a of the
-										GDPR).</p>
-									<p>In all situations, sensitive personal data are processed
-										solely on the basis of the consent granted for the purpose
-										specified in its content (Article 9 par. 2 letter a of the
-										GDPR).</p>
-								</li>
+							<p class="description-steps-eta-planning" id="paddingId">By using our website, you hereby consent to our Privacy
+								Policy and agree to its terms.</p>
 
-								<li>
-									<h4 id="personalId">
-										4.Recipients of data</h4>
-									<p>IVS discloses or may disclose personal data to the
-										following recipients or categories of recipients, in
-										particular to:</p>
-									<ul id="RecipId">
-										<li>public authorities and relevant state offices,
-											competent to process visa applications and to issue visas;</li>
-										<li>entities that participate in the processes necessary
-											to perform contracts concluded with clients, including banks,
-											credit card operators, electronic and online payment agents,</li>
-										<li>entities which support IVS in business processes,
-											including in particular entities processing personal data for
-											IVS (so-called data processors),inter alia:</li>
-										<li>hosting companies,</li>
-										<li>legal services and accounting services,</li>
-										<li>companies and external entities carrying out
-											processes which are a part of the activities necessary to
-											conclude the contract with a client.</li>
-
-									</ul>
-								</li>
-								<li>
-									<h4 id="personalId">
-										5.Time of data processing</h4>
-
-									<p>The client's personal data, including sensitive data
-										provided on the basis of consent, are processed by IVS for the
-										time necessary to achieve the objectives indicated in point 3,
-										that is, until the contract is concluded. After that period,
-										IVS may process the client's data for a period of time and to
-										the extent specified by law or for the pursuit of the
-										legitimate interest of the controller as in point. 3, however,
-										no longer than 10 years. Insensitive data processed on the
-										basis of separate consent shall be kept until the consent is
-										withdrawn.</p>
-
-									<h3 id="personalId">
-										6. The rights of data subjects</h3>
-
-									<p>IVS guarantees all clients exercise of the data subject
-										rights granted by the GDPR, including in particular:</p>
-
-									<ul id="subjectId">
-										<li>The right to access the personal data;</li>
-										<li>The right to request correction of the personal data
-											which are incorrect and the right to request supplementing of
-											the incomplete personal data,</li>
-										<li>The right to request erasure of the personal data
-											("the right to be forgotten"), when:</li>
+							<h2 class="description-steps-eta-planning" id="AddingForCSSH2">Information we collect</h2>
 							
-									</ul>
-									<ul id="dataId">
-									<li>The personal data are no longer necessary for the
-											purposes for which they have been collected or otherwise
-											processed;</li>
-										<li>The data subject objects to the processing;</li>
-										<li>The personal data have been unlawfully processed;</li>
-										<li>The data subject has withdrawn the consent on which the processing is 
-										based and there is no other legal ground for processing;</li>
-										<li>The personal data have to be erased for compliance with a legal obligation provided by law</li>
-										<li>The personal data have been collected in relation to the offer of
-										 information society services.</li>
-									</ul>
-									<ul>
-									<li>The right to request restriction of processing of the personal data when:</li>
-									<li>The data subject challenges correctness of the personal data;</li>
-									<li>The processing is unlawful and the data subject opposes to erasure of 
-									the personal data, requesting to limit their use instead;</li>
-									<li>The controller no longer needs the personal data for processing but it is 
-									necessary for the data subject to establish an enquiry or defend their claims;</li>
-									<li>The data subject has objected to the processing - pending determination of whether
-									 the legitimate grounds on the part of the controller take precedence over the grounds of objection.</li>
-									<li>The right to transfer personal data if:</li>
-									<li>The processing takes place on the basis of consent or on the basis of a contract</li>
-									<li>The processing is automated</li>
-									<li>The right to object to the processing of personal data, if there are reasons 
-									related to the client's special situation and the processing results from indispensability 
-									for the purposes resulting from legally justified interests pursued by the controller.</li>
-									<li>Withdrawal of consent to data processing</li>
-									<li>To the extent of the client's consent to processing of their personal data, 
-									the client is entitled to withdraw the consent at any time. The withdrawal takes 
-									place without affecting the legality of the processing which was carried out on 
-									the basis of the consent prior to its withdrawal.</li>
-									<li>The right to lodge a complaint with the supervisory authority</li>
-									<li>In any situation, when the client considers that IVS processes personal data 
-									contrary to the provisions of the GDPR, the client has the right to lodge a complaint 
-									with the appropriate supervisory authority.</li>
-									<li>Transfer of personal data to countries outside the</li>
-									<li>European Economic Area IVS transfers personal data to countries outside 
-									the European Economic Area: Canada – the transfer of data is necessary for 
-									carrying out the contract of the visa agency. In addition, the Commission 
-									decision of 20th December 2001 stated that the regulations in force in Canada 
-									ensure an adequate level of protection of personal data.</li>
-									<li>IVS may transfer personal data to third countries, in particular, to 
-									the US and international organizations.The transfer of data takes place on 
-									the basis of standard contractual clauses agreed with the recipient,
-									the content of which has been adopted by the European Commission and ensures 
-									the highest standards of personal data protection applied on the market. 
-									The client has the right to obtain a copy of the data transferred by IVS.</li>
-									<li>Obligation to provide personal data</li>
-									<li>Providing personal data is entirely voluntary. Providing data is a 
-									condition for concluding a visa contract with IVS or it is necessary to achieve 
-									the objectives arising from the legitimate interests of IVS. Failure to provide all 
-									the data will prevent conclusion and execution of the indicated contract.</li>
-									
-                              </ul>
-								
+							<p class="description-steps-eta-planning" id="paddingId">The personal information that you are asked to provide, and the reasons why you are asked to provide it, will be made clear to you at the point we ask you to provide your personal information.</p>
+<p class="description-steps-eta-planning" id="paddingId">If you contact us directly, we may receive additional information about you such as your name, email address, phone number, the contents of the message and/or attachments you may send us, and any other information you may choose to provide.</p>
+<p class="description-steps-eta-planning" id="paddingId">When you register for an Account, we may ask for your contact information, including items such as name, company name, address, email address, and telephone number.</p>
+
+				<h2 class="description-steps-eta-planning" id="AddingForCSSH2">How we use your information</h2>
+
+<p class="description-steps-eta-planning" id="paddingId">We use the information we collect in various ways, including to:</p>
+
+							<ul class="description-steps-eta-planning" id="edocsList">
+								<li>Provide, operate, and maintain our website</li>
+								<li>Improve, personalize, and expand our website</li>
+								<li>Understand and analyze how you use our website</li>
+								<li>Develop new products, services, features, and
+									functionality</li>
+								<li>Communicate with you, either directly or through one of
+									our partners, including for customer service, to provide you
+									with updates and other information relating to the website, and
+									for marketing and promotional purposes</li>
+								<li>Send you emails</li>
+								<li>Find and prevent fraud</li>
 							</ul>
+
+							<h2 class="description-steps-eta-planning" id="AddingForCSSH2">Log Files</h2>
+
+<p class="description-steps-eta-planning" id="paddingId">edocs.travel follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this and a part of hosting services' analytics. The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information.</p>
+
+
+
+
+<h2 class="description-steps-eta-planning" id="AddingForCSSH2">Advertising Partners Privacy Policies</h2>
+
+<P class="description-steps-eta-planning" id="paddingId">You may consult this list to find the Privacy Policy for each of the advertising partners of edocs.travel.</p>
+
+<p class="description-steps-eta-planning" id="paddingId">Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on edocs.travel, which are sent directly to users' browser. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit.</p>
+
+<p class="description-steps-eta-planning" id="paddingId">Note that edocs.travel has no access to or control over these cookies that are used by third-party advertisers.</p>
+
+<h2 class="description-steps-eta-planning" id="AddingForCSSH2">Third Party Privacy Policies</h2>
+
+<p class="description-steps-eta-planning" id="paddingId">edocs.travel's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options. </p>
+
+<p class="description-steps-eta-planning" id="paddingId">You can choose to disable cookies through your individual browser options. To know more detailed information about cookie management with specific web browsers, it can be found at the browsers' respective websites.</p>
+
+<h2 class="description-steps-eta-planning" id="AddingForCSSH2">CCPA Privacy Rights (Do Not Sell My Personal Information)</h2>
+
+<p class="description-steps-eta-planning" id="paddingId">Under the CCPA, among other rights, California consumers have the right to:</p>
+<p class="description-steps-eta-planning" id="paddingId">Request that a business that collects a consumer's personal data disclose the categories and specific pieces of personal data that a business has collected about consumers.</p>
+<p class="description-steps-eta-planning" id="paddingId">Request that a business delete any personal data about the consumer that a business has collected.</p>
+<p class="description-steps-eta-planning" id="paddingId">Request that a business that sells a consumer's personal data, not sell the consumer's personal data.</p>
+<p class="description-steps-eta-planning" id="paddingId">If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us.</p>
+
+<h2 class="description-steps-eta-planning" id="AddingForCSSH2">GDPR Data Protection Rights</h2>
+
+<p class="description-steps-eta-planning" id="paddingId">We would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to the following:</p>
+<p class="description-steps-eta-planning" id="paddingId">The right to access – You have the right to request copies of your personal data. We may charge you a small fee for this service.</p>
+<p class="description-steps-eta-planning" id="paddingId">The right to rectification – You have the right to request that we correct any information you believe is inaccurate. You also have the right to request that we complete the information you believe is incomplete.</p>
+<p class="description-steps-eta-planning" id="paddingId">The right to erasure – You have the right to request that we erase your personal data, under certain conditions.</p>
+<p class="description-steps-eta-planning" id="paddingId">The right to restrict processing – You have the right to request that we restrict the processing of your personal data, under certain conditions.</p>
+<p class="description-steps-eta-planning" id="paddingId">The right to object to processing – You have the right to object to our processing of your personal data, under certain conditions.</p>
+<p class="description-steps-eta-planning" id="paddingId">The right to data portability – You have the right to request that we transfer the data that we have collected to another organization, or directly to you, under certain conditions.</p>
+<p class="description-steps-eta-planning" id="paddingId">If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us.</p>
+
+<h2 class="description-steps-eta-planning" id="AddingForCSSH2">Children's Information</h2>
+
+<p class="description-steps-eta-planning" id="paddingId">Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.</p>
+
+<p class="description-steps-eta-planning" id="paddingId" style="padding-bottom: 50px;">edocs.travel does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</p>
 						</div>
 
 					</section>
@@ -1140,14 +972,14 @@ span.description-steps-text-bottom {
 
 	<script>
 		var languages = {
-			'en' : 'https://edocs.travel/',
-			'de' : 'https://edocs.travel/de',
-			'en' : 'https://edocs.travel/',
-			'pl' : 'https://edocs.travel/pl',
-			'en' : 'https://edocs.travel/',
-			'es' : 'https://edocs.travel/es',
-			'en' : 'https://edocs.travel/',
-			'cn' : 'https://edocs.travel/cn',
+			'en' : 'https://evisa.express/',
+			'de' : 'https://evisa.express/de',
+			'en' : 'https://evisa.express/',
+			'pl' : 'https://evisa.express/pl',
+			'en' : 'https://evisa.express/',
+			'es' : 'https://evisa.express/es',
+			'en' : 'https://evisa.express/',
+			'cn' : 'https://evisa.express/cn',
 		}
 
 		window.onscroll = function() {
