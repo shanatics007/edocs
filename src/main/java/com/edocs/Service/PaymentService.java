@@ -1,8 +1,10 @@
 package com.edocs.Service;
 
+import java.util.HashMap;
+
 import com.edocs.Model.PaymentModel;
 
 public interface PaymentService {
 
-	public PaymentModel savePaymentDetails(PaymentModel model);
+	public HashMap<Object, Object> savePaymentDetails(PaymentModel model);
 }

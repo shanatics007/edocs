@@ -79,9 +79,10 @@ public class ApplicationForVisaServiceImpl implements ApplicationForVisaService 
 	}
 
 	@Override
-	public ApplicationForVisaModel updatePaymentStatus(int applicationId) {
+	public void updatePaymentStatus(int applicationId) {
 		
-		return applicationRepos.updatePaymentstatus(applicationId);
+		 applicationRepos.updatePaymentstatus(applicationId);
+		 
 	}
 
 

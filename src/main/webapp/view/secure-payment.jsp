@@ -31,6 +31,8 @@
 		 applicationId = ApplnFormData.getPkid();
 		 userId = ApplnFormData.getUserId();
 		 price = ApplnFormData.getPrice();
+		 String [] str = price.split("USD");
+		 price = str[0];
 		 firstName = ApplnFormData.getFirstName();
 		 lastName = ApplnFormData.getLastName();
 		 from_country=ApplnFormData.getNationality();
@@ -58,7 +60,7 @@
     <meta http-equiv="pragma" content="no-cache">
     <script src="jquery-3.6.0.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <style type="text/css">
 iframe#_hjRemoteVarsFrame {
 	display: none !important;
@@ -253,8 +255,18 @@ function makePayment(){
 		}),
 		async : true,
 		success : function(data) {
-			
+			if(data.status==true){
 				window.location.href = "/en/confirmation";
+			}else{
+				Swal.fire({
+					  title: "<img src='/images/fail1234.png' style='width:150px;'>", 
+					  html: data.message,  
+					  confirmButtonText: "Ok", 
+					 
+					});
+					
+				}
+			
 		},	
 		error : function(data) {
 			console.log("error when gettig data");

@@ -381,10 +381,7 @@
     			 
     		 }
 		
-    					
-    		
     	}
-
       	
       	function onSubmitValidate(){
       		var isValidated = true;
