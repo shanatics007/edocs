@@ -9,8 +9,6 @@
   <%@ page import="java.util.Calendar"%>
   
  <%    
- 
- 
  int applicationId=0;
  String price=null;
  boolean checkUser=false;
@@ -114,13 +112,13 @@
 			    <form id="ingenico-card-payment-form">
 			        <div class="input-group">
 			            <label>Credit card number</label>
-			            <input type="text" inputmode="numeric" id="card_number" minlength="10" maxlength="19" placeholder="0000 0000 0000 0000" autocomplete="off" required="">
+			            <input type="text" inputmode="numeric" id="card_number" minlength="10" maxlength="19" placeholder="0000 0000 0000 0000" autocomplete="off" onChange="validate();">
 			            <div id="card_number_info" class="input-info"></div>
 			        </div>
 			        			        <div class="input-group row">
 			            <div class="col-md-6">
 			                <label>Expiration date</label>
-			                <select class="col-lg-5" id="card_expiry_mm" name="card_expiration_month" autocomplete="off" required="">
+			                <select class="col-lg-5" id="card_expiry_mm" name="card_expiration_month" autocomplete="off" onChange="validate();">
 			                    <option value="" disabled="" selected="">MM</option>
 			                                            <option value="01">01</option>
 			                                            <option value="02">02</option>
@@ -135,7 +133,7 @@
 			                                            <option value="11">11</option>
 			                                            <option value="12">12</option>
 			                                    </select>
-			                <select class="col-lg-5" id="card_expiry_yy" name="card_expiration_year" autocomplete="off" required="">
+			                <select class="col-lg-5" id="card_expiry_yy" name="card_expiration_year" autocomplete="off" onChange="validate();">
 			                    <option value="" disabled="" selected="">YY</option>
 			                                            <option value="22">22</option>
 			                                            <option value="23">23</option>
@@ -153,7 +151,7 @@
 			            </div>
 			            <div class="col-md-5 col-sm-11 cvv-box">
 			                <label>CVC / CVV / CCV2</label>
-			                <input type="text" inputmode="numeric" pattern="\d\d\d|\d\d\d\d" placeholder="123" class="cvv-code" id="card_cvv" name="card_cvv_code" autocomplete="off" required="">
+			                <input type="text" inputmode="numeric"  placeholder="123" class="cvv-code" id="card_cvv" name="card_cvv_code" autocomplete="off" onChange="validate();">
 			                <div id="card_cvv_info" class="input-info"></div>
 			            </div>
 			            <div class="hint" data-content="&lt;div&gt;The CVV/CVC code is 3 digits located on the back of your credit/debit card.&lt;/div&gt;&lt;img src=&#39;/assets/images/cvv.svg&#39; /&gt;&lt;div class=&#39;arrow&#39;&gt;&lt;/div&gt;" data-original-title="" title=""></div>
@@ -163,49 +161,46 @@
 			        <div class="input-group row card-holders">
 			            <div class="col-md-6">
 			                <label>First name</label>
-			                <input type="text" id="card_holder_first_name" placeholder="required" autocomplete="off"  required="" class="input-success">
+			                <input type="text" id="card_holder_first_name" placeholder="required" autocomplete="off"  onChange="validate();" class="input-success">
 			                <div class="input-info card_holder_info"></div>
 			            </div>
 			            <div class="col-md-6">
 			                <label>Surname</label>
-			                <input type="text" id="card_holder_second_name" placeholder="required" autocomplete="off"  required="" class="input-success">
+			                <input type="text" id="card_holder_second_name" placeholder="required" autocomplete="off"  onChange="validate();" class="input-success">
 			                <div class="input-info card_holder_info"></div>
 			            </div>
 			        </div>
 			        
 			          <div class="input-group">
 			            <label>Address</label>
-			            <input type="text" inputmode="numeric" id="billing_address" minlength="10" maxlength="19" placeholder="Street,apt,address" autocomplete="off" required="">
+			            <input type="text" inputmode="numeric" id="billing_address" minlength="10" maxlength="19" placeholder="Street,apt,address" autocomplete="off" onChange="validate();">
 			            
 			        </div>
 			        
 			          <div class="input-group">
 			            <label>City</label>
-			            <input type="text" inputmode="numeric" id="billing_city" minlength="10" maxlength="19" placeholder="City" autocomplete="off" required="">
+			            <input type="text" inputmode="numeric" id="billing_city" minlength="10" maxlength="19" placeholder="City" autocomplete="off" onChange="validate();">
 			           
 			        </div>
 			        
 			         <div class="input-group row card-holders">
 			            <div class="col-md-6">
 			                <label>State</label>
-			                <input type="text" id="billing_state" placeholder="State" autocomplete="off"  required="" class="input-success">
+			                <input type="text" id="billing_state" placeholder="State" autocomplete="off"  required="" class="input-success" onChange="validate();">
 			                <div class="input-info card_holder_info"></div>
 			            </div>
 			            <div class="col-md-6">
 			                <label>ZipCode</label>
-			                <input type="text" id="billing_zipcode" placeholder="Zip Code" minlength="5" maxlength="5" autocomplete="off"  required="" class="input-success">
+			                <input type="text" id="billing_zipcode" placeholder="Zip Code" minlength="5" maxlength="5" autocomplete="off"  onChange="validate();"class="input-success">
 			                <div class="input-info card_holder_info"></div>
 			            </div>
 			        </div>	
 			           <div class="input-group">
 			            <label>Country</label>
-			             <select id="countrylist">
+			             <select id="countrylist" onChange="validate();">
 						<option value="port"></option>
 						</select>
-			           
 			        </div>	
-			        
-
 			        <button type="submit" id="payment-form--submit" style="display: none;"></button>
 			    </form>
 			</li>
@@ -214,7 +209,7 @@
          <div class="buttons-block buttons-center order-lg-3">
                 <button type="button" class="payment-btn big-button button-success" id="pay-btn" onclick="makePayment();">
                     <div class="loader"></div>
-                    Make a payment                </button>
+                    Make a payment    </button>
             </div>
       </div>
    </div>
@@ -224,7 +219,9 @@
 <script>
 
 function makePayment(){
+	
 	var url ="/payment/makePayment";
+	if(validate()){
 	$.ajax({
 		type : "POST",
 		url : url,	
@@ -253,14 +250,24 @@ function makePayment(){
 		async : true,
 		success : function(data) {
 			if(data.status==true){
-				window.location.href = "/en/confirmation";
+				window.location.href = "/en/confirmation/"+data.data.applicationId;
 			}else{
-				Swal.fire({
-					  title: "<img src='/images/fail1234.png' style='width:150px;'>", 
-					  html: data.message,  
-					  confirmButtonText: "Ok", 
-					 
-					});
+				if(data.message==""){
+					Swal.fire({
+						  title: "<img src='/images/fail1234.png' style='width:150px;'>", 
+						  html: "Unable tp process your payment",  
+						  confirmButtonText: "Ok", 
+						 
+						});
+				}else{
+					Swal.fire({
+						  title: "<img src='/images/fail1234.png' style='width:150px;'>", 
+						  html: data.message,  
+						  confirmButtonText: "Ok", 
+						 
+						});
+					}
+				
 					
 				}
 			
@@ -269,7 +276,9 @@ function makePayment(){
 			console.log("error when gettig data");
 		}
 	});
-
+	}else{
+		validate();
+		}
 }
   		
 </script>
@@ -319,15 +328,91 @@ window.onload = function () {
 			console.log("error when gettig data");
 		}
 	}); 
-    
-    
-    
+  
 }
 
+</script>
 
+<script>
 
+	function validate(){
+		var isvalidated =true;
+		if($('#card_number').val()!=''){
+			
+			$('#card_number').css('border','none')
+		}else{
+			$('#card_number').css('border','1px solid red')
+			isvalidated = false;
+		}
+		if($('#card_expiry_mm').val()!=''){
+			
+			$('#card_expiry_mm').css('border','none')
+		}else{
+			$('#card_expiry_mm').css('border','1px solid red')
+			isvalidated = false;
+		}
 
+		if($('#card_expiry_yy').val()!=''){
+			
+			$('#card_expiry_yy').css('border','none')
+		}else{
+			$('#card_expiry_yy').css('border','1px solid red')
+			isvalidated = false;
+		}
 
+		if($('#card_cvv').val()!=''){
+			
+			$('#card_cvv').css('border','none')
+		}else{
+			$('#card_cvv').css('border','1px solid red')
+			isvalidated = false;
+		}
+		if($('#billing_address').val()!=''){
+			
+			$('#billing_address').css('border','none')
+		}else{
+			$('#billing_address').css('border','1px solid red')
+			isvalidated = false;
+		}
+		
+		if($('#billing_city').val()!=''){
+			
+			$('#billing_city').css('border','none')
+		}else{
+			$('#billing_city').css('border','1px solid red')
+			isvalidated = false;
+		}
+		if($('#billing_state').val()!=''){
+			
+			$('#billing_state').css('border','none')
+		}else{
+			$('#billing_state').css('border','1px solid red')
+			isvalidated = false;
+		}
+		if($('#billing_zipcode').val()!=''){
+			
+			$('#billing_zipcode').css('border','none')
+		}else{
+			$('#billing_zipcode').css('border','1px solid red')
+			isvalidated = false;
+		}
+		if($('#countrylist').val()!=''){
+			
+			$('#countrylist').css('border','none')
+		}else{
+			$('#countrylist').css('border','1px solid red')
+			isvalidated = false;
+		}
+
+		return isvalidated;
+		
+
+		
+		
+		
+		
+		
+	}
 </script>
 
 </body>

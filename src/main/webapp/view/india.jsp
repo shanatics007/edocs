@@ -223,42 +223,7 @@ span.description-steps-text-bottom {
 <body>
 	<div id="overlay" class="hidden mobileMenuOverlay"></div>
 	<%@include file="header.jsp"%>
-	<div class="mobile-menu right5000">
-		<div class="mobile-menu-top">
-			<span class="mobile-menu-account in-header"><img src="#"
-				alt=""><a id="menu-mobile-login" class="mobile-menu-font"
-				href="/login" rel="nofollow">Log in</a></span><span
-				class="mobile-menu-close">close</span>
-		</div>
-		<ul class="toggle-box">
-			<li class="toggle-li"><a id="menu-mobile-get-visa"
-				class="mobile-menu-font toggle-click-closed">get visa</a>
-				<div class="height">
-					<ul class="mobile-menu-country-list">
-
-						<li><a href="/en/india">India</a></li>
-
-						<li><a href="/en/turkey">Turkey</a></li>
-						
-						<li><a href="/en/thailand">Thailand</a></li>
-						
-						<li><a href="/en/united-arab-emirates">United-Arab-Emirates</a></li>
-						
-						<li><a href="/en/pakistan">Pakistan</a></li>
-
-					</ul>
-				</div></li>
-			<li class="toggle-li"><a id="menu-mobile-groups"
-				class="mobile-menu-font" href="#">Passenger Locator Forms</a></li>
-			<li class="toggle-li"><a id="menu-mobile-groups"
-				class="mobile-menu-font" href="#" rel="nofollow">Travel
-					Insurance</a></li>
-			<li class="toggle-li"><a id="menu-mobile-groups"
-				class="mobile-menu-font" href="#">Check Entry Requirements</a></li>
-
-		</ul>
-	</div>
-
+	
 	<div>
 		<section class="applyonline" id="onlineapplysection"
 			style="background-image: url('/images/indiabanner.jpg'); width: auto; height: 500px;">

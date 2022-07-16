@@ -39,6 +39,7 @@ public class PaymentServiceImpl implements PaymentService {
 			paymentInfo = paymentGateway.doAuth(paymentInfo);
 			if(paymentInfo.getPaymentTransactionID() != "") {
 				model.setPaymentId(paymentInfo.getPaymentTransactionID());
+				model.setPaymentStatus(true);
 				response.put("data", paymentRepository.save(model));
 				applicationForVisaRepository.updatePaymentstatus(model.getApplicationId());
 				response.put("status", true);
@@ -53,6 +54,12 @@ public class PaymentServiceImpl implements PaymentService {
 		}
 	
 		return response;
+	}
+
+	@Override
+	public PaymentModel getPaymentByApplicationId(int applicationId) {
+		
+		return paymentRepository.getPaymnetByApplicationId(applicationId);
 	}
 
 }

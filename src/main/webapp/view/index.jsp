@@ -466,44 +466,7 @@ span.description-steps-text-bottom {
 <body>
 	<div id="overlay" class="hidden mobileMenuOverlay"></div>
 	<%@include file="header.jsp"%>
-	<div class="mobile-menu right5000">
-		<div class="mobile-menu-top">
-			<span class="mobile-menu-account in-header"><img src="#"
-				alt=""><a id="menu-mobile-login" class="mobile-menu-font"
-				href="/login" rel="nofollow">Log in</a></span><span
-				class="mobile-menu-close">close</span>
-		</div>
-		<ul class="toggle-box">
-			<li class="toggle-li"><a id="menu-mobile-get-visa"
-				class="mobile-menu-font toggle-click-closed">get visa</a>
-				<div class="height">
-					<ul class="mobile-menu-country-list">
 
-						<li><a href="/en/india" style="color: #1d3367 !important;">India</a></li>
-
-						<li><a href="/en/turkey" style="color: #1d3367 !important;">Turkey</a></li>
-
-						<li><a href="/en/pakistan" style="color: #1d3367 !important;">Pakistan</a></li>
-
-						<li><a href="/en/thailand" style="color: #1d3367 !important;">Thailand</a></li>
-
-						<li><a href="/en/united-arab-emirates"
-							style="color: #1d3367 !important;">United Arab Emirates</a></li>
-
-					</ul>
-				</div></li>
-			<li class="toggle-li"><a id="menu-mobile-groups"
-				class="mobile-menu-font" href="/en/passenger-locator-form"
-				style="color: #1d3367 !important;">Passenger Locator Forms</a></li>
-			<li class="toggle-li"><a id="menu-mobile-groups"
-				class="mobile-menu-font" href="#" rel="nofollow"
-				style="color: #1d3367 !important;">Travel Insurance</a></li>
-			<li class="toggle-li"><a id="menu-mobile-groups"
-				class="mobile-menu-font" href="/en/travel-entry-requirements"
-				style="color: #1d3367 !important;">Check Entry Requirements</a></li>
-
-		</ul>
-	</div>
 
 	<div>
 		<section class="applyonline" id="onlineapplysection"

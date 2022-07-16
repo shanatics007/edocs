@@ -126,8 +126,8 @@ public class CountryController {
 		return "userAccount";
 	}
 	
-	@RequestMapping("/confirmation")
-	public String confirmation() {
+	@RequestMapping("/confirmation/{applicationId}")
+	public String confirmation(@PathVariable int applicationId) {
 		return "confirmation";
 	}
 	

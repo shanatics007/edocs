@@ -789,43 +789,7 @@ ul.drop-down-ul.display-none.display-block {
 <body>
 	<div id="overlay" class="hidden mobileMenuOverlay"></div>
 	<%@include file="header.jsp"%>
-	<div class="mobile-menu right5000">
-		<div class="mobile-menu-top">
-			<span class="mobile-menu-account in-header"><img src="#"
-				alt=""><a id="menu-mobile-login" class="mobile-menu-font"
-				href="/login" rel="nofollow">Log in</a></span><span
-				class="mobile-menu-close">close</span>
-		</div>
-		<ul class="toggle-box">
-			<li class="toggle-li"><a id="menu-mobile-get-visa"
-				class="mobile-menu-font toggle-click-closed">get visa</a>
-				<div class="height">
-					<ul class="mobile-menu-country-list">
-
-						<li><a href="/en/india">India</a></li>
-
-						<li><a href="/en/turkey">Turkey</a></li>
-						
-						<li><a href="/en/thailand">Thailand</a></li>
-						
-						<li><a href="/en/united-arab-emirates">United-Arab-Emirates</a></li>
-						
-						<li><a href="/en/pakistan">Pakistan</a></li>
-					</ul>
-				</div></li>
-			<li class="toggle-li"><a id="menu-mobile-groups"
-				class="mobile-menu-font" href="#">Passenger Locator Forms</a></li>
-			<li class="toggle-li"><a id="menu-mobile-groups"
-				class="mobile-menu-font" href="#" rel="nofollow">Travel
-					Insurance</a></li>
-			<li class="toggle-li"><a id="menu-mobile-groups"
-				class="mobile-menu-font" href="#">Check Entry Requirements</a></li>
-
-		</ul>
-	</div>
-
-	
-	<section class="main-site-content account-page white-bg">
+		<section class="main-site-content account-page white-bg">
 		<div class="account-menu-wrapper">
 			<div class="container">
 				<ul class="e-visa-footer-links">
@@ -906,9 +870,10 @@ ul.drop-down-ul.display-none.display-block {
 											style="margin-top: -5px;">
 
 											<div class="drop-down">
-												<input type="text" name="noPassword" id="select-country"
+											<form autocomplete="off">
+												<input type="text"  id="select-country"
 													placeholder="Select a country"
-													class="initial-input input-drop-down" autocomplete="no"
+													class="initial-input input-drop-down" autocomplete="nope"
 													style="border-bottom: 1px solid;">
 												<ul class="drop-down-ul display-none"
 													style="bottom: initial; max-height: 300px;">
@@ -929,6 +894,7 @@ ul.drop-down-ul.display-none.display-block {
 														href="/en/united-arab-emirates" class="a-no-active" id="countryDropDown"><span>United-Arab-Emirates</span></a></li>
 
 												</ul>
+												</form>
 											</div>
 										</div>
 										
@@ -1128,6 +1094,9 @@ ul.drop-down-ul.display-none.display-block {
 	
 
 	window.onload = function () {
+		var some_id = $('#select-country');
+	    some_id.prop('type', 'text');
+	    some_id.removeAttr('autocomplete');
 		$('#loginLinkId').css('display','none')
 		var param = "email=<%=email%>"
 		$.ajax({

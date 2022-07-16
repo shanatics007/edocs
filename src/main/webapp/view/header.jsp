@@ -67,9 +67,7 @@
 							<a href="/login" id="loginLinkId" style="color: #1d3367 !important;">Log In</a>
 						<% }
 						%>
-						
-						
-                           
+					
                    </li>
                   
                   </ul>
@@ -87,3 +85,86 @@
             </div>
          </nav>
       </div>
+      
+      	<div class="mobile-menu right5000">
+		<div class="mobile-menu-top">
+		<span class="mobile-menu-account in-header">
+		
+                   <%
+	                   if (request.getSession().getAttribute("userLogin") != null) {
+	               		HashMap<Object, Object> userDetails =(HashMap<Object, Object>) request.getSession().getAttribute("userLogin");
+	               		UserModel user = (UserModel)userDetails.get("data");
+	               		
+						long userid1 = user.getUserId();
+						if(userid1 == 0){
+						%>
+							<a href="/login" id="loginLinkId" style="color: #1d3367 !important;">Log In</a>
+						<%}else{%>
+						<ul class="menu-options account-dropdown">
+						<li class="dropdown-wrapper">
+						<a id="menu-desktop-account" href="" class="menu-account-user link-prevent menu-option-dropdown">
+						<img src="https://evisa.express/img/icon/account-personal.svg" alt="">
+						<div class="user-name">My account</div></a>
+						<ul class="menu-dropdown-values hidden">
+						<li>
+						<a id="menu-desktop-account-index" href="/en/account" title="My applications">My applications</a>
+						</li>
+						<li>
+						<a id="menu-desktop-account-settings" href="/en/account" title="Settings">Settings</a></li>
+						<li><a id="menu-mobile-login" class="mobile-menu-font" href="/logout" rel="nofollow">Log out</a>
+						</li>
+						</ul></li>
+						</ul>
+							
+						<%}
+						}else{  %>
+							<a id="menu-mobile-login" class="mobile-menu-font" href="/login" rel="nofollow">Log in</a>
+						<% }
+						%>
+					
+                  
+			
+			
+			
+			
+			
+			
+				
+		
+				
+				
+			</span>
+				
+				<span class="mobile-menu-close">close</span>
+		</div>
+		<ul class="toggle-box">
+			<li class="toggle-li"><a id="menu-mobile-get-visa"
+				class="mobile-menu-font toggle-click-closed">get visa</a>
+				<div class="height">
+					<ul class="mobile-menu-country-list">
+
+						<li><a href="/en/india" style="color: #1d3367 !important;">India</a></li>
+
+						<li><a href="/en/turkey" style="color: #1d3367 !important;">Turkey</a></li>
+
+						<li><a href="/en/pakistan" style="color: #1d3367 !important;">Pakistan</a></li>
+
+						<li><a href="/en/thailand" style="color: #1d3367 !important;">Thailand</a></li>
+
+						<li><a href="/en/united-arab-emirates"
+							style="color: #1d3367 !important;">United Arab Emirates</a></li>
+
+					</ul>
+				</div></li>
+			<li class="toggle-li"><a id="menu-mobile-groups"
+				class="mobile-menu-font" href="/en/passenger-locator-form"
+				style="color: #1d3367 !important;">Passenger Locator Forms</a></li>
+			<li class="toggle-li"><a id="menu-mobile-groups"
+				class="mobile-menu-font" href="#" rel="nofollow"
+				style="color: #1d3367 !important;">Travel Insurance</a></li>
+			<li class="toggle-li"><a id="menu-mobile-groups"
+				class="mobile-menu-font" href="/en/travel-entry-requirements"
+				style="color: #1d3367 !important;">Check Entry Requirements</a></li>
+
+		</ul>
+	</div>

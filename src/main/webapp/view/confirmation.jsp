@@ -56,6 +56,8 @@
 <link rel="stylesheet" href="/css/home.css" type="text/css">
 <link rel="stylesheet" href="/css/india.css" type="text/css">
 <link rel="stylesheet" href="/css/contact.css" type="text/css">
+<script src="jquery-3.6.0.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <style>
 
@@ -246,43 +248,6 @@ span.description-steps-text-bottom {
 <body>
 	<div id="overlay" class="hidden mobileMenuOverlay"></div>
 	<%@include file="header.jsp"%>
-	<div class="mobile-menu right5000">
-		<div class="mobile-menu-top">
-			<span class="mobile-menu-account in-header"><img src="#"
-				alt=""><a id="menu-mobile-login" class="mobile-menu-font"
-				href="/login" rel="nofollow">Log in</a></span><span
-				class="mobile-menu-close">close</span>
-		</div>
-		<ul class="toggle-box">
-			<li class="toggle-li"><a id="menu-mobile-get-visa"
-				class="mobile-menu-font toggle-click-closed">get visa</a>
-				<div class="height">
-					<ul class="mobile-menu-country-list">
-
-						<li><a href="/en/india">India</a></li>
-
-						<li><a href="/en/turkey">Turkey</a></li>
-						
-						<li><a href="/en/thailand">Thailand</a></li>
-						
-						<li><a href="/en/united-arab-emirates">United-Arab-Emirates</a></li>
-						
-						<li><a href="/en/pakistan">Pakistan</a></li>
-					</ul>
-				</div></li>
-			<li class="toggle-li"><a id="menu-mobile-groups"
-				class="mobile-menu-font" href="#">Passenger Locator Forms</a></li>
-			<li class="toggle-li"><a id="menu-mobile-groups"
-				class="mobile-menu-font" href="#" rel="nofollow">Travel
-					Insurance</a></li>
-			<li class="toggle-li"><a id="menu-mobile-groups"
-				class="mobile-menu-font" href="#">Check Entry Requirements</a></li>
-
-		</ul>
-	</div>
-
-
-
 	<section class="main-site-content">
 	<div class="top-background" style="background-image: url('/images/background 2.jpg');"></div>
 		<div class="container">
@@ -305,7 +270,7 @@ span.description-steps-text-bottom {
 							Thank you for your visa !
 							 </p>
 							<p class="description-steps-eta-planning" style="font-size:18px;">
-							Your application ID is:<span style="font-weight: 600;"> <%=applicationId%></span> 
+							Your application ID is:<span id="ConfirmApplicatonId" style="font-weight: 600;"></span> 
 							</p>
 							<p class="description-steps-eta-planning" style="font-size:18px;">
 								You will receive an confirmation email with details of application.
@@ -313,6 +278,10 @@ span.description-steps-text-bottom {
 							
 						</div>
 					</section>
+					
+					<input type="hidden" id="userId">
+					<input type="hidden" id="paymentId">
+					
 				
 				</div>
 			</div>
@@ -335,116 +304,31 @@ span.description-steps-text-bottom {
 				});
 	</script>
 	<script>
-		function toggleExpandText(expand) {
-			if ($('.toexpand').hasClass('expanded')) {
-				expand.innerText = "READ LESS"
-			} else {
-				expand.innerText = "READ MORE"
-			}
-		}
-		document
-				.addEventListener(
-						'DOMContentLoaded',
-						function() {
-							var suffix = document
-									.querySelector('.insert-number-with-suffix').dataset.suffix;
-							var insertNumberWithSuffix = document
-									.querySelectorAll('.insert-number-with-suffix');
-							for (var i = 0; i < insertNumberWithSuffix.length; i++) {
-								insertNumberWithSuffix[i].setAttribute('href',
-										'tel:+44 2031 293 603'
-												.replace(/ /g, ""));
-								insertNumberWithSuffix[i].innerHTML = '<span class="phone-lang-name">en</span> +44 2031 293 603 '
-										+ suffix;
-							}
+	
+	window.onload = function () {
+		var applicationId = window.location.href;
+		var spliturl =  applicationId.split('/');
+		applicationId = spliturl[5];
+		 $.ajax({
+				type : 'GET',
+				url : '/payment/getPaymentByApplicationId/'+applicationId,	
+				async : true,
+				success : function(data) {
+					$('#ConfirmApplicatonId').text(data.applicationId);
+					$('#userId').val(data.userId);
+					$('#paymentId').val(data.paymentId);
+					
+					
+				},	
+				error : function(data) {
+					console.log("error when gettig data");
+				}
+			}); 
+				
 
-							var insertNumber = document
-									.querySelectorAll('.insert-number');
-							for (var i = 0; i < insertNumber.length; i++) {
-								insertNumber[i].setAttribute('href',
-										'tel:+44 2031 293 603'
-												.replace(/ /g, ""));
-								insertNumber[i].innerHTML = '<span class="phone-lang-name">en</span> +44 2031 293 603';
-							}
-
-							const req = new XMLHttpRequest();
-							req.open('POST', '/ajax/get-support-address.json',
-									true);
-							req.onreadystatechange = function(evt) {
-								if (req.readyState == 4) {
-									if (req.status == 200) {
-										var insertSupportAddress = document
-												.querySelectorAll('.insert-support-address');
-										for (var i = 0; i < insertSupportAddress.length; i++) {
-											insertSupportAddress[i].innerText = JSON
-													.parse(req.responseText).email
-													.replace('[]', '@');
-											insertSupportAddress[i]
-													.setAttribute(
-															'href',
-															'mailTo:'
-																	+ (JSON
-																			.parse(req.responseText).email
-																			.replace(
-																					'[]',
-																					'@')));
-										}
-									}
-								}
-							}
-							req.send();
-							var insertPhone = document
-									.querySelectorAll('.insert-phone-' + 1);
-							for (var i = 0; i < insertPhone.length; i++) {
-								insertPhone[i]
-										.setAttribute('href',
-												'tel:+49 30209930611'.replace(
-														/ /g, ""));
-								insertPhone[i].innerHTML = '<span class="phone-lang-name">de</span> +49 30209930611';
-							}
-							var insertPhone = document
-									.querySelectorAll('.insert-phone-' + 2);
-							for (var i = 0; i < insertPhone.length; i++) {
-								insertPhone[i].setAttribute('href',
-										'tel:+48 32 431 00 11'
-												.replace(/ /g, ""));
-								insertPhone[i].innerHTML = '<span class="phone-lang-name">pl</span> +48 32 431 00 11';
-							}
-							var insertPhone = document
-									.querySelectorAll('.insert-phone-' + 3);
-							for (var i = 0; i < insertPhone.length; i++) {
-								insertPhone[i].setAttribute('href',
-										'tel:+34  932 200 330'
-												.replace(/ /g, ""));
-								insertPhone[i].innerHTML = '<span class="phone-lang-name">es</span> +34  932 200 330';
-							}
-							var insertPhone = document
-									.querySelectorAll('.insert-phone-' + 4);
-							for (var i = 0; i < insertPhone.length; i++) {
-								insertPhone[i].setAttribute('href',
-										'tel:+86 10 852 41 270'.replace(/ /g,
-												""));
-								insertPhone[i].innerHTML = '<span class="phone-lang-name">cn</span> +86 10 852 41 270';
-							}
-						});
+	}	
+	
 	</script>
 
-	<script>
-		
-		window.onscroll = function() {
-			scrollFunction()
-		};
-
-		function scrollFunction() {
-
-			var mybutton = document.getElementById("applyhere");
-			if (document.body.scrollTop > 20
-					|| document.documentElement.scrollTop > 20) {
-				mybutton.style.display = "block";
-			} else {
-				mybutton.style.display = "none";
-			}
-		}
-	</script>
 </body>
 </html>
