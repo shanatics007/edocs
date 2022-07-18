@@ -227,9 +227,19 @@ label#radiolabel {
  .ee-form-sidebar{
  width: 100% !important;
  }
- 
   
 }
+
+@media (max-width: 599px){
+	#desktopViewId{
+	display: none;
+	}
+	#mobileviewId{
+	display: block !important;
+	}
+
+}
+
  </style>
    </head>
    <body>
@@ -513,7 +523,7 @@ label#radiolabel {
             </div>
             </div>
               <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
-            <span id="emailerrors" style="display: none;">please Enter Correct Email</span>
+            <span id="emailerrors" style="display: none;">Please enter correct email</span>
             </div>
              <label> E-mail address(re-enter) </label> 
              <div>
@@ -612,6 +622,104 @@ label#radiolabel {
                               </div>
                            </div>
                         </div>
+                        
+                        <div class="ee-form-sidebar" id="mobileviewId" style="display:none;">
+            <div class="ee-form-info ee-form-info--hidden">
+               <div class="ee-errors" style="display: none;">
+                  <div class="error-title">
+                     Attention
+                  </div>
+                  <ul></ul>
+               </div>
+               <div class="form-infobox-mobile form-infobox">
+                  <div class="form-info-subheader"><span>
+                     Application number
+                     </span> <span>
+                     </span>
+                  </div>
+               </div>
+               <div class="form-infobox">
+                  <div class="form-info-header">
+                     Summary
+                  </div>
+                  <div class="form-info-subheader"><span>
+                     Destination
+                     </span> <span id="CountrySummary">
+                    
+                     </span>
+                  </div>
+                  
+             
+                  <div class="form-info-subheader" id="VisaandpriceId"><span>
+                     Visa
+                     </span> <span id="priceidinDollerVisa">
+                    
+                     </span>
+                  </div>
+                  
+                  <!-- <div class="form-choose-currency-wrapper" id="VisaandpriceId" style="display: none;"><span>
+                        Visa
+                        </span> 
+                        <span></span> 
+                        <span id="priceidinDoller"></span>
+                     </div> -->
+                 
+               </div>
+               <div class="form-pricebox">
+                  
+                  <div class="form-info-element sidebar-citizenship-not-chosen">
+                     <div class="form-choose-currency-wrapper"><span>
+                        Full price
+                        </span> 
+                        <span></span> 
+                        <span id="priceidinDoller"></span>
+                     </div>
+                     <div id="priceshow">
+                        Price will be shown after the required fields are filled
+                     </div>
+                     <div id="ulpriceshow">
+                        <ul>
+                          <span> Price depends on the following fields:</span>
+                           <li id="nationalityId"><span>Nationality</span></li>
+                           <li id="purposeTravelId"><span>Purpose for travel</span></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               
+               <div>
+                  <div class="form-sidebar-faq">
+                     <header>
+                        <h3>FAQ</h3>
+                     </header>
+                     <ul class="toggle-box">
+                        <li class="toggle-li">
+                           <a class="visa-questions-click toggle-click-closed">When will I receive my Visa?</a> 
+                           <div class="height">
+                              <p class="visa-questions-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, esse, impedit aspernatur ipsa inventore reiciendis eius ut repellendus ad dolore autem earum id tempore a provident odio unde harum sunt qui laudantium eligendi consectetur molestias molestiae sint aut sequi omnis iure nesciunt optio accusantium debitis nam mollitia blanditiis. Enim, magni.</p>
+                           </div>
+                        </li>
+                        <li class="toggle-li">
+                           <a class="visa-questions-click toggle-click-closed">Why was my Visa declined?</a> 
+                           <div class="height">
+                              <p class="visa-questions-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, esse, impedit aspernatur ipsa inventore reiciendis eius ut repellendus ad dolore autem earum id tempore a provident odio unde harum sunt qui laudantium eligendi consectetur molestias molestiae sint aut sequi omnis iure nesciunt optio accusantium debitis nam mollitia blanditiis. Enim, magni.</p>
+                           </div>
+                        </li>
+                        <li class="toggle-li">
+                           <a class="visa-questions-click toggle-click-closed">Is my visa refundable?</a> 
+                           <div class="height">
+                              <p class="visa-questions-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, esse, impedit aspernatur ipsa inventore reiciendis eius ut repellendus ad dolore autem earum id tempore a provident odio unde harum sunt qui laudantium eligendi consectetur molestias molestiae sint aut sequi omnis iure nesciunt optio accusantium debitis nam mollitia blanditiis. Enim, magni.</p>
+                           </div>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               
+              
+            </div>
+         </div>
+                        
+              
                         <div class="input-box" type="SubmitInput" name="go-to-step-2" label="SEND AND PAY" hint="" required="required" validations="" options="" reactions="[object Object]" possiblereactions="" possibledisablingreactions="" possibleemits="">
                            <div class="input-box-bottom button-container submit-input-container">
                               <button class="btn" style="text-align: center;" onclick="submitApplication();">SEND AND PAY</button> <!---->
@@ -626,7 +734,7 @@ label#radiolabel {
                
                
                
-          <div class="ee-form-sidebar">
+          <div class="ee-form-sidebar" id="desktopViewId">
             <div class="ee-form-info ee-form-info--hidden">
                <div class="ee-errors" style="display: none;">
                   <div class="error-title">
@@ -931,7 +1039,7 @@ label#radiolabel {
   			success : function(data) {
   				console.log(data)
   				if(data!=0){
-  					$('.notValidVisa').css('display','none');
+  				$('.notValidVisa').css('display','none');
   				$('#priceidinDoller').text(data +" USD");
   				$('#priceidinDollerVisa').text(data +" USD");
   				$('#VisaandpriceId').css('display','flex');

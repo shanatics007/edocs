@@ -1,63 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ page import="java.util.HashMap" %>
- <%@ page import="com.edocs.Model.UserModel" %>
- <%@ page import="java.util.Date" %>
- <%@ page import=" java.time.LocalDate" %>
-  <%@ page import="java.time.Month"%>
-  <%@ page import="java.time.format.DateTimeFormatter "%>
-  <%@ page import="java.util.Calendar"%>
-  
- <%    
- String email = "";
- String fullName = "";
- long userId = 0;
- 
- if (request.getSession().getAttribute("userLogin") != null) {
-		HashMap<Object, Object> userDetails =(HashMap<Object, Object>) request.getSession().getAttribute("userLogin");
-		UserModel user = (UserModel)userDetails.get("data");
-		email= user.getUserEmail();
-		fullName = user.getFullName();
-		userId = user.getUserId();
- }
- 
- %>
-	
+@charset "UTF-8";
 
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Edocs Travel</title>
-
-<script src="/js/select2.min.js"></script>
-<script src="/js/home.js"></script>
- <link rel="icon" href="/images/favicon-1.png" type="image/x-icon">
-<link rel="stylesheet" href="/css/home.css" type="text/css">
-<link rel="stylesheet" href="/css/india.css" type="text/css">
-<link rel="stylesheet" href="/css/useraccount.css" type="text/css">
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<style>
-
-
-
-@media ( min-width : 599px) {
-	background-image: url('/images/background 2.jpg');
-	
-}
-
-@media ( min-width : 1330px) {
-section#onlineapplysection {
-    margin-left: 60px;
-    margin-right: 60px;
- }
-	
-}
 
 p.description-steps-eta-planning {
 	font-size: 18px !important;
@@ -73,10 +15,10 @@ ul.toggle-box {
     margin-right: 50px;
     margin-left: 50px;
 }
-</style>
 
 
-<style>
+
+
 .cookie-info-text {
 	color: #969696;
 }
@@ -230,9 +172,6 @@ span.description-steps-text-bottom {
     background: #1c3367;
 }
 
-button.btn.btn--disabled {
-    background: #1d3367;
-}
 .account-page .applications-wrapper .my-applications .my-applications-menu li a, .feedbackPage .applications-wrapper .my-applications .my-applications-menu li a {
     display: block;
     height: 48px;
@@ -667,6 +606,309 @@ ul.e-visa-footer-links {
     vertical-align: middle;
     width: 25px;
 }
+
+
+#showsUserSetting{
+display: none;
+}
+.top-content-follow-card-destination .drop-down .drop-down-ul li:hover .a-no-active{
+		color:black !important;
+}
+.main-site-content{
+	height: auto;
+}
+ul.drop-down-ul.display-none.display-block {
+    z-index: 999999;
+}
+
+
+
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+
+.account-page .mtb-30, .feedbackPage .mtb-30 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.account-page .application-view, .feedbackPage .application-view {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+.ee-form-loader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.7);
+    z-index: 9999;
+}
+
+.account-page .application-view .application-status-container, .feedbackPage .application-view .application-status-container {
+    width: 352px;
+    border: 1px solid #1c3367;
+}
+
+.account-page .application-view .application-status-container .main-header, .feedbackPage .application-view .application-status-container .main-header {
+    background: #1c3367;
+    padding: 15px 0;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+
+
+
+.account-page .application-view .application-status-container header, .feedbackPage .application-view .application-status-container header {
+    font: 14px KonkretGroteskPro, Fallback, sans-serif;
+    font-weight: 700;
+}
+
+
+.account-page .application-view .application-status-container .application-status:not(.subsequent):last-child, .feedbackPage .application-view .application-status-container .application-status:not(.subsequent):last-child {
+    border-bottom: 1px solid #1c3367;
+}
+.account-page .application-view .application-status-container .statuses-expandable .application-status, .feedbackPage .application-view .application-status-container .statuses-expandable .application-status {
+    overflow: hidden;
+}
+
+.account-page .application-view .application-status-container .application-status, .feedbackPage .application-view .application-status-container .application-status {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    background: #fff;
+}	
+
+
+.account-page .application-view .application-status-container .application-status .status-title, .feedbackPage .application-view .application-status-container .application-status .status-title {
+    background-color: #F0F1ED;
+    width: 100%;
+    min-height: 58px;
+    padding: 18px 42px;
+    cursor: pointer;
+}
+
+.account-page .application-view .application-status-container .statuses-expandable .application-status.expanded:not(:last-child) .status-title img, .account-page .application-view .application-status-container .statuses-expandable .application-status:not(.expanded):last-child .status-title img, .feedbackPage .application-view .application-status-container .statuses-expandable .application-status.expanded:not(:last-child) .status-title img, .feedbackPage .application-view .application-status-container .statuses-expandable .application-status:not(.expanded):last-child .status-title img {
+    transform: rotate(
+180deg
+);
+}
+
+.account-page .application-view .application-status-container .application-status:not(.subsequent) .status-title img, .feedbackPage .application-view .application-status-container .application-status:not(.subsequent) .status-title img {
+    transition: transform 500ms ease-in-out;
+}
+img {
+    border: 0;
+    vertical-align: middle;
+}
+.account-page .application-view .application-status-container .application-status .status-title header, .feedbackPage .application-view .application-status-container .application-status .status-title header {
+    padding-left: 39px;
+    display: inline-block;
+}
+
+
+.account-page .application-view .application-status-container .application-status:not(.subsequent) header, .feedbackPage .application-view .application-status-container .application-status:not(.subsequent) header {
+    color: #1c3367;
+}
+
+.account-page .application-view .application-status-container .application-status header, .feedbackPage .application-view .application-status-container .application-status header {
+    text-transform: uppercase;
+}
+
+.account-page .application-view .application-status-container header, .feedbackPage .application-view .application-status-container header {
+    font: 14px KonkretGroteskPro, Fallback, sans-serif;
+    font-weight: 700;
+}
+
+.account-page .application-view .application-status-container .application-status .status-content p, .feedbackPage .application-view .application-status-container .application-status .status-content p {
+    margin: 12px 0 0 0;
+    font: 500 12px Roboto;
+    color: #231f20;
+}
+
+
+.account-page .application-view .application-status-container .statuses-expandable .application-status p, .feedbackPage .application-view .application-status-container .statuses-expandable .application-status p {
+    opacity: 1;
+    transition: opacity 300ms ease-in-out;
+}
+
+.account-page .application-view .application-status-container .application-status .status-content div:not(.img-wrapper), .feedbackPage .application-view .application-status-container .application-status .status-content div:not(.img-wrapper) {
+    padding: 20px 67px 20px 0;
+    width: calc(100% - 94px);
+}
+
+
+.account-page .application-view .application-information, .feedbackPage .application-view .application-information {
+    margin-left: 52px;
+    width: 700px;
+}
+
+.account-page .application-view .application-information .visa-information, .feedbackPage .application-view .application-information .visa-information {
+    border: 1px solid #1c3367;
+}
+
+.account-page .application-view .application-information .visa-information header, .feedbackPage .application-view .application-information .visa-information header {
+    background: #1c3367;
+    padding: 15px 20px;
+    color: #fff;
+}
+
+.account-page .application-view .application-information .visa-information .information-content, .feedbackPage .application-view .application-information .visa-information .information-content {
+    padding: 32px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.account-page .application-view .application-information .visa-information .information-content .information-data, .feedbackPage .application-view .application-information .visa-information .information-content .information-data {
+    width: 273px;
+}
+
+.account-page .application-view .application-information .visa-information .information-content .information-data .data-row, .feedbackPage .application-view .application-information .visa-information .information-content .information-data .data-row {
+    font-size: 16px;
+    margin: 7px 0;
+}
+
+.account-page .application-view .application-information .visa-information .information-content .information-data .data-row span, .feedbackPage .application-view .application-information .visa-information .information-content .information-data .data-row span {
+    font-weight: 700;
+}
+
+.account-page .application-view .application-information .visa-information .information-content .information-navigation, .feedbackPage .application-view .application-information .visa-information .information-content .information-navigation {
+    width: 273px;
+}
+
+.account-page .application-view .application-information .visa-information .information-content .information-navigation .phone, .feedbackPage .application-view .application-information .visa-information .information-content .information-navigation .phone {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.font-burgund {
+    color: #7C152A;
+}
+
+.account-page .application-view .application-information .visa-information .information-content .information-navigation .phone p, .feedbackPage .application-view .application-information .visa-information .information-content .information-navigation .phone p {
+    margin: 10px 0 18px 0;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.account-page .application-view .application-information .visa-information .information-content .information-navigation .button-container:not(:first-child), .feedbackPage .application-view .application-information .visa-information .information-content .information-navigation .button-container:not(:first-child) {
+    margin-top: 10px;
+}
+
+.account-page .button-green, .feedbackPage .button-green {
+    border: 2px solid #4C967D;
+    background: #4C967D;
+}
+
+.account-page .button-no-arrow, .feedbackPage .button-no-arrow {
+    text-align: center;
+    background-image: none;
+    text-transform: uppercase;
+}
+
+.application-faq {
+    display: none;
+}
+
+
+.account-page .application-view .application-status-container .application-status:not(.subsequent) .status-content, .feedbackPage .application-view .application-status-container .application-status:not(.subsequent) .status-content {
+    transition: border-top 500ms ease-in-out;
+    border-top: 1px solid #1c3367;
+}
+
+.account-page .application-view .application-status-container .application-status .status-content, .feedbackPage .application-view .application-status-container .application-status .status-content {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+
+.account-page .application-view .application-status-container .application-status .status-content .img-wrapper, .feedbackPage .application-view .application-status-container .application-status .status-content .img-wrapper {
+    width: 54px;
+    height: 100%;
+    padding: 20px 0;
+}
+
+.account-page .application-view .application-status-container .application-status .img-wrapper, .feedbackPage .application-view .application-status-container .application-status .img-wrapper {
+    width: 54px;
+    box-sizing: content-box;
+    margin: 0 20px;
+}
+
+.account-page .application-view .application-status-container .application-status .status-content div:not(.img-wrapper), .feedbackPage .application-view .application-status-container .application-status .status-content div:not(.img-wrapper) {
+    padding: 20px 67px 20px 0;
+    width: calc(100% - 94px);
+}
+
+.account-page .application-view .application-status-container .application-status:not(.subsequent) header, .feedbackPage .application-view .application-status-container .application-status:not(.subsequent) header {
+    color: #1c3367;
+}
+.account-page .application-view .application-status-container .application-status header, .feedbackPage .application-view .application-status-container .application-status header {
+    text-transform: uppercase;
+}
+
+.account-page .application-view .application-status-container header, .feedbackPage .application-view .application-status-container header {
+    font: 14px KonkretGroteskPro, Fallback, sans-serif;
+    font-weight: 700;
+}
+
+.account-page .application-view .application-status-container .application-status .status-content p, .feedbackPage .application-view .application-status-container .application-status .status-content p {
+    margin: 12px 0 0 0;
+    font: 500 12px Roboto;
+    color: #231f20;
+}
+
+.account-page .application-view .application-status-container .statuses-expandable .application-status p, .feedbackPage .application-view .application-status-container .statuses-expandable .application-status p {
+    opacity: 1;
+    transition: opacity 300ms ease-in-out;
+}
+
+
+#cusorEvent {
+    cursor: pointer;
+    color: #1c3367 !important;
+}
+
+
+.status-title{
+	
+	color: #1c3367 !important;
+}
+
+
+
+
+
+@media ( min-width : 599px) {
+	background-image: url('/images/background 2.jpg');
+	
+}
+
+@media ( min-width : 1330px) {
+section#onlineapplysection {
+    margin-left: 60px;
+    margin-right: 60px;
+ }
+	
+}
+
 @media (min-width: 600px){
 	.top-content-follow-card-destination {
     width: 100% !important;
@@ -685,19 +927,16 @@ ul.e-visa-footer-links {
     flex-direction: column;
 }
 
+.account-page .application-view .application-information .visa-information .information-content .information-navigation, .feedbackPage .application-view .application-information .visa-information .information-content .information-navigation {
+    width: 215px;
 }
-
-@media screen and (max-width: 768px){
-
-    .account-page .settings-section .settings-content .settings-button-wrapper {
+   .account-page .settings-section .settings-content .settings-button-wrapper {
     width: 300px;
     align-self: flex-start;
     margin: 30px 0 0 0;
 }
-}
 
 
-@media (max-width: 768px){
 
     .container {
     margin-right: auto;
@@ -705,7 +944,56 @@ ul.e-visa-footer-links {
     padding-left: 16px;
     padding-right: 16px;
 }
+
+
+    .account-page .settings-section .settings-content {
+    flex-direction: column;
 }
+
+
+    .account-page .settings-section .settings-content .settings-button-wrapper {
+    width: 300px;
+    align-self: flex-start;
+    margin: 30px 0 0 0;
+}
+
+
+    .account-page .settings-section .settings-content {
+    flex-direction: column;
+}
+
+ .account-page .settings-section .settings-content .settings-button-wrapper {
+    width: 300px;
+    align-self: flex-start;
+    margin: 30px 0 0 0;
+}
+
+.account-page .application-view .application-status-container, .feedbackPage .application-view .application-status-container {
+    width: 100%;
+    
+    margin-bottom: 30px;
+    
+}
+
+.account-page .application-view .application-information, .feedbackPage .application-view .application-information {
+    margin-left: 0px !important;
+   
+}
+
+
+
+.account-page .application-view .application-information, .feedbackPage .application-view .application-information {
+   
+    width: 100%;
+}
+
+.account-page .application-view .application-information .visa-information .information-content .information-navigation, .feedbackPage .application-view .application-information .visa-information .information-content .information-navigation {
+    width: 215px;
+}
+
+
+}
+
 
 @media screen and (max-width: 400px){
 
@@ -713,47 +1001,27 @@ ul.e-visa-footer-links {
     width: 40px;
     margin-right: 10px;
 }
+
+.second-list, .e-visa-footer-links, .e-visa-logo-container {
+    flex-direction: column  !important;
+    align-items: center;
+}
 }
 
-@media screen and (max-width: 768px){
-    .account-page .settings-section .settings-content {
-    flex-direction: column;
-}
-}
-
-@media screen and (max-width: 768px){
-    .account-page .settings-section .settings-content .settings-button-wrapper {
-    width: 300px;
-    align-self: flex-start;
-    margin: 30px 0 0 0;
-}
-
-}
 
 @media screen and (max-width: 425px){
     .submit-input-container.button-container {
     display: flex;
-    flex-direction: column;
-}
+    flex-direction: column !important;
 }
 
-@media screen and (max-width: 425px){
     .submit-input-container.button-container .btn {
     width: 100%;
 }
-}
 
-@media screen and (max-width: 768px){
-    .account-page .settings-section .settings-content {
-    flex-direction: column;
-}
-}
-
-@media screen and (max-width: 768px){
-    .account-page .settings-section .settings-content .settings-button-wrapper {
-    width: 300px;
-    align-self: flex-start;
-    margin: 30px 0 0 0;
+.second-list, .e-visa-footer-links, .e-visa-logo-container {
+    flex-direction: column !important;
+    align-items: center;
 }
 }
 
@@ -775,512 +1043,122 @@ ul.e-visa-footer-links {
     margin-right: 0;
     padding-left: 15px;
 }
+
+.second-list, .e-visa-footer-links, .e-visa-logo-container {
+    flex-direction: column;
+    align-items: center;
+}
+}
+
+@media (max-width: 799px){
+	
+.account-page .application-view .application-status-container, .feedbackPage .application-view .application-status-container {
+    width: 100%;
+    
+    margin-bottom: 30px;
+    
+}
+
+.account-page .application-view .application-information, .feedbackPage .application-view .application-information {
+    margin-left: 0px !important;
+   
 }
 
 
-#showsUserSetting{
-display: none;
+
+.account-page .application-view .application-information, .feedbackPage .application-view .application-information {
+   
+    width: 100%;
 }
-.top-content-follow-card-destination .drop-down .drop-down-ul li:hover .a-no-active{
-		color:black !important;
+
+.account-page .application-view .application-information .visa-information .information-content .information-navigation, .feedbackPage .application-view .application-information .visa-information .information-content .information-navigation {
+    width: 215px;
 }
-.main-site-content{
-	height: auto;
+
 }
-ul.drop-down-ul.display-none.display-block {
-    z-index: 999999;
+
+
+
+@media (max-width: 999px){
+	
+.account-page .application-view .application-status-container, .feedbackPage .application-view .application-status-container {
+    width: 100%;
+    
+    margin-bottom: 30px;
+    
 }
-</style>
 
-</head>
-<body>
-	<div id="overlay" class="hidden mobileMenuOverlay"></div>
-	<%@include file="header.jsp"%>
-		<section class="main-site-content account-page white-bg">
-		<div class="account-menu-wrapper">
-			<div class="container">
-				<ul class="e-visa-footer-links">
-					<li><a id="myApplications-menu" class="col-xs-3	col-sm-3 col-md-3 col-lg-3 my-account-tab active" href="#myApplications">My applications</a></li>
-					<li><a id="settingId-menu" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 my-account-tab " href="#setting">Settings</a></li>
-					<li><a id="LogoutId" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 my-account-tab " href="/logout">Log Out</a></li>
-					
-				</ul>
-			</div>
-		</div>
-
-		<section id="myApplications" class="my-account-section-setting" >
-				<div class="container" id="container1">
-			<div class="mtb-30">
-				<div>
-					<div class="applications-wrapper">
-						<div class="my-applications col-md-8">
-							
-							<ul class="my-applications-menu">
-									<li><a class="my-account-tab-menu active"
-										id="actived-menu" href="#actived"> active <span
-											id="activeTotalId"></span></a></li>
-									<li><a class="my-account-tab-menu " id="finished-menu"
-										href="#finished"> finished <span id="finishedTotalId"></span>
-									</a></li>
-								</ul>
-							<div class="tab-content my-account-section" id="actived">
-								<div>
-									<table class="applications-table">
-										<thead>
-											<tr>
-																								<th>ID</th>
-												<th class="pl-10"><span>country</span></th>
-												<th><span>status</span></th>
-												<th class="hide-465"><span>applicant</span></th>
-												<th class="hide-465"><span>date</span></th>
-												<th>actions</th>
-											</tr>
-										</thead>
-										<tbody id="activetBody">
-											
-										</tbody>
-										
-									</table>
-								</div>
-							</div>
-							<div class="tab-content my-account-section" id="finished" style="display: none;">
-								<div>
-									<table class="applications-table">
-										<thead>
-											<tr>
-												<th>ID</th>
-												<th class="pl-10"><span>country</span></th>
-												<th><span>status</span></th>
-												<th class="hide-465"><span>applicant</span></th>
-												<th class="hide-465"><span>date</span></th>
-												
-											</tr>
-										</thead>
-										<tbody id="finishtBody">
-											
-										</tbody>
-										
-									</table>
-								</div>
-							</div>
-						</div>
-						<div class="new-application col-md-4">
-							<div class="application-creator">
-								<div
-									class="input-box-bottom button-container button-container-open">
-									<button class="active button-no-arrow button-green">new
-										application</button>
-									<div class="application-creator-content" style="">
-								
-										<header>Destination:</header>
-										<div class="top-content-follow-card-destination"
-											style="margin-top: -5px;">
-
-											<div class="drop-down">
-											<form autocomplete="off">
-												<input type="text"  id="select-country"
-													placeholder="Select a country"
-													class="initial-input input-drop-down" autocomplete="nope"
-													style="border-bottom: 1px solid;">
-												<ul class="drop-down-ul display-none"
-													style="bottom: initial; max-height: 300px;padding-left: 20px;">
-
-													<li class="drop-down-ul-element" id="countryHref"><a href="/en/india"
-														class="a-no-active" id="countryDropDown"><span>India</span></a></li>
-
-													<li class="drop-down-ul-element" id="countryHref"><a href="/en/turkey"
-														class="a-no-active" id="countryDropDown"><span>Turkey</span></a></li>
-
-													<li class="drop-down-ul-element" id="countryHref"><a
-														href="/en/pakistan" class="a-no-active" id="countryDropDown"><span>Pakistan</span></a></li>
-
-													<li class="drop-down-ul-element" id="countryHref"><a
-														href="/en/thailand" class="a-no-active" id="countryDropDown"><span>Thailand</span></a></li>
-
-													<li class="drop-down-ul-element" id="countryHref"><a
-														href="/en/united-arab-emirates" class="a-no-active" id="countryDropDown"><span>United-Arab-Emirates</span></a></li>
-
-												</ul>
-												</form>
-											</div>
-										</div>
-										
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				
-			</div>
-		</div>
-		</section>
-		<section id="setting" class="my-account-section-setting" style="display:none;">
-				<div class="container">
-			<div class="mtb-30">
-				<div>
-					<h2 class="settings-header">Personal account</h2>
-					<div class="settings-section">
-						<div class="settings-icon">
-							<img src="/images/user.png">
-							<!---->
-						</div>
-						<div class="settings-content">
-							<div class="settings-fields">
-								<header>Account information:</header>
-								<div class="input-box">
-									<div class="input-box-top">
-										<div class="input-box-label">Full name</div>
-									</div>
-									<div class="input-box-bottom">
-										<div class="actual-input">
-											<div class="text-input-single">
-											<form autocapitalize="off">
-												<input type="text" id="updateUserNameId" autocomplete="off" value="<%=fullName%>">
-											</form>
-											</div>
-											
-										</div>
-										
-									</div>
-								</div>
-							</div>
-							<div class="settings-button-wrapper">
-								<div class="input-box">
-									<div
-										class="input-box-bottom button-container submit-input-container">
-										<button  class="btn btn--disabled" onclick="updateUserFullName();">save
-											data</button>
-									</div>
-								</div>
-							</div>
-						</div>
-						
-						
-					</div>
-					<div class="dataSucess">&#10004; Data updated successfully</div>
-					<!---->
-					<div class="settings-section">
-						<div class="settings-icon">
-							<img src="/images/padlock.png">
-						</div>
-						<div class="settings-content">
-							<div class="settings-fields">
-								<div class="input-box">
-								<form autocomplete="off">
-									<header>Change password</header>
-									<!---->
-									<div class="input-box">
-										<div class="input-box-top">
-											<div class="input-box-label">Current password</div>
-										</div>
-										<div class="input-box-bottom">
-											<div class="actual-input">
-												<div class="text-input-single">
-													<input type="password" id="currentPasswordId" autocomplete="off">
-												</div>
-												<!---->
-											</div>
-											<!---->
-										</div>
-									</div>
-									<div class="input-box">
-										<div class="input-box-top">
-											<div class="input-box-label">Password</div>
-											<div class="input-box-hint">At least 8 characters,
-												including at least 1 uppercase letter, 1 lowercase letter
-												and a number.</div>
-										</div>
-										<div class="input-box-bottom">
-											<div class="actual-input">
-												<div class="text-input-single">
-													<input type="password" id="newPassWordId" autocomplete="off">
-												</div>
-												<!---->
-											</div>
-											<!---->
-										</div>
-									</div>
-									<div class="input-box">
-										<div class="input-box-top">
-											<div class="input-box-label">Confirm password</div>
-											<div class="input-box-hint">The two passwords must
-												match.</div>
-										</div>
-										<div class="input-box-bottom">
-											<div class="actual-input">
-												<div class="text-input-single">
-													<input type="password" id="confirmPassId" autocomplete="off">
-												</div>
-												<!---->
-											</div>
-											<!---->
-										</div>
-									</div>
-									</form>
-								</div>
-							</div>
-							<div class="settings-button-wrapper">
-								<div class="input-box">
-									<div
-										class="input-box-bottom button-container submit-input-container">
-										<button  class="btn btn--disabled" onclick="updateUserPassword();">
-											<span>Change password</span>
-											<!---->
-										</button>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="dataSucess" id="passwordUpdaetedmsg">&#10004; Password updated successfully</div>
-				</div>
-				
-			</div>
-		</div>
-		</section>
-
-	</section>
-	<%@include file="footer.jsp"%>
-	<script>
-	document.querySelector('#select-country').addEventListener('change', function () {
-        var destinationKey = this.getAttribute('data-key').toLowerCase();
-        if (destinationKey !== null) {
-            window.location.href = '/en/india/applicationform'.replace("india", destinationKey);
-        }
-    });
+.account-page .application-view .application-information, .feedbackPage .application-view .application-information {
+    margin-left: 0px !important;
+   
+}
 
 
-	$(document).on(
-			"click",
-			".my-account-tab-menu",
-			function(e) {
-				var sectionId = $(this).attr("id");
-				var section = $(this).attr(
-						"href");
-				$(".my-account-section").css("display",
-						"none");
-				$(".my-account-tab-menu").removeClass("active")
-				displaySection(sectionId, section);
-				e.preventDefault();
-				e.stopPropagation();
-			});
 
-	function displaySection(secid, sec){
-		$(sec).show();
-		$("#" + secid).addClass("active");
-		
-	}
+.account-page .application-view .application-information, .feedbackPage .application-view .application-information {
+   
+    width: 100%;
+}
+
+}
 
 
-	$(document).on(
-			"click",
-			".my-account-tab",
-			function(e) {
-				var sectionId = $(this).attr("id");
-				var section = $(this).attr(
-						"href");
-				$(".my-account-section-setting").css("display",
-						"none");
-				$(".my-account-tab").removeClass("active")
-				displayHedaerSection(sectionId, section);
-				e.preventDefault();
-				e.stopPropagation();
-			});
-
-	function displayHedaerSection(secid, sec){
-		$(sec).show();
-		$("#" + secid).addClass("active");
-		
-		}
-	function makePendingPayment(authKey){
-		var param ="hash="+authKey;
-		window.location.href = "/payment/?"+param;
-	}
-
-	function updateUserFullName(){
-		var param = "userId=<%=userId%>"
-			if($('#updateUserNameId').val() != ""){
-				$('#updateUserNameId').css('border','1px solid black');
-		$.ajax({
-			type : 'POST',
-			url : '/user/updateUserFullName/?'+param,	
-			headers: {
-                 'Content-Type': 'application/json'
-             },
-			data: JSON.stringify ({
-			"fullName": $('#updateUserNameId').val(),
-			}),
-			success : function(data) {
-				
-				$('.dataSucess').css('display','block');
-				$('#updateUserNameId').val(data.fullName);
-					setTimeout(() => {
-					$('.dataSucess').css('display','none');
-					}, "1000")
-								
-			},
-			error : function(data) {
-				console.log("error when gettig data");
-			
-			}
-		}); 
-			}else{
-				$('#updateUserNameId').css('border','1px solid red')
-				
-				}
-	}
-
-
-	function updateUserPassword(){
-		var userId = <%=userId%>
-		var newPassword = $('#newPassWordId').val();
-			if(validate()){
-				
-			$.ajax({
-				type : 'POST',
-				url : '/user/updateUserPassword/'+userId+'/'+newPassword,	
-				headers: {
-	                 'Content-Type': 'application/json'
-	             },
-				data: JSON.stringify ({
-				"userPassword": $('#currentPasswordId').val(),
-				}),
-				success : function(data) {
-					
-					$('#passwordUpdaetedmsg').css('display','block');
-					$('#updateUserNameId').val(data.fullName);
-						setTimeout(() => {
-						$('.dataSucess').css('display','none');
-						}, "1000")
-									
-				},
-				error : function(data) {
-					console.log("error when gettig data");
-				
-				}
-			}); 
-				}else{
-					validate();
-					
-					}
-	}
+@media (max-width: 1199px){
 	
-	
-	</script>
-	<script>
-	function validate() {
-		var isValidated = true;
-		var pass = $('#newPassWordId').val();
+.account-page .application-view .application-status-container, .feedbackPage .application-view .application-status-container {
+    width: 100%;
+    
+    margin-bottom: 30px;
+    
+}
 
-		var confirmPass = $('#confirmPassId').val();
+.account-page .application-view .application-information, .feedbackPage .application-view .application-information {
+    margin-left: 0px !important;
+   
+}
 
-		if (pass.match(/[a-z]/g) && pass.match(/[A-Z]/g)
-				&& pass.match(/[0-9]/g) && pass.match(/[^a-zA-Z\d]/g)
-				&& pass.length >= 8) {
 
-			isValidated = true
 
-		} else {
-		
-		}
-		if (confirmPass == pass) {
-			
-			isValidated = true;
-			
-		} else{
-			
-			isValidated = false;
+.account-page .application-view .application-information, .feedbackPage .application-view .application-information {
+   
+    width: 100%;
+}
 
-		}
-		return isValidated;
+}
 
-	}
 
-		
-	</script>
-	
-	<script>
-	
+@media (max-width: 599px){
+
+	.account-page .application-view .application-information .visa-information .information-content .information-navigation, .feedbackPage .application-view .application-information .visa-information .information-content .information-navigation {
+    width: 215px !important;
+      
+    margin-right: 10px;
+}
+}
+
+@media (max-width: 699px){
+
+	.account-page .application-view .application-information .visa-information .information-content .information-navigation, .feedbackPage .application-view .application-information .visa-information .information-content .information-navigation {
+    width: 215px !important;
+      
+    margin-right: 10px;
+}
+}
 	
 
-	window.onload = function () {
-		var some_id = $('#select-country');
-	    some_id.prop('type', 'text');
-	    some_id.removeAttr('autocomplete');
-		$('#loginLinkId').css('display','none')
-		var param = "email=<%=email%>"
-		$.ajax({
-			type : 'GET',
-			url : '/user/getUnpaidApplication/?'+param,	
-			async : true,
-			success : function(data) {
-				$('#activeTotalId').text(' ('+data.length+')')
-				 $.each(data, function(index,element) {
-					 
-					 if(element.payment==0){
-						 element.payment="Unpaid";
-					}else{
-						element.payment="Paid";
-						}
-				 $('#activetBody').append(
-						 
-						 '<tr><td>'+element.pkid+'</td><td>'+element.toCountry+'</td>'
-						 +'<td style="color:red;">'+element.payment+'</td><td>'+element.firstName+' '+element.lastName+'</td>'
-						 +'<td>'+element.plannedDateOfTravel+'</td><td><img src="/images/view.png" style="width:20px; height:20px;" onclick="getViewPage(\''+element.confirmAuthKey+'\');">'
-						 +'<span style="color: red; font-size: 20px; cursor: pointer; padding-left:30px;" onclick="makePendingPayment(\''+element.confirmAuthKey+'\');">&#36;</span></td>'
-						 +'</tr>'
-	
-						 )
-						
-					 });
-					
-			},	
-			error : function(data) {
-				console.log("error when gettig data");
-			}
-		}); 
 
-		$('#loginLinkId').css('display','none')
-		var param = "email=<%=email%>"
-		$.ajax({
-			type : 'GET',
-			url : '/user/getPaidApplication/?'+param,	
-			async : true,
-			success : function(data) {
-				$('#finishedTotalId').text(' ('+data.length+')')
-				 $.each(data, function(index,element) {
-					 
-					 if(element.payment==0){
-						 element.payment="Unpaid";
-					}else{
-						element.payment="Paid";
-						}
-				 $('#finishtBody').append(
-						 
-						 '<tr><td>'+element.pkid+'</td><td>'+element.toCountry+'</td>'
-						 +'<td style="color:red;">'+element.payment+'</td><td>'+element.firstName+' '+element.lastName+'</td><td>'+element.plannedDateOfTravel+'</td></tr>'
-	
-						 )
-						
-					 });
-					
-			},	
-			error : function(data) {
-				console.log("error when gettig data");
-			}
-		}); 
-	}
-	
-	
 
-</script>
-<script>
-	function getViewPage(authKey){
-		var param = "?hash="+authKey;
-		window.location.href = "/en/view/"+param
-	}
-</script>
+@media (max-width: 991px){
+	
+	
+	.second-list, .e-visa-footer-links, .e-visa-logo-container {
+    flex-direction: row;
+    align-items: center;
+}
+}
 
-</body>
-</html>
+
+
+
+
+

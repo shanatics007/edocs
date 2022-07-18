@@ -200,4 +200,31 @@ public class UserServiceImpl implements UserService {
 		return applicationData;
 	}
 
+
+	@Override
+	public UserModel updateUserFullName(UserModel model, long userId) {
+		UserModel userModel = userRepos.findOneByUserId(userId);
+		
+		try {
+			userModel.setFullName(model.getFullName());
+			userRepos.save(userModel);
+		} catch (Exception e) {
+			
+		}
+		return userModel;
+	}
+
+
+	@Override
+	public UserModel updateUserPassword(UserModel model, long userId, String newPassword) {
+		UserModel userModel = userRepos.findOneByUserId(userId);
+		if(userModel.getUserPassword().equals(model.getUserPassword())) {
+			userModel.setUserConfirmPassword(newPassword);
+			userModel.setUserPassword(newPassword);
+			userRepos.save(userModel);
+		}
+		
+		return userModel;
+	}
+
 }

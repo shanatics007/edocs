@@ -8589,11 +8589,7 @@
                                     }
                                 }
 
-                                function p(t) {
-                                    n.innerHTML = "", t.map((function(t) {
-                                        return n.innerHTML += '<li class="drop-down-ul-element"><a href="#" class="a-no-active">'.concat(t, "</a></li>")
-                                    }))
-                                }
+                                
                                 p(r), n.addEventListener("click", (function(t) {
                                     if (-1 !== o(document.querySelectorAll(".drop-down-ul-element")).indexOf(t.target)) {
                                         var i = t.target.querySelector("[data-key]");

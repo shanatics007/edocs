@@ -1,21 +1,12 @@
 package com.edocs.Controller;
-
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import com.edocs.Model.TravelTypesModel;
-import com.edocs.Service.TravelTypeService;
-
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/en")
 public class CountryController {
-	
 	
 	
 	@RequestMapping("/india")
@@ -129,6 +120,11 @@ public class CountryController {
 	@RequestMapping("/confirmation/{applicationId}")
 	public String confirmation(@PathVariable int applicationId) {
 		return "confirmation";
+	}
+	
+	@RequestMapping("/view")
+	public String viewApplications(@RequestParam(name = "hash",required = true) String authkay) {
+		return "viewApplications";
 	}
 	
 	

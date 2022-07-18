@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -64,6 +65,18 @@ public class UserController {
 		return userService.getPaidApplication(email);
 		
 	}
+	@PostMapping("/updateUserFullName")
+	public UserModel updateUserFullName(@RequestBody UserModel model,@RequestParam long userId) {
+		return userService.updateUserFullName(model, userId);
+		
+	}
+	
+	@PostMapping("/updateUserPassword/{userId}/{newPassword}")
+	public UserModel updateUserPassword(@RequestBody UserModel model, @PathVariable long userId,@PathVariable String newPassword) {
+		return userService.updateUserPassword(model, userId, newPassword);
+	}
+	
+	
 	
 
 }

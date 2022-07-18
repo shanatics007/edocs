@@ -22,6 +22,10 @@ public interface UserService {
 	List<ApplicationForVisaModel> getUnpaideApplication(String email);
 
 	List<ApplicationForVisaModel> getPaidApplication(String email);
+	
+	UserModel updateUserFullName(UserModel model, long userId);
+	
+	UserModel updateUserPassword(UserModel model,long userId,String newPassword);
 
 
 }

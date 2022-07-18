@@ -1,0 +1,16 @@
+.dataSucess {
+    background: rgb(14 177 122);
+    color: #fff;
+    width: 250px;
+    height: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    font-size: 16px;
+    margin-left: 90px;
+    display: none;
+}
+ul.e-visa-footer-links {
+    flex-direction: row;
+}
+

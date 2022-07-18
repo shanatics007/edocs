@@ -8,6 +8,35 @@
   <%@ page import="java.time.format.DateTimeFormatter "%>
   <%@ page import="java.util.Calendar"%>
 
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<style>
+ @media (max-width: 599px){
+
+#menu-desktop-account {
+    display: flex;
+}
+ul.menu-options.account-dropdown {
+    list-style-type: none;
+    padding-left: 0;
+
+}
+.user-name {
+    margin-left: 10px;
+    color: #1c3367;
+   font-weight: 700;
+}
+ul.menu-dropdown-values {
+    list-style-type: none;
+}
+} 
+
+</style>
+
+</head>
+<body>
 <div class="menu-desktop-wrapper">
          <nav class="menu-desktop">
             <div class="container">
@@ -39,9 +68,10 @@
                    <%
 	                   if (request.getSession().getAttribute("userLogin") != null) {
 	               		HashMap<Object, Object> userDetails =(HashMap<Object, Object>) request.getSession().getAttribute("userLogin");
-	               		UserModel user = (UserModel)userDetails.get("data");
 	               		
-						long userid1 = user.getUserId();
+	               		if(userDetails!=null){
+	               		UserModel user = (UserModel)userDetails.get("data");
+						long userid1 = user.getUserId();	
 						if(userid1 == 0){
 						%>
 							<a href="/login" id="loginLinkId" style="color: #1d3367 !important;">Log In</a>
@@ -50,7 +80,7 @@
 						<li class="dropdown-wrapper">
 						<a id="menu-desktop-account" href="" class="menu-account-user link-prevent menu-option-dropdown">
 						<img src="https://evisa.express/img/icon/account-personal.svg" alt="">
-						<div class="user-name">My account</div></a>
+						<div class="user-name" style="color: #1d3367;	margin-left: 10px;">My account</div></a>
 						<ul class="menu-dropdown-values hidden">
 						<li>
 						<a id="menu-desktop-account-index" href="/en/account" title="My applications">My applications</a>
@@ -63,6 +93,9 @@
 						</ul>
 							
 						<%}
+						}else{ %>
+							<a href="/login" id="loginLinkId" style="color: #1d3367 !important;">Log In</a>
+						<% }
 						}else{  %>
 							<a href="/login" id="loginLinkId" style="color: #1d3367 !important;">Log In</a>
 						<% }
@@ -168,3 +201,5 @@
 
 		</ul>
 	</div>
+</body>
+</html>

@@ -1807,7 +1807,8 @@ th{
 .menu-desktop .container .menu-options{
     display:flex;
     height:30px;
-    margin:0
+    margin:0;
+    margin-right: -65px
 }
 .menu-desktop .container .menu-options.account-dropdown{
     height:auto
@@ -7276,7 +7277,8 @@ th{
 .menu-desktop .container .menu-options{
     display:flex;
     height:30px;
-    margin:0
+    margin:0;
+    margin-right:-65px
 }
 .menu-desktop .container .menu-options.account-dropdown{
     height:auto
