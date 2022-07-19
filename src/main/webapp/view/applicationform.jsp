@@ -231,7 +231,9 @@ label#radiolabel {
 }
 
 @media (max-width: 599px){
-	
+	.row.ee-form-container {
+    display: block !important;
+}
 
 }
 
