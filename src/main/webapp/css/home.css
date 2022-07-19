@@ -1969,18 +1969,18 @@ th{
     border-bottom:none
 }
 .menu-desktop .menu-option-dropdown.active{
-    border-color:#7C152A
+    border-color:#1c3367 !important	;
 }
 .menu-desktop .menu-option-dropdown+ul{
     position:absolute;
     z-index:90;
     top:35px;
     left:0;
-    color:#7C152A;
+    color:#1c3367 !important;
     padding:0;
     margin:0;
     background:#fff;
-    border:1px solid #7C152A;
+    border:1px solid #1c3367 !important;
     width:192px
 }
 .menu-desktop .menu-option-dropdown+ul li{
@@ -2005,7 +2005,7 @@ th{
     flex-wrap:wrap
 }
 .menu-desktop .menu-option-dropdown.custom-shape-link-flexible+ul li{
-    height:35px !important;
+   height:35px !important;
     width:192px;
     border-right:1px solid #7C152A
 }
@@ -7464,7 +7464,7 @@ th{
 }
 .menu-desktop .menu-option-dropdown+ul li a:hover{
     color:#fff;
-    background:#7C152A
+     background:#1d3367 !important;
 }
 .menu-desktop .menu-option-dropdown.custom-shape-link-flexible+ul{
     max-height:80vh;
@@ -7475,7 +7475,7 @@ th{
 .menu-desktop .menu-option-dropdown.custom-shape-link-flexible+ul li{
     height:35px !important;
     width:192px;
-    border-right:1px solid #7C152A
+    border-right:1px solid #1d3367 !important;
 }
 .menu-desktop .menu-option-dropdown.language-switcher+ul{
     width:100%;

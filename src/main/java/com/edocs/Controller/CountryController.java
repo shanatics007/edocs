@@ -8,6 +8,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/en")
 public class CountryController {
 	
+	@RequestMapping("/en")
+	public String home() {
+		
+		return "india";
+	}
 	
 	@RequestMapping("/india")
 	public String indiaEvisa() {

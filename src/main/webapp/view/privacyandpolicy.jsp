@@ -548,12 +548,12 @@ span.description-steps-text-bottom {
 			<h4 style="    color: rgb(176, 143, 111);width: 100%;text-align: center;font-size: 20px;">AND APPLY ONLINE</h4>
 
 			
-			<div class="top-content-follow-card-destination" style="margin: auto; text-align: center;">
+			<div class="top-content-follow-card-destination" id="privDestinId">
 				<span class="top-content-follow-card-destination-small-text">Your
 					Destination</span>
 				<div class="drop-down">
 					<input type="text" name="noPassword" id="select-country" placeholder="Select a country" class="initial-input input-drop-down" autocomplete="no">
-					<ul class="drop-down-ul display-none" style="bottom: initial; max-height: 180px;">
+					<ul class="drop-down-ul display-none" id="ulselectId">
 					<li class="drop-down-ul-element">
 					
 					<a href="/en/india" class="a-no-active">

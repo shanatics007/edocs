@@ -114,313 +114,30 @@ h2.description-steps-h3 {
 	padding-bottom: 15px;
 }
 
-@
--webkit-keyframes glowing { 0% {
-	background-color: #1d3367;
-	-webkit-box-shadow: 0 0 3px #1d3367;
+
+
+@-webkit-keyframes glowing {
+  0% { background-color: #1d3367; -webkit-box-shadow: 0 0 3px #1d3367; }
+  50% { background-color: #FF0000; -webkit-box-shadow: 0 0 15px #FF0000; }
+  100% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
 }
 
-50
-
-
-%
-{
-background-color
-
-
-:
-
-
-#FF0000
-;
-
-
--webkit-box-shadow
-
-
-:
-
-
-0
-
-
-0
-
-
-15px
-
-
-#FF0000
-;
-
-
-}
-100
-
-
-%
-{
-background-color
-
-
-:
-
-
-#B20000
-;
-
-
--webkit-box-shadow
-
-
-:
-
-
-0
-
-
-0
-
-
-3px
-
-
-#B20000
-;
-
-
-}
-}
-@
--moz-keyframes glowing { 0% {
-	background-color: #1d3367;
-	-moz-box-shadow: 0 0 3px #1d3367;
+@-moz-keyframes glowing {
+  0% { background-color: #1d3367; -moz-box-shadow: 0 0 3px #1d3367; }
+  50% { background-color: #FF0000; -moz-box-shadow: 0 0 15px #FF0000; }
+  100% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
 }
 
-50
-
-
-%
-{
-background-color
-
-
-:
-
-
-#FF0000
-;
-
-
--moz-box-shadow
-
-
-:
-
-
-0
-
-
-0
-
-
-15px
-
-
-#FF0000
-;
-
-
-}
-100
-
-
-%
-{
-background-color
-
-
-:
-
-
-#B20000
-;
-
-
--moz-box-shadow
-
-
-:
-
-
-0
-
-
-0
-
-
-3px
-
-
-#B20000
-;
-
-
-}
-}
-@
--o-keyframes glowing { 0% {
-	background-color: #1d3367;
-	box-shadow: 0 0 3px #1d3367;
+@-o-keyframes glowing {
+  0% { background-color: #1d3367; box-shadow: 0 0 3px #1d3367; }
+  50% { background-color: #FF0000; box-shadow: 0 0 15px #FF0000; }
+  100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
 }
 
-50
-
-
-%
-{
-background-color
-
-
-:
-
-
-#FF0000
-;
-
-
-box-shadow
-
-
-:
-
-
-0
-
-
-0
-
-
-15px
-
-
-#FF0000
-;
-
-
-}
-100
-
-
-%
-{
-background-color
-
-
-:
-
-
-#B20000
-;
-
-
-box-shadow
-
-
-:
-
-
-0
-
-
-0
-
-
-3px
-
-
-#B20000
-;
-
-
-}
-}
-@
-keyframes glowing { 0% {
-	background-color: #1d3367;
-	box-shadow: 0 0 3px #1d3367;
-}
-
-50
-
-
-%
-{
-background-color
-
-
-:
-
-
-#FF0000
-;
-
-
-box-shadow
-
-
-:
-
-
-0
-
-
-0
-
-
-15px
-
-
-#FF0000
-;
-
-
-}
-100
-
-
-%
-{
-background-color
-
-
-:
-
-
-#B20000
-;
-
-
-box-shadow
-
-
-:
-
-
-0
-
-
-0
-
-
-3px
-
-
-#B20000
-;
-
-
-}
+@keyframes glowing {
+  0% { background-color: #1d3367; box-shadow: 0 0 3px #1d3367; }
+  50% { background-color: #FF0000; box-shadow: 0 0 15px #FF0000; }
+  100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
 }
 .description-steps-text-main {
 	color: #1d3367;
@@ -479,7 +196,7 @@ span.description-steps-text-bottom {
 
 			<div class="top-content-follow-card-logo" style="margin: auto;"></div>
 			<div class="top-content-follow-card-destination"
-				style="margin: auto; padding-top: 40px;">
+				style="margin: auto; padding-top: 40px;padding-left:50px;padding-right:50px;">
 				<span class="top-content-follow-card-destination-small-text">Your
 					Destination</span>
 				<div class="drop-down">

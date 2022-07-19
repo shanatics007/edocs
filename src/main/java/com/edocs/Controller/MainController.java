@@ -35,6 +35,13 @@ public class MainController {
 		return "register";
 	}
 	
+	
+	@RequestMapping("/register/{country}")
+	public String FromApplicationsignUp(@PathVariable String country) {
+		
+		return "register";
+	}
+	
 	@RequestMapping(value = "/resetpassword/{key}",method = RequestMethod.GET)
 	public String resetPassword(@PathVariable String key) {
 		

@@ -13,6 +13,10 @@
 <html lang="en">
 <head>
 <style>
+#menuDropdownValuesHeaderPage{
+	width:100% !important;
+	margin-top:10px !important;
+}
  @media (max-width: 599px){
 
 #menu-desktop-account {
@@ -47,16 +51,16 @@ ul.menu-dropdown-values {
                         <a href="#" id="menu-desktop-get-visa" class="link-prevent menu-option-dropdown custom-shape-link custom-shape-link-flexible" style="color: #1d3367 !important;">Get Visa</a>
                         <ul class="menu-dropdown-values hidden" id="destinations" style="width:auto; height:auto;">
                            
-                           <li><a href="/en/india" title="Visa for India" style="color: #1d3367 !important;">India</a></li>
+                           <li><a href="/en/india" title="Visa for India">India</a></li>
                           
                            <li style="border-right: none;">
-                           <a href="/en/turkey" title="Visa for Turkey" style="color: #1d3367 !important;">Turkey</a></li>
+                           <a href="/en/turkey" title="Visa for Turkey">Turkey</a></li>
                            
-                            <li><a href="/en/pakistan" title="Visa for pakistan" style="color: #1d3367 !important;">Pakistan</a></li>
+                            <li><a href="/en/pakistan" title="Visa for pakistan">Pakistan</a></li>
                             
-                             <li><a href="/en/thailand" title="Visa for thailand" style="color: #1d3367 !important;">Thailand</a></li>
+                             <li><a href="/en/thailand" title="Visa for thailand">Thailand</a></li>
                              
-                              <li><a href="/en/united-arab-emirates" title="Visa for UAE" style="color: #1d3367 !important;">United Arab Emirates</a></li>
+                              <li><a href="/en/united-arab-emirates" title="Visa for UAE">United Arab Emirates</a></li>
                         
                         </ul>
                      </li>
@@ -79,11 +83,11 @@ ul.menu-dropdown-values {
 						<ul class="menu-options account-dropdown">
 						<li class="dropdown-wrapper">
 						<a id="menu-desktop-account" href="" class="menu-account-user link-prevent menu-option-dropdown">
-						<img src="https://evisa.express/img/icon/account-personal.svg" alt="">
-						<div class="user-name" style="color: #1d3367;	margin-left: 10px;">My account</div></a>
-						<ul class="menu-dropdown-values hidden">
+						<img src="/images/user_icon.png" alt="userProfile" style="width:25px; height: 25px;">
+						<div class="user-name" style="color: #1d3367;	margin-left: 10px;">My Account</div></a>
+						<ul class="menu-dropdown-values hidden" id="menuDropdownValuesHeaderPage">
 						<li>
-						<a id="menu-desktop-account-index" href="/en/account" title="My applications">My applications</a>
+						<a id="menu-desktop-account-index" href="/en/account" title="My applications">My Aplications</a>
 						</li>
 						<li>
 						<a id="menu-desktop-account-settings" href="/en/account" title="Settings">Settings</a></li>
@@ -138,7 +142,7 @@ ul.menu-dropdown-values {
 						<a id="menu-desktop-account" href="" class="menu-account-user link-prevent menu-option-dropdown">
 						<img src="https://evisa.express/img/icon/account-personal.svg" alt="">
 						<div class="user-name">My account</div></a>
-						<ul class="menu-dropdown-values hidden">
+						<ul class="menu-dropdown-values hidden" id="menuDropdownValuesHeaderPage">
 						<li>
 						<a id="menu-desktop-account-index" href="/en/account" title="My applications">My applications</a>
 						</li>
@@ -154,17 +158,6 @@ ul.menu-dropdown-values {
 							<a id="menu-mobile-login" class="mobile-menu-font" href="/login" rel="nofollow">Log in</a>
 						<% }
 						%>
-					
-                  
-			
-			
-			
-			
-			
-			
-				
-		
-				
 				
 			</span>
 				
@@ -176,16 +169,15 @@ ul.menu-dropdown-values {
 				<div class="height">
 					<ul class="mobile-menu-country-list">
 
-						<li><a href="/en/india" style="color: #1d3367 !important;">India</a></li>
+						<li><a href="/en/india">India</a></li>
 
-						<li><a href="/en/turkey" style="color: #1d3367 !important;">Turkey</a></li>
+						<li><a href="/en/turkey">Turkey</a></li>
 
-						<li><a href="/en/pakistan" style="color: #1d3367 !important;">Pakistan</a></li>
+						<li><a href="/en/pakistan">Pakistan</a></li>
 
-						<li><a href="/en/thailand" style="color: #1d3367 !important;">Thailand</a></li>
+						<li><a href="/en/thailand">Thailand</a></li>
 
-						<li><a href="/en/united-arab-emirates"
-							style="color: #1d3367 !important;">United Arab Emirates</a></li>
+						<li><a href="/en/united-arab-emirates">United Arab Emirates</a></li>
 
 					</ul>
 				</div></li>
@@ -201,5 +193,9 @@ ul.menu-dropdown-values {
 
 		</ul>
 	</div>
+	<script>
+
+	var checkUser = false;
+	</script>
 </body>
 </html>

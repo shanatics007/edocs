@@ -165,8 +165,12 @@
                         </div>
                      </div>
                      <div class="input-box">
-                        <div class="input-box-bottom button-container submit-input-container"><button class="btn" onclick="register();">
+                        <div class="input-box-bottom button-container submit-input-container" id="continueForLoginId"><button class="btn" onclick="register();">
                            Continue
+                           </button>
+                        </div>
+                        <div class="input-box-bottom button-container submit-input-container" style="display:none;" id="continueForApplicationId"><button class="btn" onclick="registerAndApply();">
+                           Continue And Application
                            </button>
                         </div>
                      </div>
@@ -181,24 +185,7 @@
      	<%@include file="footer.jsp"%>
      	
      	
-     	
-     	
-     	
-     
-     	
       <script>
-         var languages = {
-                         'en': 'https://evisa.express/en/account/register',
-             'de': 'https://evisa.express/de/account/register',
-                         'en': 'https://evisa.express/en/account/register',
-             'pl': 'https://evisa.express/pl/account/register',
-                         'en': 'https://evisa.express/en/account/register',
-             'es': 'https://evisa.express/es/account/register',
-                         'en': 'https://evisa.express/en/account/register',
-             'cn': 'https://evisa.express/cn/account/register',
-                     }
-
-
          function showCompanyDeatils(){
              
         		 document.getElementById("showCompanyType").style.display = "block";
@@ -217,6 +204,7 @@
       
       <script type="text/javascript">
       	function register(){
+          	
 
       		 var userIp = '<%=ip%>';
 			
@@ -270,7 +258,7 @@
 					}else{
 
 						Swal.fire({
-							  title: "<img src='images/sucess1234.png' style='width:150px;'>", 
+							  title: "<img src='/images/sucess1234.png' style='width:150px;'>", 
 							  html: "You have registerd sucessfully",  
 							  confirmButtonText: "Ok", 
 							}).then(function() {
@@ -434,6 +422,171 @@
 		   });
       	}
       	
+      </script>
+      
+      <script>
+      var CountryName;
+      window.onload = function () {
+    	  CountryName  =  window.location.href;
+          var splittedUrl = CountryName.split('/');
+          CountryName = splittedUrl[4];
+          
+          if(window.location.href.includes(CountryName)){
+              $('#continueForApplicationId').show();
+              $('#continueForLoginId').hide();
+
+            }
+
+      }
+
+
+
+      function registerAndApply(){
+        	
+
+   		 var userIp = '<%=ip%>';
+			
+			
+       	if($('#terms').prop('checked') && $('#gdpr').prop('checked')){
+   		
+   		if(onSubmitValidate()){
+   			
+       	var url = "/user/signup";	
+       	var userEmail =$('#userEmail').val();
+       	var userPass = $('#userPass').val();
+       	var userConfirmPass = $('#userConfPass').val();
+       	var accType= $("input[name='accountType']:checked ~ label").text().trim();
+       	var fullName=null;
+       	var companyName= null;
+       	var isEnabled = true;
+       	if(accType=="Personal"){
+       		fullName = $('#fullNameId').val();
+       	}else if(accType == "Corporate"){
+       		companyName = $('#companyNameId').val();
+       	}
+			
+			$.ajax({
+				type : "POST",
+				url : url,	
+				 headers: {
+	                    'Content-Type': 'application/json'
+	                },
+				data: JSON.stringify ({
+					"userEmail":userEmail,
+					"userPassword": userPass,
+					"userConfirmPassword": userConfirmPass,
+					"accountType": accType,
+					"isCreatedOn": Math.floor(Date.now() / 1000),
+					"isEnabled": isEnabled,
+					"userRole":	"USER",
+					"userIp": userIp,
+					"fullName": fullName,
+					"companyName":companyName
+					
+				}),
+				async : true,
+				success : function(data) {
+					if(data.status==false){
+						Swal.fire({
+							  title: "<img src='images/fail1234.png' style='width:150px;'>", 
+							  html: "Email already registerd..!",  
+							  confirmButtonText: "Ok", 
+							});
+
+					}else{
+
+						Swal.fire({
+							  title: "<img src='/images/sucess1234.png' style='width:150px;'>", 
+							  html: "You have registerd sucessfully",  
+							  confirmButtonText: "Ok", 
+							}).then(function() {
+								loginApply(data.data.userEmail,data.data.userPassword);
+							});
+						
+						}
+					
+				},	
+				error : function(data) {
+					console.log("error when gettig data");
+				}
+			});
+   	}
+       	}else{
+       		$('#terms').blur();
+       		 $('#gdpr').blur();
+           	}
+			
+		}
+
+
+
+  	function loginApply(userEmail,userPass){	
+        	var url = "/user/signin";	
+        	
+        	if(userEmail==null || userEmail.length==0){
+        		$('#userEmail').blur();
+        		$('#userEmail').css('border',' 1px solid red');
+        		
+        	}else if(userPass==null || userPass.length==0){
+        		$('#userPass').blur();
+        		$('#userPass').css('border',' 1px solid red');
+        	}else{
+        		$('#userEmail').css('border',' 1px solid black');
+        		$('#userPass').css('border',' 1px solid black');
+        	
+			$.ajax({
+				type : "POST",
+				url : url,	
+				 headers: {
+	                    'Content-Type': 'application/json'
+	                },
+				data: JSON.stringify ({
+					"userEmail":userEmail,
+					"userPassword": userPass			
+				}),
+				async : true,
+				success : function(data) {
+					
+					if(data.status==true){
+						window.location = "/en/"+CountryName+"/applicationform";
+						
+					}else{
+
+						if(data.message=="User not found")	{
+
+							Swal.fire({
+								  title: "<img src='images/fail1234.png' style='width:150px;'>", 
+								  html: "User not found",  
+								  confirmButtonText: "Ok", 
+								});
+									
+
+						}else{
+
+							Swal.fire({
+								  title: "<img src='images/fail1234.png' style='width:150px;'>", 
+								  html: "Please Verify your Email on registered Email",  
+								  confirmButtonText: "Ok", 
+							});
+								  
+							
+							}
+			
+					}
+				},	
+				error : function(data) {
+					console.log("error when gettig data");
+				}
+			});
+			
+			}
+  	}
+   
+
+
+      
+
+
       </script>
       
         

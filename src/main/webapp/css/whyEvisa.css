@@ -104,6 +104,17 @@ section#lastsectiononlineapply {
 #applyhere{
 	display:none !important;
 }
+div#destinationID{
+	margin: auto; 
+	text-align: center;
+	padding-left: 12%;
+    padding-right: 12%;
+}
+ul#uldestinId{
+	bottom: initial;
+    max-height: 300px;
+    text-align: initial;
+}
 
 
 @media(max-width:768px)

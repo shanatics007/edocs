@@ -58,8 +58,8 @@
 		<div class="account-menu-wrapper">
 			<div class="container">
 				<ul class="e-visa-footer-links">
-					<li><a id="myApplications-menu" class="col-xs-3	col-sm-3 col-md-3 col-lg-3 my-account-tab active" href="#myApplications">My applications</a></li>
-					<li><a id="settingId-menu" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 my-account-tab " href="#setting">Settings</a></li>
+					<li><a id="myApplications-menu" class="col-xs-3	col-sm-3 col-md-3 col-lg-3 my-account-tab active" href="/en/account">My applications</a></li>
+					<li><a id="settingId-menu" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 my-account-tab " href="/en/account#setting">Settings</a></li>
 					<li><a id="LogoutId" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 my-account-tab " href="/logout">Log Out</a></li>
 					
 				</ul>
@@ -115,23 +115,23 @@
 					</div>
 					<div class="application-information">
 						<div class="visa-information">
-							<header>Application number: <span id="applicationNumber">'<%=applicationNumber%>'</span></header>
+							<header>Application number: <span id="applicationNumber"></span></header>
 							<div class="information-content">
 								<div class="information-data">
 									<p class="data-row">
 										<span> India e-Visa Application Online <!----></span>
 									</p>
 									<p class="data-row">
-										Flight date: <span></span>
+										Flight date: <span id="flightDate"></span>
 									</p>
 									<p class="data-row">
-										Name: <span id="firstName">'<%=firstName%>'</span>
+										Name: <span id="firstName"></span>
 									</p>
 									<p class="data-row">
-										Surname: <span id="lastName">'<%=lastName%>'</span>
+										Surname: <span id="lastName"></span>
 									</p>
 									<p class="data-row">
-										Visa Type: <span id=""></span>
+										Visa Type: <span id="visaType"></span>
 									</p>
 								</div>
 								<div class="information-navigation">
@@ -139,7 +139,7 @@
 									<div class="input-box-bottom button-container">
 										<a target="_blank"
 											href=""
-											class="button-no-arrow button-green">Make payment</a>
+											class="button-no-arrow button-green" onclick="makePendingPayment()">Make payment</a>
 									</div>
 									<!---->
 									<!---->
@@ -209,13 +209,15 @@
 			url : '/application/getApplicationDetails/'+authKey,	
 			async : true,
 			success : function(data) {
-				$('#applicationNumber').val(data.pkid);
-				var price  = data.price.split('USD');
-				$('#priceId').val(price[0]);
-				$('#userId').val(data.userId);
-				$('#firstName').val(data.firstName);
-				$('#lastName').val(data.lastName);
-				$('#countrylist').val(data.nationality);
+				$('#applicationNumber').text(data.pkid);
+				//var price  = data.price.split('USD');
+				//$('#priceId').val(price[0]);
+				//$('#userId').val(data.userId);
+				$('#flightDate').text(data.plannedDateOfTravel);
+				$('#firstName').text(data.firstName);
+				$('#lastName').text(data.lastName);
+				$('#visaType').text(data.purposeForTravel);
+				//$('#countrylist').val(data.nationality);
 			},	
 			error : function(data) {
 				console.log("error when gettig data");
@@ -223,6 +225,13 @@
 		}); 
 		
 		
+	}
+	function makePendingPayment(){
+		var authUrl = window.location.href;
+		var authKey = authUrl.split('=')[1];
+		
+		var param ="hash="+authKey;
+		window.location.href = "/payment/?"+param;
 	}
 	
 	

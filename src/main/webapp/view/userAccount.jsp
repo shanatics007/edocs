@@ -977,7 +977,8 @@ ul.drop-down-ul.display-none.display-block {
 										<div class="input-box-bottom">
 											<div class="actual-input">
 												<div class="text-input-single">
-													<input type="password" id="currentPasswordId" autocomplete="off">
+													<input type="password" id="currentPasswordId" autocomplete="off" onchange="validate();">
+													<span id="currentPassId">Please enter the correct password</span>
 												</div>
 												<!---->
 											</div>
@@ -994,7 +995,8 @@ ul.drop-down-ul.display-none.display-block {
 										<div class="input-box-bottom">
 											<div class="actual-input">
 												<div class="text-input-single">
-													<input type="password" id="newPassWordId" autocomplete="off">
+													<input type="password" id="newPassWordId" autocomplete="off" onchange="validate();">
+													<span id=newPassId>Please enter the correct password</span>
 												</div>
 												<!---->
 											</div>
@@ -1010,7 +1012,8 @@ ul.drop-down-ul.display-none.display-block {
 										<div class="input-box-bottom">
 											<div class="actual-input">
 												<div class="text-input-single">
-													<input type="password" id="confirmPassId" autocomplete="off">
+													<input type="password" id="confirmPassId" autocomplete="off" onchange="validate();">
+													<span id="confPassId">Password not matched please enter correct password</span>
 												</div>
 												<!---->
 											</div>
@@ -1113,7 +1116,7 @@ ul.drop-down-ul.display-none.display-block {
 			}),
 			success : function(data) {
 				
-				$('.dataSucess').css('display','block');
+				$('#userUpdateMessageId').css('display','block');
 				$('#updateUserNameId').val(data.fullName);
 					setTimeout(() => {
 					$('.dataSucess').css('display','none');
@@ -1152,6 +1155,10 @@ ul.drop-down-ul.display-none.display-block {
 					$('#updateUserNameId').val(data.fullName);
 						setTimeout(() => {
 						$('.dataSucess').css('display','none');
+						$('#currentPasswordId').val(null);
+						$('#newPassWordId').val(null);
+						$('#confirmPassId').val(null);
+						
 						}, "1000")
 									
 				},
@@ -1171,26 +1178,41 @@ ul.drop-down-ul.display-none.display-block {
 	<script>
 	function validate() {
 		var isValidated = true;
-		var pass = $('#newPassWordId').val();
-
+		var currentPass = $('#currentPasswordId').val();
+		var newpass = $('#newPassWordId').val();
 		var confirmPass = $('#confirmPassId').val();
 
-		if (pass.match(/[a-z]/g) && pass.match(/[A-Z]/g)
-				&& pass.match(/[0-9]/g) && pass.match(/[^a-zA-Z\d]/g)
-				&& pass.length >= 8) {
+		if (currentPass.match(/[a-z]/g) && currentPass.match(/[A-Z]/g)
+				&& currentPass.match(/[0-9]/g) && currentPass.match(/[^a-zA-Z\d]/g)
+				&& currentPass.length >= 8) {
 
 			isValidated = true
+			$('#currentPassId').css('display','none');
 
 		} else {
+			$('#currentPassId').css('display','block');
 		
 		}
-		if (confirmPass == pass) {
+		if (newpass.match(/[a-z]/g) && newpass.match(/[A-Z]/g)
+				&& newpass.match(/[0-9]/g) && newpass.match(/[^a-zA-Z\d]/g)
+				&& newpass.length >= 8) {
+
+			isValidated = true
+			$('#newPassId').css('display','none');
+
+		} else {
+			$('#newPassId').css('display','block');
+		
+		}
+		if (confirmPass == newpass) {
 			
 			isValidated = true;
+			$('#confPassId').css('display','none');
 			
 		} else{
 			
 			isValidated = false;
+			$('#confPassId').css('display','block');
 
 		}
 		return isValidated;
@@ -1228,7 +1250,7 @@ ul.drop-down-ul.display-none.display-block {
 						 '<tr><td>'+element.pkid+'</td><td>'+element.toCountry+'</td>'
 						 +'<td style="color:red;">'+element.payment+'</td><td>'+element.firstName+' '+element.lastName+'</td>'
 						 +'<td>'+element.plannedDateOfTravel+'</td><td><img src="/images/view.png" style="width:20px; height:20px;" onclick="getViewPage(\''+element.confirmAuthKey+'\');">'
-						 +'<span style="color: red; font-size: 20px; cursor: pointer; padding-left:30px;" onclick="makePendingPayment(\''+element.confirmAuthKey+'\');">&#36;</span></td>'
+						 +'<span id="makePaymentDollerId" onclick="makePendingPayment(\''+element.confirmAuthKey+'\');">&#36;</span></td>'
 						 +'</tr>'
 	
 						 )
@@ -1270,6 +1292,16 @@ ul.drop-down-ul.display-none.display-block {
 				console.log("error when gettig data");
 			}
 		}); 
+		
+		
+		var checkSetting = window.location.href;
+		var splittedCheckUrl = checkSetting.split('#');
+		checkSetting =  splittedCheckUrl[1];
+		if(checkSetting=="setting"){
+			$('#settingId-menu').click();
+
+			
+		}
 	}
 	
 	

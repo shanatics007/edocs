@@ -26,6 +26,15 @@ div#typesetpedvisa {
 #edocsList{
 	padding-left:120px;
 }
+div#privDestinId{
+	margin: auto;
+    text-align: center;
+}
+ul#ulselectId{
+	bottom: initial;
+    max-height: 180px;
+    text-align: initial;
+}
 @media (max-width: 599px ) {
 	
 #paddingId {
