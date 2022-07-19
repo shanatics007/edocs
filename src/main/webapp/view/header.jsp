@@ -153,19 +153,7 @@ ul.menu-dropdown-values {
 						}else{  %>
 							<a id="menu-mobile-login" class="mobile-menu-font" href="/login" rel="nofollow">Log in</a>
 						<% }
-						%>
-					
-                  
-			
-			
-			
-			
-			
-			
-				
-		
-				
-				
+						%> 
 			</span>
 				
 				<span class="mobile-menu-close">close</span>

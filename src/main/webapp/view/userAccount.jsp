@@ -829,11 +829,11 @@ ul.drop-down-ul.display-none.display-block {
 										<thead>
 											<tr>
 																								<th>ID</th>
-												<th class="pl-10"><span>country</span></th>
-												<th><span>status</span></th>
-												<th class="hide-465"><span>applicant</span></th>
-												<th class="hide-465"><span>date</span></th>
-												<th>actions</th>
+												<th class="pl-10"><span>COUNTRY</span></th>
+												<th><span>STATUS</span></th>
+												<th class="hide-465"><span>APPLICANT</span></th>
+												<th class="hide-465"><span>DATE</span></th>
+												<th>ACTIONS</th>
 											</tr>
 										</thead>
 										<tbody id="activetBody">
@@ -849,10 +849,10 @@ ul.drop-down-ul.display-none.display-block {
 										<thead>
 											<tr>
 												<th>ID</th>
-												<th class="pl-10"><span>country</span></th>
-												<th><span>status</span></th>
-												<th class="hide-465"><span>applicant</span></th>
-												<th class="hide-465"><span>date</span></th>
+												<th class="pl-10"><span>COUNTRY</span></th>
+												<th><span>STATUS</span></th>
+												<th class="hide-465"><span>APPLICANT</span></th>
+												<th class="hide-465"><span>DATE</span></th>
 												
 											</tr>
 										</thead>
@@ -868,8 +868,8 @@ ul.drop-down-ul.display-none.display-block {
 							<div class="application-creator">
 								<div
 									class="input-box-bottom button-container button-container-open">
-									<button class="active button-no-arrow button-green">new
-										application</button>
+									<button class="active button-no-arrow button-green">New
+										Application</button>
 									<div class="application-creator-content" style="">
 								
 										<header>Destination:</header>
@@ -927,10 +927,10 @@ ul.drop-down-ul.display-none.display-block {
 						</div>
 						<div class="settings-content">
 							<div class="settings-fields">
-								<header>Account information:</header>
+								<header>Account Information:</header>
 								<div class="input-box">
 									<div class="input-box-top">
-										<div class="input-box-label">Full name</div>
+										<div class="input-box-label">Full Name</div>
 									</div>
 									<div class="input-box-bottom">
 										<div class="actual-input">
@@ -949,8 +949,8 @@ ul.drop-down-ul.display-none.display-block {
 								<div class="input-box">
 									<div
 										class="input-box-bottom button-container submit-input-container">
-										<button  class="btn btn--disabled" onclick="updateUserFullName();">save
-											data</button>
+										<button  class="btn btn--disabled" onclick="updateUserFullName();">Save
+											Data</button>
 									</div>
 								</div>
 							</div>
@@ -1025,7 +1025,7 @@ ul.drop-down-ul.display-none.display-block {
 									<div
 										class="input-box-bottom button-container submit-input-container">
 										<button  class="btn btn--disabled" onclick="updateUserPassword();">
-											<span>Change password</span>
+											<span>Change Password</span>
 											<!---->
 										</button>
 									</div>
