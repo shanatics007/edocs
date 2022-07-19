@@ -27,6 +27,14 @@
 	p.description-steps-eta-planning {
 		font-size: 14px !important;
 	}
+	div#stepVisarowid {
+    display: block !important;
+ }
+}
+@media ( min-width : 600px) {
+	div#stepVisarowid {
+	    display: flex !important;
+	 }
 }
 
 @media ( max-width : 768px) {
@@ -283,7 +291,7 @@ span.description-steps-text-bottom {
 									up on these steps to complete the application process. </p>
 							</div>
 
-							<div class="row" style="display: flex;">
+							<div class="row" id="stepVisarowid">
 								<div class="col-sm-4" id="stepscolumn">
 									<div class="step-icon step-icon-1"></div>
 									<div class="description-steps-text">
