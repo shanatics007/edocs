@@ -1,6 +1,7 @@
 package com.edocs.Service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -89,6 +90,12 @@ public class ApplicationForVisaServiceImpl implements ApplicationForVisaService 
 	public ApplicationForVisaModel getApplicationByAuth(String authKey) {
 		
 		return applicationRepos.getAppDetails(authKey);
+	}
+
+	@Override
+	public List<ApplicationForVisaModel> getApplicationByUserId(long userId) {
+		
+		return applicationRepos.getApplicationByUserId(userId);
 	}
 
 

@@ -18,9 +18,9 @@
  boolean paymentStatus = false;
  String from_country="";
  
- if (request.getSession().getAttribute("formDetails") != null) {
-		HashMap<Object, Object> appVisamodel =(HashMap<Object, Object>) request.getSession().getAttribute("formDetails");
-		//ApplicationForVisaModel test =request.getSession().getAttribute("formDetails");
+ if (request.getSession(false).getAttribute("formDetails") != null) {
+		HashMap<Object, Object> appVisamodel =(HashMap<Object, Object>) request.getSession(false).getAttribute("formDetails");
+		//ApplicationForVisaModel test =request.getSession(false).getAttribute("formDetails");
 		System.out.println("AppData:"+appVisamodel.get("data"));
 		ApplicationForVisaModel ApplnFormData = (ApplicationForVisaModel)appVisamodel.get("data");
 		if(ApplnFormData!=null){

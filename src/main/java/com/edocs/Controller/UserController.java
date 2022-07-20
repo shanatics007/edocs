@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.edocs.Model.ApplicationForVisaModel;
 import com.edocs.Model.UserModel;
+import com.edocs.Service.ApplicationForVisaService;
 import com.edocs.Service.UserService;
 
 @RestController
@@ -23,7 +24,9 @@ import com.edocs.Service.UserService;
 public class UserController {
 
 	@Autowired
-	UserService userService;
+	private UserService userService;
+	@Autowired
+	private ApplicationForVisaService applicationForVisaService;
 	
 	@PostMapping(value = "/signup")
 	public HashMap<Object, Object> userSignUp(@RequestBody UserModel user) {
@@ -42,6 +45,14 @@ public class UserController {
 	public HashMap<String, Object> customerSignIn(@RequestBody UserModel user,HttpSession session) {
 		HashMap<String, Object> loginDetails = userService.userSignIn(user);
 		session.setAttribute("userLogin", loginDetails);
+		UserModel userdetails = (UserModel)loginDetails.get("data");
+		
+		List<ApplicationForVisaModel> appDetails = applicationForVisaService.getApplicationByUserId(userdetails.getUserId());
+		ApplicationForVisaModel model=null;
+		if(appDetails.size()>0) {
+			model = appDetails.get(appDetails.size()-1);
+		}
+		session.setAttribute("AppDetailsByUser", model);
 		
 		return loginDetails;
 		

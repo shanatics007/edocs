@@ -17,9 +17,9 @@
  String lastName = null;
  String paymentId = null;
  
- if (request.getSession().getAttribute("paymentDetails") != null) {
-		HashMap<Object, Object> paymentModel =(HashMap<Object, Object>) request.getSession().getAttribute("paymentDetails");
-		//ApplicationForVisaModel test =request.getSession().getAttribute("formDetails");
+ if (request.getSession(false).getAttribute("paymentDetails") != null) {
+		HashMap<Object, Object> paymentModel =(HashMap<Object, Object>) request.getSession(false).getAttribute("paymentDetails");
+		//ApplicationForVisaModel test =request.getSession(false).getAttribute("formDetails");
 		
 		PaymentModel paymentData = (PaymentModel)paymentModel.get("data");
 		if(paymentData!=null){

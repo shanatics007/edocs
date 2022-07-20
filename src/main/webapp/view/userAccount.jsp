@@ -13,8 +13,8 @@
  String fullName = "";
  long userId = 0;
  
- if (request.getSession().getAttribute("userLogin") != null) {
-		HashMap<Object, Object> userDetails =(HashMap<Object, Object>) request.getSession().getAttribute("userLogin");
+ if (request.getSession(false).getAttribute("userLogin") != null) {
+		HashMap<Object, Object> userDetails =(HashMap<Object, Object>) request.getSession(false).getAttribute("userLogin");
 		UserModel user = (UserModel)userDetails.get("data");
 		email= user.getUserEmail();
 		fullName = user.getFullName();

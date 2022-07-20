@@ -1,3 +1,4 @@
+<%@page import="com.edocs.Model.ApplicationForVisaModel"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.HashMap" %>
@@ -70,8 +71,8 @@ ul.menu-dropdown-values {
                    
                    <li>
                    <%
-	                   if (request.getSession().getAttribute("userLogin") != null) {
-	               		HashMap<Object, Object> userDetails =(HashMap<Object, Object>) request.getSession().getAttribute("userLogin");
+	                   if (request.getSession(false).getAttribute("userLogin") != null) {
+	               		HashMap<Object, Object> userDetails =(HashMap<Object, Object>) request.getSession(false).getAttribute("userLogin");
 	               		
 	               		if(userDetails!=null){
 	               		UserModel user = (UserModel)userDetails.get("data");
@@ -96,7 +97,9 @@ ul.menu-dropdown-values {
 						</ul></li>
 						</ul>
 							
-						<%}
+						<%  
+						
+						}
 						}else{ %>
 							<a href="/login" id="loginLinkId" style="color: #1d3367 !important;">Log In</a>
 						<% }
@@ -128,8 +131,8 @@ ul.menu-dropdown-values {
 		<span class="mobile-menu-account in-header">
 		
                    <%
-	                   if (request.getSession().getAttribute("userLogin") != null) {
-	               		HashMap<Object, Object> userDetails =(HashMap<Object, Object>) request.getSession().getAttribute("userLogin");
+	                   if (request.getSession(false).getAttribute("userLogin") != null) {
+	               		HashMap<Object, Object> userDetails =(HashMap<Object, Object>) request.getSession(false).getAttribute("userLogin");
 	               		UserModel user = (UserModel)userDetails.get("data");
 	               		
 						long userid1 = user.getUserId();

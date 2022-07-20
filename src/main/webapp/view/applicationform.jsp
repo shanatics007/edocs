@@ -34,14 +34,15 @@
  long userId=0;
 
  
-if (request.getSession().getAttribute("formDetails") != null) {
-	HashMap<Object, Object> appVisamodel =(HashMap<Object, Object>) request.getSession().getAttribute("formDetails");
-	//ApplicationForVisaModel test =request.getSession().getAttribute("formDetails");
+if (request.getSession(false).getAttribute("formDetails") != null) {
+	HashMap<Object, Object> appVisamodel =(HashMap<Object, Object>) request.getSession(false).getAttribute("formDetails");
+	//ApplicationForVisaModel test =request.getSession(false).getAttribute("formDetails");
 	System.out.println("AppData:"+appVisamodel.get("data"));
 	ApplicationForVisaModel ApplnFormData = (ApplicationForVisaModel)appVisamodel.get("data");
 	if(ApplnFormData!=null){
 	
 	checkUser=true;
+	
 	 pkId = ApplnFormData.getPkid();
 	 applicationId = Integer.toString(pkId);
 	 travelAirports = ApplnFormData.getTravelAirports();
@@ -74,7 +75,51 @@ if (request.getSession().getAttribute("formDetails") != null) {
 		checkUser=false;
 	}
 } 
- 
+boolean userCheckslogin=false;
+String travelAirportss=null;
+String  plannedDateOfTravelss=null;
+String dayArrivals=null;
+String montharrivals=null;
+String yearlists=null;
+String travelPurposes=null;
+String firstNames=null;
+String lastNames=null;
+String  emails=null;
+String contactPhoneNumbers=null;
+String nationalitys=null;
+String dateOfBirths=null;
+String dayDOBs=null;
+String dayMonths=null;
+String yearlistdobs=null;
+
+if (request.getSession(false).getAttribute("AppDetailsByUser") != null) {
+	ApplicationForVisaModel applicationdetails = (ApplicationForVisaModel) request.getSession(false).getAttribute("AppDetailsByUser");
+	checkUser=true;
+	userCheckslogin=true;
+	 travelAirportss = applicationdetails.getTravelAirports();
+	 plannedDateOfTravelss = applicationdetails.getPlannedDateOfTravel();
+	 String [] dateOfTravels = plannedDateOfTravelss.split("-");
+	
+	 dayArrivals = dateOfTravels[0];
+	  montharrivals = dateOfTravels[1];
+	  yearlists = dateOfTravels[2];
+	
+	travelPurposes = applicationdetails.getPurposeForTravel();
+	firstNames = applicationdetails.getFirstName();
+	lastNames =  applicationdetails.getLastName();
+	emails = applicationdetails.getEmail();
+	contactPhoneNumbers = applicationdetails.getContactPhoneNumber();
+	nationalitys = applicationdetails.getNationality();
+	
+    dateOfBirths = applicationdetails.getDateOfBirth();
+	String [] dateBirths =  dateOfBirths.split("-");
+	 
+	dayDOBs = dateBirths[0];
+	 dayMonths = dateBirths[1];
+	 yearlistdobs = dateBirths[2];
+	 userCheckslogin=true;
+	
+}
 %> 
     <!DOCTYPE html>
  
@@ -419,7 +464,7 @@ label#radiolabel {
             <label> Surname(s) </label> 
             <div class="row">
             <div class="col-sm-10">
-            <input type="text" name="firstname" id="lastNameID" size="15" required  onchange="validate();"/> 
+            <input type="text" name="lastName" id="lastNameID" size="15" required  onchange="validate();"/> 
             
             </div>
              <div class="col-sm-2">
@@ -546,7 +591,7 @@ label#radiolabel {
              <label> Phone number </label> 
              <div class="row">
             <div class="col-sm-10">
-            <input type="text" name="firstname" id="phoneNoId" size="15" required onchange="validate();" />
+            <input type="text" name="phoneNo" id="phoneNoId" size="15" required onchange="validate();" />
             </div>
              <div class="col-sm-2">
              <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
@@ -844,7 +889,9 @@ label#radiolabel {
   	
   	<script>
   	
+  	
   	function submitApplication(){
+  	  	
   		var urlString  = window.location.href.split('/');
     	var country = urlString[4];
 		if($('#accept-terms-track').prop('checked') && $('#accept-gdpr-track').prop('checked')){
@@ -888,17 +935,49 @@ label#radiolabel {
 								 
 								}).then(function() {
 									
+									localStorage.setItem("dayArrival", $('#dayArrival').val());
+									localStorage.setItem("monthArrival", $('#montharrival').val());
+									localStorage.setItem("yearArrival", $('#yearlist').val());
+									localStorage.setItem("portArrival", $('#portArrival').val());
+									localStorage.setItem("firstname", $('#firstNameID').val());
+									localStorage.setItem("lastName", $('#lastNameID').val());
+									localStorage.setItem("dayDOB", $('#dayDOB').val());
+									localStorage.setItem("dayMonth", $('#dayMonth').val());
+									localStorage.setItem("yearlistdob", $('#yearlistdob').val());
+									localStorage.setItem("email", $('#emailID').val());
+									localStorage.setItem("phoneNo", $('#phoneNoId').val());
+									localStorage.setItem("purposeTraval", $('#purposeTraval').val());
+									localStorage.setItem("nationality", $('#countrylist').val());
+									
 								    window.location = "/register/"+country;
+								    
 								});
 
 						}else{
 							var param ="hash="+data.hash;
-							window.location.href = "/payment/?"+param;
-							/* Swal.fire({
-								  title: "<img src='/images/sucess1234.png' style='width:150px;'>", 
-								  html: "Your Application submitted sucessfully",  
-								  confirmButtonText: "Ok", 
-								}); */
+							localStorage.removeItem("dayArrival");
+							localStorage.removeItem("monthArrival");
+							localStorage.removeItem("yearArrival");
+							localStorage.removeItem("portArrival");
+							localStorage.removeItem("firstname");
+							localStorage.removeItem("lastName");
+							localStorage.removeItem("dayDOB");
+							localStorage.removeItem("dayMonth");
+							localStorage.removeItem("yearlistdob");
+							localStorage.removeItem("email");
+							localStorage.removeItem("phoneNo");
+							localStorage.removeItem("purposeTraval");
+							localStorage.removeItem("nationality");
+							
+							localStorage.setItem("dayArrival", "Day");
+							localStorage.setItem("monthArrival", "Month");
+							localStorage.setItem("yearArrival", "Year");
+							localStorage.setItem("dayDOB", "Day");
+							localStorage.setItem("dayMonth", "Month");
+							localStorage.setItem("yearlistdob", "Year");
+							
+							 window.location.href = "/payment/?"+param;
+							
 							
 							}
 						
@@ -972,13 +1051,49 @@ label#radiolabel {
 	
 
 	}
+	 function setLoginSessionValues(checkFormStatus){
+		 if(checkFormStatus=="true"){
+			
+			$('#portArrival').val('<%=travelAirportss%>');
+			$('#firstNameID').val('<%=firstNames%>');
+			$('#lastNameID').val('<%=lastNames%>');
+			$('#emailID').val('<%=emails%>');
+			$('#phoneNoId').val('<%=contactPhoneNumbers%>');
+			$('#dayArrival').val('<%=dayArrivals%>');
+			$('#montharrival').val('<%=montharrivals%>');
+			$('#yearlist').val('<%=yearlists%>');
+			$('#dayDOB').val('<%=dayDOBs%>');
+			$('#dayMonth').val('<%=dayMonths%>');
+			$('#yearlistdob').val('<%=yearlistdobs%>');
+		
+		 }
+		}
+	 function getAppDetailsLocalStorage(){
+
+	    	$('#dayArrival').val(localStorage.getItem("dayArrival"));
+	    	$('#montharrival').val(localStorage.getItem("monthArrival"));
+	    	$('#yearlist').val(localStorage.getItem("yearArrival"));
+	    	$('#portArrival').val(localStorage.getItem("portArrival"));
+	    	$('#firstNameID').val(localStorage.getItem("firstname"));
+	    	$('#lastNameID').val(localStorage.getItem("lastName"));
+	    	$('#dayDOB').val(localStorage.getItem("dayDOB"));
+	    	$('#dayMonth').val(localStorage.getItem("dayMonth"));
+	    	$('#yearlistdob').val(localStorage.getItem("yearlistdob"));
+	    	$('#emailID').val(localStorage.getItem("email"));
+	    	$('#phoneNoId').val(localStorage.getItem("phoneNo"));
+	    	$('#purposeTraval').val(localStorage.getItem("purposeTraval"));
+	    	$('#countrylist').val(localStorage.getItem("nationality"));
+	    	        
+	       }
+	
+	  	
 
   	</script>
   	
   	<script>
 	function validate(){
 	var isvalidated =true;
-
+	
 			
 			if($('#dayArrival').val()!="Day" && $('#montharrival').val()!="Month" && $('#yearlist').val()!="Year" ){
 			var arrivalDate = new Date($('#dayArrival').val()+'-'+$('#montharrival').val()+'-'+$('#yearlist').val());
@@ -1167,10 +1282,11 @@ label#radiolabel {
 
 	
     window.onload = function () {
-
+    	
     	var urlString  = window.location.href.split('/');
     	var country = urlString[4];
     	$('#CountrySummary').text(capitalizeFirstLetter(country));
+    	
        
         var ddlYears = document.getElementById("yearlist");
   
@@ -1232,8 +1348,6 @@ label#radiolabel {
 			}
 		}); 
 
-    	
-    	
     $.ajax({
 		type : 'GET',
 		url : '/getTravelTypes/'+country,	
@@ -1250,23 +1364,34 @@ label#radiolabel {
 			console.log("error when gettig data");
 		}
 	}); 
+    <% if(request.getSession().getAttribute("formDetails") != null || request.getSession().getAttribute("AppDetailsByUser") != null ){%>
+    getAppDetailsLocalStorage();
+    <%}%>
 
+    
     var checkFormStatus = "<%=checkUser%>";
+    
+	var checkUserLogin = "<%=userCheckslogin%>";
+
+	if(checkUserLogin=="false"){
     
     if(checkFormStatus=="true"){
     	setSessionValues();
       }
-    }
+    }else{
+    	setLoginSessionValues(checkFormStatus);
+        }
+ }
 
     function capitalizeFirstLetter(str) {
         const capitalized = str.replace(/^./, str[0].toUpperCase());
         return capitalized;
     }
 
-
+   
+    
   	</script>
   	
-  
   	
   </body>
 </html>

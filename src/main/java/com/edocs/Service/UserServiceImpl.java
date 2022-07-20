@@ -52,6 +52,7 @@ public class UserServiceImpl implements UserService {
 			
 				response.put("data", userRepos.save(userModel));
 				response.put("status", true);
+				
 				//ConfirmationTokenModel confirmationToken = new ConfirmationTokenModel(userModel.getUserEmail(),MethodsUtility.getCurrentTimestamp());
 				//saveConfirmationToken(confirmationToken);
 				
