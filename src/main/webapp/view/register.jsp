@@ -170,7 +170,7 @@
                            </button>
                         </div>
                         <div class="input-box-bottom button-container submit-input-container" style="display:none;" id="continueForApplicationId"><button class="btn" onclick="registerAndApply();">
-                           Continue And Application
+                           Continue And Apply
                            </button>
                         </div>
                      </div>
