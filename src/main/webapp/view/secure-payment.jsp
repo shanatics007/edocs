@@ -222,6 +222,8 @@ function makePayment(){
 	
 	var url ="/payment/makePayment";
 	if(validate()){
+		alert($('#countrylist').val());
+		alert($('#billing_zipcode').val());
 	$.ajax({
 		type : "POST",
 		url : url,	

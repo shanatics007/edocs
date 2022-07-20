@@ -1017,10 +1017,10 @@ label#radiolabel {
   			success : function(data) {
   				console.log(data)
   				if(data!=0){
-  				$('.notValidVisa').css('display','none');
-  				$('#priceidinDoller').text(data +" USD");
-  				$('#priceidinDollerVisa').text(data +" USD");
-  				$('#VisaandpriceId').css('display','flex');
+	  				$('.notValidVisa').css('display','none');
+	  				$('#priceidinDoller').text(data +" USD");
+	  				$('#priceidinDollerVisa').text(data +" USD");
+	  				$('#VisaandpriceId').css('display','flex');
   				}else{
 					$('.notValidVisa').css('display','block');
   	  				}	

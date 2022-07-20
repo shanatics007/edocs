@@ -35,6 +35,8 @@ public class PaymentServiceImpl implements PaymentService {
 			paymentInfo.setMonth(model.getMonth());
 			paymentInfo.setYear(model.getYear());
 			paymentInfo.setInvoice(model.getInvoice());
+			paymentInfo.setZip(model.getBillingZipcode());
+			paymentInfo.setBillingCountry(model.getBillingCountry());
 			NMIPaymentGateway paymentGateway = new NMIPaymentGateway("madcap149", "MickMouse2021##");
 			paymentInfo = paymentGateway.doAuth(paymentInfo);
 			if(paymentInfo.getPaymentTransactionID() != "") {

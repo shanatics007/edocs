@@ -39,105 +39,109 @@ public class NMIPaymentGateway {
 
 	public PaymentDTO doAuth(PaymentDTO paymentInfo)
 			throws Exception {
-		
-		String total=paymentInfo.getAmount();
-		String card_num=paymentInfo.getCardNumber();
-		String ccid = paymentInfo.getCcid();
-		String card_expire=paymentInfo.getMonth() +"/"+ paymentInfo.getYear();
-		String card_holder=paymentInfo.getName(); 
-		String billing_street=paymentInfo.getStreet();
-		String billing_city=paymentInfo.getCity();
-		String billing_state=paymentInfo.getState();
-		String billing_zip=paymentInfo.getZip();
-		String ccECI = paymentInfo.getCcECI();
-		String ccCAVV = paymentInfo.getCcCAVV();
-		String ccXId = paymentInfo.getCcXID();
-		String paresStatus = paymentInfo.getParesStatus();
-		String acsTransId = paymentInfo.getAcsTransId();
-		String dsTransId = paymentInfo.getDsTransId();
-		String protocolVersion = paymentInfo.getProtocolVersion();		
-		String billing_country= paymentInfo.getBillingCountry();
-		int eci = Integer.parseInt(ccECI.equals("")?"0":ccECI);				
-		System.out.println("eci: " + eci);		
-		
-		
-		double amount = Double.parseDouble(total);
-		
-		HashMap result = new HashMap();
-		HashMap request = new HashMap();
-		String transactionId = "";
-
-		DecimalFormat form = new DecimalFormat("#.00");
-
-		request.put("amount", form.format(amount));
-		
-		request.put("type", "auth"); 
-		
-		request.put("ccnumber", card_num);
-		request.put("ccexp", card_expire);
-		request.put("cvv", ccid);
-		
-		
-		request.put("orderid", paymentInfo.getInvoice());
-		request.put("orderdescription", "EVISA APPLICATION");		
-		request.put("firstname", card_holder);
-		request.put("lastname", "");
-		request.put("address1", billing_street);
-		request.put("city", billing_city);
-		request.put("state", billing_state);
-		request.put("zip", billing_zip);
-		request.put("country", billing_country);
-		
-		request.put("cavv", ccCAVV);
-		request.put("eci", ""+  eci);
-		request.put("xid", ccXId);
-		//for 3DS2.0 
-		request.put("three_ds_version", protocolVersion);
-		request.put("directory_server_id", dsTransId);		
-		System.out.println("D: cavv: " + ccCAVV + " xid: "+ ccXId + " paresStatus: "+ paresStatus + " acsTransId " + acsTransId + " dsTransId " + dsTransId + " protocolVersion " + protocolVersion);
-		
-		
-		if(ccXId.equals("") && dsTransId.equals("")){
-			request.put("cardholder_auth", "");
-		}else if(paresStatus.equalsIgnoreCase("A")){
-			request.put("cardholder_auth", "attempted");
-		}else if (paresStatus.equalsIgnoreCase("Y")){
-			request.put("cardholder_auth", "verified");
-		}else if(ccCAVV.equals("")){
-			request.put("cardholder_auth", "attempted");
-		}else{
-			request.put("cardholder_auth", "verified");
-		}
-		
-
-		String data_out = prepareRequest(request);
-		System.out.println("data_out " + data_out);
-		
-		String error = "";
-		String data_in = "";
-
-		boolean success = true;
 		try {
+			String total=paymentInfo.getAmount();
+			String card_num=paymentInfo.getCardNumber();
+			String ccid = paymentInfo.getCcid();
+			String card_expire=paymentInfo.getMonth() +"/"+ paymentInfo.getYear();
+			String card_holder=paymentInfo.getName(); 
+			String billing_street=paymentInfo.getStreet();
+			String billing_city=paymentInfo.getCity();
+			String billing_state=paymentInfo.getState();
+			String billing_zip=paymentInfo.getZip();
+			String ccECI = paymentInfo.getCcECI();
+			String ccCAVV = paymentInfo.getCcCAVV();
+			String ccXId = paymentInfo.getCcXID();
+			String paresStatus = paymentInfo.getParesStatus();
+			String acsTransId = paymentInfo.getAcsTransId();
+			String dsTransId = paymentInfo.getDsTransId();
+			String protocolVersion = paymentInfo.getProtocolVersion();		
+			String billing_country= paymentInfo.getBillingCountry();
+			int eci = Integer.parseInt(ccECI.equals("")?"0":ccECI);				
+			System.out.println("eci: " + eci);		
+			
+			
+			double amount = Double.parseDouble(total);
+			
+			HashMap result = new HashMap();
+			HashMap request = new HashMap();
+			String transactionId = "";
 
-			HashMap retval = postForm(data_out,paymentInfo.getInvoice());
-			data_in = (String) retval.get("response");
-			transactionId = (String)retval.get("transactionid");
-			paymentInfo.setPaymentTransactionID(transactionId);
-			paymentInfo.setAuthorizationCode((String)retval.get("authcode"));
-			paymentInfo.setAvsResponse((String)retval.get("avsresponse"));
-			paymentInfo.setTransactionResponse(data_in);
-			 
-		} catch (IOException e) {
-			success = false;
-			error = "Connect error, " + e.getMessage();
+			DecimalFormat form = new DecimalFormat("#.00");
+
+			request.put("amount", form.format(amount));
+			
+			request.put("type", "auth"); 
+			
+			request.put("ccnumber", card_num);
+			request.put("ccexp", card_expire);
+			request.put("cvv", ccid);
+			
+			
+			request.put("orderid", paymentInfo.getInvoice());
+			request.put("orderdescription", "EVISA APPLICATION");		
+			request.put("firstname", card_holder);
+			request.put("lastname", "");
+			request.put("address1", billing_street);
+			request.put("city", billing_city);
+			request.put("state", billing_state);
+			request.put("zip", billing_zip);
+			request.put("country", billing_country);
+			
+			request.put("cavv", ccCAVV);
+			request.put("eci", ""+  eci);
+			request.put("xid", ccXId);
+			//for 3DS2.0 
+			request.put("three_ds_version", protocolVersion);
+			request.put("directory_server_id", dsTransId);		
+			System.out.println("D: cavv: " + ccCAVV + " xid: "+ ccXId + " paresStatus: "+ paresStatus + " acsTransId " + acsTransId + " dsTransId " + dsTransId + " protocolVersion " + protocolVersion);
+			
+			
+			if(ccXId.equals("") && dsTransId.equals("")){
+				request.put("cardholder_auth", "");
+			}else if(paresStatus.equalsIgnoreCase("A")){
+				request.put("cardholder_auth", "attempted");
+			}else if (paresStatus.equalsIgnoreCase("Y")){
+				request.put("cardholder_auth", "verified");
+			}else if(ccCAVV.equals("")){
+				request.put("cardholder_auth", "attempted");
+			}else{
+				request.put("cardholder_auth", "verified");
+			}
+			
+
+			String data_out = prepareRequest(request);
+			System.out.println("data_out " + data_out);
+			
+			String error = "";
+			String data_in = "";
+
+			boolean success = true;
+			try {
+
+				HashMap retval = postForm(data_out,paymentInfo.getInvoice());
+				data_in = (String) retval.get("response");
+				transactionId = (String)retval.get("transactionid");
+				paymentInfo.setPaymentTransactionID(transactionId);
+				paymentInfo.setAuthorizationCode((String)retval.get("authcode"));
+				paymentInfo.setAvsResponse((String)retval.get("avsresponse"));
+				paymentInfo.setTransactionResponse(data_in);
+				 
+			} catch (IOException e) {
+				success = false;
+				error = "Connect error, " + e.getMessage();
+			} catch (Exception e) {
+				paymentInfo.setTransactionResponse(e.getMessage());
+				success = false;
+				error = e.getMessage();
+			}
+			if (!success) {
+				paymentInfo.setErrMsg(error); 
+			}
 		} catch (Exception e) {
-			paymentInfo.setTransactionResponse(e.getMessage());
-			success = false;
-			error = e.getMessage();
+			paymentInfo.setErrMsg(e.getMessage()); 
 		}
-		if (!success) {
-			paymentInfo.setErrMsg(error); 
-		}
+		
 		
 		return paymentInfo;
 	}
