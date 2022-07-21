@@ -927,7 +927,7 @@
     cursor:pointer
 }
 .input-drop-down::placeholder{
-    font-size:14px
+    font-size:14px;
 }
 .input-drop-down:focus{
     border-color:#7C152A;

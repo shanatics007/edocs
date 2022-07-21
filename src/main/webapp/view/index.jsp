@@ -22,6 +22,14 @@
 		margin-right: 60px;
 	}
 }
+@media ( max-width : 375px){
+.icon.destination-thailand {
+    margin-left: 0px !important;
+}
+.icon.destination-united-arab-emirates {
+    margin-left: 0px !important;
+}
+}
 
 @media ( max-width : 599px) {
 	p.description-steps-eta-planning {
@@ -30,6 +38,12 @@
 	div#stepVisarowid {
     display: block !important;
  }
+  .icon.destination-thailand {
+    margin-left: 0px !important;
+   }
+  .icon.destination-united-arab-emirates {
+    margin-left: 0px !important;
+  }
 }
 @media ( min-width : 600px) {
 	div#stepVisarowid {
@@ -40,6 +54,12 @@
 @media ( max-width : 768px) {
 	.top-content-follow-card-destination {
 		width: 50% !important;
+	}
+	 .icon.destination-thailand {
+    margin-left: 0px !important;
+}
+	.icon.destination-united-arab-emirates {
+	    margin-left: 0px !important;
 	}
 }
 
@@ -180,6 +200,12 @@ span.description-steps-text-bottom {
 .step-icon.step-icon-3 {
 	margin-bottom: 15px;
 	margin-top: 15px;
+}
+.icon.destination-thailand {
+    margin-left: -143px;
+}
+.icon.destination-united-arab-emirates {
+    margin-left: -144px;
 }
 
 .insurance-banner-section .insurance-price {
@@ -529,6 +555,22 @@ span.description-steps-text-bottom {
 								<div class="icon destination-turkey">
 									<img src="images/turkey.png" width="70" height="45">
 								</div> <a href="/en/turkey">Turkey</a>
+							</li>
+							
+							<li>
+								<div class="icon destination-pakistan">
+									<img src="images/Pakistan.jpg" width="70" height="45">
+								</div> <a href="/en/pakistan">Pakistan</a>
+							</li>
+							<li>
+								<div class="icon destination-thailand">
+									<img src="images/Thailand.jpg" width="70" height="45">
+								</div> <a href="/en/thailand">Thailand</a>
+							</li>
+								<li>
+								<div class="icon destination-united-arab-emirates">
+									<img src="images/UAE.jpg" width="70" height="45">
+								</div> <a href="/en/united-arad-emirates">UAE</a>
 							</li>
 						</ul>
 						<div class="empty-results-info">No search results</div>

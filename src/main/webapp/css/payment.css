@@ -4499,7 +4499,6 @@ input::-ms-clear {
 .payments .payment-row {
 	height: auto;
 	border: 1px solid rgba(112, 112, 112, .11);
-	border-right: none;
 	border-radius: 5px;
 	background-color: #fff;
 	margin-bottom: 0px;
@@ -4674,7 +4673,6 @@ not (-ms-high-contrast:none) {
 .payments .payment-data-row {
 	background-color: #f3f3f3;
 	border: 1px solid rgba(112, 112, 112, .11);
-	border-left: none;
 	display: block
 }
 
@@ -4877,14 +4875,11 @@ not (-ms-high-contrast:none) {
 
 .payments .payment-data-row .destination-logo img {
 	max-width: 90%;
-	max-height: 70px;
+	max-height: 50px;
 	margin: 0 auto
 }
 
-.payments .payment-data-row .logo-govietnamonlinecom img,
-.payments .payment-data-row .logo-onlinecanadanet img {
-	max-width: 75%
-}
+
 
 .payments .payment-data-row .details-container {
 	display: block;
@@ -5916,7 +5911,7 @@ select:focus {
 @media (min-width:992px) {
 	.payments-main {
 		min-height: 90vh;
-		width: 50%;
+		
 		margin: auto;
 		
 	}
@@ -5993,15 +5988,7 @@ select:focus {
 		margin-left: 0
 	}
 
-	.payments .payment-data-row .total-cost {
-		padding-bottom: 10px;
-		display: -webkit-box;
-		display: flex;
-		flex-wrap: wrap;
-		-webkit-box-align: center;
-		align-items: center
-	}
-
+	
 	.payments .payment-data-row .insurance-exist {
 		padding-bottom: 10px;
 		display: block !important;
@@ -6040,12 +6027,7 @@ select:focus {
 		transform: rotate(90deg)
 	}
 
-	.payments .payment-data-row .details-container,
-	.payments-main .payment-header,
-	.payments-main .payment-subheader {
-		display: none
-	}
-
+	
 	.payment-header {
 		margin-top: 0;
 		font-size: 22px;
@@ -6441,4 +6423,31 @@ input[type=number] {
 	height: 48px;
 	background: url(/images/visacard.png) -604px 0
 }
+span#userApplicationId {
+    font-weight: 600;
+}
+span#visaTypeId{
+	font-weight: 600;
+}
+span#firstNameId{
+	font-weight: 600;
+}
+span#lastNameId{
+	font-weight: 600;
+}
+span#emailId{
+	font-weight: 600;
+}
 
+@media (max-width:599px) {
+	div#desktopheadermessage{
+	display: none;
+	}
+	div#desktopViewPaymnetMessage{
+		display: none;
+	}
+}
+	
+	
+	
+	

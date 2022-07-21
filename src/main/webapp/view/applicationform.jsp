@@ -75,50 +75,23 @@ if (request.getSession(false).getAttribute("formDetails") != null) {
 		checkUser=false;
 	}
 } 
+String userEmail = "";
+String userfullName = "";
+long userId1 = 0;
+String userFirstName = "";
+String userLastName = "";
 boolean userCheckslogin=false;
-String travelAirportss=null;
-String  plannedDateOfTravelss=null;
-String dayArrivals=null;
-String montharrivals=null;
-String yearlists=null;
-String travelPurposes=null;
-String firstNames=null;
-String lastNames=null;
-String  emails=null;
-String contactPhoneNumbers=null;
-String nationalitys=null;
-String dateOfBirths=null;
-String dayDOBs=null;
-String dayMonths=null;
-String yearlistdobs=null;
-
-if (request.getSession(false).getAttribute("AppDetailsByUser") != null) {
-	ApplicationForVisaModel applicationdetails = (ApplicationForVisaModel) request.getSession(false).getAttribute("AppDetailsByUser");
-	checkUser=true;
-	userCheckslogin=true;
-	 travelAirportss = applicationdetails.getTravelAirports();
-	 plannedDateOfTravelss = applicationdetails.getPlannedDateOfTravel();
-	 String [] dateOfTravels = plannedDateOfTravelss.split("-");
-	
-	 dayArrivals = dateOfTravels[0];
-	  montharrivals = dateOfTravels[1];
-	  yearlists = dateOfTravels[2];
-	
-	travelPurposes = applicationdetails.getPurposeForTravel();
-	firstNames = applicationdetails.getFirstName();
-	lastNames =  applicationdetails.getLastName();
-	emails = applicationdetails.getEmail();
-	contactPhoneNumbers = applicationdetails.getContactPhoneNumber();
-	nationalitys = applicationdetails.getNationality();
-	
-    dateOfBirths = applicationdetails.getDateOfBirth();
-	String [] dateBirths =  dateOfBirths.split("-");
-	 
-	dayDOBs = dateBirths[0];
-	 dayMonths = dateBirths[1];
-	 yearlistdobs = dateBirths[2];
-	 userCheckslogin=true;
-	
+if (request.getSession(false).getAttribute("userLogin") != null) {
+		HashMap<Object, Object> userDetails =(HashMap<Object, Object>) request.getSession(false).getAttribute("userLogin");
+		UserModel user1 = (UserModel)userDetails.get("data");
+		userEmail= user1.getUserEmail();
+		userfullName = user1.getFullName();
+		String [] fullNameSplitted = userfullName.split(" ");
+		userFirstName = fullNameSplitted[0];
+		userLastName = fullNameSplitted[1];
+		userId1 = user1.getUserId();
+		checkUser=true;
+		userCheckslogin=true;
 }
 %> 
     <!DOCTYPE html>
@@ -591,7 +564,7 @@ label#radiolabel {
              <label> Phone number </label> 
              <div class="row">
             <div class="col-sm-10">
-            <input type="text" name="phoneNo" id="phoneNoId" size="15" required onchange="validate();" />
+            <input type="text" name="phoneNo" id="phoneNoId" size="15" maxlength="10"  required onchange="validate();" />
             </div>
              <div class="col-sm-2">
              <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
@@ -894,9 +867,15 @@ label#radiolabel {
   	  	
   		var urlString  = window.location.href.split('/');
     	var country = urlString[4];
+		
 		if($('#accept-terms-track').prop('checked') && $('#accept-gdpr-track').prop('checked')){
-			$('.checkmark').css('border','none');
+			$('.checkmark').css('border','1px solid black');
 			if(validate()){
+				var checkprice = $('#priceidinDoller').text();
+				var splittedPrice = checkprice.split("USD");
+				checkprice = splittedPrice[0];
+				if(checkprice!=0){
+				
 				var url ="/application/saveApplication";
 				var dateofArrival = $('#dayArrival').val()+'-'+$('#montharrival').val()+'-'+$('#yearlist').val();
 				var dateofBirth = $('#dayDOB').val()+'-'+$('#dayMonth').val()+'-'+$('#yearlistdob').val();
@@ -986,6 +965,14 @@ label#radiolabel {
 						console.log("error when gettig data");
 					}
 				});
+			}else{
+				Swal.fire({
+					  title: "<img src='/images/fail1234.png' style='width:150px;'>", 
+					  html: "Sorry, E-visa not available. please contact the nearest embassy",  
+					  confirmButtonText: "Ok", 
+					 
+					})
+				}
 
 			}else{
 					validate();
@@ -1023,6 +1010,8 @@ label#radiolabel {
 	  				$('#VisaandpriceId').css('display','flex');
   				}else{
 					$('.notValidVisa').css('display','block');
+					$('#priceidinDoller').text(data +" USD");
+	  				$('#priceidinDollerVisa').text(data +" USD");
   	  				}	
   			},	
   			error : function(data) {
@@ -1054,17 +1043,17 @@ label#radiolabel {
 	 function setLoginSessionValues(checkFormStatus){
 		 if(checkFormStatus=="true"){
 			
-			$('#portArrival').val('<%=travelAirportss%>');
-			$('#firstNameID').val('<%=firstNames%>');
-			$('#lastNameID').val('<%=lastNames%>');
-			$('#emailID').val('<%=emails%>');
-			$('#phoneNoId').val('<%=contactPhoneNumbers%>');
-			$('#dayArrival').val('<%=dayArrivals%>');
-			$('#montharrival').val('<%=montharrivals%>');
-			$('#yearlist').val('<%=yearlists%>');
-			$('#dayDOB').val('<%=dayDOBs%>');
-			$('#dayMonth').val('<%=dayMonths%>');
-			$('#yearlistdob').val('<%=yearlistdobs%>');
+			
+			$('#firstNameID').val('<%=userFirstName%>');
+			$('#lastNameID').val('<%=userLastName%>');
+			$('#emailID').val('<%=userEmail%>');
+			$('#phoneNoId').val();
+			$('#dayArrival').val("Day");
+			$('#montharrival').val("Month");
+			$('#yearlist').val("Year");
+			$('#dayDOB').val("Day");
+			$('#dayMonth').val("Month");
+			$('#yearlistdob').val("Year");
 		
 		 }
 		}
@@ -1364,23 +1353,33 @@ label#radiolabel {
 			console.log("error when gettig data");
 		}
 	}); 
-    <% if(request.getSession().getAttribute("formDetails") != null || request.getSession().getAttribute("AppDetailsByUser") != null ){%>
-    getAppDetailsLocalStorage();
-    <%}%>
+   <% if(request.getSession().getAttribute("formDetails") != null || request.getSession().getAttribute("userLogin") != null ){%>
+   if (localStorage.getItem("email") != null) {
+  	   getAppDetailsLocalStorage();
+  	}else{
+  		<% if(request.getSession().getAttribute("formDetails") != null){ %>
+  			setSessionValues();
+  			<%}else{%>
+  	  		var checkFormStatus = "<%=checkUser%>";
+  	  		setLoginSessionValues(checkFormStatus);	
+  	  	<%}%>
+  		<%-- var checkFormStatus = "<%=checkUser%>";
+  	    
+  		var checkUserLogin = "<%=userCheckslogin%>";
+
+  		if(checkUserLogin=="false"){
+  	    
+  	    if(checkFormStatus=="true"){
+  	    	setSessionValues();
+  	      }
+  	    }else{
+  	    	setLoginSessionValues(checkFormStatus);
+  	        } --%>
+  	  	}
+    <%}%> 
 
     
-    var checkFormStatus = "<%=checkUser%>";
     
-	var checkUserLogin = "<%=userCheckslogin%>";
-
-	if(checkUserLogin=="false"){
-    
-    if(checkFormStatus=="true"){
-    	setSessionValues();
-      }
-    }else{
-    	setLoginSessionValues(checkFormStatus);
-        }
  }
 
     function capitalizeFirstLetter(str) {

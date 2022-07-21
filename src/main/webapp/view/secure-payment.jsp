@@ -27,7 +27,6 @@
 		
 		 checkUser=true;
 		 applicationId = ApplnFormData.getPkid();
-		 System.out.println(applicationId);
 		 userId = ApplnFormData.getUserId();
 		 price = ApplnFormData.getPrice();
 		 String [] str = price.split("USD");
@@ -57,7 +56,9 @@
     <meta http-equiv="expires" content="0">
     <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT">
     <meta http-equiv="pragma" content="no-cache">
+     <link rel="stylesheet" href="/css/home.css">
     <script src="jquery-3.6.0.min.js"></script>
+     <script async="" src="/js/home.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <style type="text/css">
@@ -67,6 +68,7 @@
 
 </head>
 <body>
+<%@include file="header.jsp"%>
 <div class="container warnings-box">
     <div class="warning-title">
             </div>
@@ -81,10 +83,52 @@
                 Please make a payment to complete your application            </div>
     </div>
     <div class="row payments-main">
-        <div class="col-lg-12 order-1 order-lg-1 order-sm-12 payment-row px-0">
-            <div class="offset-1 col-lg-10 payment-header">
+    <div class="col-lg-4  payment-data-row row">
+            <div class="destination-logo">
+                <img src="/images/edocs-trave-logo.png">
+            </div>
+
+            <div class="details-container payment-details order-sm-12 order-lg-1">
+                <div class="title desktop-title" style="font-weight: 600;">
+                    Details:
+                </div>
+
+                <p translate="no">
+                    Application no:<span id="userApplicationId"></span>
+                </p>
+                                <p>
+                    Type of visa:<span id="visaTypeId"></span>
+                </p>
+                        <p translate="no">
+                    Name:<span id="firstNameId"></span>
+                </p>
+                <p translate="no">
+                    Surname:<span id="lastNameId"></span>
+                </p>
+                <p class="email-address">
+                    <span class="email-address__text">Your email:</span>
+                    <span class="email-address__content" id="emailId"></span>
+                </p>
+              
+            </div>
+            <div class="total-cost order-sm-1 order-lg-2 ">
+                 <div class="total-cost-line">
+                    <span class="total-cost-text">Total cost:</span>
+                   <div class="amount">
+                        <span id="price-amount" translate="no" id="totalPriceId"></span>
+                        <span id="price-currency" translate="no" class="prices-list" style="cursor: pointer;">USD</span>
+                       
+                       
+                    </div>
+               
+               </div>
+            </div>
+        
+        </div>
+        <div class="col-lg-8 payment-row px-0">
+            <div class="offset-1 col-lg-10 payment-header" id="desktopheadermessage">
                 Your application has been received.            </div>
-            <div class="offset-1 col-lg-10 payment-subheader">
+            <div class="offset-1 col-lg-10 payment-subheader" id="desktopViewPaymnetMessage">
                 Please make a payment to complete your application            </div>
             <div class="offset-lg-1 offset-sm-0 col-12 col-lg-10 col-sm-12 payments-box">
                 <div class="payment-method-text">
@@ -213,9 +257,12 @@
             </div>
       </div>
    </div>
+   
+   
         
     </div>
 </div>
+<%@include file="footer.jsp"%>
 <script>
 
 function makePayment(){
@@ -257,7 +304,7 @@ function makePayment(){
 				if(data.message==""){
 					Swal.fire({
 						  title: "<img src='/images/fail1234.png' style='width:150px;'>", 
-						  html: "Unable tp process your payment",  
+						  html: "We are unable tp process your payment",  
 						  confirmButtonText: "Ok", 
 						 
 						});
@@ -292,7 +339,6 @@ window.onload = function () {
     $('#card_holder_first_name').val('<%=firstName%>');
     $('#card_holder_second_name').val('<%=lastName%>');
     
-
     $.ajax({
 		type : 'GET',
 		url : '/country/getCountryList',	
@@ -325,6 +371,14 @@ window.onload = function () {
 			$('#card_holder_first_name').val(data.firstName);
 			$('#card_holder_second_name').val(data.lastName);
 			$('#countrylist').val(data.nationality);
+			$('#userApplicationId').text(data.pkid);
+			$('#visaTypeId').text(data.purposeForTravel);
+			$('#firstNameId').text(data.firstName);
+			$('#lastNameId').text(data.lastName);
+			$('#emailId').text(data.email);
+			$('#price-amount').text(price[0]);
+			
+			
 		},	
 		error : function(data) {
 			console.log("error when gettig data");
