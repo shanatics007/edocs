@@ -286,7 +286,7 @@ span.description-steps-text-bottom {
 								<div class="small-line"></div>
 								<h2 class="description-steps-h3"
 									style="color: #1d3367 !important; text-align: center; font-weight: 700;">
-									Are Passenger Locator Forms mandatory</h2>
+									Are Passenger Locator Forms Mandatory</h2>
 							</div>
 							<p class="description-steps-eta-planning"
 								style="padding-right: 80px; padding-left: 80px;">In most
@@ -330,8 +330,8 @@ span.description-steps-text-bottom {
 						<div class="d-flex" style="text-align: center; color: #1d3367;">
 							<div class="small-line"></div>
 							<h2 class="description-steps-h3"
-								style="color: #1d3367; font-weight: 600;">Requirements to
-								complete a Passenger Locator Form</h2>
+								style="color: #1d3367; font-weight: 600;">Requirements To
+								Complete a Passenger Locator Form</h2>
 
 						</div>
 						<div class="formdetails">
@@ -396,7 +396,7 @@ span.description-steps-text-bottom {
 							<div class="d-flex">
 								<div class="small-line"></div>
 								<h2 class="description-steps-h3" style="font-weight: 600;">How
-									to apply for a PLF</h2>
+									to Apply for a PLF</h2>
 
 							</div>
 							<p class="description-steps-eta-planning">Passenger Locator
@@ -437,8 +437,8 @@ span.description-steps-text-bottom {
 							<div class="d-flex">
 								<div class="small-line"></div>
 								<h2 class="description-steps-h3" style="font-weight: 600;">Countries
-									that require completing a Passenger Locator Form before
-									departure</h2>
+									that Require Completing a Passenger Locator Form Before
+									Departure</h2>
 							</div>
 
 							<div class="listofports">

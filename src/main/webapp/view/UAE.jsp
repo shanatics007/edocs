@@ -183,26 +183,30 @@ ul {
 }
 @-webkit-keyframes glowing {
   0% { background-color: #1d3367; -webkit-box-shadow: 0 0 3px #1d3367; }
-  50% { background-color: #FF0000; -webkit-box-shadow: 0 0 15px #FF0000; }
-  100% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #1d3367; -webkit-box-shadow: 0 0 15px #1d3367; }
+  100% { background-color: #1d3367; -webkit-box-shadow: 0 0 3px #1d3367; }
 }
 
 @-moz-keyframes glowing {
   0% { background-color: #1d3367; -moz-box-shadow: 0 0 3px #1d3367; }
-  50% { background-color: #FF0000; -moz-box-shadow: 0 0 15px #FF0000; }
-  100% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #1d3367; -moz-box-shadow: 0 0 15px #1d3367; }
+  100% { background-color: #1d3367; -moz-box-shadow: 0 0 3px #1d3367; }
 }
 
 @-o-keyframes glowing {
   0% { background-color: #1d3367; box-shadow: 0 0 3px #1d3367; }
-  50% { background-color: #FF0000; box-shadow: 0 0 15px #FF0000; }
-  100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #1d3367; box-shadow: 0 0 15px #1d3367; }
+  100% { background-color: #1d3367; box-shadow: 0 0 3px #1d3367; }
 }
 
 @keyframes glowing {
   0% { background-color: #1d3367; box-shadow: 0 0 3px #1d3367; }
-  50% { background-color: #FF0000; box-shadow: 0 0 15px #FF0000; }
-  100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #1d3367; box-shadow: 0 0 15px #1d3367; }
+  100% { background-color: #1d3367; box-shadow: 0 0 3px #1d3367; }
+}
+button#applyhere {
+display:block;
+font-weight: 600;
 }
 .description-steps-text-main {
 	color: #1d3367;

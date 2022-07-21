@@ -7,7 +7,7 @@
                   <div class="e-visa-description-container"><span class="e-visa-footer-name">EDOCS TRAVEL</span><span class="e-visa-footer-rights">©  2022  Edocs Travel. All right reserved.</span></div>
                </div>
                <ul class="e-visa-footer-links">
-                  <li><a href="/en/why-evisa-express" rel="nofollow">WHY EDOCS TRAVEL</a></li>
+                  <li><a href="/en/why-edocs-travel" rel="nofollow">WHY EDOCS TRAVEL</a></li>
                   <li><a href="/en/contact" rel="nofollow">CONTACT</a></li>
                   <li><a href="/en/passenger-locator-form">PASSENGER LOCATOR</a></li> 
                   <li><a href="/en/travel-entry-requirements">REQUIREMENTS</a></li>

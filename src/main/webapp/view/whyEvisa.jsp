@@ -252,7 +252,7 @@ span.description-steps-text-bottom {
 						<div class="description-steps" id="description-steps">
 							<div class="d-flex">
 								<h2 class="description-steps-h3" style="color: rgb(29 51 103); text-align: center; font-weight: 600; padding-bottom: 20px;">
-								ABOUT EDOCS.TRAVEL
+								ABOUT EDOCS TRAVEL
 								</h2>
 							</div>
 							

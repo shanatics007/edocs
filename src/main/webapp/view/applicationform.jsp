@@ -361,7 +361,7 @@ label#radiolabel {
             </div>
             </div>
             <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
-            <span id="datearrivalerror" style="display: none;">Please choose Day, Month and Year</span>
+            <span id="datearrivalerror" style="display: none;">Please choose day, month and year</span>
             </div>
               
               
@@ -416,9 +416,9 @@ label#radiolabel {
             </div>
             </div>
              <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
-            <span id="arrirvalporsterrors" style="display: none;">Please select Port of Arrival</span>
+            <span id="arrirvalporsterrors" style="display: none;">Please select port of arrival</span>
             </div>
-            <label> Given name(s) </label> 
+            <label> Given Name(s) </label> 
             <div class="row">
             <div class="col-sm-10">
             <input type="text" name="firstname" id="firstNameID" size="15" required   onchange="validate();"/> 
@@ -450,7 +450,7 @@ label#radiolabel {
             <span id="surnameeorr" style="display: none;">Please fill the surname</span>
             </div>
             
-             <label> Date of birth </label> 
+             <label> Date of Birth </label> 
                <div class="row">
               <div class="col-sm-3">
              <select id="dayDOB" onchange="validate();">
@@ -521,11 +521,11 @@ label#radiolabel {
             </div>
             </div>
               <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
-            <span id="doberrorr" style="display: none;">Please Choose Date of Birth</span>
+            <span id="doberrorr" style="display: none;">Please choose date of birth</span>
             </div>
-             <label> E-mail address </label> 
+             <label> E-mail Address </label> 
              <div>
-               <span>at this email you will receive your visa</span>
+               <span>At this email you will receive your visa</span>
                </div>
              <div class="row">
             <div class="col-sm-10">
@@ -540,9 +540,9 @@ label#radiolabel {
               <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
             <span id="emailerrors" style="display: none;">Please enter correct email</span>
             </div>
-             <label> E-mail address(re-enter) </label> 
+             <label> E-mail Address(Re-Enter) </label> 
              <div>
-              <span>the two emails must match </span>
+              <span>The two e-mails must match </span>
               </div>
             
              <div class="row">
@@ -561,7 +561,7 @@ label#radiolabel {
             <span id="emailnotmatcherror" style="display: none;">Email not matched,please enter correct email </span>
             </div>
             
-             <label> Phone number </label> 
+             <label> Phone Number </label> 
              <div class="row">
             <div class="col-sm-10">
             <input type="text" name="phoneNo" id="phoneNoId" size="15" maxlength="10"  required onchange="validate();" />
@@ -576,7 +576,7 @@ label#radiolabel {
             <span id="phnoerror" style="display: none;">Please enter phone number</span>
             </div>
             
-             <label> Purpose of travel </label> 
+             <label> Purpose of Travel </label> 
             <div class="row">
              <div class="col-sm-10">
              <select id="purposeTraval" onchange="validate();">

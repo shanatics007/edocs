@@ -76,7 +76,7 @@ public class CountryController {
 	
 	
 	
-	@RequestMapping("/why-evisa-express")
+	@RequestMapping("/why-edocs-travel")
 	public String whyEdocsTravel() {
 		
 		return "whyEvisa";

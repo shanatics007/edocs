@@ -16,6 +16,64 @@
 <link rel="stylesheet" href="/css/home.css" type="text/css">
 <link rel="icon" href="/images/favicon-1.png" type="image/x-icon">
 <style>
+
+#focusSectionId{
+	background-color: #ffffff;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 35px;
+    padding-left: 65px;
+    padding-right: 65px;
+    }
+section#applySectionId{
+	background-color: #ffffff;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 35px;
+    padding-left: 65px;
+    padding-right: 65px;
+}
+section#mobilestepsview{
+	background-color: #ffffff;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 35px;
+    padding-left: 65px;
+    padding-right: 65px;
+}
+#pleasesectionId{
+	background-color: #ffffff;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 35px;
+    padding-left: 65px;
+    padding-right: 65px;
+}
+#insurancesectionId{
+	background-color: #ffffff;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 35px;
+    padding-left: 65px;
+    padding-right: 65px;
+
+}
+#edocsAppId{
+	color: #1d3367;
+    font-size: 24px;
+    text-align: center;
+    font-weight: 600;
+}
+h2#requirementsectId{
+	color: #1d3367;
+    font-size: 24px;
+    text-align: center;
+    font-weight: 600;
+}
+button#applyhere {
+display:block;
+font-weight: 600;
+}
 @media ( min-width : 1330px) {
 	section#onlineapplysection {
 		margin-left: 60px;
@@ -38,19 +96,42 @@
 	div#stepVisarowid {
     display: block !important;
  }
-  .icon.destination-thailand {
+ section#focusSectionId{
+ padding-left: 30px;
+ padding-right: 30px;
+ }
+ section#applySectionId{
+ padding-left: 30px;
+ padding-right: 30px;
+ }
+ section#mobilestepsview{
+ padding-left: 30px;
+ padding-right: 30px;
+ }
+ section#pleasesectionId{
+ padding-left: 30px;
+ padding-right: 30px;
+ }
+ section#insurancesectionId{
+ padding-left: 30px;
+ padding-right: 30px;
+ }
+ .icon.destination-thailand {
     margin-left: 0px !important;
    }
   .icon.destination-united-arab-emirates {
     margin-left: 0px !important;
   }
 }
+}
 @media ( min-width : 600px) {
 	div#stepVisarowid {
-	    display: flex !important;
+	    display: flex;
 	 }
 }
-
+div#stepVisarowid {
+    display: flex;
+}
 @media ( max-width : 768px) {
 	.top-content-follow-card-destination {
 		width: 50% !important;
@@ -146,26 +227,26 @@ h2.description-steps-h3 {
 
 @-webkit-keyframes glowing {
   0% { background-color: #1d3367; -webkit-box-shadow: 0 0 3px #1d3367; }
-  50% { background-color: #FF0000; -webkit-box-shadow: 0 0 15px #FF0000; }
-  100% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #1d3367; -webkit-box-shadow: 0 0 15px #1d3367; }
+  100% { background-color: #1d3367; -webkit-box-shadow: 0 0 3px #1d3367; }
 }
 
 @-moz-keyframes glowing {
   0% { background-color: #1d3367; -moz-box-shadow: 0 0 3px #1d3367; }
-  50% { background-color: #FF0000; -moz-box-shadow: 0 0 15px #FF0000; }
-  100% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #1d3367; -moz-box-shadow: 0 0 15px #1d3367; }
+  100% { background-color: #1d3367; -moz-box-shadow: 0 0 3px #1d3367; }
 }
 
 @-o-keyframes glowing {
   0% { background-color: #1d3367; box-shadow: 0 0 3px #1d3367; }
-  50% { background-color: #FF0000; box-shadow: 0 0 15px #FF0000; }
-  100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #1d3367; box-shadow: 0 0 15px #1d3367; }
+  100% { background-color: #1d3367; box-shadow: 0 0 3px #1d3367; }
 }
 
 @keyframes glowing {
   0% { background-color: #1d3367; box-shadow: 0 0 3px #1d3367; }
-  50% { background-color: #FF0000; box-shadow: 0 0 15px #FF0000; }
-  100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #1d3367; box-shadow: 0 0 15px #1d3367; }
+  100% { background-color: #1d3367; box-shadow: 0 0 3px #1d3367; }
 }
 .description-steps-text-main {
 	color: #1d3367;
@@ -278,11 +359,10 @@ span.description-steps-text-bottom {
 
 					<a href="#onlineapplysection"><button type="button"
 							id="applyhere">APPLY ONLINE</button></a>
-					<section class="description padding mobile-pt-0"
-						style="background-color: #ffffff; padding-top: 20px; padding-bottom: 50px; margin-bottom: 35px;">
+					<section class="description padding mobile-pt-0" id="focusSectionId">
 						<p
-							style="color: #1d3367; font-size: 20px; text-align: center; font-weight: 600;">YOU
-							FOCUS ON THE TRIP, AND WE ARE HERE TO FOCUS ON THE VISA OPTIONS </p>
+							style="color: #1d3367; font-size: 24px; text-align: center; font-weight: 600;">You
+							Focus on the Trip, and We are Here to Focus on the Visa Options </p>
 						<div class="description-steps">
 							<p class="description-steps-eta-planning">We help to serve
 								the people after assisting with electronic visa. It comes from
@@ -298,13 +378,11 @@ span.description-steps-text-bottom {
 								handle every situation on your side.</p>
 						</div>
 					</section>
-					<section class="description padding"
-						style="background-color: #ffffff; padding-top: 20px; padding-bottom: 50px;">
+					<section class="description padding" id="applySectionId">
 						<div class="description-steps">
 							<div class="d-flex">
-								<h2 class="description-steps-h3"
-									style="color: rgb(29, 51, 103); text-align: center;">APPLY
-									FOR THE VISA IN 3 EASY STEPS </h2>
+								<h2 class="description-steps-h3"  id="edocsAppId">Apply
+									For the Visa in 3 Easy Steps </h2>
 							</div>
 							<div class="stepsdescription" style="margin-bottom: 50px;">
 								<p class="description-steps-eta-planning">You can work for
@@ -374,85 +452,16 @@ span.description-steps-text-bottom {
 						</div>
 					</section>
 
-					<section class="gallery-big padding-rwd" style="margin-top: 35px;">
+			
+
+
+
+					<section class="gallery-big padding-rwd" id="mobilestepsview">
 						<div class="steps" style="background-color: #ffffff;">
 							<div class="d-flex">
 								<div class="small-line"></div>
-								<h2 class="description-steps-h3"
-									style="color: #1d3367 !important; text-align: center;">Requirements
-									To Meet For The EDOCS Travel</h2>
-							</div>
-							<p class="description-steps-eta-planning"
-								style="text-align: center !important;">
-								<strong>Before applying</strong>, please make sure that you have
-								the following:
-							</p>
-							<div class="row" style="margin-bottom: 30px;" id="docsRow">
-								<div class="col-sm-6">
-									<div class="gallery-big-container-description">
-										<h3 class="gallery-big-container-description-title">A
-											Valid Passport </h3>
-										<p class="toexpand">All the candidates should have a valid
-											passport for application online. It is advised that you
-											should exceed the validity of the visa for up to 6 months. It
-											might come with the arrival of the country with the
-											destination. </p>
-										<span class="arrowText expand">READ MORE</span>
-									</div>
-								</div>
-								<div class="col-sm-6">
-									<div class="gallery-big-container requirements-01"></div>
-								</div>
-							</div>
-
-
-							<div class="row" style="margin-bottom: 30px;" id="docsRow">
-								<div class="col-sm-6">
-									<div class="gallery-big-container requirements-02"></div>
-								</div>
-								<div class="col-sm-6">
-									<div class="gallery-big-container-description">
-										<h3 class="gallery-big-container-description-title">Means
-											Of Online Payment </h3>
-										<p class="toexpand">You have to make a credit or debit
-											card with access to online payment methods. You can handle
-											any of it to make EDOCS Travel fees.</p>
-										<span class="arrowText expand">READ MORE</span>
-									</div>
-								</div>
-							</div>
-
-							<div class="row" style="margin-bottom: 30px;" id="docsRow">
-								<div class="col-sm-6">
-									<div class="gallery-big-container-description">
-										<h3 class="gallery-big-container-description-title">An
-											Active Email Address </h3>
-										<p class="toexpand">Ensure that the email address you
-											enter in the form is active. Therefore you can easily access
-											the further details. What if it is not functioning? You can
-											make out for the EDOCS Travel once after arrival for the
-											email box.</p>
-										<span class="arrowText expand">READ MORE</span>
-									</div>
-								</div>
-								<div class="col-sm-6">
-									<div class="gallery-big-container requirements-03"></div>
-								</div>
-							</div>
-						</div>
-						<div class="button-container btn-length"></div>
-					</section>
-
-
-
-					<section class="gallery-big padding-rwd" id="mobilestepsview"
-						style="display: none;">
-						<div class="steps" style="background-color: #ffffff;">
-							<div class="d-flex">
-								<div class="small-line"></div>
-								<h2 class="description-steps-h3"
-									style="color: #1d3367 !important; text-align: center;">Requirements
-									To Meet For The EDOCS Travel</h2>
+								<h2 class="description-steps-h3"id="requirementsectId">Requirements
+									to Meet for the EDOCS Travel</h2>
 							</div>
 							<p class="description-steps-eta-planning"
 								style="text-align: center !important;">
@@ -516,8 +525,7 @@ span.description-steps-text-bottom {
 						<div class="button-container btn-length"></div>
 					</section>
 
-					<section class="description padding"
-						style="background-color: white; margin-top: 35px;">
+					<section class="description padding" id="pleasesectionId" >
 						<div class="description-steps" style="padding: 10px">
 							<p class="description-steps-eta-planning">
 								<strong>Please note</strong> that it comes with basic
@@ -528,14 +536,7 @@ span.description-steps-text-bottom {
 							</p>
 						</div>
 					</section>
-					<!-- <section class="destinations-list-header padding">
-						<div class="d-flex">
-							<div class="small-line"></div>
-							<h2 class="description-steps-h3">Choose your destination
-								country</h2>
-
-						</div>
-					</section> -->
+					
 					<section class="destinations-list-section">
 						<div class="d-flex" id="destinationId"
 							style="text-align: center; color: #1d3367;">
@@ -575,11 +576,11 @@ span.description-steps-text-bottom {
 						</ul>
 						<div class="empty-results-info">No search results</div>
 					</section>
-					<section class="insurance-banner-section">
+					<section class="insurance-banner-section" id="insurancesectionId">
 						<div class="container">
 							<div class="row">
 								<div class="col-sm-8">
-									<h3 class="">GET YOUR TRAVEL INSURANCE</h3>
+									<h3 class="">Get Your Travel Insurance</h3>
 									<p class="insurance-banner-description">including COVID-19
 										treatment</p>
 								</div>

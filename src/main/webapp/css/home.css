@@ -927,14 +927,14 @@
     cursor:pointer
 }
 .input-drop-down::placeholder{
-    font-size:14px;
+    font-size:14px
 }
 .input-drop-down:focus{
     border-color:#7C152A;
     border-style:solid;
     border-width:1px 1px 0 1px;
     outline:none;
-    background-image:url("/img/icon/16/arrow_up.svg")
+   
 }
 .arrowText{
     color:#7C152A;
@@ -5439,10 +5439,10 @@ ul li,ol li{
         height:168px;
         margin-top:16px
     }
-    .gallery-big{
+    /* .gallery-big{
         padding-left:10px;
         margin:30px -25px 20px -6px
-    }
+    } */
     .gallery-big-container-description{
         height:auto;
         padding:16px;
@@ -5770,9 +5770,9 @@ ul li,ol li{
    
     background: url(imagebanner-bg.png), rgb(33, 55, 106);
   }
-  section#mobilestepsview {
+ /*  section#mobilestepsview {
     display: block !important;
-}
+} */
 
 
 .ee-form-inner{
@@ -6381,8 +6381,9 @@ button.toast-close-button{
     outline:none
 }
 .input-drop-down{
-    background-image:url("#");
-    cursor:pointer
+    background-image:url("/images/down-arrow.png");
+    cursor:pointer;
+    background-size: 1.6rem;
 }
 .input-drop-down::placeholder{
     font-size:14px
@@ -6392,7 +6393,8 @@ button.toast-close-button{
     border-style:solid;
     border-width:1px 1px 0 1px;
     outline:none;
-    background-image:url("#")
+    background-image:url("/images/arrow-up.png");
+    background-size: 1.6rem;
 }
 .arrowText{
     color:#1d3367;
@@ -10582,12 +10584,12 @@ ul li,ol li{
     .top-background{
     height: 680px !important;
     }
-    .gallery-big {
+    /* .gallery-big {
     padding: 0px !important;
     margin-left: 0px !important;
     margin-right: 0px !important;
     
-}
+} */
 
 }
 .description-steps-text-bottom{

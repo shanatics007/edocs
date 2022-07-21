@@ -18,6 +18,18 @@
 	width:100% !important;
 	margin-top:10px !important;
 }
+
+#menu-desktop-get-visa{
+    background-image: url(/images/down-arrow.png) !important;
+    cursor: pointer;
+    background-size: 1.6rem !important;
+    background-repeat: no-repeat !important;
+    background-position: right !important;
+    background-size: 1.4rem !important;
+    vertical-align: middle;
+    padding-right: 25px !important
+ 
+}
  @media (max-width: 599px){
 
 #menu-desktop-account {
@@ -37,7 +49,17 @@ ul.menu-dropdown-values {
     list-style-type: none;
 }
 } 
-
+#menu-desktop-get-visa:hover {
+   
+    background-image: url(/images/arrow-up.png) !important;
+    cursor: pointer;
+    background-size: 1.6rem !important;
+    background-repeat: no-repeat !important;
+    background-position: right !important;
+    background-size: 1.2rem !important;
+    vertical-align: middle;
+    padding-right: 25px !important;
+}
 </style>
 
 </head>
