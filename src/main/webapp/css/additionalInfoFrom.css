@@ -3,12 +3,11 @@
 	
 }
 button.btn.btn-primary {
-    width: 100%;
-    height: 50px;
-    background-color: #2b1569;
-    color: #ffff;
-    font-weight: 600;
-
+	width: 100%;
+	height: 50px;
+	background-color: #1c3367;
+	color: #ffff;
+	font-weight: 600;
 }
 
 div#documentUploadFormId {
@@ -17,4 +16,57 @@ div#documentUploadFormId {
 h1#formheadrId {
     padding-bottom: 20px;
     padding-top: 20px;
+}
+
+.ee-form-container h1 {
+    font-size: 22px;
+    color: #1d3367;
+    font-weight: 600;
+}
+
+#columfirstId {
+    display: flex;
+    border: 1px solid;
+    align-items: center;
+    width: 50%;
+    vertical-align: middle;
+}
+
+
+#columSecondId {
+    display: flex;
+    border: 1px solid;
+    align-items: center;
+    border-left: 0;
+    width: 50%;
+   }
+}
+
+div#taxIdentityNoId {
+    display: none;
+}
+
+div#secondTitleHeaderForm {
+	background: white;
+}
+
+span#secondTitlelabel {
+	color: #1d3367 !important;
+}
+
+div#firstTitleHeaderForm{
+	background-color:  #1d3367 !important;
+}
+span#fristTitlelabel {
+    color: #fff;
+}
+.ee-form-steps .active-step .form-step-number{
+	color: #fff;
+}
+div#firstTitleHeaderForm::before {
+	background: white !important;
+}
+
+div#firstTitleHeaderForm::After {
+	background: white !important;
 }

@@ -269,17 +269,17 @@ label#radiolabel {
       <div class="row ee-form-container">
          <div class="ee-form-actual">
             <div class="ee-form-steps">
-               <div class="form-step active-step"><span class="form-step-number">
+               <div class="form-step active-step" id="firstTitleHeaderForm"><span class="form-step-number">
                   1
-                  </span> <span class="form-step-label">Basic info<br>and payment</span> <span class="form-step-complete"><i class="icon-ok" style="display: none;"></i></span>
+                  </span> <span class="form-step-label"  id="fristTitlelabel">Basic info<br>and payment</span> <span class="form-step-complete"><i class="icon-ok" style="display: none;"></i><img src="/images/check.png" style="width:25px; height:25px;"></span>
                </div>
-               <div class="form-step"><span class="form-step-number" style="color:#fff">
+               <div class="form-step" id="secondTitleHeaderForm"><span class="form-step-number" style="color:#1d3367;">
                   2
-                  </span> <span class="form-step-label" style="color:#fff">Additional<br>information</span> <span class="form-step-complete"><i class="icon-ok" style="display: none;"></i></span>
+                  </span> <span class="form-step-label" id="secondTitlelabel" style="color:#fff">Additional<br>information</span> <span class="form-step-complete"><i class="icon-ok" style="display: none;"></i></span>
                </div>
-               <div class="form-step"><span class="form-step-number" style="color:#fff">
+               <div class="form-step" id="thirdTitleHeaderForm"><span class="form-step-number" style="color:#fff">
                   3
-                  </span> <span class="form-step-label" style="color:#fff">Check<br>your email</span> <span class="form-step-complete"><i class="icon-ok" style="display: none;"></i></span>
+                  </span> <span class="form-step-label" id="thirdTitlelabel"  style="color:#fff">Check<br>your email</span> <span class="form-step-complete"><i class="icon-ok" style="display: none;"></i></span>
                </div>
             </div>
             <div class="ee-form-inner">
@@ -294,7 +294,7 @@ label#radiolabel {
             <div class="row">
              <div class="col-sm-10">
              <select id="countrylist" onchange="validate();">
-			<option value="port"></option>
+			<option value="birthCountry"></option>
 			
 			</select>
             </div>
@@ -304,96 +304,101 @@ label#radiolabel {
             </div>
             </div>
              <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
-            <span id="nationalityerrors" style="display: none;">Please choose nationality</span>
+            <span id="countryTerritoryErrorId" style="display: none;">Please choose territory of birth</span>
             </div>
             
          
             <label> City of birth </label> 
             <div class="row">
             <div class="col-sm-10">
-            <input type="text" name="firstname" id="firstNameID" size="15" required   onchange="validate();"/> 
+            <input type="text" name="cityName" id="cityOfBirthNameID" size="15" required   onchange="validate();"/> 
             
             </div>
              <div class="col-sm-2">
-              <div class="error-mark" id="firstNameError" style="display:none;"><i class="icon-error"></i></div>
-            <div class="success-mark" id="firstNameSucess" style="display:none;"><i class="icon-ok"></i></div>
+              <div class="error-mark" id="CityOfNameError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="cityOfNameSucess" style="display:none;"><i class="icon-ok"></i></div>
             
             
             </div>
             </div>
               <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
-            <span id="nameerrors" style="display: none;">Please fill the given name</span>
+            <span id="cityOfBirthNameErrorsId" style="display: none;">Please fill the city of birth</span>
             </div>
             
             
             <label> Gender </label> 
             <div class="row">
              <div class="col-sm-10">
-             <select id="countrylist" onchange="validate();">
-			<option value="port"></option>
-			
+             <select id="genderListId" onchange="validate();">
+			<option value="genderList">Select</option>
+			<option value="male">Male</option>
+			<option value="female">Female</option>
 			</select>
             </div>
              <div class="col-sm-2">
-             <div class="error-mark" id="countryBirthError" style="display:none;"><i class="icon-error"></i></div>
-            <div class="success-mark" id="countryBirthSucess" style="display:none;"><i class="icon-ok"></i></div>
+             <div class="error-mark" id="genderListErrorId" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="genderListSuccessId" style="display:none;"><i class="icon-ok"></i></div>
             </div>
             </div>
              <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
-            <span id="nationalityerrors" style="display: none;">Please choose nationality</span>
+            <span id="genderErrorId" style="display: none;">Please choose gender</span>
             </div>
             
              <label> Maritial status </label> 
             <div class="row">
              <div class="col-sm-10">
-             <select id="countrylist" onchange="validate();">
-			<option value="port"></option>
-			
+             <select id="maritialStatusId" onchange="validate();">
+			<option value="maritialStatusList">Select</option>
+			<option value="Common-Law">Common-Law</option>
+			<option value="Divorced">Divorced</option>
+			<option value="Married">Married</option>
+			<option value="Single">Single</option>
+			<option value="Widowed">Widowed</option>
 			</select>
             </div>
              <div class="col-sm-2">
-             <div class="error-mark" id="countryBirthError" style="display:none;"><i class="icon-error"></i></div>
-            <div class="success-mark" id="countryBirthSucess" style="display:none;"><i class="icon-ok"></i></div>
+             <div class="error-mark" id="maritialErrorId" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="maritialSucessId" style="display:none;"><i class="icon-ok"></i></div>
             </div>
             </div>
              <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
-            <span id="nationalityerrors" style="display: none;">Please choose nationality</span>
+            <span id="maritialStatusErrorId" style="display: none;">Please choose maritial status</span>
             </div>
             </div>
-       <h1 id="formheadrId"> Passport details</h1>  
+       <h1 id="passportDetailSectionId"> Passport details</h1>  
             <div class="newform">
             
             <label> Passport number </label> 
             <div class="row">
             <div class="col-sm-10">
-            <input type="text" name="lastName" id="lastNameID" size="15" required  onchange="validate();"/> 
+            <input type="text" name="lastName" id="passportNoId" size="15" required  onchange="validate();"/> 
             
             </div>
              <div class="col-sm-2">
-             <div class="error-mark" id="lastNameError" style="display:none;"><i class="icon-error"></i></div>
-            <div class="success-mark" id="lastNameSucess" style="display:none;"><i class="icon-ok"></i></div>
+             <div class="error-mark" id="passportErrorMarkId" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="paasportSuccessMarkId" style="display:none;"><i class="icon-ok"></i></div>
         
             </div>
             </div>
                <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
-            <span id="surnameeorr" style="display: none;">Please fill the surname</span>
+            <span id="passportNumberId" style="display: none;">Please fill the last name</span>
             </div>
             
              <label> Country / territory of issue </label> 
             <div class="row">
              <div class="col-sm-10">
-             <select id="countrylist" onchange="validate();">
-			<option value="port"></option>
+             <select id="passPortCountryList" onchange="validate();">
+			<option value="passportCountry"></option>
 			
 			</select>
             </div>
              <div class="col-sm-2">
-             <div class="error-mark" id="countryBirthError" style="display:none;"><i class="icon-error"></i></div>
-            <div class="success-mark" id="countryBirthSucess" style="display:none;"><i class="icon-ok"></i></div>
+             <div class="error-mark" id="countryIssueError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="countryIssueSucess" style="display:none;"><i class="icon-ok"></i></div>
             </div>
             </div>
              <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
-            <span id="nationalityerrors" style="display: none;">Please choose nationality</span>
+            <span id="counrtIssueErrorId" style="display: none;">Please choose country / territory of issue</span>
             </div>
             
             
@@ -401,23 +406,23 @@ label#radiolabel {
             <label> Issuing authority </label> 
             <div class="row">
             <div class="col-sm-10">
-            <input type="text" name="lastName" id="lastNameID" size="15" required  onchange="validate();"/> 
+            <input type="text" name="lastName" id="authorityNameId" size="15" required  onchange="validate();"/> 
             
             </div>
              <div class="col-sm-2">
-             <div class="error-mark" id="lastNameError" style="display:none;"><i class="icon-error"></i></div>
-            <div class="success-mark" id="lastNameSucess" style="display:none;"><i class="icon-ok"></i></div>
+             <div class="error-mark" id="authorityNameError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="authorityNameSucess" style="display:none;"><i class="icon-ok"></i></div>
         
             </div>
             </div>
                <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
-            <span id="surnameeorr" style="display: none;">Please fill the surname</span>
+            <span id="authorityNameeorrId" style="display: none;">Please fill the authority</span>
             </div>
           
              <label> Date of issue </label> 
                <div class="row">
               <div class="col-sm-3">
-             <select id="dayDOB" onchange="validate();">
+             <select id="dateIssueId" onchange="validate();">
 			<option value="Day">Day</option>
 			<option value="1">1</option>
 			<option value="2">2</option>
@@ -454,7 +459,7 @@ label#radiolabel {
             </div>
             
              <div class="col-sm-4">
-             <select id="dayMonth" onchange="validate();">
+             <select id="dayIssueMonthId" onchange="validate();">
 			<option value="Month">Month</option>
 			<option value="Jan">Jan</option>
 			<option value="Feb">Feb</option>
@@ -472,26 +477,26 @@ label#radiolabel {
             </div>
             
             <div class="col-sm-3">
-              <select id="yearlistdob" onchange="validate();"> 
+              <select id="yearIssueId" onchange="validate();"> 
 			<option value="Year">Year</option>
 			
 			</select>
             </div>
              <div class="col-sm-2">
              
-             <div class="error-mark" id="dobError" style="display:none;"><i class="icon-error"></i></div>
-            <div class="success-mark" id="dobSucess" style="display:none;"><i class="icon-ok"></i></div>
+             <div class="error-mark" id="dateIssueErrorId" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="dateIssueSuccessId" style="display:none;"><i class="icon-ok"></i></div>
             
             </div>
             </div>
               <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
-            <span id="doberrorr" style="display: none;">Please choose date of birth</span>
+            <span id="dateOfIssueErrorId" style="display: none;">Please choose date of issue</span>
             </div>
             
-              <label> Date of Expiry </label> 
+              <label> Date of expiry </label> 
                <div class="row">
               <div class="col-sm-3">
-             <select id="dayDOB" onchange="validate();">
+             <select id="dateExpiryId" onchange="validate();">
 			<option value="Day">Day</option>
 			<option value="1">1</option>
 			<option value="2">2</option>
@@ -528,7 +533,7 @@ label#radiolabel {
             </div>
             
              <div class="col-sm-4">
-             <select id="dayMonth" onchange="validate();">
+             <select id="dateExpiryMonthId" onchange="validate();">
 			<option value="Month">Month</option>
 			<option value="Jan">Jan</option>
 			<option value="Feb">Feb</option>
@@ -546,126 +551,142 @@ label#radiolabel {
             </div>
             
             <div class="col-sm-3">
-              <select id="yearlistdob" onchange="validate();"> 
+              <select id="dateExpiryYearId" onchange="validate();"> 
 			<option value="Year">Year</option>
 			
 			</select>
             </div>
              <div class="col-sm-2">
              
-             <div class="error-mark" id="dobError" style="display:none;"><i class="icon-error"></i></div>
-            <div class="success-mark" id="dobSucess" style="display:none;"><i class="icon-ok"></i></div>
+             <div class="error-mark" id="dateExpiryErrorId" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="dateExpirySuccessId" style="display:none;"><i class="icon-ok"></i></div>
             
             </div>
             </div>
               <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
-            <span id="doberrorr" style="display: none;">Please choose date of birth</span>
+            <span id="dateOfExpiryErrorId" style="display: none;">Please choose date of expiry</span>
             </div>
             </div>
             
             
-       <h1 id="formheadrId"> Permanant address details</h1>  
+       <h1 id="formheadrId"> Permanent Address Details</h1>  
           <div class="newform">
            
            <label> House no/street </label> 
       
              <div class="row">
             <div class="col-sm-10">
-            <input type="text" name="email" id="emailID" size="15" required onchange="validate();" />
+            <input type="text" name="house" id="houseNoId" size="15" required onchange="validate();" />
             </div>
              <div class="col-sm-2">
-              <div class="error-mark" id="emailError" style="display:none;"><i class="icon-error"></i></div>
-            <div class="success-mark" id="emailSucess" style="display:none;"><i class="icon-ok"></i></div>
+              <div class="error-mark" id="houseNoErrorId" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="houseNoSuccessId" style="display:none;"><i class="icon-ok"></i></div>
              
             </div>
             </div>
               <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
-            <span id="emailerrors" style="display: none;">Please enter correct email</span>
+            <span id="houseNumberErrorId" style="display: none;">Please enter correct house no/street</span>
             </div>
             
             <label> Village / town / city </label> 
       
              <div class="row">
             <div class="col-sm-10">
-            <input type="text" name="email" id="emailID" size="15" required onchange="validate();" />
+            <input type="text" name="village" id="villageId" size="15" required onchange="validate();" />
             </div>
              <div class="col-sm-2">
-              <div class="error-mark" id="emailError" style="display:none;"><i class="icon-error"></i></div>
-            <div class="success-mark" id="emailSucess" style="display:none;"><i class="icon-ok"></i></div>
+              <div class="error-mark" id="villageErrorId" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="villageSuccessId" style="display:none;"><i class="icon-ok"></i></div>
              
             </div>
             </div>
               <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
-            <span id="emailerrors" style="display: none;">Please enter correct email</span>
+            <span id="villageTownCityErrorId" style="display: none;">Please enter correct village/town/city</span>
             </div>
             
                 <label> Country </label> 
             <div class="row">
              <div class="col-sm-10">
-             <select id="countrylist" onchange="validate();">
-			<option value="port"></option>
+             <select id="addressCountryList" onchange="validate();">
+			<option value="addressCountry"></option>
 			
 			</select>
             </div>
              <div class="col-sm-2">
-             <div class="error-mark" id="countryBirthError" style="display:none;"><i class="icon-error"></i></div>
-            <div class="success-mark" id="countryBirthSucess" style="display:none;"><i class="icon-ok"></i></div>
+             <div class="error-mark" id="countryErrorId" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="countrySucessId" style="display:none;"><i class="icon-ok"></i></div>
             </div>
             </div>
              <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
-            <span id="nationalityerrors" style="display: none;">Please choose nationality</span>
+            <span id="countryChooseErrorId" style="display: none;">Please choose country</span>
             </div>
             </div>          
-       <h1 id="formheadrId"> Vat invoice</h1>  
+       <h1 id="vatInvoiceSection"> Vat invoice</h1>  
           <div class="newform">
             
              <label> Do you want to receive a VAT invoice? </label> 
              <div class="row">
             <div class="col-sm-10">
-            <input type="text" name="phoneNo" id="phoneNoId" size="15" maxlength="10"  required onchange="validate();" />
+           <div class="col-sm-5" id="columfirstId">
+           <div style="width: 30%; margin-left: 10px;">
+           <input type="radio" id="vatNoId" name="taxInvoice" style="width: 25px; height: 20px;" onchange="validate();" onclick="checkVatInvoice('no')">
+           </div>
+           <div style="width: 100%;">
+            <label for="vatNoId">No</label>
+            </div>
+           </div>
+            <div class="col-sm-5" id="columSecondId">
+             <div style="width: 30%; margin-left: 10px;">
+             <input type="radio" id="vatYesId" name="taxInvoice" style="width: 25px; height: 20px;" onchange="validate();" onclick="checkVatInvoice('yes')">
+             </div>
+             <div style="width: 100%;">
+              <label for="vatYesId">Yes</label>
+              </div>
+            </div>
+           
             </div>
              <div class="col-sm-2">
-             <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
-            <div class="success-mark" id="phoneSucess" style="display:none;"><i class="icon-ok"></i></div>
+             <div class="error-mark" id="vatradioNuttionError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="vatradioNuttionSucess" style="display:none;"><i class="icon-ok"></i></div>
             
             </div>
             </div>
              <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
-            <span id="phnoerror" style="display: none;">Please enter phone number</span>
+            <span id="vatNumberErrorId" style="display: none;">Please choose VAT invoice option</span>
             </div>
             </div>
             
-      <div class="newform" id="vatInvoidFormId">
+      <div class="newform" id="taxIdentityNoId">
             
              <label> Tax identification number (Company VAT) </label> 
              <div class="row">
             <div class="col-sm-10">
-            <input type="text" name="phoneNo" id="phoneNoId" size="15" maxlength="10"  required onchange="validate();" />
+            <input type="text" name="number" id="taxNumberId" size="15" maxlength="10"  required onchange="validate();" />
             </div>
              <div class="col-sm-2">
-             <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
-            <div class="success-mark" id="phoneSucess" style="display:none;"><i class="icon-ok"></i></div>
+             <div class="error-mark" id="taxNumberErrorId" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="taxNumberSuccessId" style="display:none;"><i class="icon-ok"></i></div>
             
             </div>
             </div>
              <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
-            <span id="phnoerror" style="display: none;">Please enter phone number</span>
+            <span id="taxIdentificationErrorId" style="display: none;">Please enter tax identification number</span>
             </div>
         
             
             <label>Name of the company</label> 
              <div class="row">
             <div class="col-sm-10">
-            <input type="text" name="phoneNo" id="phoneNoId" size="15" maxlength="10"  required onchange="validate();" />
+            <input type="text" name="companyName" id="companyNameId" size="15" maxlength="10"  required onchange="validate();" />
             </div>
              <div class="col-sm-2">
-             <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
-            <div class="success-mark" id="phoneSucess" style="display:none;"><i class="icon-ok"></i></div>
+             <div class="error-mark" id="companyNameErrorId" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="companyNameSuccessId" style="display:none;"><i class="icon-ok"></i></div>
             
             </div>
             </div>
              <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
-            <span id="phnoerror" style="display: none;">Please enter phone number</span>
+            <span id="nameOfCompanyErrorId" style="display: none;">Please enter name of the company</span>
             </div>
            
             
@@ -673,228 +694,263 @@ label#radiolabel {
            <label> Company country </label> 
             <div class="row">
              <div class="col-sm-10">
-             <select id="countrylist" onchange="validate();">
-			<option value="port"></option>
+             <select id="taxCompanyCountryList" onchange="validate();">
+			<option value="companyCountry"></option>
 			
 			</select>
             </div>
              <div class="col-sm-2">
-             <div class="error-mark" id="countryBirthError" style="display:none;"><i class="icon-error"></i></div>
-            <div class="success-mark" id="countryBirthSucess" style="display:none;"><i class="icon-ok"></i></div>
+             <div class="error-mark" id="companyCountryErrorId" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="companycountrySucessId" style="display:none;"><i class="icon-ok"></i></div>
             </div>
             </div>
              <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
-            <span id="nationalityerrors" style="display: none;">Please choose nationality</span>
+            <span id="companyCountryId" style="display: none;">Please choose nationality</span>
             </div>
             
              <label>Company city</label> 
              <div class="row">
             <div class="col-sm-10">
-            <input type="text" name="phoneNo" id="phoneNoId" size="15" maxlength="10"  required onchange="validate();" />
+            <input type="text" name="cityName" id="cityNameId" size="15" maxlength="10"  required onchange="validate();" />
             </div>
              <div class="col-sm-2">
-             <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
-            <div class="success-mark" id="phoneSucess" style="display:none;"><i class="icon-ok"></i></div>
+             <div class="error-mark" id="cityNameErrorId" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="cityNameSucessId" style="display:none;"><i class="icon-ok"></i></div>
             
             </div>
             </div>
              <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
-            <span id="phnoerror" style="display: none;">Please enter phone number</span>
+            <span id="companyCityErrorId" style="display: none;">Please enter company city</span>
             </div>
            
             
               <label>Company postal</label> 
              <div class="row">
             <div class="col-sm-10">
-            <input type="text" name="phoneNo" id="phoneNoId" size="15" maxlength="10"  required onchange="validate();" />
+            <input type="text" name="companyPostal" id="companyPostalId" size="15" maxlength="10"  required onchange="validate();" />
             </div>
              <div class="col-sm-2">
-             <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
-            <div class="success-mark" id="phoneSucess" style="display:none;"><i class="icon-ok"></i></div>
+             <div class="error-mark" id="companyPostalErrorId" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="companyPostalSucessId" style="display:none;"><i class="icon-ok"></i></div>
             
             </div>
             </div>
              <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
-            <span id="phnoerror" style="display: none;">Please enter phone number</span>
+            <span id="companyErrorId" style="display: none;">Please enter company postal</span>
             </div>
             
             
             <label>Company street</label> 
              <div class="row">
             <div class="col-sm-10">
-            <input type="text" name="phoneNo" id="phoneNoId" size="15" maxlength="10"  required onchange="validate();" />
+            <input type="text" name="companyStreet" id="companyStreetId" size="15" maxlength="10"  required onchange="validate();" />
             </div>
              <div class="col-sm-2">
-             <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
-            <div class="success-mark" id="phoneSucess" style="display:none;"><i class="icon-ok"></i></div>
+             <div class="error-mark" id="companyStreetError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="companyStreetSucess" style="display:none;"><i class="icon-ok"></i></div>
             
             </div>
             </div>
              <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
-            <span id="phnoerror" style="display: none;">Please enter phone number</span>
+            <span id="companyStreetErrorId" style="display: none;">Please enter phone number</span>
             </div>
          
             </div>
-      <h1 id="formheadrId"> Employment information</h1>  
-    <div class="newform" id="employmentFormId">
+      <h1 id="employeeInfoSectionId"> Employment information</h1>  
+    <div class="newform" id="employeeInformationId">
        <label> Employment status </label> 
             <div class="row">
              <div class="col-sm-10">
-             <select id="countrylist" onchange="validate();">
-			<option value="port"></option>
-			
+             <select id="employmentId" onchange="validate();">
+			<option value="EmployyeStatus">Select</option>
+			<option value="Employed">Employed</option>
+			<option value="HomeMaker">Home Maker</option>
+			<option value="Retired">Retired</option>
+			<option value="Student">Student</option>
 			</select>
             </div>
              <div class="col-sm-2">
-             <div class="error-mark" id="countryBirthError" style="display:none;"><i class="icon-error"></i></div>
-            <div class="success-mark" id="countryBirthSucess" style="display:none;"><i class="icon-ok"></i></div>
+             <div class="error-mark" id="employmentErrorId" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="employmentSucessId" style="display:none;"><i class="icon-ok"></i></div>
             </div>
             </div>
              <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
-            <span id="nationalityerrors" style="display: none;">Please choose nationality</span>
+            <span id="employmentInfoErrorId" style="display: none;">Please choose employment status</span>
             </div>
             
             
              <label> Occupation </label> 
             <div class="row">
              <div class="col-sm-10">
-             <select id="countrylist" onchange="validate();">
-			<option value="port"></option>
+             <select id="occupationId" onchange="validate();">
+			<option value="occupatinList">Select</option>
+			<option value="Art,culture,recreation and sport occupations">Art,culture,recreation and sport occupations</option>
+			<option value="Business,finance and administration occupations">Business,finance and administration occupations</option>
+			<option value="Education,law and social,community and government services occupations">Education,law and social,community and government services occupations</option>
+			<option value="Health occupations">Health occupations</option>
+			<option value="Homemaker">Homemaker</option>
+			<option value="Management occupations">Management occupations</option>
+			<option value="Manufacturing and utilities occupations">Manufacturing and utilities occupations</option>
+			<option value="Military/armed forces">Military/armed forces</option>
+			<option value="Natural and applied sciences and related occupations">Natural and applied sciences and related occupations</option>
+			<option value="Natural resources, agriculture and related production occupations">Natural resources, agriculture and related production occupations</option>
+			<option value="Retired">Retired</option>
+			<option value="Sales and service occupations">Sales and service occupations</option>
+			<option value="Student">Student</option>
+			<option value="Trades, transport and equipment operators and related occupations">Trades, transport and equipment operators and related occupations</option>
+			<option value="Unemployed">Unemployed</option>
 			
 			</select>
             </div>
              <div class="col-sm-2">
-             <div class="error-mark" id="countryBirthError" style="display:none;"><i class="icon-error"></i></div>
-            <div class="success-mark" id="countryBirthSucess" style="display:none;"><i class="icon-ok"></i></div>
+             <div class="error-mark" id="occupationError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="occupationSucess" style="display:none;"><i class="icon-ok"></i></div>
             </div>
             </div>
              <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
-            <span id="nationalityerrors" style="display: none;">Please choose nationality</span>
+            <span id="occupationErrorId" style="display: none;">Please choose occupation</span>
             </div>
             
             
             <label> Qualification </label> 
             <div class="row">
              <div class="col-sm-10">
-             <select id="countrylist" onchange="validate();">
-			<option value="port"></option>
-			
+             <select id="qualificationId" onchange="validate();">
+			<option value="qualificationList">Select</option>
+			<option value="Below Matriculation">Below Matriculation</option>
+			<option value="Graduate">Graduate</option>
+			<option value="Higher Secondary">Higher Secondary</option>
+			<option value="Matriculation">Matriculation</option>
+			<option value="Na Being Minor">Na Being Minor</option>
+			<option value="Post Graduate">Post Graduate</option>
+			<option value="Others">Others</option>
 			</select>
             </div>
              <div class="col-sm-2">
-             <div class="error-mark" id="countryBirthError" style="display:none;"><i class="icon-error"></i></div>
-            <div class="success-mark" id="countryBirthSucess" style="display:none;"><i class="icon-ok"></i></div>
+             <div class="error-mark" id="qualificationError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="qualificationSucess" style="display:none;"><i class="icon-ok"></i></div>
             </div>
             </div>
              <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
-            <span id="nationalityerrors" style="display: none;">Please choose nationality</span>
+            <span id="qualificationErrorId" style="display: none;">Please choose qualification</span>
             </div>
             
             
               <label> Religion </label> 
             <div class="row">
              <div class="col-sm-10">
-             <select id="countrylist" onchange="validate();">
-			<option value="port"></option>
-			
+             <select id="religionId" onchange="validate();">
+			<option value="religionList">Select</option>
+			<option value="Atheism">Atheism</option>
+			<option value="Bahai">Bahai</option>
+			<option value="Buddhism">Buddhism</option>
+			<option value="Christian">Christian</option>
+			<option value="Hindu">Hindu</option>
+			<option value="Islam">Islam</option>
+			<option value="Jainism">Jainism</option>
+			<option value="Judaism">Judaism</option>
+			<option value="Sikh">Sikh</option>
+			<option value="Others">Others</option>
 			</select>
             </div>
              <div class="col-sm-2">
-             <div class="error-mark" id="countryBirthError" style="display:none;"><i class="icon-error"></i></div>
-            <div class="success-mark" id="countryBirthSucess" style="display:none;"><i class="icon-ok"></i></div>
+             <div class="error-mark" id="religionError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="religionSucess" style="display:none;"><i class="icon-ok"></i></div>
             </div>
             </div>
              <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
-            <span id="nationalityerrors" style="display: none;">Please choose nationality</span>
+            <span id="religionErrorId" style="display: none;">Please choose religion</span>
             </div>
             
             
             <label>Mother's name</label> 
              <div class="row">
             <div class="col-sm-10">
-            <input type="text" name="phoneNo" id="phoneNoId" size="15" maxlength="10"  required onchange="validate();" />
+            <input type="text" name="motherName" id="motherNameId" size="15" maxlength="10"  required onchange="validate();" />
             </div>
              <div class="col-sm-2">
-             <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
-            <div class="success-mark" id="phoneSucess" style="display:none;"><i class="icon-ok"></i></div>
+             <div class="error-mark" id="motherNameError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="motherNameSucess" style="display:none;"><i class="icon-ok"></i></div>
             
             </div>
             </div>
              <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
-            <span id="phnoerror" style="display: none;">Please enter phone number</span>
+            <span id="motherNameErrorId" style="display: none;">Please enter mother's name</span>
             </div>
             </div>
             
             
-          <h1 id="formheadrId"> Details of visit</h1>  
-    <div class="newform" id="visitDetailsId">
+          <h1 id="detailVisitSectionId"> Details of visit</h1>  
+    <div class="newform" id="visitId">
     
     		<label> Transportation type </label> 
             <div class="row">
              <div class="col-sm-10">
-             <select id="countrylist" onchange="validate();">
-			<option value="port"></option>
-			
+             <select id="TransportTypeId" onchange="validate();">
+			<option value="transportList">Select</option>
+			<option value="Air">Air</option>
+			<option value="Land">Land</option>
+			<option value="Maritime">Maritime</option>
 			</select>
             </div>
              <div class="col-sm-2">
-             <div class="error-mark" id="countryBirthError" style="display:none;"><i class="icon-error"></i></div>
-            <div class="success-mark" id="countryBirthSucess" style="display:none;"><i class="icon-ok"></i></div>
+             <div class="error-mark" id="transportTypeError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="transportTypeSucess" style="display:none;"><i class="icon-ok"></i></div>
             </div>
             </div>
              <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
-            <span id="nationalityerrors" style="display: none;">Please choose nationality</span>
+            <span id="transportTypeErrorId" style="display: none;">Please choose transportation type</span>
             </div>
             
             
             <label> Departure country </label> 
             <div class="row">
              <div class="col-sm-10">
-             <select id="countrylist" onchange="validate();">
-			<option value="port"></option>
+             <select id="departureCountryList" onchange="validate();">
+			<option value="departureCountry"></option>
 			
 			</select>
             </div>
              <div class="col-sm-2">
-             <div class="error-mark" id="countryBirthError" style="display:none;"><i class="icon-error"></i></div>
-            <div class="success-mark" id="countryBirthSucess" style="display:none;"><i class="icon-ok"></i></div>
+             <div class="error-mark" id="departureCountryError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="departureCountrySucess" style="display:none;"><i class="icon-ok"></i></div>
             </div>
             </div>
              <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
-            <span id="nationalityerrors" style="display: none;">Please choose nationality</span>
+            <span id="departureCountryErrorId" style="display: none;">Please choose departure country</span>
             </div>
             
             
              <label>Departure city</label> 
              <div class="row">
             <div class="col-sm-10">
-            <input type="text" name="phoneNo" id="phoneNoId"  required onchange="validate();" />
+            <input type="text" name="cityName" id="departureCity"  required onchange="validate();" />
             </div>
              <div class="col-sm-2">
-             <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
-            <div class="success-mark" id="phoneSucess" style="display:none;"><i class="icon-ok"></i></div>
+             <div class="error-mark" id="departureCityError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="departureCitySucess" style="display:none;"><i class="icon-ok"></i></div>
             
             </div>
             </div>
              <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
-            <span id="phnoerror" style="display: none;">Please enter phone number</span>
+            <span id="departureCityErrorId" style="display: none;">Please enter departure city</span>
             </div>
             
             
             
-            <label>Name of hotel, motel or apartment in the CountryNameHere</label> 
+            <label>Name of hotel, motel or apartment in the <span id="countryNameofHotel"></span></label> 
              <div class="row">
             <div class="col-sm-10">
-            <input type="text" name="phoneNo" id="phoneNoId"  required onchange="validate();" />
+            <input type="text" name="hotelName" id="nameHotelsId"  required onchange="validate();" />
             </div>
              <div class="col-sm-2">
-             <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
-            <div class="success-mark" id="phoneSucess" style="display:none;"><i class="icon-ok"></i></div>
+             <div class="error-mark" id="nameHotelsError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="nameHotelsSucess" style="display:none;"><i class="icon-ok"></i></div>
             
             </div>
             </div>
              <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
-            <span id="phnoerror" style="display: none;">Please enter phone number</span>
+            <span id="nameOfHotelsErrorId" style="display: none;">Please enter name of hotel, motel or apartment in the country name here</span>
             </div>
             
             
@@ -902,16 +958,16 @@ label#radiolabel {
             <label>Accommodation address</label> 
              <div class="row">
             <div class="col-sm-10">
-            <input type="text" name="phoneNo" id="phoneNoId"  required onchange="validate();" />
+            <input type="text" name="address" id="accomAddress"  required onchange="validate();" />
             </div>
              <div class="col-sm-2">
-             <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
-            <div class="success-mark" id="phoneSucess" style="display:none;"><i class="icon-ok"></i></div>
+             <div class="error-mark" id="accomAddressError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="accomAddressSucess" style="display:none;"><i class="icon-ok"></i></div>
             
             </div>
             </div>
              <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
-            <span id="phnoerror" style="display: none;">Please enter phone number</span>
+            <span id="accomdationAddressErrorId" style="display: none;">Please enter accommodation address</span>
             </div>
            
             
@@ -919,16 +975,16 @@ label#radiolabel {
              <label>Accommodation phone number</label> 
              <div class="row">
             <div class="col-sm-10">
-            <input type="text" name="phoneNo" id="phoneNoId"  required onchange="validate();" />
+            <input type="text" name="phoneNo" id="accomPhoneNoId"  required onchange="validate();" />
             </div>
              <div class="col-sm-2">
-             <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
-            <div class="success-mark" id="phoneSucess" style="display:none;"><i class="icon-ok"></i></div>
+             <div class="error-mark" id="accomPhoneError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="accomPhoneSucess" style="display:none;"><i class="icon-ok"></i></div>
             
             </div>
             </div>
              <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
-            <span id="phnoerror" style="display: none;">Please enter phone number</span>
+            <span id="accomPhoneNoErrorId" style="display: none;">Please enter accommodation phone number</span>
             </div>
    		</div>
    		</div>
@@ -966,13 +1022,16 @@ label#radiolabel {
     	 </p>
     	 <div class="row" id="documentUploadFormId">
     	 <div class="col-sm-4" id="photographycolId">
-    	<button type="button" class="btn btn-primary">upload</button>
+    	<button type="button" class="btn btn-primary" id="photographyButtonId">upload</button>
+    	<input type="file" id="photographyfileId" hidden/>
     	 </div>
     	  <div class="col-sm-2">
     	 or
     	 </div>
     	 <div class="col-sm-4" id="photographycolId">
-    	  <button type="button" class="btn btn-primary">Take a photo</button>
+    	  <button type="button" class="btn btn-primary" id="takephotoId" onclick="startWebcam();">Take a photo</button>
+    	 
+		    	  
     	 </div>
     	 <div class="col-sm-2">
          <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
@@ -989,7 +1048,8 @@ label#radiolabel {
     	 </p>
     	 <div class="row" id="documentUploadFormId">
     	 <div class="col-sm-4" id="photographycolId">
-    	<button type="button" class="btn btn-primary">upload</button>
+    	<button type="button" class="btn btn-primary" id="biographicalButtonId">upload</button>
+    	<input type="file" id="biographicalFileId" hidden/>
     	 </div>
     	  <div class="col-sm-2">
     	 or
@@ -1008,7 +1068,8 @@ label#radiolabel {
     	 <p></p>
     	 <div class="row" id="documentUploadFormId">
     	 <div class="col-sm-4" id="photographycolId">
-    	<button type="button" class="btn btn-primary">upload</button>
+    	<button type="button" class="btn btn-primary" id="hotelBookingButtonId">upload</button>
+    	<input type="file" id="hotelBookingFileId" hidden/>
     	 </div>
     	  <div class="col-sm-2">
     	 or
@@ -1026,7 +1087,8 @@ label#radiolabel {
      	<p></p>
     	 <div class="row" id="documentUploadFormId">
     	 <div class="col-sm-4" id="photographycolId">
-    	<button type="button" class="btn btn-primary">upload</button>
+    	<button type="button" class="btn btn-primary" id="residenceButtonId">upload</button>
+    	<input type="file" id="residencefileId" hidden/>
     	 </div>
     	  <div class="col-sm-2">
     	 or
@@ -1043,102 +1105,7 @@ label#radiolabel {
     	 
    </div>
    		
- <!--   <div class="newform" id="documentsuploadsFormId">
-   		
-   		  <label>Photography</label> 
-   		         
-    	<p>The photo should present a full face, front view, eyes open.
-    		No black&white photos, no blurred photos.
-    	 </p>
-    	 <div class="row">
-    	 <div class="col-sm-4" id="photographycolId">
-    	  <input type="text" name="phoneNo" id="phoneNoId"  required onchange="validate();" />
-    	 </div>
-    	 <div class="col-sm-2">
-    	 or
-    	 </div>
-    	 <div class="col-sm-4" id="photographycolId">
-    	   <input type="text" name="phoneNo" id="phoneNoId"  required onchange="validate();" />
-    	 </div>
-    	<div class="col-sm-2">
-         <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
-         <div class="success-mark" id="phoneSucess" style="display:none;"><i class="icon-ok"></i></div>
-            
-       </div>
-    	 </div>
-    	 
-   		 <label>Biographical page of passport</label> 
-   		         
-    	<p>The photo should present a full face, front view, eyes open.
-    		No black&white photos, no blurred photos.
-    	 </p>
-    	 <div class="photographyRow">
-    	 <div class="col-sm-4" id="photographycolId">
-    	  <input type="text" name="phoneNo" id="phoneNoId"  required onchange="validate();" />
-    	 </div>
-    	 <div class="col-sm-2">
-    	 or
-    	 </div>
-    	 <div class="col-sm-4" id="photographycolId">
-    	   <input type="text" name="phoneNo" id="phoneNoId"  required onchange="validate();" />
-    	 </div>
-    	<div class="col-sm-2">
-         <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
-         <div class="success-mark" id="phoneSucess" style="display:none;"><i class="icon-ok"></i></div>
-            
-       </div>
-    	 </div>
-    	 
-    	 
-    	  <label>Hotel Booking</label> 
-   		         
-    	<p>The photo should present a full face, front view, eyes open.
-    		No black&white photos, no blurred photos.
-    	 </p>
-    	 <div class="photographyRow">
-    	 <div class="col-sm-4" id="photographycolId">
-    	  <input type="text" name="phoneNo" id="phoneNoId"  required onchange="validate();" />
-    	 </div>
-    	 <div class="col-sm-2">
-    	 or
-    	 </div>
-    	 <div class="col-sm-4" id="photographycolId">
-    	   <input type="text" name="phoneNo" id="phoneNoId"  required onchange="validate();" />
-    	 </div>
-    	<div class="col-sm-2">
-         <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
-         <div class="success-mark" id="phoneSucess" style="display:none;"><i class="icon-ok"></i></div>
-            
-       </div>
-    	 </div>
-    	 
-    	 
-    	  <label>Residence proof or id</label> 
-   		         
-    	<p>The photo should present a full face, front view, eyes open.
-    		No black&white photos, no blurred photos.
-    	 </p>
-    	 <div class="photographyRow">
-    	 <div class="col-sm-4" id="photographycolId">
-    	  <input type="text" name="phoneNo" id="phoneNoId"  required onchange="validate();" />
-    	 </div>
-    	 <div class="col-sm-2">
-    	 or
-    	 </div>
-    	 <div class="col-sm-4" id="photographycolId">
-    	   <input type="text" name="phoneNo" id="phoneNoId"  required onchange="validate();" />
-    	 </div>
-    	<div class="col-sm-2">
-         <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
-         <div class="success-mark" id="phoneSucess" style="display:none;"><i class="icon-ok"></i></div>
-            
-       </div>
-    	 </div>
-    
-   		
-   		</div>
-   		
-         </div>  -->
+
                   </div>
                   <div>
                      <div>
@@ -1167,51 +1134,63 @@ label#radiolabel {
                      Summary
                   </div>
                   <div class="form-info-subheader"><span>
-                     Destination
+                     Destination:
                      </span> <span id="CountrySummary">
                     
                      </span>
-                  </div>
+                  </div> 
                   
-             
-                  <div class="form-info-subheader" id="VisaandpriceId"><span>
-                     Visa
-                     </span> <span id="priceidinDollerVisa">
+                   <div class="form-info-subheader"><span>
+                     Planned day of travel:
+                     </span> <span id="plannedDayofTravelId">
                     
                      </span>
-                  </div>
+                  </div> 
+                  <div class="form-info-subheader"><span>
+                    Given name(s):
+                     </span> <span id="givenFirstNameId">
+                    
+                     </span>
+                  </div> 
+                   <div class="form-info-subheader"><span>
+                    Surname(s):
+                     </span> <span id="givenSurnameId">
+                    
+                     </span>
+                  </div> 
+                   <div class="form-info-subheader"><span>
+                    Date of birth:
+                     </span> <span id="dateOfBirthId">
+                    
+                     </span>
+                  </div> 
+                   <div class="form-info-subheader"><span>
+                    E-mail address:
+                     </span> <span id="givenEmailId">
+                    
+                     </span>
+                  </div> 
+                  <div class="form-info-subheader"><span>
+                   Contact phone number:
+                     </span> <span id="contactPhoneNoId">
+                    
+                     </span>
+                  </div> 
+                  <div class="form-info-subheader"><span>
+                    Purpose for travel:
+                     </span> <span id="purposeForTravelId">
+                    
+                     </span>
+                  </div> 
+                  <div class="form-info-subheader"><span>
+                    Nationality:
+                     </span> <span id="nationalityId">
+                    
+                     </span>
+                  </div> 
                   
-                  <!-- <div class="form-choose-currency-wrapper" id="VisaandpriceId" style="display: none;"><span>
-                        Visa
-                        </span> 
-                        <span></span> 
-                        <span id="priceidinDoller"></span>
-                     </div> -->
-                 
-               </div>
-               <div class="form-pricebox">
-                  
-                  <div class="form-info-element sidebar-citizenship-not-chosen">
-                     <div class="form-choose-currency-wrapper"><span>
-                        Full price
-                        </span> 
-                        <span></span> 
-                        <span id="priceidinDoller"></span>
-                     </div>
-                     <div id="priceshow">
-                        Price will be shown after the required fields are filled
-                     </div>
-                     <div id="ulpriceshow">
-                        <ul>
-                          <span> Price depends on the following fields:</span>
-                           <li id="nationalityId"><span>Nationality</span></li>
-                           <li id="purposeTravelId"><span>Purpose for travel</span></li>
-                        </ul>
-                     </div>
-                  </div>
                </div>
             
-              
             </div>
          </div>
             </div>
@@ -1226,7 +1205,7 @@ label#radiolabel {
   	<script>
   	
   	
-  	function submitApplication(){
+  	function submitApplicationAdditionalInfo(){
   	  	
   		var urlString  = window.location.href.split('/');
     	var country = urlString[4];
@@ -1277,46 +1256,12 @@ label#radiolabel {
 								 
 								}).then(function() {
 									
-									localStorage.setItem("dayArrival", $('#dayArrival').val());
-									localStorage.setItem("monthArrival", $('#montharrival').val());
-									localStorage.setItem("yearArrival", $('#yearlist').val());
-									localStorage.setItem("portArrival", $('#portArrival').val());
-									localStorage.setItem("firstname", $('#firstNameID').val());
-									localStorage.setItem("lastName", $('#lastNameID').val());
-									localStorage.setItem("dayDOB", $('#dayDOB').val());
-									localStorage.setItem("dayMonth", $('#dayMonth').val());
-									localStorage.setItem("yearlistdob", $('#yearlistdob').val());
-									localStorage.setItem("email", $('#emailID').val());
-									localStorage.setItem("phoneNo", $('#phoneNoId').val());
-									localStorage.setItem("purposeTraval", $('#purposeTraval').val());
-									localStorage.setItem("nationality", $('#countrylist').val());
 									
-								    window.location = "/register/"+country;
 								    
 								});
 
 						}else{
 							var param ="hash="+data.hash;
-							localStorage.removeItem("dayArrival");
-							localStorage.removeItem("monthArrival");
-							localStorage.removeItem("yearArrival");
-							localStorage.removeItem("portArrival");
-							localStorage.removeItem("firstname");
-							localStorage.removeItem("lastName");
-							localStorage.removeItem("dayDOB");
-							localStorage.removeItem("dayMonth");
-							localStorage.removeItem("yearlistdob");
-							localStorage.removeItem("email");
-							localStorage.removeItem("phoneNo");
-							localStorage.removeItem("purposeTraval");
-							localStorage.removeItem("nationality");
-							
-							localStorage.setItem("dayArrival", "Day");
-							localStorage.setItem("monthArrival", "Month");
-							localStorage.setItem("yearArrival", "Year");
-							localStorage.setItem("dayDOB", "Day");
-							localStorage.setItem("dayMonth", "Month");
-							localStorage.setItem("yearlistdob", "Year");
 							
 							 window.location.href = "/payment/?"+param;
 							
@@ -1352,295 +1297,388 @@ label#radiolabel {
 
 		}
 
-
-  	function changePricing(){
-  	  	
-  		var urlString  = window.location.href.split('/');
-  	  	var toCountry = urlString[4]; 
-  	  	var fromCountry = $("#countrylist").val();
-  	  	var travel_purpose = $('#purposeTraval').val(); 	  	
-  	  	var param = "?fromCountry="+fromCountry+"&toCountry="+toCountry+"&travel_purpose="+travel_purpose;
-  		 $.ajax({
-  			type : 'GET',
-  			url : '/country/getCountryVisaPrices'+param,
-  			async : true,
-  			success : function(data) {
-  				console.log(data)
-  				if(data!=0){
-	  				$('.notValidVisa').css('display','none');
-	  				$('#priceidinDoller').text(data +" USD");
-	  				$('#priceidinDollerVisa').text(data +" USD");
-	  				$('#VisaandpriceId').css('display','flex');
-  				}else{
-					$('.notValidVisa').css('display','block');
-					$('#priceidinDoller').text(data +" USD");
-	  				$('#priceidinDollerVisa').text(data +" USD");
-  	  				}	
-  			},	
-  			error : function(data) {
-  				console.log("error when gettig data");
-  			}
-  		}); 
-	
-  	 }
-
-	 function setSessionValues(){
-		
-		$('#portArrival').val('<%=travelAirports%>');
-		$('#firstNameID').val('<%=firstName%>');
-		$('#lastNameID').val('<%=lastName%>');
-		$('#emailID').val('<%=email%>');
-		$('#phoneNoId').val('<%=contactPhoneNumber%>');
-		$('#dayArrival').val('<%=dayArrival%>');
-		$('#montharrival').val('<%=montharrival%>');
-		$('#yearlist').val('<%=yearlist%>');
-		$('#dayDOB').val('<%=dayDOB%>');
-		$('#dayMonth').val('<%=dayMonth%>');
-		$('#yearlistdob').val('<%=yearlistdob%>');
-		$('#applicationId').val('<%=applicationId%>');
-		$('#authKeyId').val('<%=authKey%>');
-		$('#usersId').val('<%=userId%>');
-	
-
-	}
-	 function setLoginSessionValues(checkFormStatus){
-		 if(checkFormStatus=="true"){
-			
-			
-			$('#firstNameID').val('<%=userFirstName%>');
-			$('#lastNameID').val('<%=userLastName%>');
-			$('#emailID').val('<%=userEmail%>');
-			$('#phoneNoId').val();
-			$('#dayArrival').val("Day");
-			$('#montharrival').val("Month");
-			$('#yearlist').val("Year");
-			$('#dayDOB').val("Day");
-			$('#dayMonth').val("Month");
-			$('#yearlistdob').val("Year");
-		
-		 }
-		}
-	 function getAppDetailsLocalStorage(){
-
-	    	$('#dayArrival').val(localStorage.getItem("dayArrival"));
-	    	$('#montharrival').val(localStorage.getItem("monthArrival"));
-	    	$('#yearlist').val(localStorage.getItem("yearArrival"));
-	    	$('#portArrival').val(localStorage.getItem("portArrival"));
-	    	$('#firstNameID').val(localStorage.getItem("firstname"));
-	    	$('#lastNameID').val(localStorage.getItem("lastName"));
-	    	$('#dayDOB').val(localStorage.getItem("dayDOB"));
-	    	$('#dayMonth').val(localStorage.getItem("dayMonth"));
-	    	$('#yearlistdob').val(localStorage.getItem("yearlistdob"));
-	    	$('#emailID').val(localStorage.getItem("email"));
-	    	$('#phoneNoId').val(localStorage.getItem("phoneNo"));
-	    	$('#purposeTraval').val(localStorage.getItem("purposeTraval"));
-	    	$('#countrylist').val(localStorage.getItem("nationality"));
-	    	        
-	       }
-	
-	  	
-
   	</script>
   	
   	<script>
 	function validate(){
 	var isvalidated =true;
 	
-			
-			if($('#dayArrival').val()!="Day" && $('#montharrival').val()!="Month" && $('#yearlist').val()!="Year" ){
-			var arrivalDate = new Date($('#dayArrival').val()+'-'+$('#montharrival').val()+'-'+$('#yearlist').val());
-			var currentDate = new Date();
-			if(arrivalDate<=currentDate){
-			$('#datearrivalerror').text("The provided date is too early")
-			$('#dateofArrivalError').css('display','block');
-			return false;
-				
-			}else{
-				 $('#dateofArrivalSucess').css('display','block');
-				 $('#dateofArrivalError').css('display','none');
-				 $('#datearrivalerror').css('display','none');
-
-				}	
-
-			}else{
-				
-				$('#datearrivalerror').text("Please choose Day, Month and Year")
-				 $('#dateofArrivalError').css('display','block');
-				 $('#dateofArrivalSucess').css('display','none');
-				 $('#datearrivalerror').css('display','block');
-				 isvalidated=false;
-				 return false;
-				}
-			
-			if(window.location.href.includes("india")){
-			
-			if($('#portArrival').val()!='port'){
-				 $('#portofArrivalError').css('display','none');
-				 $('#portofArrivalSucess').css('display','block');
-				 $('#arrirvalporsterrors').css('display','none');
-			
-				}else{
-					
-					 $('#portofArrivalSucess').css('display','none');
-					 $('#portofArrivalError').css('display','block');
-					 $('#arrirvalporsterrors').css('display','block');
-					 
-					 isvalidated=false;
-					 
-				}
-			}
-
-			if($('#firstNameID').val()=="" || $('#firstNameID').val().length==0){
-				 $('#firstNameError').css('display','block');
-				 $('#firstNameSucess').css('display','none');
-				 $('#nameerrors').css('display','block');
-				 isvalidated=false;
-				 return false;
-
-				}else{
-					
-					 $('#firstNameSucess').css('display','block');
-					 $('#firstNameError').css('display','none');
-					 $('#nameerrors').css('display','none');
-					 
-
-					}
-
-			if($('#lastNameID').val()=="" || $('#lastNameID').val().length==0){
-				 $('#lastNameError').css('display','block');
-				 $('#lastNameSucess').css('display','none');
-				 $('#surnameeorr').css('display','block');
-				 isvalidated=false;
-				 return false;
-				}else{
-					
-					 $('#lastNameSucess').css('display','block');
-					 $('#lastNameError').css('display','none');
-					 $('#surnameeorr').css('display','none');
-					 
-					}
-			
-			if($('#dayDOB').val()!="Day" && $('#dayMonth').val()!="Month" && $('#yearlistdob').val()!="Year" ){
-				 $('#dobSucess').css('display','block');
-				 $('#dobError').css('display','none');
-				 $('#doberrorr').css('display','none');
-
-				}else{
-
-					 $('#dobError').css('display','block');
-					 $('#dobSucess').css('display','none');
-					 $('#doberrorr').css('display','block');
-					 isvalidated=false;
-					 return false;
-					}
-			
-				var emailvalidate = $('#emailID').val();
-				
-			 	var validRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-				
-				 if (validRegex.test(emailvalidate)==true && emailvalidate.length !=0 ) {
-					 $('#emailError').css('display','none');
-					 $('#emailSucess').css('display','block');
-					 $('#emailerrors').css('display','none');
-					 
-				
-				 }else{
+	if($('#countrylist').val() == 'birthCountry'){
+		$('#countryBirthSucess').hide();
+		$('#countryTerritoryErrorId').show();
+		$('#countryBirthError').show();
+		isvalidated=false;
+		return false;
+	}else{
+		$('#countryTerritoryErrorId').hide();
+		$('#countryBirthError').hide();
+		$('#countryBirthSucess').show();
+		isvalidated= true;
 		
-					 $('#emailError').css('display','block');
-					 $('#emailSucess').css('display','none');
-					 $('#emailerrors').css('display','block');
-					 isvalidated=false;
-					 return false;
-					 
-							 
-				}
-				if($('#cnfEmail').val()==emailvalidate && $('#cnfEmail').val().length!=0){
-
-					 $('#cnfemailError').css('display','none');
-					 $('#cnfemailSucess').css('display','block');
-					 $('#emailnotmatcherror').css('display','none');
-					 
-					}else{
-
-						 $('#cnfemailError').css('display','block');
-						 $('#cnfemailSucess').css('display','none');
-						 $('#emailnotmatcherror').css('display','block');
-						 isvalidated=false;
-						 return false;
-					}
-
-				var phoneno = /^\d{10}$/;
-				
-				if($('#phoneNoId').val().length !=0 && $('#phoneNoId').val().match(phoneno)){
-					 $('#phoneError').css('display','none');
-					 $('#phoneSucess').css('display','block');
-					 $('#phnoerror').css('display','none');
-					
-				}else{
-					 $('#phoneError').css('display','block');
-					 $('#phoneSucess').css('display','none');
-					 $('#phnoerror').css('display','block');
-					 isvalidated=false;
-					 return false;
-
-					}	
-
-				if($('#purposeTraval').val()!='port'){
-					$('#purposeTravelId').css('display','none')
-					 $('#travelpuposeError').css('display','none');
-					 $('#travelpuposeSucess').css('display','block');
-					 $('#travelpurposeError').css('display','none');
-				
-					}else{
-						$('#purposeTravelId').css('display','block')
-						 $('#travelpuposeSucess').css('display','none');
-						 $('#travelpuposeError').css('display','block');
-						 $('#travelpurposeError').css('display','block');
-						 isvalidated=false;
-						 return false;
-						 
-					}
-				if($('#countrylist').val()!='port'){
-					$('#nationalityId').css('display','none')
-					 $('#nationalityError').css('display','none');
-					 $('#nationalitySucess').css('display','block');
-					 $('#nationalityerrors').css('display','none');
-				
-					}else{
-						$('#nationalityId').css('display','block')
-						 $('#nationalitySucess').css('display','none');
-						 $('#nationalityError').css('display','block');
-						 $('#nationalityerrors').css('display','block');
-						 isvalidated=false;
-						 return false;
-					}
-				
-					if(($('#purposeTraval').val()!='port') && ($('#countrylist').val()!='port')){
-						$('#priceshow').css('display','none');
-						$('#ulpriceshow').css('display','none');
-						
-						changePricing();
-						
-					}else{
-							return false;
-						}
-
-				
-
-				return  isvalidated;
-				
 	}
+	if($('#cityOfBirthNameID').val() ==""){
+		$('#CityOfNameError').show();
+		$('#cityOfBirthNameErrorsId').show();
+		$('#cityOfNameSucess').hide();
+		isvalidated= false;
+		return false;
+	}else{
+		$('#CityOfNameError').hide();
+		$('#cityOfBirthNameErrorsId').hide();
+		$('#cityOfNameSucess').show();
+		isvalidated= true;
+	}
+	if($('#genderListId').val() == 'genderList'){
+		$('#genderErrorId').show();
+		$('#genderListErrorId').show();
+		$('#genderListSuccessId').hide();
+		isvalidated= false;
+		return false;
+	}else{
+		$('#genderErrorId').hide();
+		$('#genderListErrorId').hide();
+		$('#genderListSuccessId').show();
+		isvalidated= true;
+	}
+	if($('#maritialStatusId').val() == 'maritialStatusList'){
+		$('#maritialStatusErrorId').show();
+		$('#maritialErrorId').show();
+		$('#maritialSucessId').hide();
+		isvalidated= false;
+		return false;
+	}else{
+		$('#maritialStatusErrorId').hide();
+		$('#maritialErrorId').hide();
+		$('#maritialSucessId').show();
+		isvalidated= true;
+	}
+	if($('#passportNoId').val() == ""){
+		$('#passportErrorMarkId').show();
+		$('#passportNumberId').show();
+		$('#paasportSuccessMarkId').hide();
+		isvalidated= false;
+		return false;
+	}else{
+		$('#passportErrorMarkId').hide();
+		$('#passportNumberId').hide();
+		$('#paasportSuccessMarkId').show();
+		isvalidated= true;
+	}                                                                     
+	if($('#passPortCountryList').val() == 'passportCountry'){   
+		$('#counrtIssueErrorId').show();
+		$('#countryIssueError').show();
+		$('#countryIssueSucess').hide();
+		isvalidated= false;
+		return false;
+	}else{
+		$('#counrtIssueErrorId').hide();
+		$('#countryIssueError').hide();
+		$('#countryIssueSucess').show();
+		isvalidated= true;
+	}
+	if($('#authorityNameId').val()== ""){
+		$('#authorityNameeorrId').show();
+		$('#authorityNameError').show();
+		$('#authorityNameSucess').hide();
+		isvalidated= false;
+		return false;
+	}else{
+		$('#authorityNameeorrId').hide();
+		$('#authorityNameError').hide();
+		$('#authorityNameSucess').show();
+		isvalidated= true;
+	}
+	if($('#dateIssueId').val()=="Day" || $('#dayIssueMonthId').val()=="Month" || $('#yearIssueId').val()=="Year"){
+			$('#dateOfIssueErrorId').show();
+			$('#dateIssueErrorId').show();
+			$('#dateIssueSuccessId').hide();
+			isvalidated=false;
+			return false;
+		}else{
+			$('#dateOfIssueErrorId').hide();
+			$('#dateIssueErrorId').hide();
+			$('#dateIssueSuccessId').show();
+			isvalidated=true;
+		}
+	if($('#dateExpiryId').val()=="Day" || $('#dateExpiryMonthId').val()=="Month" || $('#dateExpiryYearId').val()=="Year"){
+		$('#dateOfExpiryErrorId').show();
+		$('#dateExpiryErrorId').show();
+		$('#dateExpirySuccessId').hide();
+		isvalidated=false;
+		return false;
+	}else{
+		$('#dateOfExpiryErrorId').hide();
+		$('#dateExpiryErrorId').hide();
+		$('#dateExpirySuccessId').show();
+		isvalidated=true;
+	}
+	if($('#houseNoId').val() == ""){
+		$('#houseNumberErrorId').show();
+		$('#houseNoErrorId').show();
+		$('#houseNoSuccessId').hide();
+		isvalidated=false;
+		return false;
+	}else{
+		$('#houseNumberErrorId').hide();
+		$('#houseNoErrorId').hide();
+		$('#houseNoSuccessId').show();
+		isvalidated=true;
+	}
+	if($('#villageId').val() == ""){
+		$('#villageTownCityErrorId').show();
+		$('#villageErrorId').show();
+		$('#villageSuccessId').hide();
+		isvalidated=false;
+		return false;
+	}else{
+		$('#villageTownCityErrorId').hide();
+		$('#villageErrorId').hide();
+		$('#villageSuccessId').show();
+		isvalidated=true;
+	}
+	if($('#addressCountryList').val() == 'addressCountry'){
+		$('#countryChooseErrorId').show();
+		$('#countryErrorId').show();
+		$('#countrySucessId').hide();
+		isvalidated=false;
+		return false;
+	}else{
+		$('#countryChooseErrorId').hide();
+		$('#countryErrorId').hide();
+		$('#countrySucessId').show();
+		isvalidated=true;
+	}
+
+	if($('#vatNoId').prop('checked') == true || $('#vatYesId').prop('checked')==true){
+		$('#vatradioNuttionError').hide();
+		$('#vatNumberErrorId').hide();
+		$('#vatradioNuttionSucess').show();
+		isvalidated=true;
+	}else{
+		$('#vatradioNuttionError').show();
+		$('#vatNumberErrorId').show();
+		$('#vatradioNuttionSucess').hide();
+		isvalidated=false;
+		return false;
+
+	}
+	if($('#taxNumberId').val() == ""){
+		$('#taxIdentificationErrorId').show();
+		$('#taxNumberErrorId').show();
+		$('#taxNumberSuccessId').hide();
+		isvalidated=false;
+		return false;
+	}else{
+		$('#taxIdentificationErrorId').hide();
+		$('#taxNumberErrorId').hide();
+		$('#taxNumberSuccessId').show();
+		isvalidated=false;
+	}
+	if($('#companyNameId').val() == ""){
+		$('#nameOfCompanyErrorId').show();
+		$('#companyNameErrorId').show();
+		$('#companyNameSuccessId').hide();
+		isvalidated=false;
+		return false;
+	}else{
+		$('#nameOfCompanyErrorId').hide();
+		$('#companyNameErrorId').hide();
+		$('#companyNameSuccessId').show();
+		isvalidated=true;
+	}
+	if($('#taxCompanyCountryList').val() == 'companyCountry') {
+		$('#companyCountryId').show();
+		$('#companyCountryErrorId').show();
+		$('#companycountrySucessId').hide();
+		isvalidated=false;
+		return false;
+	}else{
+		$('#companyCountryId').hide();
+		$('#companyCountryErrorId').hide();
+		$('#companycountrySucessId').show();
+		isvalidated=true;
+	}
+	if($('#cityNameId').val() == ""){
+		$('#companyCityErrorId').show();
+		$('#cityNameErrorId').show();
+		$('#cityNameSucessId').hide();
+		isvalidated=false;
+		return false;
+	}else{
+		$('#companyCityErrorId').hide();
+		$('#cityNameErrorId').hide();
+		$('#cityNameSucessId').show();
+		isvalidated=true;
+	}
+	if($('#companyPostalId').val() == ""){
+		$('#companyErrorId').show();
+		$('#companyPostalErrorId').show();
+		$('#companyPostalSucessId').hide();
+		isvalidated=false;
+		return false;
+	}else{
+		$('#companyErrorId').hide();
+		$('#companyPostalErrorId').hide();
+		$('#companyPostalSucessId').show();
+		isvalidated=true;
+	}
+	if($('#companyStreetId').val() == "") {
+		$('#companyStreetErrorId').show();
+		$('#companyStreetError').show();
+		$('#companyStreetSucess').hide();
+		isvalidated=false;
+		return false;
+	}else{
+		$('#companyStreetErrorId').hide();
+		$('#companyStreetError').hide();
+		$('#companyStreetSucess').show();
+		isvalidated=true;
+	}
+	if($('#employmentId').val() == 'EmployyeStatus'){
+		$('#employmentInfoErrorId').show();
+		$('#employmentErrorId').show();
+		$('#employmentSucessId').hide();
+		isvalidated=false;
+		return false;
+	}else{
+		$('#employmentInfoErrorId').hide();
+		$('#employmentErrorId').hide();
+		$('#employmentSucessId').show();
+		isvalidated=true;
+	}
+	if($('#occupationId').val() == 'occupatinList'){
+		$('#occupationErrorId').show();
+		$('#occupationError').show();
+		$('#occupationSucess').hide();
+		isvalidated=false;
+		return false;
+	}else{
+		$('#occupationErrorId').hide();
+		$('#occupationError').hide();
+		$('#occupationSucess').show();
+		isvalidated=true;
+	}
+	if($('#qualificationId').val() == 'qualificationList'){
+		$('#qualificationErrorId').show();
+		$('#qualificationError').show();
+		$('#qualificationSucess').hide();
+		isvalidated=false;
+		return false;
+	}else{
+		$('#qualificationErrorId').hide();
+		$('#qualificationError').hide();
+		$('#qualificationSucess').show();
+		isvalidated=true;
+	}
+	if($('#religionId').val() == 'religionList'){
+		$('#religionErrorId').show();
+		$('#religionError').show();
+		$('#religionSucess').hide();
+		isvalidated=false;
+		return false;
+	}	else{
+		$('#religionErrorId').hide();
+		$('#religionError').hide();
+		$('#religionSucess').show();
+		isvalidated=true;
+	}
+	if($('#motherNameId').val() == ""){
+		$('#motherNameErrorId').show();
+		$('#motherNameError').show();
+		$('#motherNameSucess').hide();
+		isvalidated=false;
+		return false;
+	}else{
+		$('#motherNameErrorId').hide();
+		$('#motherNameError').hide();
+		$('#motherNameSucess').show();
+		isvalidated=true;
+	}	
+	if($('#TransportTypeId').val() == 'transportList'){
+		$('#transportTypeErrorId').show();
+		$('#transportTypeError').show();
+		$('#transportTypeSucess').hide();
+		isvalidated=false;
+		return false;
+	}else{
+		$('#transportTypeErrorId').hide();
+		$('#transportTypeError').hide();
+		$('#transportTypeSucess').show();
+		isvalidated=true;
+	}
+	if($('#departureCountryList').val() == 'departureCountry'){
+		$('#departureCountryErrorId').show();
+		$('#departureCountryError').show();
+		$('#departureCountrySucess').hide();
+		isvalidated=false;
+		return false;
+	}else{
+		$('#departureCountryErrorId').hide();
+		$('#departureCountryError').hide();
+		$('#departureCountrySucess').show();
+		isvalidated=true;
+	}
+	if($('#departureCity').val() == ""){
+		$('#departureCityErrorId').show();
+		$('#departureCityError').show();
+		$('#departureCitySucess').hide();
+		isvalidated=false;
+		return false;
+	}else{
+		$('#departureCityErrorId').hide();
+		$('#departureCityError').hide();
+		$('#departureCitySucess').show();
+		isvalidated=true;
+	}
+	if($('#nameHotelsId').val() == ""){
+		$('#nameOfHotelsErrorId').show();
+		$('#nameHotelsError').show();
+		$('#nameHotelsSucess').hide();
+		isvalidated=false;
+		return false;
+	}else{
+		$('#nameOfHotelsErrorId').hide();
+		$('#nameHotelsError').hide();
+		$('#nameHotelsSucess').show();
+		isvalidated=true;
+	}
+	if($('#accomAddress').val() == ""){
+		$('#accomdationAddressErrorId').show();
+		$('#accomAddressError').show();
+		$('#accomAddressSucess').hide();
+		isvalidated=false;
+		return false;
+	}	else{
+		$('#accomdationAddressErrorId').hide();
+		$('#accomAddressError').hide();
+		$('#accomAddressSucess').show();
+		isvalidated=true;
+	}
+	if($('#accomPhoneNoId').val() == ""){
+		$('#accomPhoneNoErrorId').show();
+		$('#accomPhoneError').show();
+		$('#accomPhoneSucess').hide();
+		isvalidated=false;
+		return false;
+	}else{
+		$('#accomPhoneNoErrorId').hide();
+		$('#accomPhoneError').hide();
+		$('#accomPhoneSucess').show();
+		isvalidated=true;
+	}
+	
+	
+	
+		return  isvalidated;
+					
+}
 
 
 	
     window.onload = function () {
-    	
-    	var urlString  = window.location.href.split('/');
-    	var country = urlString[4];
-    	$('#CountrySummary').text(capitalizeFirstLetter(country));
-    	
+    	getCountryList();
        
-        var ddlYears = document.getElementById("yearlist");
+        var ddlYears = document.getElementById("dateExpiryYearId");
   
         var currentYear = (new Date()).getFullYear();
        
@@ -1652,7 +1690,7 @@ label#radiolabel {
            
         }
 
-        var ddldobyears = document.getElementById("yearlistdob");	
+        var ddldobyears = document.getElementById("yearIssueId");	
         var currentYear = (new Date()).getFullYear();
         for (var i = 1950; i <= currentYear; i++) {
             var option = document.createElement("OPTION");
@@ -1661,97 +1699,139 @@ label#radiolabel {
             ddldobyears.appendChild(option);
            
         }    
+        
+        getStep1ApplicationDetails();
+     
+    
+    }
 
-        if(window.location.href.includes("turkey")) {
-			$('#portArrivalLabel').css('display','none');
-			$('#portArrivalRow').css('display','none');	
-			$('#arrirvalporsterrors').css('display','none !important');	
-          }  
-        else if(window.location.href.includes("thailand")){
-        	  $('#portArrivalLabel').css('display','none');
-  			  $('#portArrivalRow').css('display','none');
-  			$('#arrirvalporsterrors').css('display','none !important');		
-          } 
-        else if(window.location.href.includes("pakistan")){
-        	  $('#portArrivalLabel').css('display','none');
-  			  $('#portArrivalRow').css('display','none');	
-  			$('#arrirvalporsterrors').css('display','none !important');	
-          } 
-        else if(window.location.href.includes("united-arab-emirates")){
-        	  $('#portArrivalLabel').css('display','none');
-  			  $('#portArrivalRow').css('display','none');
-  			$('#arrirvalporsterrors').css('display','none !important');		
-          }  
-   
-    $.ajax({
-			type : 'GET',
-			url : '/country/getCountryList',	
-			async : true,
-			success : function(data) {
-				 $.each(data, function(index,element) {
-					 
-					 $('#countrylist').append('<option value="'+element.countryCode+'">'+element.countryName+'</option>')
-					
-				 });
-					
-			},	
-			error : function(data) {
-				console.log("error when gettig data");
-			}
-		}); 
+    function getStep1ApplicationDetails(){
+    	var authUrl = window.location.href;
+    	var authKey = authUrl.split('/')[5];
+       
+        $.ajax({
+    		type : 'GET',
+    		url : '/application/getApplicationDetails/'+authKey,	
+    		async : true,
+    		success : function(data) {
+    			
+    			$('#CountrySummary').text(capitalizeFirstLetter(data.toCountry));
+    			$('#plannedDayofTravelId').text(data.plannedDateOfTravel);
+    			$('#givenFirstNameId').text(data.firstName);
+    			$('#givenSurnameId').text(data.lastName);
+    			$('#dateOfBirthId').text(data.dateOfBirth);
+    			$('#givenEmailId').text(data.email);
+    			$('#contactPhoneNoId').text(data.contactPhoneNumber);
+    			$('#purposeForTravelId').text(data.purposeForTravel);
+    			$('#nationalityId').text(data.nationality);
+    			$('#countryNameofHotel').text(data.toCountry);
+    		},	
+    		error : function(data) {
+    			console.log("error when gettig data");
+    		}
+    	}); 
+    }
 
-    $.ajax({
-		type : 'GET',
-		url : '/getTravelTypes/'+country,	
-		async : true,
-		success : function(data) {
-			 $.each(data, function(index,element) {
-				 $('#purposeTraval').append('<option value="'+element.travelType+'">'+element.travelType+'</option>')
-				 
-				
-			 });
-			
-		},	
-		error : function(data) {
-			console.log("error when gettig data");
-		}
-	}); 
-   <% if(request.getSession().getAttribute("formDetails") != null || request.getSession().getAttribute("userLogin") != null ){%>
-   if (localStorage.getItem("email") != null) {
-  	   getAppDetailsLocalStorage();
-  	}else{
-  		<% if(request.getSession().getAttribute("formDetails") != null){ %>
-  			setSessionValues();
-  			<%}else{%>
-  	  		var checkFormStatus = "<%=checkUser%>";
-  	  		setLoginSessionValues(checkFormStatus);	
-  	  	<%}%>
-  		<%-- var checkFormStatus = "<%=checkUser%>";
-  	    
-  		var checkUserLogin = "<%=userCheckslogin%>";
+    function getCountryList(){
+        
+    	 $.ajax({
+ 			type : 'GET',
+ 			url : '/country/getCountryList',	
+ 			async : true,
+ 			success : function(data) {
+ 				 $.each(data, function(index,element) {
+ 					 
+ 					 $('#countrylist').append('<option value="'+element.countryCode+'">'+element.countryName+'</option>')
+ 					  $('#passPortCountryList').append('<option value="'+element.countryCode+'">'+element.countryName+'</option>')
+ 					   $('#addressCountryList').append('<option value="'+element.countryCode+'">'+element.countryName+'</option>')
+ 					    $('#taxCompanyCountryList').append('<option value="'+element.countryCode+'">'+element.countryName+'</option>')
+ 					     $('#departureCountryList').append('<option value="'+element.countryCode+'">'+element.countryName+'</option>')
+ 					     
+ 					
+ 				 });
+ 					
+ 			},	
+ 			error : function(data) {
+ 				console.log("error when gettig data");
+ 			}
+ 		});
 
-  		if(checkUserLogin=="false"){
-  	    
-  	    if(checkFormStatus=="true"){
-  	    	setSessionValues();
-  	      }
-  	    }else{
-  	    	setLoginSessionValues(checkFormStatus);
-  	        } --%>
-  	  	}
-    <%}%> 
-
+       }
     
     
- }
-
     function capitalizeFirstLetter(str) {
         const capitalized = str.replace(/^./, str[0].toUpperCase());
         return capitalized;
     }
 
-   
+    function checkVatInvoice(check){
+        if(check=='yes'){
+            $('#taxIdentityNoId').show();
+
+            }else{
+            	 $('#taxIdentityNoId').hide();
+                }
+
+        }
+
     
+  	</script>
+  	
+  	<script>
+
+  	 document.getElementById('photographyButtonId').addEventListener('click', openDialog1);
+
+     function openDialog1() {
+       document.getElementById('photographyfileId').click();
+     }
+
+     document.getElementById('biographicalButtonId').addEventListener('click', openDialog2);
+
+     function openDialog2() {
+       document.getElementById('biographicalFileId').click();
+     }
+
+     document.getElementById('hotelBookingButtonId').addEventListener('click', openDialog3);
+
+     function openDialog3() {
+       document.getElementById('hotelBookingFileId').click();
+     }
+
+     document.getElementById('residenceButtonId').addEventListener('click', openDialog4);
+
+     function openDialog4() {
+       document.getElementById('residencefileId').click();
+     }
+
+
+     
+     function startWebcam() {
+         if (navigator.getUserMedia) {
+            navigator.getUserMedia (
+
+               // constraints
+               {
+                  video: true,
+                  audio: false
+               },
+
+               // successCallback
+               function(localMediaStream) {
+                   video = document.querySelector('video');
+                  video.srcObject=localMediaStream;
+                  webcamStream = localMediaStream;
+               },
+
+               // errorCallback
+               function(err) {
+                  console.log("The following error occured: " + err);
+               }
+            );
+         } else {
+            console.log("getUserMedia not supported");
+         }  
+       }
+     
   	</script>
   	
   	

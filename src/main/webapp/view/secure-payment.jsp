@@ -266,7 +266,8 @@
 <script>
 
 function makePayment(){
-	
+	var authUrl = window.location.href;
+	var authKey = authUrl.split('=')[1];
 	var url ="/payment/makePayment";
 	if(validate()){
 		alert($('#countrylist').val());
@@ -299,7 +300,7 @@ function makePayment(){
 		async : true,
 		success : function(data) {
 			if(data.status==true){
-				window.location.href = "/en/additional-information/"+data.data.applicationId;
+				window.location.href = "/en/additional-information/"+authKey;
 			}else{
 				if(data.message==""){
 					Swal.fire({

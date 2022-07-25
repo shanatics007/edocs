@@ -138,8 +138,8 @@ public class CountryController {
 	}
 	
 	
-	@RequestMapping("/additional-information/{applicationId}")
-	public String additionalInfo(@PathVariable int applicationId) {
+	@RequestMapping("/additional-information/{authKey}")
+	public String additionalInfo(@PathVariable String authKey) {
 		return "additionalInformationForm";
 	}
 	

@@ -895,7 +895,7 @@ label#radiolabel {
 						"email": $('#emailID').val(),
 						"contactPhoneNumber":$('#phoneNoId').val(),
 						"purposeForTravel": $('#purposeTraval').val(),
-						"nationality": $('#countrylist').val(),
+						"nationality": $('#countrylist option:selected').text(),
 						"price": $('#priceidinDoller').text(),
 						"isPayment":false,
 						"pkid":$('#applicationId').val(),
