@@ -12,6 +12,8 @@ pipeline {
                     sh 'cp -rf /home/jenkins/workspace/EDOCS_TRAVEL_NEW_main/* /home/edocs.travel/public_html/'
 		    sh 'JENKINS_NODE_COOKIE=dontKillMe nohup java -jar /home/jenkins/workspace/EDOCS_TRAVEL_NEW_main/target/edocs-0.0.1-SNAPSHOT.jar >> nohup.out 2> nohup.err < /dev/null &'
 		   
+			
+			
                 }
         }
     }
