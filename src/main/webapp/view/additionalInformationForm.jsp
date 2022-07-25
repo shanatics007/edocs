@@ -105,6 +105,7 @@ if (request.getSession(false).getAttribute("userLogin") != null) {
        
        <link rel="stylesheet" href="/css/default.css"> 
     <link rel="stylesheet" href="/css/home.css">
+        <link rel="stylesheet" href="/css/additionalInfoFrom.css">
       <link rel="icon" href="/images/favicon-1.png" type="image/x-icon">
       
       <script src="jquery-3.6.0.min.js"></script>
@@ -283,142 +284,31 @@ label#radiolabel {
             </div>
             <div class="ee-form-inner">
                <div id="ee-form-step1">
-                <h1 id="formheadrId"> Basic Information</h1> 
+                <h1 id="formheadrId"> Personal details</h1> 
                <div class="newform">
              <input type="hidden" id="applicationId">
              <input type="hidden" id="authKeyId">
              <input type="hidden" id="usersId">
              
-               <label> Date of Arrival </label> 
-               <div class="row">
-              <div class="col-sm-3">
-             <select id="dayArrival" onchange="validate();">
-			<option value="Day">Day</option>
-			<option value="1">1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-			<option value="4">4</option>
-			<option value="5">5</option>
-			<option value="6">6</option>
-			<option value="7">7</option>
-			<option value="8">8</option>
-			<option value="9">9</option>
-			<option value="10">10</option>
-			<option value="11">11</option>
-			<option value="12">12</option>
-			<option value="13">13</option>
-			<option value="14">14</option>
-			<option value="15">15</option>
-			<option value="16">16</option>
-			<option value="17">17</option>
-			<option value="18">18</option>
-			<option value="19">19</option>
-			<option value="20">20</option>
-			<option value="21">21</option>
-			<option value="22">22</option>
-			<option value="23">23</option>
-			<option value="24">24</option>
-			<option value="25">25</option>
-			<option value="26">26</option>
-			<option value="27">27</option>
-			<option value="28">28</option>
-			<option value="29">29</option>
-			<option value="30">30</option>
-			<option value="31">31</option>
-			</select>
-            </div>
-            
-             <div class="col-sm-4">
-             <select id="montharrival" onchange="validate();">
-			<option value="Month">Month</option>
-			<option value="Jan">Jan</option>
-			<option value="Feb">Feb</option>
-			<option value="March">March</option>
-			<option value="April">April</option>
-			<option value="May">May</option>
-			<option value="June">June</option>
-			<option value="July">July</option>
-			<option value="Aug">Aug</option>
-			<option value="Sept">Sept</option>
-			<option value="Oct">Oct</option>
-			<option value="Nov">Nov</option>
-			<option value="Dec">Dec</option>
-			
-			</select>
-            </div>
-            
-            <div class="col-sm-3">
-             <select id="yearlist" onchange="validate();"> 
-			<option value="Year">Year</option>
-		
-			
-			</select>
-            </div>
-            <div class="col-sm-2">
-            <div class="error-mark" id="dateofArrivalError" style="display:none;"><i class="icon-error"></i></div>
-            <div class="success-mark" id="dateofArrivalSucess" style="display:none;"><i class="icon-ok"></i></div>
-            
-            </div>
-            </div>
-            <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
-            <span id="datearrivalerror" style="display: none;">Please choose day, month and year</span>
-            </div>
-              
-              
-             
-            <label id="portArrivalLabel"> Port of Arrival </label> 
-            <div class="row" id="portArrivalRow">
+             <label> Country / territory of birth </label> 
+            <div class="row">
              <div class="col-sm-10">
-             <select id="portArrival" onchange="validate();">
-             
+             <select id="countrylist" onchange="validate();">
 			<option value="port"></option>
-			<option value="I don't have a ticket">I don't have a ticket</option>
-			<option value="Bagdora">Bagdora</option>
-			<option value="Bangalore">Bangalore</option>
-			<option value="Bhubaneshwar Airport">Bhubaneshwar Airport</option>
-			<option value="Chandigarh Airport">Chandigarh Airport</option>
-			<option value="Chennai Airport">Chennai Airport</option>
-			<option value="Cochin Airport">Cochin Airport</option>
-			<option value="Coimbatore Airport">Coimbatore Airport</option>
-			<option value="Delhi">Delhi</option>
-			<option value="Gaya">Gaya</option>
-			<option value="Goa Airport">Goa Airport</option>
-			<option value="Guwahati Airport">Guwahati Airport</option>
-			<option value="Hyderabad">Hyderabad</option>
-			<option value="Jaipur">Jaipur</option>
-			<option value="Kalkuta">Kalkuta</option>
-			<option value="Lucknow">Lucknow</option>
-			<option value="Madurai Airport">Madurai Airport</option>
-			<option value="Mangalore Airport">Mangalore Airport</option>
-			<option value="Mumbai Airport">Mumbai Airport</option>
-			<option value="Nagpur Airport">Nagpur Airport</option>
-			<option value="Portblair Airport">Portblair Airport</option>
-			<option value="Pune Airport">Pune Airport</option>
-			<option value="Tiruchirapalli">Tiruchirapalli</option>
-			<option value="Trivandrum">Trivandrum</option>
-			<option value="Varanasi">Varanasi</option>
-			<option value="Vishakhapatnam">Vishakhapatnam</option>
-			<option value="Chennai Seaport">Chennai Seaport</option>
-			<option value="Cochin Seaport">Cochin Seaport</option>
-			<option value="Goa Seaport">Goa Seaport</option>
-			<option value="Mangalore Seaport">Mangalore Seaport</option>
-			<option value="Mumbai Seaport">Mumbai Seaport</option>
-			<option value="Ahmedabad">Ahmedabad</option>
-			<option value="Amritsar">Amritsar</option>
-			
 			
 			</select>
             </div>
              <div class="col-sm-2">
-             <div class="error-mark" id="portofArrivalError" style="display:none;"><i class="icon-error"></i></div>
-            <div class="success-mark" id="portofArrivalSucess" style="display:none;"><i class="icon-ok"></i></div>
-            
+             <div class="error-mark" id="countryBirthError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="countryBirthSucess" style="display:none;"><i class="icon-ok"></i></div>
             </div>
             </div>
              <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
-            <span id="arrirvalporsterrors" style="display: none;">Please select port of arrival</span>
+            <span id="nationalityerrors" style="display: none;">Please choose nationality</span>
             </div>
-            <label> Given Name(s) </label> 
+            
+         
+            <label> City of birth </label> 
             <div class="row">
             <div class="col-sm-10">
             <input type="text" name="firstname" id="firstNameID" size="15" required   onchange="validate();"/> 
@@ -434,7 +324,46 @@ label#radiolabel {
               <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
             <span id="nameerrors" style="display: none;">Please fill the given name</span>
             </div>
-            <label> Surname(s) </label> 
+            
+            
+            <label> Gender </label> 
+            <div class="row">
+             <div class="col-sm-10">
+             <select id="countrylist" onchange="validate();">
+			<option value="port"></option>
+			
+			</select>
+            </div>
+             <div class="col-sm-2">
+             <div class="error-mark" id="countryBirthError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="countryBirthSucess" style="display:none;"><i class="icon-ok"></i></div>
+            </div>
+            </div>
+             <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
+            <span id="nationalityerrors" style="display: none;">Please choose nationality</span>
+            </div>
+            
+             <label> Maritial status </label> 
+            <div class="row">
+             <div class="col-sm-10">
+             <select id="countrylist" onchange="validate();">
+			<option value="port"></option>
+			
+			</select>
+            </div>
+             <div class="col-sm-2">
+             <div class="error-mark" id="countryBirthError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="countryBirthSucess" style="display:none;"><i class="icon-ok"></i></div>
+            </div>
+            </div>
+             <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
+            <span id="nationalityerrors" style="display: none;">Please choose nationality</span>
+            </div>
+            </div>
+       <h1 id="formheadrId"> Passport details</h1>  
+            <div class="newform">
+            
+            <label> Passport number </label> 
             <div class="row">
             <div class="col-sm-10">
             <input type="text" name="lastName" id="lastNameID" size="15" required  onchange="validate();"/> 
@@ -450,7 +379,42 @@ label#radiolabel {
             <span id="surnameeorr" style="display: none;">Please fill the surname</span>
             </div>
             
-             <label> Date of Birth </label> 
+             <label> Country / territory of issue </label> 
+            <div class="row">
+             <div class="col-sm-10">
+             <select id="countrylist" onchange="validate();">
+			<option value="port"></option>
+			
+			</select>
+            </div>
+             <div class="col-sm-2">
+             <div class="error-mark" id="countryBirthError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="countryBirthSucess" style="display:none;"><i class="icon-ok"></i></div>
+            </div>
+            </div>
+             <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
+            <span id="nationalityerrors" style="display: none;">Please choose nationality</span>
+            </div>
+            
+            
+            
+            <label> Issuing authority </label> 
+            <div class="row">
+            <div class="col-sm-10">
+            <input type="text" name="lastName" id="lastNameID" size="15" required  onchange="validate();"/> 
+            
+            </div>
+             <div class="col-sm-2">
+             <div class="error-mark" id="lastNameError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="lastNameSucess" style="display:none;"><i class="icon-ok"></i></div>
+        
+            </div>
+            </div>
+               <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
+            <span id="surnameeorr" style="display: none;">Please fill the surname</span>
+            </div>
+          
+             <label> Date of issue </label> 
                <div class="row">
               <div class="col-sm-3">
              <select id="dayDOB" onchange="validate();">
@@ -523,10 +487,88 @@ label#radiolabel {
               <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
             <span id="doberrorr" style="display: none;">Please choose date of birth</span>
             </div>
-             <label> E-mail Address </label> 
-             <div>
-               <span>At this email you will receive your visa</span>
-               </div>
+            
+              <label> Date of Expiry </label> 
+               <div class="row">
+              <div class="col-sm-3">
+             <select id="dayDOB" onchange="validate();">
+			<option value="Day">Day</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+			<option value="11">11</option>
+			<option value="12">12</option>
+			<option value="13">13</option>
+			<option value="14">14</option>
+			<option value="15">15</option>
+			<option value="16">16</option>
+			<option value="17">17</option>
+			<option value="18">18</option>
+			<option value="19">19</option>
+			<option value="20">20</option>
+			<option value="21">21</option>
+			<option value="22">22</option>
+			<option value="23">23</option>
+			<option value="24">24</option>
+			<option value="25">25</option>
+			<option value="26">26</option>
+			<option value="27">27</option>
+			<option value="28">28</option>
+			<option value="29">29</option>
+			<option value="30">30</option>
+			<option value="31">31</option>
+			</select>
+            </div>
+            
+             <div class="col-sm-4">
+             <select id="dayMonth" onchange="validate();">
+			<option value="Month">Month</option>
+			<option value="Jan">Jan</option>
+			<option value="Feb">Feb</option>
+			<option value="March">March</option>
+			<option value="April">April</option>
+			<option value="May">May</option>
+			<option value="June">June</option>
+			<option value="July">July</option>
+			<option value="Aug">Aug</option>
+			<option value="Sept">Sept</option>
+			<option value="Oct">Oct</option>
+			<option value="Nov">Nov</option>
+			<option value="Dec">Dec</option>
+			</select>
+            </div>
+            
+            <div class="col-sm-3">
+              <select id="yearlistdob" onchange="validate();"> 
+			<option value="Year">Year</option>
+			
+			</select>
+            </div>
+             <div class="col-sm-2">
+             
+             <div class="error-mark" id="dobError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="dobSucess" style="display:none;"><i class="icon-ok"></i></div>
+            
+            </div>
+            </div>
+              <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
+            <span id="doberrorr" style="display: none;">Please choose date of birth</span>
+            </div>
+            </div>
+            
+            
+       <h1 id="formheadrId"> Permanant address details</h1>  
+          <div class="newform">
+           
+           <label> House no/street </label> 
+      
              <div class="row">
             <div class="col-sm-10">
             <input type="text" name="email" id="emailID" size="15" required onchange="validate();" />
@@ -540,28 +582,128 @@ label#radiolabel {
               <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
             <span id="emailerrors" style="display: none;">Please enter correct email</span>
             </div>
-             <label> E-mail Address(Re-Enter) </label> 
-             <div>
-              <span>The two e-mails must match </span>
-              </div>
             
+            <label> Village / town / city </label> 
+      
              <div class="row">
             <div class="col-sm-10">
-            <input type="text" name="connfirmEmail" id="cnfEmail" size="15" required onchange="validate();" />
+            <input type="text" name="email" id="emailID" size="15" required onchange="validate();" />
             </div>
              <div class="col-sm-2">
+              <div class="error-mark" id="emailError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="emailSucess" style="display:none;"><i class="icon-ok"></i></div>
              
-             
-              <div class="error-mark" id="cnfemailError" style="display:none;"><i class="icon-error"></i></div>
-            <div class="success-mark" id="cnfemailSucess" style="display:none;"><i class="icon-ok"></i></div>
-            
             </div>
             </div>
               <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
-            <span id="emailnotmatcherror" style="display: none;">Email not matched,please enter correct email </span>
+            <span id="emailerrors" style="display: none;">Please enter correct email</span>
             </div>
             
-             <label> Phone Number </label> 
+                <label> Country </label> 
+            <div class="row">
+             <div class="col-sm-10">
+             <select id="countrylist" onchange="validate();">
+			<option value="port"></option>
+			
+			</select>
+            </div>
+             <div class="col-sm-2">
+             <div class="error-mark" id="countryBirthError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="countryBirthSucess" style="display:none;"><i class="icon-ok"></i></div>
+            </div>
+            </div>
+             <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
+            <span id="nationalityerrors" style="display: none;">Please choose nationality</span>
+            </div>
+            </div>          
+       <h1 id="formheadrId"> Vat invoice</h1>  
+          <div class="newform">
+            
+             <label> Do you want to receive a VAT invoice? </label> 
+             <div class="row">
+            <div class="col-sm-10">
+            <input type="text" name="phoneNo" id="phoneNoId" size="15" maxlength="10"  required onchange="validate();" />
+            </div>
+             <div class="col-sm-2">
+             <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="phoneSucess" style="display:none;"><i class="icon-ok"></i></div>
+            
+            </div>
+            </div>
+             <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
+            <span id="phnoerror" style="display: none;">Please enter phone number</span>
+            </div>
+            </div>
+            
+      <div class="newform" id="vatInvoidFormId">
+            
+             <label> Tax identification number (Company VAT) </label> 
+             <div class="row">
+            <div class="col-sm-10">
+            <input type="text" name="phoneNo" id="phoneNoId" size="15" maxlength="10"  required onchange="validate();" />
+            </div>
+             <div class="col-sm-2">
+             <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="phoneSucess" style="display:none;"><i class="icon-ok"></i></div>
+            
+            </div>
+            </div>
+             <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
+            <span id="phnoerror" style="display: none;">Please enter phone number</span>
+            </div>
+        
+            
+            <label>Name of the company</label> 
+             <div class="row">
+            <div class="col-sm-10">
+            <input type="text" name="phoneNo" id="phoneNoId" size="15" maxlength="10"  required onchange="validate();" />
+            </div>
+             <div class="col-sm-2">
+             <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="phoneSucess" style="display:none;"><i class="icon-ok"></i></div>
+            
+            </div>
+            </div>
+             <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
+            <span id="phnoerror" style="display: none;">Please enter phone number</span>
+            </div>
+           
+            
+            
+           <label> Company country </label> 
+            <div class="row">
+             <div class="col-sm-10">
+             <select id="countrylist" onchange="validate();">
+			<option value="port"></option>
+			
+			</select>
+            </div>
+             <div class="col-sm-2">
+             <div class="error-mark" id="countryBirthError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="countryBirthSucess" style="display:none;"><i class="icon-ok"></i></div>
+            </div>
+            </div>
+             <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
+            <span id="nationalityerrors" style="display: none;">Please choose nationality</span>
+            </div>
+            
+             <label>Company city</label> 
+             <div class="row">
+            <div class="col-sm-10">
+            <input type="text" name="phoneNo" id="phoneNoId" size="15" maxlength="10"  required onchange="validate();" />
+            </div>
+             <div class="col-sm-2">
+             <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="phoneSucess" style="display:none;"><i class="icon-ok"></i></div>
+            
+            </div>
+            </div>
+             <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
+            <span id="phnoerror" style="display: none;">Please enter phone number</span>
+            </div>
+           
+            
+              <label>Company postal</label> 
              <div class="row">
             <div class="col-sm-10">
             <input type="text" name="phoneNo" id="phoneNoId" size="15" maxlength="10"  required onchange="validate();" />
@@ -576,24 +718,26 @@ label#radiolabel {
             <span id="phnoerror" style="display: none;">Please enter phone number</span>
             </div>
             
-             <label> Purpose of Travel </label> 
-            <div class="row">
-             <div class="col-sm-10">
-             <select id="purposeTraval" onchange="validate();">
-			<option value="port"></option>
-			
-			</select>
+            
+            <label>Company street</label> 
+             <div class="row">
+            <div class="col-sm-10">
+            <input type="text" name="phoneNo" id="phoneNoId" size="15" maxlength="10"  required onchange="validate();" />
             </div>
              <div class="col-sm-2">
-             <div class="error-mark" id="travelpuposeError" style="display:none;"><i class="icon-error"></i></div>
-            <div class="success-mark" id="travelpuposeSucess" style="display:none;"><i class="icon-ok"></i></div>
+             <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="phoneSucess" style="display:none;"><i class="icon-ok"></i></div>
+            
             </div>
             </div>
              <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
-            <span id="travelpurposeError" style="display: none;">Please choose purpose of travel</span>
+            <span id="phnoerror" style="display: none;">Please enter phone number</span>
             </div>
-            
-            <label> Nationality </label> 
+         
+            </div>
+      <h1 id="formheadrId"> Employment information</h1>  
+    <div class="newform" id="employmentFormId">
+       <label> Employment status </label> 
             <div class="row">
              <div class="col-sm-10">
              <select id="countrylist" onchange="validate();">
@@ -602,43 +746,403 @@ label#radiolabel {
 			</select>
             </div>
              <div class="col-sm-2">
-             <div class="error-mark" id="nationalityError" style="display:none;"><i class="icon-error"></i></div>
-            <div class="success-mark" id="nationalitySucess" style="display:none;"><i class="icon-ok"></i></div>
+             <div class="error-mark" id="countryBirthError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="countryBirthSucess" style="display:none;"><i class="icon-ok"></i></div>
             </div>
             </div>
              <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
             <span id="nationalityerrors" style="display: none;">Please choose nationality</span>
             </div>
             
-            <div class="notValidVisa">Sorry, E-visa not available. please contact the nearest embassy</div>
+            
+             <label> Occupation </label> 
+            <div class="row">
+             <div class="col-sm-10">
+             <select id="countrylist" onchange="validate();">
+			<option value="port"></option>
+			
+			</select>
             </div>
-        
-              </div>
-                  </div>
-                  <div>
-                     <div>
-                        <h1></h1>
-                        <div class="input-box" type="CheckAllInput" name="accept-all-terms" label="Check all (checks all the checkboxes below)" hint="" placeholder="" tooltip="" required="required" validations="" options="" reactions="[object Object]" possiblereactions="" possibledisablingreactions="" possibleemits="check-all">
-                           
-                        </div>
-                        <div class="input-box nested-checkbox" type="CheckboxInput" name="accept-terms"  hint="" placeholder="" tooltip="" required="required" validations="" options="" reactions="[object Object]" watch="check-all" possiblereactions="" possibledisablingreactions="" possibleemits="">
-                           <div class="input-box-bottom">
-                              <div class="error-position"><span style="display: none;">0</span></div>
-                              <div id="accept-terms" class="actual-input">
-                                 <div class="checkbox-input"><label for="accept-terms-track" class="checkbox-label"><span>I accept the <a href="/en/terms-of-service" target="_blank">Terms</a> and <a href="/en/terms-of-service" target="_blank">Conditions</a>.</span> <input type="checkbox" id="accept-terms-track" name="accept-terms"> <span class="checkmark"></span></label></div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="input-box nested-checkbox" type="CheckboxInput" name="accept-gdpr" label="In accordance with article 9 § 2 letter (a) of the General Regulation on the protection of personal data of 27 April 2016 (Journal of Laws EU.L 2016 No. 119), I agree to processing my personal data regarding health and the ones revealing my ethnic origin, religious beliefs, as well as the biometric data (passport photography) by IVS sp.z o.o. sp.k.  (LLC LLP), in order to submit a visa application on my behalf (execution of the visa brokerage contract)." hint="" placeholder="" tooltip="" required="required" validations="" options="" reactions="[object Object]" watch="check-all" possiblereactions="" possibledisablingreactions="" possibleemits="">
+             <div class="col-sm-2">
+             <div class="error-mark" id="countryBirthError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="countryBirthSucess" style="display:none;"><i class="icon-ok"></i></div>
+            </div>
+            </div>
+             <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
+            <span id="nationalityerrors" style="display: none;">Please choose nationality</span>
+            </div>
+            
+            
+            <label> Qualification </label> 
+            <div class="row">
+             <div class="col-sm-10">
+             <select id="countrylist" onchange="validate();">
+			<option value="port"></option>
+			
+			</select>
+            </div>
+             <div class="col-sm-2">
+             <div class="error-mark" id="countryBirthError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="countryBirthSucess" style="display:none;"><i class="icon-ok"></i></div>
+            </div>
+            </div>
+             <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
+            <span id="nationalityerrors" style="display: none;">Please choose nationality</span>
+            </div>
+            
+            
+              <label> Religion </label> 
+            <div class="row">
+             <div class="col-sm-10">
+             <select id="countrylist" onchange="validate();">
+			<option value="port"></option>
+			
+			</select>
+            </div>
+             <div class="col-sm-2">
+             <div class="error-mark" id="countryBirthError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="countryBirthSucess" style="display:none;"><i class="icon-ok"></i></div>
+            </div>
+            </div>
+             <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
+            <span id="nationalityerrors" style="display: none;">Please choose nationality</span>
+            </div>
+            
+            
+            <label>Mother's name</label> 
+             <div class="row">
+            <div class="col-sm-10">
+            <input type="text" name="phoneNo" id="phoneNoId" size="15" maxlength="10"  required onchange="validate();" />
+            </div>
+             <div class="col-sm-2">
+             <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="phoneSucess" style="display:none;"><i class="icon-ok"></i></div>
+            
+            </div>
+            </div>
+             <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
+            <span id="phnoerror" style="display: none;">Please enter phone number</span>
+            </div>
+            </div>
+            
+            
+          <h1 id="formheadrId"> Details of visit</h1>  
+    <div class="newform" id="visitDetailsId">
+    
+    		<label> Transportation type </label> 
+            <div class="row">
+             <div class="col-sm-10">
+             <select id="countrylist" onchange="validate();">
+			<option value="port"></option>
+			
+			</select>
+            </div>
+             <div class="col-sm-2">
+             <div class="error-mark" id="countryBirthError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="countryBirthSucess" style="display:none;"><i class="icon-ok"></i></div>
+            </div>
+            </div>
+             <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
+            <span id="nationalityerrors" style="display: none;">Please choose nationality</span>
+            </div>
+            
+            
+            <label> Departure country </label> 
+            <div class="row">
+             <div class="col-sm-10">
+             <select id="countrylist" onchange="validate();">
+			<option value="port"></option>
+			
+			</select>
+            </div>
+             <div class="col-sm-2">
+             <div class="error-mark" id="countryBirthError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="countryBirthSucess" style="display:none;"><i class="icon-ok"></i></div>
+            </div>
+            </div>
+             <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
+            <span id="nationalityerrors" style="display: none;">Please choose nationality</span>
+            </div>
+            
+            
+             <label>Departure city</label> 
+             <div class="row">
+            <div class="col-sm-10">
+            <input type="text" name="phoneNo" id="phoneNoId"  required onchange="validate();" />
+            </div>
+             <div class="col-sm-2">
+             <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="phoneSucess" style="display:none;"><i class="icon-ok"></i></div>
+            
+            </div>
+            </div>
+             <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
+            <span id="phnoerror" style="display: none;">Please enter phone number</span>
+            </div>
+            
+            
+            
+            <label>Name of hotel, motel or apartment in the CountryNameHere</label> 
+             <div class="row">
+            <div class="col-sm-10">
+            <input type="text" name="phoneNo" id="phoneNoId"  required onchange="validate();" />
+            </div>
+             <div class="col-sm-2">
+             <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="phoneSucess" style="display:none;"><i class="icon-ok"></i></div>
+            
+            </div>
+            </div>
+             <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
+            <span id="phnoerror" style="display: none;">Please enter phone number</span>
+            </div>
+            
+            
+            
+            <label>Accommodation address</label> 
+             <div class="row">
+            <div class="col-sm-10">
+            <input type="text" name="phoneNo" id="phoneNoId"  required onchange="validate();" />
+            </div>
+             <div class="col-sm-2">
+             <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="phoneSucess" style="display:none;"><i class="icon-ok"></i></div>
+            
+            </div>
+            </div>
+             <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
+            <span id="phnoerror" style="display: none;">Please enter phone number</span>
+            </div>
+           
+            
+            
+             <label>Accommodation phone number</label> 
+             <div class="row">
+            <div class="col-sm-10">
+            <input type="text" name="phoneNo" id="phoneNoId"  required onchange="validate();" />
+            </div>
+             <div class="col-sm-2">
+             <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
+            <div class="success-mark" id="phoneSucess" style="display:none;"><i class="icon-ok"></i></div>
+            
+            </div>
+            </div>
+             <div class="errordiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
+            <span id="phnoerror" style="display: none;">Please enter phone number</span>
+            </div>
+   		</div>
+   		</div>
+   		
+   		        
+         <h1 id="formheadrId"> Necessary documents</h1>  
+    <div class="newform" id="necessaryDocId">
+    
+    	<p> We accept document in jpg, pdf, png, and tiff formats. The required documents
+    		can be uploaded in the form of photo, scan or photo using a webcam (if your web browser allows it). 
+    	 </p>
+    	 
+    					 <div class="input-box nested-checkbox" id="documentCheckboxId" style="margin-left: 0px; padding-left: 0px;">
                            <div class="input-box-bottom">
                               <div class="error-position"><span style="display: none;">0</span></div>
                               <div id="accept-gdpr" class="actual-input">
-                                 <div class="checkbox-input"><label for="accept-gdpr-track" class="checkbox-label"><span>In accordance with article 9 § 2 letter (a) of the General Regulation on the protection of personal data of 27 April 2016 (Journal of Laws EU.L 2016 No. 119), I agree to processing my personal data regarding health and the ones revealing my ethnic origin, religious beliefs, as well as the biometric data (passport photography) by IVS sp.z o.o. sp.k.  (LLC LLP), in order to submit a visa application on my behalf (execution of the visa brokerage contract).</span> <input type="checkbox" id="accept-gdpr-track" name="accept-gdpr"> <span class="checkmark"></span></label></div>
+                                 <div class="checkbox-input"><label for="accept-gdpr-track" class="checkbox-label">
+                                 <span id="uploadDocLaterId">I will upload document later</span> <input type="checkbox" id="accept-gdpr-track" name="accept-gdpr"> <span class="checkmark"></span></label></div>
                               </div>
                            </div>
                         </div>
-                        
-              
+               
+    	<div><p> We will send a message to your email which explains how you can upload 
+    		the documents. Please load documents within 48 hours.
+    	 </p>
+    	 </div>
+   
+   </div>   
+   <div class="newform" id="documentsuploadsFormId">
+    
+     <label>Photography</label> 
+    
+     <p>The photo should present a full face, front view, eyes open.
+    		No black&white photos, no blurred photos.
+    	 </p>
+    	 <div class="row" id="documentUploadFormId">
+    	 <div class="col-sm-4" id="photographycolId">
+    	<button type="button" class="btn btn-primary">upload</button>
+    	 </div>
+    	  <div class="col-sm-2">
+    	 or
+    	 </div>
+    	 <div class="col-sm-4" id="photographycolId">
+    	  <button type="button" class="btn btn-primary">Take a photo</button>
+    	 </div>
+    	 <div class="col-sm-2">
+         <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
+         <div class="success-mark" id="phoneSucess" style="display:none;"><i class="icon-ok"></i></div>
+       </div>
+    	</div>
+    	
+    	
+    	<label>Biographical page of passport</label> 
+    	
+    	
+	     <p>All four corners should be shown up on the final scanned image. 
+	     The image must be clear and legible.
+    	 </p>
+    	 <div class="row" id="documentUploadFormId">
+    	 <div class="col-sm-4" id="photographycolId">
+    	<button type="button" class="btn btn-primary">upload</button>
+    	 </div>
+    	  <div class="col-sm-2">
+    	 or
+    	 </div>
+    	 <div class="col-sm-4" id="photographycolId">
+    	  <button type="button" class="btn btn-primary">Take a photo</button>
+    	 </div>
+    	 <div class="col-sm-2">
+         <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
+         <div class="success-mark" id="phoneSucess" style="display:none;"><i class="icon-ok"></i></div>
+       </div>
+    	</div>
+    	
+    	<label>Hotel Booking</label> 
+    
+    	 <p></p>
+    	 <div class="row" id="documentUploadFormId">
+    	 <div class="col-sm-4" id="photographycolId">
+    	<button type="button" class="btn btn-primary">upload</button>
+    	 </div>
+    	  <div class="col-sm-2">
+    	 or
+    	 </div>
+    	 <div class="col-sm-4" id="photographycolId">
+    	  <button type="button" class="btn btn-primary">Take a photo</button>
+    	 </div>
+    	 <div class="col-sm-2">
+         <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
+         <div class="success-mark" id="phoneSucess" style="display:none;"><i class="icon-ok"></i></div>
+       </div>
+    	</div>
+    	
+    	<label>Residence proof or ID</label> 
+     	<p></p>
+    	 <div class="row" id="documentUploadFormId">
+    	 <div class="col-sm-4" id="photographycolId">
+    	<button type="button" class="btn btn-primary">upload</button>
+    	 </div>
+    	  <div class="col-sm-2">
+    	 or
+    	 </div>
+    	 <div class="col-sm-4" id="photographycolId">
+    	  <button type="button" class="btn btn-primary">Take a photo</button>
+    	 </div>
+    	 <div class="col-sm-2">
+         <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
+         <div class="success-mark" id="phoneSucess" style="display:none;"><i class="icon-ok"></i></div>
+       </div>
+    	</div>
+    	 
+    	 
+   </div>
+   		
+ <!--   <div class="newform" id="documentsuploadsFormId">
+   		
+   		  <label>Photography</label> 
+   		         
+    	<p>The photo should present a full face, front view, eyes open.
+    		No black&white photos, no blurred photos.
+    	 </p>
+    	 <div class="row">
+    	 <div class="col-sm-4" id="photographycolId">
+    	  <input type="text" name="phoneNo" id="phoneNoId"  required onchange="validate();" />
+    	 </div>
+    	 <div class="col-sm-2">
+    	 or
+    	 </div>
+    	 <div class="col-sm-4" id="photographycolId">
+    	   <input type="text" name="phoneNo" id="phoneNoId"  required onchange="validate();" />
+    	 </div>
+    	<div class="col-sm-2">
+         <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
+         <div class="success-mark" id="phoneSucess" style="display:none;"><i class="icon-ok"></i></div>
+            
+       </div>
+    	 </div>
+    	 
+   		 <label>Biographical page of passport</label> 
+   		         
+    	<p>The photo should present a full face, front view, eyes open.
+    		No black&white photos, no blurred photos.
+    	 </p>
+    	 <div class="photographyRow">
+    	 <div class="col-sm-4" id="photographycolId">
+    	  <input type="text" name="phoneNo" id="phoneNoId"  required onchange="validate();" />
+    	 </div>
+    	 <div class="col-sm-2">
+    	 or
+    	 </div>
+    	 <div class="col-sm-4" id="photographycolId">
+    	   <input type="text" name="phoneNo" id="phoneNoId"  required onchange="validate();" />
+    	 </div>
+    	<div class="col-sm-2">
+         <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
+         <div class="success-mark" id="phoneSucess" style="display:none;"><i class="icon-ok"></i></div>
+            
+       </div>
+    	 </div>
+    	 
+    	 
+    	  <label>Hotel Booking</label> 
+   		         
+    	<p>The photo should present a full face, front view, eyes open.
+    		No black&white photos, no blurred photos.
+    	 </p>
+    	 <div class="photographyRow">
+    	 <div class="col-sm-4" id="photographycolId">
+    	  <input type="text" name="phoneNo" id="phoneNoId"  required onchange="validate();" />
+    	 </div>
+    	 <div class="col-sm-2">
+    	 or
+    	 </div>
+    	 <div class="col-sm-4" id="photographycolId">
+    	   <input type="text" name="phoneNo" id="phoneNoId"  required onchange="validate();" />
+    	 </div>
+    	<div class="col-sm-2">
+         <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
+         <div class="success-mark" id="phoneSucess" style="display:none;"><i class="icon-ok"></i></div>
+            
+       </div>
+    	 </div>
+    	 
+    	 
+    	  <label>Residence proof or id</label> 
+   		         
+    	<p>The photo should present a full face, front view, eyes open.
+    		No black&white photos, no blurred photos.
+    	 </p>
+    	 <div class="photographyRow">
+    	 <div class="col-sm-4" id="photographycolId">
+    	  <input type="text" name="phoneNo" id="phoneNoId"  required onchange="validate();" />
+    	 </div>
+    	 <div class="col-sm-2">
+    	 or
+    	 </div>
+    	 <div class="col-sm-4" id="photographycolId">
+    	   <input type="text" name="phoneNo" id="phoneNoId"  required onchange="validate();" />
+    	 </div>
+    	<div class="col-sm-2">
+         <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
+         <div class="success-mark" id="phoneSucess" style="display:none;"><i class="icon-ok"></i></div>
+            
+       </div>
+    	 </div>
+    
+   		
+   		</div>
+   		
+         </div>  -->
+                  </div>
+                  <div>
+                     <div>
+                    
                         <div class="input-box" type="SubmitInput" name="go-to-step-2" label="SEND AND PAY" hint="" required="required" validations="" options="" reactions="[object Object]" possiblereactions="" possibledisablingreactions="" possibleemits="">
                            <div class="input-box-bottom button-container submit-input-container">
                               <button class="btn" style="text-align: center;" onclick="submitApplication();">SEND AND PAY</button> <!---->
@@ -647,12 +1151,6 @@ label#radiolabel {
                      </div>
                   </div>
                </div>
-               <div id="ee-form-step2" style="display: none;"></div>
-               <div id="ee-form-step3" style="display: none;"></div>
-               <!---->
-               
-               
-               
           <div class="ee-form-sidebar" id="desktopViewId">
             <div class="ee-form-info ee-form-info--hidden">
                <div class="ee-errors" style="display: none;">
@@ -712,151 +1210,16 @@ label#radiolabel {
                      </div>
                   </div>
                </div>
-               
-               <div>
-                  <div class="form-sidebar-faq">
-                     <header>
-                        <h3>FAQ</h3>
-                     </header>
-                     <ul class="toggle-box">
-                        <li class="toggle-li">
-                           <a class="visa-questions-click toggle-click-closed">When will I receive my Visa?</a> 
-                           <div class="height">
-                              <p class="visa-questions-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, esse, impedit aspernatur ipsa inventore reiciendis eius ut repellendus ad dolore autem earum id tempore a provident odio unde harum sunt qui laudantium eligendi consectetur molestias molestiae sint aut sequi omnis iure nesciunt optio accusantium debitis nam mollitia blanditiis. Enim, magni.</p>
-                           </div>
-                        </li>
-                        <li class="toggle-li">
-                           <a class="visa-questions-click toggle-click-closed">Why was my Visa declined?</a> 
-                           <div class="height">
-                              <p class="visa-questions-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, esse, impedit aspernatur ipsa inventore reiciendis eius ut repellendus ad dolore autem earum id tempore a provident odio unde harum sunt qui laudantium eligendi consectetur molestias molestiae sint aut sequi omnis iure nesciunt optio accusantium debitis nam mollitia blanditiis. Enim, magni.</p>
-                           </div>
-                        </li>
-                        <li class="toggle-li">
-                           <a class="visa-questions-click toggle-click-closed">Is my visa refundable?</a> 
-                           <div class="height">
-                              <p class="visa-questions-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, esse, impedit aspernatur ipsa inventore reiciendis eius ut repellendus ad dolore autem earum id tempore a provident odio unde harum sunt qui laudantium eligendi consectetur molestias molestiae sint aut sequi omnis iure nesciunt optio accusantium debitis nam mollitia blanditiis. Enim, magni.</p>
-                           </div>
-                        </li>
-                     </ul>
-                  </div>
-               </div>
-               
+            
               
             </div>
          </div>
             </div>
            
          </div>
-         
-         
-        
-         
+       
       </div>
   
-   <div class="ee-form-loader" style="display: none;"><img src="/img/icon/loader.svg" alt="Evisa Express"></div>
-   <div onclick="window.hideInsuranceInfo()" class="insurance-info-wrapper" style="display: none;">
-      <div onclick="falseHideInsiranceInfoClick(event)" class="insurance-info-container">
-         <img src="/img/insurance/signal-iduna-vector-logo.svg" class="signal-iduna-logo"> <button onclick="window.hideInsuranceInfo()" class="insurance-info-close"><img src="\img\icon\16\close.svg"></button> 
-         <h1>SAFE TRAVEL</h1>
-         <p>Comprehensive travel insurance ensuring optimal protection for customers traveling outside their country of residence for recreational, tourism, educational and professional purposes.</p>
-         <div class="insurance-table-header">Medical expenses</div>
-         <div class="insurance-table">
-            <div class="insurance-table-col">Total limit</div>
-            <div class="insurance-table-col">250000 EUR</div>
-         </div>
-         <div class="insurance-table">
-            <div class="insurance-table-col">Medical transportation</div>
-            <div class="insurance-table-col">up to total limit</div>
-         </div>
-         <div class="insurance-table">
-            <div class="insurance-table-col">Emergency dental treatment</div>
-            <div class="insurance-table-col">250 EUR</div>
-         </div>
-         <div class="insurance-table">
-            <div class="insurance-table-col">Chronic diseases</div>
-            <div class="insurance-table-col">Included</div>
-         </div>
-         <div class="insurance-table">
-            <div class="insurance-table-col">Hospitalization</div>
-            <div class="insurance-table-col">up to total limit</div>
-         </div>
-         <div class="insurance-table">
-            <div class="insurance-table-col">Medicines and dressings</div>
-            <div class="insurance-table-col">up to total limit</div>
-         </div>
-         <div class="insurance-table-header">Assistance</div>
-         <div class="insurance-table">
-            <div class="insurance-table-col">24h Telephone emergency assistance</div>
-            <div class="insurance-table-col">up to total limit</div>
-         </div>
-         <div class="insurance-table">
-            <div class="insurance-table-col">Interpretation and translation</div>
-            <div class="insurance-table-col">up to total limit</div>
-         </div>
-         <div class="insurance-table">
-            <div class="insurance-table-col">Delayed flight coverage</div>
-            <div class="insurance-table-col">250 EUR</div>
-         </div>
-         <div class="insurance-table">
-            <div class="insurance-table-col">Travel interruption costs</div>
-            <div class="insurance-table-col">up to total limit</div>
-         </div>
-         <div class="insurance-table">
-            <div class="insurance-table-col">Substitution on a business trip</div>
-            <div class="insurance-table-col">up to total limit</div>
-         </div>
-         <div class="insurance-table">
-            <div class="insurance-table-col">Transport to your home country</div>
-            <div class="insurance-table-col">5000 EUR</div>
-         </div>
-         <div class="insurance-table-header">Baggage</div>
-         <div class="insurance-table">
-            <div class="insurance-table-col">Baggage insurance — total limit</div>
-            <div class="insurance-table-col">500 EUR</div>
-         </div>
-         <div class="insurance-table">
-            <div class="insurance-table-col">Loss of travel documents (passport, ID)</div>
-            <div class="insurance-table-col">up to total limit</div>
-         </div>
-         <div class="insurance-table">
-            <div class="insurance-table-col">Delayed baggage coverage</div>
-            <div class="insurance-table-col">250 EUR</div>
-         </div>
-         <div class="insurance-table">
-            <div class="insurance-table-col">Photographic, computer, audio-video equipment and mobile phones:</div>
-            <div class="insurance-table-col">250 EUR</div>
-         </div>
-         <div class="insurance-table-header">Legal assistance</div>
-         <div class="insurance-table">
-            <div class="insurance-table-col">Lawyer fees in compensation cases</div>
-            <div class="insurance-table-col">2000 EUR</div>
-         </div>
-         <div class="insurance-table">
-            <div class="insurance-table-col">Lawyer remuneration in OC cases</div>
-            <div class="insurance-table-col">1000 EUR</div>
-         </div>
-         <div class="insurance-table">
-            <div class="insurance-table-col">A loan against a deposit</div>
-            <div class="insurance-table-col">10000 EUR</div>
-         </div>
-         <div class="insurance-table-header">Telephone emergency assistance</div>
-         <div class="insurance-table">
-            <div class="insurance-table-col">Tourist assistance</div>
-            <div class="insurance-table-col">Included</div>
-         </div>
-         <div class="insurance-table">
-            <div class="insurance-table-col">Medical Assistance</div>
-            <div class="insurance-table-col">Included</div>
-         </div>
-         <div class="insurance-table">
-            <div class="insurance-table-col">Interpretation and translation</div>
-            <div class="insurance-table-col">Included</div>
-         </div>
-         <p>Country of residence - the country where the policyholder is currently covered by general health insurance or the country where the policyholder resides with the intention of permanent residence.</p>
-         <div class="insurance-links"><a target="_blank" href="/pdf/insurance/scope.pdf">Scope and exclusions</a> <a target="_blank" href="/pdf/insurance/insurance-general-conditions.pdf">General Conditions of Insurance</a> <a target="_blank" href="/pdf/insurance/ipid.pdf">IPID</a></div>
-      </div>
-   </div>
-
      
   	<%@include file="footer.jsp"%>
   	
@@ -874,7 +1237,6 @@ label#radiolabel {
 				var checkprice = $('#priceidinDoller').text();
 				var splittedPrice = checkprice.split("USD");
 				checkprice = splittedPrice[0];
-				var date = new Date();
 				if(checkprice!=0){
 				
 				var url ="/application/saveApplication";
@@ -901,9 +1263,7 @@ label#radiolabel {
 						"pkid":$('#applicationId').val(),
 						"confirmAuthKey":$('#authKeyId').val(),
 						"userId":$('#usersId').val(),
-						"toCountry":country,
-						"checkApplicationStatus":"UNPAID",
-						"dateOfApplication":date
+						"toCountry":country
 						
 						
 					}),

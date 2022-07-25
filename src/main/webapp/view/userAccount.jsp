@@ -853,6 +853,7 @@ ul.drop-down-ul.display-none.display-block {
 												<th><span>STATUS</span></th>
 												<th class="hide-465"><span>APPLICANT</span></th>
 												<th class="hide-465"><span>DATE</span></th>
+												<th class="hide-465"><span>ACTIONS</span></th>
 												
 											</tr>
 										</thead>
@@ -1249,7 +1250,7 @@ ul.drop-down-ul.display-none.display-block {
 						 
 						 '<tr><td>'+element.pkid+'</td><td>'+element.toCountry+'</td>'
 						 +'<td style="color:red;">'+element.payment+'</td><td>'+element.firstName+' '+element.lastName+'</td>'
-						 +'<td>'+element.plannedDateOfTravel+'</td><td><img src="/images/view.png" style="width:20px; height:20px;" onclick="getViewPage(\''+element.confirmAuthKey+'\');">'
+						 +'<td>'+element.plannedDateOfTravel+'</td><td><img src="/images/view.png" style="width:20px; height:20px; cursor: pointer;" onclick="getViewPage(\''+element.confirmAuthKey+'\');">'
 						 +'<span id="makePaymentDollerId" onclick="makePendingPayment(\''+element.confirmAuthKey+'\');">&#36;</span></td>'
 						 +'</tr>'
 	
@@ -1281,7 +1282,8 @@ ul.drop-down-ul.display-none.display-block {
 				 $('#finishtBody').append(
 						 
 						 '<tr><td>'+element.pkid+'</td><td>'+element.toCountry+'</td>'
-						 +'<td style="color:red;">'+element.payment+'</td><td>'+element.firstName+' '+element.lastName+'</td><td>'+element.plannedDateOfTravel+'</td></tr>'
+						 +'<td style="color:red;">'+element.payment+'</td><td>'+element.firstName+' '+element.lastName+'</td><td>'+element.plannedDateOfTravel+'</td>'
+						 +'<td><img src="/images/view.png" style="width:20px; height:20px; cursor: pointer;" onclick="getViewPage(\''+element.confirmAuthKey+'\');"></td></tr>'
 	
 						 )
 						

@@ -299,7 +299,7 @@ function makePayment(){
 		async : true,
 		success : function(data) {
 			if(data.status==true){
-				window.location.href = "/en/confirmation/"+data.data.applicationId;
+				window.location.href = "/en/additional-information/"+data.data.applicationId;
 			}else{
 				if(data.message==""){
 					Swal.fire({
@@ -461,13 +461,7 @@ window.onload = function () {
 		}
 
 		return isvalidated;
-		
-
-		
-		
-		
-		
-		
+	
 	}
 </script>
 

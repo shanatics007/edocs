@@ -23,8 +23,13 @@ public interface ApplicationForVisaRepository extends JpaRepository<ApplicationF
 	
 	@Modifying
     @Transactional
-	@Query(nativeQuery = true,value = "update edocs.ed_visa_application set is_payment=1 where pkid=?1")
+	@Query(nativeQuery = true,value = "update edocs.ed_visa_application set is_payment=1  where pkid=?1")
 	public void updatePaymentstatus(int applicationId);
+	
+	@Modifying
+    @Transactional
+	@Query(nativeQuery = true,value = "update edocs.ed_visa_application set check_application_status='PAID' where pkid=?1")
+	public void updateApplicationstatus(int applicationId);
 	
 	@Query(nativeQuery = true,value = "SELECT * FROM edocs.ed_visa_application where auth_key=?1")
 	public ApplicationForVisaModel getAppDetails(String authKey);

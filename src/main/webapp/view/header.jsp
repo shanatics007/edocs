@@ -88,7 +88,7 @@ ul.menu-dropdown-values {
                         </ul>
                      </li>
                      <li><a href="/en/passenger-locator-form" title="Passenger Locator Forms" style="color: #1d3367 !important;">Passenger Locator Forms</a></li>
-                     <li><a href="#" title="Travel Insurance" rel="nofollow" style="color: #1d3367 !important;">Travel Insurance</a></li>
+                     <li><a href="/en/check-status" title="CheckVisaStatus" rel="nofollow" style="color: #1d3367 !important;">Check Status</a></li>
                      <li><a href="/en/travel-entry-requirements" title="Check Entry Requirements" style="color: #1d3367 !important;">Check Entry Requirements</a></li>
                    
                    <li>
@@ -101,6 +101,7 @@ ul.menu-dropdown-values {
 						long userid1 = user.getUserId();	
 						if(userid1 == 0){
 						%>
+						<img src="/images/user_icon.png" alt="userProfile" style="width:25px; height: 25px;">
 							<a href="/login" id="loginLinkId" style="color: #1d3367 !important;">Log In</a>
 						<%}else{%>
 						<ul class="menu-options account-dropdown">
@@ -123,9 +124,11 @@ ul.menu-dropdown-values {
 						
 						}
 						}else{ %>
+						<img src="/images/user_icon.png" alt="userProfile" style="width:25px; height: 25px;">
 							<a href="/login" id="loginLinkId" style="color: #1d3367 !important;">Log In</a>
 						<% }
 						}else{  %>
+						<img src="/images/user_icon.png" alt="userProfile" style="width:25px; height: 25px;">
 							<a href="/login" id="loginLinkId" style="color: #1d3367 !important;">Log In</a>
 						<% }
 						%>

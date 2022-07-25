@@ -44,6 +44,7 @@ public class PaymentServiceImpl implements PaymentService {
 				model.setPaymentStatus(true);
 				response.put("data", paymentRepository.save(model));
 				applicationForVisaRepository.updatePaymentstatus(model.getApplicationId());
+				applicationForVisaRepository.updateApplicationstatus(model.getApplicationId());
 				response.put("status", true);
 		}else {
 				response.put("message", paymentInfo.getErrMsg());

@@ -209,15 +209,12 @@
 			url : '/application/getApplicationDetails/'+authKey,	
 			async : true,
 			success : function(data) {
-				$('#applicationNumber').text(data.pkid);
-				//var price  = data.price.split('USD');
-				//$('#priceId').val(price[0]);
-				//$('#userId').val(data.userId);
+				$('#applicationNumber').text(data.pkid);	
 				$('#flightDate').text(data.plannedDateOfTravel);
 				$('#firstName').text(data.firstName);
 				$('#lastName').text(data.lastName);
 				$('#visaType').text(data.purposeForTravel);
-				//$('#countrylist').val(data.nationality);
+				
 			},	
 			error : function(data) {
 				console.log("error when gettig data");

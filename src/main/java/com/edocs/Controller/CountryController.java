@@ -132,6 +132,22 @@ public class CountryController {
 		return "viewApplications";
 	}
 	
+	@RequestMapping("/check-status")
+	public String checkStatus() {
+		return "checkStatus";
+	}
+	
+	
+	@RequestMapping("/additional-information/{applicationId}")
+	public String additionalInfo(@PathVariable int applicationId) {
+		return "additionalInformationForm";
+	}
+	
+	@RequestMapping("/upload-document")
+	public String uploadDocument() {
+		return "uploadDocument";
+	}
+	
 	
 
 }

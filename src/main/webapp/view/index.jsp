@@ -16,7 +16,9 @@
 <link rel="stylesheet" href="/css/home.css" type="text/css">
 <link rel="icon" href="/images/favicon-1.png" type="image/x-icon">
 <style>
-
+#insurancesectionId{
+display: none;
+}
 #focusSectionId{
 	background-color: #ffffff;
     padding-top: 30px;
