@@ -144,7 +144,7 @@ public class CountryController {
 	}
 	
 	@RequestMapping("/upload-document")
-	public String uploadDocument() {
+	public String uploadDocument(@RequestParam(name = "hash",required = true) String authKey) {
 		return "uploadDocument";
 	}
 	

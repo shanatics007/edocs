@@ -88,6 +88,13 @@ public class UserController {
 	}
 	
 	
+	@GetMapping("/getApplicationByEmail")
+	public List<ApplicationForVisaModel> getApplicationByEmail(@RequestParam String email){
+		return userService.getApplicationByEmail(email);
+		
+	}
+	
+	
 	
 
 }

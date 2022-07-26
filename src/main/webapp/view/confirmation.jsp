@@ -63,6 +63,7 @@
 
 
 @media ( max-width : 599px) {
+
 	
 }
 @media ( min-width : 599px) {
@@ -228,6 +229,36 @@ span.description-steps-text-bottom {
 	margin-bottom: 15px;
 	margin-top: 15px;
 }
+div#fristlabelId {
+    background: #1d3367;
+}
+span#fristID {
+    color: white;
+}
+span#frilabelId {
+    color: white;
+}
+div#thirdlabelId {
+    background: white;
+}
+span#thirdId {
+    color: #1d3367 !important;
+}
+#secondId::before {
+    background: white;
+   
+}
+#secondId::After {
+    background: white;
+   
+}
+ div#subitID {
+    width: 28% !important;
+} 
+
+
+
+
 
 .step-icon.step-icon-2 {
 	margin-bottom: 15px;
@@ -242,6 +273,33 @@ span.description-steps-text-bottom {
 .checkedConfirm {
     text-align: center;
 }
+
+#ApplicationNumberForConfirmationForm {
+    border-bottom: 1px solid #1d3367;
+}
+#applicationId{
+	border-bottom: 1px solid #1d3367;
+}
+
+#anchorButton {
+    width: 40%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#imgelogoId{
+display: block;
+width: 25%;
+margin: auto;
+margin-top: 40px;
+margin-bottom: 40px;
+}
+.description-steps {
+    padding-right: 6rem;
+    padding-left: 6rem;
+}
+
+
 </style>
 
 </head>
@@ -249,38 +307,57 @@ span.description-steps-text-bottom {
 	<div id="overlay" class="hidden mobileMenuOverlay"></div>
 	<%@include file="header.jsp"%>
 	<section class="main-site-content">
-	<div class="top-background" style="background-image: url('/images/background 2.jpg');"></div>
+	<!-- <div class="top-background" style="background-image: url('/images/background 2.jpg');"></div> -->
 		<div class="container">
 			<div class="row" >
-				<div class="col-md-12">
-					<div class="top-content-text padding">
-						<h1 id="headsection" style="color: #ffff; font-size: 50px; font-weight: 600; text-align: center;">Edocs
-							Travel - Electronic Visa Service</h1>
-					</div>
-				
-					<section class="description padding mobile-pt-0" style="background-color: #ffffff; padding-top: 20px; padding-bottom: 50px; margin-bottom: 60px; padding-left: 35px !important;padding-right: 35px !important;">
+				<div class="col-sm-8">
+					  <div class="top-content-text padding">
+						<h1 id="headsection" style="color: #ffff; font-size: 50px; font-weight: 600; text-align: center;">
+						</h1>
+					</div> 
+				   
+					<section class="description padding mobile-pt-0" style="background-color: #ffffff; padding-top: 0px; padding-bottom: 50px; margin-bottom: 60px; padding-left: 0px !important;padding-right: 0px !important;">
 						<p style="color: #1d3367; font-size: 30px;text-align: center; font-weight: 600;">
-							Your application has been received	
-						</p>
-						<div class="checkedConfirm">
-						<img src="/images/check.png" style="width:100px; height:100px;">
-						</div>
+							<div class="ee-form-steps">
+             <div class="form-step active-step" id="fristlabelId"><span class="form-step-number" id="frilabelId">
+                  1
+                  </span> <span class="form-step-label" id="fristID" >Basic info<br>and payment</span><span class="form-step-complete"><i class="icon-ok" style="display: none;"></i><img src="/images/check.png" style="width:25px; height:25px;"></span>
+               </div> 
+              
+               <div class="form-step" id="secondId"><span class="form-step-number"  style="color:#fff">
+                  2
+                  </span> <span class="form-step-label" style="color:#fff">Additional<br>information</span> <span class="form-step-complete"><i class="icon-ok" style="display: none;"></i><img src="/images/check.png" style="width:25px; height:25px;"></span>
+               </div>
+               <div class="form-step" id="thirdlabelId"><span class="form-step-number"  style="color:#1c3367">
+                  3
+                  </span> <span class="form-step-label" style="color:#1c3367">Check<br>your email</span> <span class="form-step-complete"><i class="icon-ok" style="display: none;"></i></span>
+               </div>
+            </div>
+				<!-- <a class="menu-logo"  href="/"><img src="/images/edocs-trave-logo.png"  class="desktop-logo"  id="edocId" style="width: 250px; height:60px;"><img src="/images/edocs-trave-logo.png" class="mobile-logo" loading="lazy" style="display:none;"></a>
+					 -->
+					 <img src="/images/edocs-trave-logo.png" id="imgelogoId">
 						<div class="description-steps">
-							<p class="description-steps-eta-planning" style="font-size:26px;">
-							Thank you for your visa !
+							<p class="description-steps-eta-planning" style="font-size:26px; line-height: 35px;">
+							Your edocs Should be ready in 72h and send your email.
 							 </p>
+						
 							<p class="description-steps-eta-planning" style="font-size:18px;">
-							Your application ID is:<span id="ConfirmApplicatonId" style="font-weight: 600;"></span> 
-							</p>
-							<p class="description-steps-eta-planning" style="font-size:18px;">
-								You will receive an confirmation email with details of application.
-							 </p>
+								In some case processing time can take  longer.Waiting time  depends on the Government of <span id="visaCountry"></span></p>
+							<p class="description-steps-eta-planning" style="font-size:18px; margin-bottom: 4rem;">
+							<span id="ApplicationNumberForConfirmationForm">Application number   </span> 
+							<span id="applicationId"></span>
+							</p> 
+							<div class="input-box-bottom button-container submit-input-container" >
+                           		<a href="/" class="aclass" id="anchorButton">GET NEXT VISA</a>
+                           </div>
+                           <a href="/login" style="display: block;text-align: center;">or go to your account</a>
 							
-						</div>
+						</div> 
 					</section>
 					
 					<input type="hidden" id="userId">
 					<input type="hidden" id="paymentId">
+					
 					
 				
 				</div>
@@ -292,42 +369,38 @@ span.description-steps-text-bottom {
 	
 
 	<%@include file="footer.jsp"%>
-	<script>
-		document.querySelector('#select-country').addEventListener(
-				'change',
-				function() {
-					var destinationKey = this.getAttribute('data-key');
-					if (destinationKey !== null) {
-						window.location.href = '/en/india'.replace("india",
-								destinationKey);
-					}
-				});
-	</script>
+	
 	<script>
 	
 	window.onload = function () {
 		var applicationId = window.location.href;
 		var spliturl =  applicationId.split('/');
 		applicationId = spliturl[5];
-		 $.ajax({
-				type : 'GET',
-				url : '/payment/getPaymentByApplicationId/'+applicationId,	
-				async : true,
-				success : function(data) {
-					$('#ConfirmApplicatonId').text(data.applicationId);
-					$('#userId').val(data.userId);
-					$('#paymentId').val(data.paymentId);
-					
-					
-				},	
-				error : function(data) {
-					console.log("error when gettig data");
-				}
-			}); 
-				
+		
+		$('#applicationId').text(applicationId);
+		
+		getStep1ApplicationDetails(applicationId)
 
 	}	
 	
+	 function getStep1ApplicationDetails(applicationId){
+		 
+	    
+	        $.ajax({
+	    		type : 'GET',
+	    		url : '/application/getApplicationDetailsById/'+applicationId,	
+	    		async : true,
+	    		success : function(data) {
+	    			
+	    		
+	    			$('#visaCountry').text(data.toCountry);
+	    			$('#userId').val(data.userId);
+	    		},	
+	    		error : function(data) {
+	    			console.log("error when gettig data");
+	    		}
+	    	}); 
+	    }
 	</script>
 
 </body>

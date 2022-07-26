@@ -27,5 +27,6 @@ public interface UserService {
 	
 	UserModel updateUserPassword(UserModel model,long userId,String newPassword);
 
+	List<ApplicationForVisaModel> getApplicationByEmail(String email);
 
 }

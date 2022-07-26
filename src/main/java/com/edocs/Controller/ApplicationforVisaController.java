@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.edocs.Model.ApplicationForVisaModel;
+import com.edocs.Repository.ApplicationForVisaRepository;
 import com.edocs.Service.ApplicationForVisaService;
 
 
@@ -25,6 +26,10 @@ public class ApplicationforVisaController {
 	
 	@Autowired
 	private ApplicationForVisaService applicationForVisaService;
+	
+	@Autowired
+	private ApplicationForVisaRepository applicationForVisaRepository;
+	
 	
 	@PostMapping("/saveApplication")
 	public HashMap<Object, Object> applicationSave(@RequestBody ApplicationForVisaModel model,HttpSession session) {
@@ -38,6 +43,13 @@ public class ApplicationforVisaController {
 	public ApplicationForVisaModel getApplicationByAuthKey(@PathVariable String authKey) {
 		
 		return applicationForVisaService.getApplicationByAuth(authKey);
+	}
+	
+	@GetMapping("/getApplicationDetailsById/{applicationId}")
+	public ApplicationForVisaModel getApplicationDeatilsByApplicationId(@PathVariable int applicationId) {
+		
+		return applicationForVisaRepository.getAppDetailsByApplicationId(applicationId);
+		
 	}
 
 }

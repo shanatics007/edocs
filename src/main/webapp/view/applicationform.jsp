@@ -902,7 +902,7 @@ label#radiolabel {
 						"confirmAuthKey":$('#authKeyId').val(),
 						"userId":$('#usersId').val(),
 						"toCountry":country,
-						"checkApplicationStatus":"UNPAID",
+						"checkApplicationStatus":"Unpaid",
 						"dateOfApplication":date
 						
 						

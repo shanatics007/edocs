@@ -2,6 +2,8 @@ package com.edocs.Model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -10,6 +12,7 @@ import javax.persistence.Table;
 public class AdditionalInfoModel {
 	@Id
 	@Column(name="pkid")
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long pkid;
 	@Column(name="user_id")
 	private long userId;
@@ -77,6 +80,8 @@ public class AdditionalInfoModel {
 	private String accomodationAddress;
 	@Column(name="accomodation_phoneNo")
 	private String accomodationPhoneNo;
+	@Column(name="check_Visa_Application_Status")
+	private String checkVisaApplicationStatus;
 	public AdditionalInfoModel() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -88,7 +93,7 @@ public class AdditionalInfoModel {
 			String taxCompanyofCountry, String taxCompanyofCity, String taxCompanyofPostal, String taxCompanyofStreet,
 			String employeeStatus, String occupation, String qualification, String religion, String motherName,
 			String transportationType, String departureCountry, String departureCity, String nameOfHotel,
-			String accomodationAddress, String accomodationPhoneNo) {
+			String accomodationAddress, String accomodationPhoneNo, String checkVisaApplicationStatus) {
 		super();
 		this.pkid = pkid;
 		this.userId = userId;
@@ -124,6 +129,7 @@ public class AdditionalInfoModel {
 		this.nameOfHotel = nameOfHotel;
 		this.accomodationAddress = accomodationAddress;
 		this.accomodationPhoneNo = accomodationPhoneNo;
+		this.checkVisaApplicationStatus = checkVisaApplicationStatus;
 	}
 	public long getPkid() {
 		return pkid;
@@ -329,7 +335,12 @@ public class AdditionalInfoModel {
 	public void setAccomodationPhoneNo(String accomodationPhoneNo) {
 		this.accomodationPhoneNo = accomodationPhoneNo;
 	}
-	
+	public String getCheckVisaApplicationStatus() {
+		return checkVisaApplicationStatus;
+	}
+	public void setCheckVisaApplicationStatus(String checkVisaApplicationStatus) {
+		this.checkVisaApplicationStatus = checkVisaApplicationStatus;
+	}
 	
 
 }

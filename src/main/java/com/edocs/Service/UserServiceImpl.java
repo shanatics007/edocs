@@ -228,4 +228,11 @@ public class UserServiceImpl implements UserService {
 		return userModel;
 	}
 
+
+	@Override
+	public List<ApplicationForVisaModel> getApplicationByEmail(String email) {
+		
+		return appRepos.getApplicationsByEmail(email);
+	}
+
 }

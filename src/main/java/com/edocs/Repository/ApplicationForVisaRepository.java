@@ -28,12 +28,21 @@ public interface ApplicationForVisaRepository extends JpaRepository<ApplicationF
 	
 	@Modifying
     @Transactional
-	@Query(nativeQuery = true,value = "update edocs.ed_visa_application set check_application_status='PAID' where pkid=?1")
-	public void updateApplicationstatus(int applicationId);
+	@Query(nativeQuery = true,value = "update edocs.ed_visa_application set check_application_status=?1 where pkid=?2")
+	public void updateApplicationstatus(String status,int applicationId);
 	
 	@Query(nativeQuery = true,value = "SELECT * FROM edocs.ed_visa_application where auth_key=?1")
 	public ApplicationForVisaModel getAppDetails(String authKey);
 	
 	@Query(nativeQuery = true,value = "SELECT * FROM edocs.ed_visa_application where user_id=?1")
 	public List<ApplicationForVisaModel> getApplicationByUserId(long userId);
+
+	@Query(nativeQuery = true,value = "SELECT * FROM edocs.ed_visa_application where email=?1")
+	List<ApplicationForVisaModel> getApplicationsByEmail(String email);
+	
+	@Query(nativeQuery = true,value = "SELECT * FROM edocs.ed_visa_application where pkid=?1")
+	public ApplicationForVisaModel getAppDetailsByApplicationId(int applicationId);
+	
+	
+	
 }

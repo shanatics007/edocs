@@ -1228,11 +1228,12 @@ ul.drop-down-ul.display-none.display-block {
 	
 
 	window.onload = function () {
+		getApplications();
 		var some_id = $('#select-country');
 	    some_id.prop('type', 'text');
 	    some_id.removeAttr('autocomplete');
 		$('#loginLinkId').css('display','none')
-		var param = "email=<%=email%>"
+		<%-- var param = "email=<%=email%>"
 		$.ajax({
 			type : 'GET',
 			url : '/user/getUnpaidApplication/?'+param,	
@@ -1262,9 +1263,9 @@ ul.drop-down-ul.display-none.display-block {
 			error : function(data) {
 				console.log("error when gettig data");
 			}
-		}); 
+		});  --%>
 
-		$('#loginLinkId').css('display','none')
+	<%-- 	$('#loginLinkId').css('display','none')
 		var param = "email=<%=email%>"
 		$.ajax({
 			type : 'GET',
@@ -1294,7 +1295,7 @@ ul.drop-down-ul.display-none.display-block {
 				console.log("error when gettig data");
 			}
 		}); 
-		
+		 --%>
 		
 		var checkSetting = window.location.href;
 		var splittedCheckUrl = checkSetting.split('#');
@@ -1313,6 +1314,66 @@ ul.drop-down-ul.display-none.display-block {
 	function getViewPage(authKey){
 		var param = "?hash="+authKey;
 		window.location.href = "/en/view/"+param
+	}
+
+	function getUploadDocumentPage(authKey){
+		var param = "?hash="+authKey;
+		window.location.href = "/en/upload-document/"+param
+	}
+	
+
+	function getApplications(){
+		var param = "email=<%=email%>"
+		$.ajax({
+			type : 'GET',
+			url : '/user/getApplicationByEmail/?'+param,	
+			async : true,
+			success : function(data) {
+				$('#activeTotalId').text(' ('+data.length+')')
+				 $.each(data, function(index,element) {
+					 
+					 if(element.checkApplicationStatus=="Unpaid"){
+
+						 $('#activetBody').append(
+								 
+								 '<tr><td>'+element.pkid+'</td><td>'+element.toCountry+'</td>'
+								 +'<td style="color:red;">'+element.checkApplicationStatus+'</td><td>'+element.firstName+' '+element.lastName+'</td>'
+								 +'<td>'+element.plannedDateOfTravel+'</td><td style="text-align:center;"><img src="/images/view.png" style="width:18px; height:18px; cursor: pointer;" onclick="getViewPage(\''+element.confirmAuthKey+'\');">'
+								 +'<span id="makePaymentDollerId" onclick="makePendingPayment(\''+element.confirmAuthKey+'\');">&#36;</span></td>'
+								 +'</tr>'
+			
+								 )
+
+					}else if(element.checkApplicationStatus=="Unfinished"){
+ 								$('#activetBody').append(
+								 '<tr><td>'+element.pkid+'</td><td>'+element.toCountry+'</td>'
+								 +'<td style="color:red;">'+element.checkApplicationStatus+'</td><td>'+element.firstName+' '+element.lastName+'</td>'
+								 +'<td>'+element.plannedDateOfTravel+'</td><td style="text-align:center;"><img src="/images/view.png" style="width:18px; height:18px; cursor: pointer;" onclick="getViewPage(\''+element.confirmAuthKey+'\');">'
+								 +'<img src="#" style="width:15px; height:15px; margin-left: 10px; cursor: pointer;"></td>'
+								 +'</tr>'
+			
+								 )
+							}else if(element.checkApplicationStatus=="Missing documents"){
+								$('#activetBody').append(
+										 '<tr><td>'+element.pkid+'</td><td>'+element.toCountry+'</td>'
+										 +'<td style="color:red;">'+element.checkApplicationStatus+'</td><td>'+element.firstName+' '+element.lastName+'</td>'
+										 +'<td>'+element.plannedDateOfTravel+'</td><td style="text-align:center;"><img src="/images/view.png" style="width:18px; height:18px; cursor: pointer;" onclick="getViewPage(\''+element.confirmAuthKey+'\');">'
+										 +'<img src="/images/upload.png" style="width:18px; height:18px; margin-left: 10px; cursor: pointer;" onclick="getUploadDocumentPage(\''+element.confirmAuthKey+'\');"></td>'
+										 +'</tr>'
+					
+										 )
+							}else{
+		
+								}
+				
+						
+					 });
+					
+			},	
+			error : function(data) {
+				console.log("error when gettig data");
+			}
+		}); 
 	}
 </script>
 

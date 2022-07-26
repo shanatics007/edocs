@@ -112,6 +112,7 @@ if (request.getSession(false).getAttribute("userLogin") != null) {
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
      
+       <script async="" src="/js/additionalInfoForm.js"></script>
        <script async="" src="/js/home.js"></script>
        <script async="" src="/js/tag.js"></script>
        <script async="" src="/js/vendor.js"></script>
@@ -286,7 +287,7 @@ label#radiolabel {
                <div id="ee-form-step1">
                 <h1 id="formheadrId"> Personal details</h1> 
                <div class="newform">
-             <input type="hidden" id="applicationId">
+             <input type="hidden" id="applicationVisaId">
              <input type="hidden" id="authKeyId">
              <input type="hidden" id="usersId">
              
@@ -349,11 +350,11 @@ label#radiolabel {
              <div class="col-sm-10">
              <select id="maritialStatusId" onchange="validate();">
 			<option value="maritialStatusList">Select</option>
-			<option value="Common-Law">Common-Law</option>
+			<!-- <option value="Common-Law">Common-Law</option>
 			<option value="Divorced">Divorced</option>
 			<option value="Married">Married</option>
 			<option value="Single">Single</option>
-			<option value="Widowed">Widowed</option>
+			<option value="Widowed">Widowed</option> -->
 			</select>
             </div>
              <div class="col-sm-2">
@@ -763,10 +764,10 @@ label#radiolabel {
              <div class="col-sm-10">
              <select id="employmentId" onchange="validate();">
 			<option value="EmployyeStatus">Select</option>
-			<option value="Employed">Employed</option>
+			<!-- <option value="Employed">Employed</option>
 			<option value="HomeMaker">Home Maker</option>
 			<option value="Retired">Retired</option>
-			<option value="Student">Student</option>
+			<option value="Student">Student</option> -->
 			</select>
             </div>
              <div class="col-sm-2">
@@ -784,7 +785,7 @@ label#radiolabel {
              <div class="col-sm-10">
              <select id="occupationId" onchange="validate();">
 			<option value="occupatinList">Select</option>
-			<option value="Art,culture,recreation and sport occupations">Art,culture,recreation and sport occupations</option>
+			<!-- <option value="Art,culture,recreation and sport occupations">Art,culture,recreation and sport occupations</option>
 			<option value="Business,finance and administration occupations">Business,finance and administration occupations</option>
 			<option value="Education,law and social,community and government services occupations">Education,law and social,community and government services occupations</option>
 			<option value="Health occupations">Health occupations</option>
@@ -799,7 +800,7 @@ label#radiolabel {
 			<option value="Student">Student</option>
 			<option value="Trades, transport and equipment operators and related occupations">Trades, transport and equipment operators and related occupations</option>
 			<option value="Unemployed">Unemployed</option>
-			
+			 -->
 			</select>
             </div>
              <div class="col-sm-2">
@@ -817,13 +818,13 @@ label#radiolabel {
              <div class="col-sm-10">
              <select id="qualificationId" onchange="validate();">
 			<option value="qualificationList">Select</option>
-			<option value="Below Matriculation">Below Matriculation</option>
+			<!-- <option value="Below Matriculation">Below Matriculation</option>
 			<option value="Graduate">Graduate</option>
 			<option value="Higher Secondary">Higher Secondary</option>
 			<option value="Matriculation">Matriculation</option>
 			<option value="Na Being Minor">Na Being Minor</option>
 			<option value="Post Graduate">Post Graduate</option>
-			<option value="Others">Others</option>
+			<option value="Others">Others</option> -->
 			</select>
             </div>
              <div class="col-sm-2">
@@ -841,7 +842,7 @@ label#radiolabel {
              <div class="col-sm-10">
              <select id="religionId" onchange="validate();">
 			<option value="religionList">Select</option>
-			<option value="Atheism">Atheism</option>
+			<!-- <option value="Atheism">Atheism</option>
 			<option value="Bahai">Bahai</option>
 			<option value="Buddhism">Buddhism</option>
 			<option value="Christian">Christian</option>
@@ -850,7 +851,7 @@ label#radiolabel {
 			<option value="Jainism">Jainism</option>
 			<option value="Judaism">Judaism</option>
 			<option value="Sikh">Sikh</option>
-			<option value="Others">Others</option>
+			<option value="Others">Others</option> -->
 			</select>
             </div>
              <div class="col-sm-2">
@@ -888,9 +889,9 @@ label#radiolabel {
              <div class="col-sm-10">
              <select id="TransportTypeId" onchange="validate();">
 			<option value="transportList">Select</option>
-			<option value="Air">Air</option>
+			<!-- <option value="Air">Air</option>
 			<option value="Land">Land</option>
-			<option value="Maritime">Maritime</option>
+			<option value="Maritime">Maritime</option> -->
 			</select>
             </div>
              <div class="col-sm-2">
@@ -1110,9 +1111,9 @@ label#radiolabel {
                   <div>
                      <div>
                     
-                        <div class="input-box" type="SubmitInput" name="go-to-step-2" label="SEND AND PAY" hint="" required="required" validations="" options="" reactions="[object Object]" possiblereactions="" possibledisablingreactions="" possibleemits="">
+                        <div class="input-box" type="SubmitInput" name="go-to-step-2" label="SEND APPLICATION" hint="" required="required" validations="" options="" reactions="[object Object]" possiblereactions="" possibledisablingreactions="" possibleemits="">
                            <div class="input-box-bottom button-container submit-input-container">
-                              <button class="btn" style="text-align: center;" onclick="submitApplication();">SEND AND PAY</button> <!---->
+                              <button class="btn" style="text-align: center;" onclick="submitApplicationAdditionalInfo();">SEND APPLICATION</button> <!---->
                            </div>
                         </div>
                      </div>
@@ -1209,18 +1210,17 @@ label#radiolabel {
   	  	
   		var urlString  = window.location.href.split('/');
     	var country = urlString[4];
-		
-		if($('#accept-terms-track').prop('checked') && $('#accept-gdpr-track').prop('checked')){
-			$('.checkmark').css('border','1px solid black');
+    	var authUrl = window.location.href;
+    	var authKey = authUrl.split('/')[5];
 			if(validate()){
-				var checkprice = $('#priceidinDoller').text();
-				var splittedPrice = checkprice.split("USD");
-				checkprice = splittedPrice[0];
-				if(checkprice!=0){
 				
-				var url ="/application/saveApplication";
-				var dateofArrival = $('#dayArrival').val()+'-'+$('#montharrival').val()+'-'+$('#yearlist').val();
-				var dateofBirth = $('#dayDOB').val()+'-'+$('#dayMonth').val()+'-'+$('#yearlistdob').val();
+				
+				var url ="/addInfo/saveAddtionalInfo";
+				var dateofIssue = $('#dateIssueId').val()+'-'+$('#dayIssueMonthId').val()+'-'+$('#yearIssueId').val();
+				var dateofExpiry = $('#dateExpiryId').val()+'-'+$('#dateExpiryMonthId').val()+'-'+$('#dateExpiryYearId').val();
+				var userId = $('#usersId').val();
+				var applicationVisaId = $('#applicationVisaId').val();
+				
 				$.ajax({
 					type : "POST",
 					url : url,	
@@ -1228,22 +1228,40 @@ label#radiolabel {
 		                    'Content-Type': 'application/json'
 		                },
 					data: JSON.stringify ({
-						"plannedDateOfTravel": dateofArrival,
-						"travelAirports": $('#portArrival').val(),
-						"firstName": $('#firstNameID').val(),
-						"lastName": $('#lastNameID').val(),
-						"dateOfBirth": dateofBirth,
-						"email": $('#emailID').val(),
-						"contactPhoneNumber":$('#phoneNoId').val(),
-						"purposeForTravel": $('#purposeTraval').val(),
-						"nationality": $('#countrylist').val(),
-						"price": $('#priceidinDoller').text(),
-						"isPayment":false,
-						"pkid":$('#applicationId').val(),
-						"confirmAuthKey":$('#authKeyId').val(),
-						"userId":$('#usersId').val(),
-						"toCountry":country
-						
+						"userId": userId,
+						"applicationVisaId": applicationVisaId,
+						"authKey":authKey,
+						"birthCountry": $('#countrylist option:selected').text(),
+						"birthCity": $('#cityOfBirthNameID').val(),
+						"gender": $('#genderListId').val(),
+						"maritialStatus":$('#maritialStatusId').val(),
+						"passportNumber": $('#passportNoId').val(),
+						"passPortIssueCountry": $('#passPortCountryList option:selected').text(),
+						"passPortIssueAuthority": $('#authorityNameId').val(),
+						"passPrtDateOfIssue":dateofIssue,
+						"passPortDateOfExpiry":dateofExpiry,
+						"street":$('#houseNoId').val(),
+						"city":$('#villageId').val(),
+						"country":$('#addressCountryList option:selected').text(),
+						"vatInvoice":false,
+						"taxIdentificationNumber":$('#taxNumberId').val(),
+						"taxNameOfCompany":$('#companyNameId').val(),
+						"taxCompanyofCountry":$('#taxCompanyCountryList option:selected').text(),
+						"taxCompanyofCity":$('#cityNameId').val(),
+						"taxCompanyofPostal":$('#companyPostalId').val(),
+						"taxCompanyofStreet":$('#companyStreetId').val(),
+						"employeeStatus":$('#employmentId').val(),
+						"occupation":$('#occupationId').val(),
+						"qualification":$('#qualificationId').val(),
+						"religion":$('#religionId').val(),
+						"motherName":$('#motherNameId').val(),
+						"transportationType":$('#TransportTypeId').val(),
+						"departureCountry":$('#departureCountryList option:selected').text(),
+						"departureCity":$('#departureCity').val(),
+						"nameOfHotel":$('#nameHotelsId').val(),
+						"accomodationAddress":$('#accomAddress').val(),
+						"accomodationPhoneNo":$('#accomPhoneNoId').val(),
+						"checkVisaApplicationStatus":"WithoutDocument",
 						
 					}),
 					async : true,
@@ -1251,21 +1269,15 @@ label#radiolabel {
 						if(data.status==false){
 							Swal.fire({
 								  title: "<img src='/images/fail1234.png' style='width:150px;'>", 
-								  html: "Register before apply",  
+								  html: data.Message,  
 								  confirmButtonText: "Ok", 
 								 
-								}).then(function() {
-									
-									
-								    
-								});
+								})
 
 						}else{
-							var param ="hash="+data.hash;
-							
-							 window.location.href = "/payment/?"+param;
-							
-							
+						
+							 window.location.href = "/en/confirmation/"+data.data.applicationVisaId;
+						
 							}
 						
 					},	
@@ -1273,29 +1285,14 @@ label#radiolabel {
 						console.log("error when gettig data");
 					}
 				});
-			}else{
-				Swal.fire({
-					  title: "<img src='/images/fail1234.png' style='width:150px;'>", 
-					  html: "Sorry, E-visa not available. please contact the nearest embassy",  
-					  confirmButtonText: "Ok", 
-					 
-					})
-				}
-
+		
 			}else{
 					validate();
-				}
-		}else{
-				
-			$('#accept-terms-track').blur();
-     		 $('#accept-gdpr-track').blur();
-     		$('.checkmark').css('border','1px solid red');
-
-
 			}
+		
 
 
-		}
+	}
 
   	</script>
   	
@@ -1677,7 +1674,15 @@ label#radiolabel {
 	
     window.onload = function () {
     	getCountryList();
-       
+    	getMaritialStatus()
+    	getEmploymentStatus()
+    	getOccupation()
+    	getQualification()
+    	religion()
+    	gettransportation_type()
+    	
+    	
+    	
         var ddlYears = document.getElementById("dateExpiryYearId");
   
         var currentYear = (new Date()).getFullYear();
@@ -1725,6 +1730,8 @@ label#radiolabel {
     			$('#purposeForTravelId').text(data.purposeForTravel);
     			$('#nationalityId').text(data.nationality);
     			$('#countryNameofHotel').text(data.toCountry);
+    			$('#applicationVisaId').val(data.pkid);
+    			$('#usersId').val(data.userId);
     		},	
     		error : function(data) {
     			console.log("error when gettig data");
@@ -1732,33 +1739,7 @@ label#radiolabel {
     	}); 
     }
 
-    function getCountryList(){
-        
-    	 $.ajax({
- 			type : 'GET',
- 			url : '/country/getCountryList',	
- 			async : true,
- 			success : function(data) {
- 				 $.each(data, function(index,element) {
- 					 
- 					 $('#countrylist').append('<option value="'+element.countryCode+'">'+element.countryName+'</option>')
- 					  $('#passPortCountryList').append('<option value="'+element.countryCode+'">'+element.countryName+'</option>')
- 					   $('#addressCountryList').append('<option value="'+element.countryCode+'">'+element.countryName+'</option>')
- 					    $('#taxCompanyCountryList').append('<option value="'+element.countryCode+'">'+element.countryName+'</option>')
- 					     $('#departureCountryList').append('<option value="'+element.countryCode+'">'+element.countryName+'</option>')
- 					     
- 					
- 				 });
- 					
- 			},	
- 			error : function(data) {
- 				console.log("error when gettig data");
- 			}
- 		});
-
-       }
-    
-    
+   
     function capitalizeFirstLetter(str) {
         const capitalized = str.replace(/^./, str[0].toUpperCase());
         return capitalized;
