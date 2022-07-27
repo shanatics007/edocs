@@ -39,7 +39,7 @@
                         <div class="input-box-bottom">
                            <div class="actual-input">
                               <div class="text-input-single">
-                              <input type="email" placeholder="required" id="userEmail" onChange="validate();">
+                              <input type="email" placeholder="Email" id="userEmail" onChange="validate();">
                               </div>
                          
 					<div class="error-mark" style="display:none;"><i class="icon-error"></i></div>
@@ -58,7 +58,7 @@
                            <div class="input-box-bottom">
                               <div class="actual-input">
                                  <div class="text-input-single">
-                                 <input type="password" placeholder="required" id="userPass"></div>
+                                 <input type="password" placeholder="password" id="userPass"></div>
                                  <!---->
                               </div>
                             
@@ -127,6 +127,31 @@
 		
 	}
 
+
+	function isValidate(){
+		var isValidated = true;
+		var userEmail =$('#userEmail').val();
+      	var userPass = $('#userPass').val();
+		if(userEmail==null || userEmail.length==0){
+      		$('#userEmail').blur();
+      		$('#userEmail').css('border',' 1px solid red');
+      		return false;
+      		isValidated= false;
+      		
+      	}else if(userPass==null || userPass.length==0 || userPass==''){
+      		$('#userPass').blur();
+      		$('#userPass').css('border',' 1px solid red');
+      		return false;
+      		isValidated= false;
+      	}else{
+      		$('#userEmail').css('border',' 1px solid black');
+      		$('#userPass').css('border',' 1px solid black');
+      		return true;
+      		isValidated= true;
+      	
+      	 }
+		}
+
   	</script>
   	
   	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -136,17 +161,8 @@
           	var url = "user/signin";	
           	var userEmail =$('#userEmail').val();
           	var userPass = $('#userPass').val();
-          	if(userEmail==null || userEmail.length==0){
-          		$('#userEmail').blur();
-          		$('#userEmail').css('border',' 1px solid red');
-          		
-          	}else if(userPass==null || userPass.length==0){
-          		$('#userPass').blur();
-          		$('#userPass').css('border',' 1px solid red');
-          	}else{
-          		$('#userEmail').css('border',' 1px solid black');
-          		$('#userPass').css('border',' 1px solid black');
-          	
+          	if(isValidate()){
+              	
 			$.ajax({
 				type : "POST",
 				url : url,	
@@ -198,7 +214,11 @@
 				}
 			});
 			
-			}
+			}else{
+				
+				isValidate();
+				
+				}
     	}
      
     	

@@ -339,24 +339,8 @@ window.onload = function () {
     var checkFormStatus = "<%=checkUser%>";
     $('#card_holder_first_name').val('<%=firstName%>');
     $('#card_holder_second_name').val('<%=lastName%>');
-    
-    $.ajax({
-		type : 'GET',
-		url : '/country/getCountryList',	
-		async : true,
-		success : function(data) {
-			 $.each(data, function(index,element) {
-				 
-				 $('#countrylist').append('<option value="'+element.countryCode+'">'+element.countryName+'</option>')
-				 $('#countrylist').val('<%=from_country%>');
-			 });
-				
-		},	
-		error : function(data) {
-			console.log("error when gettig data");
-		}
-	}); 
-
+    getCountryList();
+    $('#countrylist option:selected').text('<%=from_country%>')
 	var authUrl = window.location.href;
 	var authKey = authUrl.split('=')[1];
    
@@ -371,7 +355,7 @@ window.onload = function () {
 			$('#userId').val(data.userId);
 			$('#card_holder_first_name').val(data.firstName);
 			$('#card_holder_second_name').val(data.lastName);
-			$('#countrylist').val(data.nationality);
+			/* $('#countrylist').val(data.nationality); */
 			$('#userApplicationId').text(data.pkid);
 			$('#visaTypeId').text(data.purposeForTravel);
 			$('#firstNameId').text(data.firstName);
@@ -464,6 +448,26 @@ window.onload = function () {
 		return isvalidated;
 	
 	}
+
+	function getCountryList(){
+		  $.ajax({
+				type : 'GET',
+				url : '/country/getCountryList',	
+				async : false,
+				success : function(data) {
+					 $.each(data, function(index,element) {
+						 
+						 $('#countrylist').append('<option value="'+element.countryCode+'">'+element.countryName+'</option>')
+						
+					 });
+						
+				},	
+				error : function(data) {
+					console.log("error when gettig data");
+				}
+			}); 
+		}
+	
 </script>
 
 </body>
