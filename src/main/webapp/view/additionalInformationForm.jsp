@@ -1024,7 +1024,7 @@ label#radiolabel {
     	 <div class="row" id="documentUploadFormId">
     	 <div class="col-sm-4" id="photographycolId">
     	<button type="button" class="btn btn-primary" id="photographyButtonId">upload</button>
-    	<input type="file" id="photographyfileId" hidden/>
+    	<input type="file" id="photographyfileId" onchange="validateDocument();" hidden/>
     	 </div>
     	  <div class="col-sm-2">
     	 or
@@ -1035,12 +1035,13 @@ label#radiolabel {
 		    	  
     	 </div>
     	 <div class="col-sm-2">
-         <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
-         <div class="success-mark" id="phoneSucess" style="display:none;"><i class="icon-ok"></i></div>
+         <div class="error-mark" id="photographyError" style="display:none;"><i class="icon-error"></i></div>
+         <div class="success-mark" id="photographysucess" style="display:none;"><i class="icon-ok"></i></div>
        </div>
+     
     	</div>
-    	
-    	
+    	<div id="photogrphyErrorContent" style="color:red; display: none;"><span>Please choose file or take photo</span></div>
+    	  <div id="photogrphySizeError" style="color:red; display: none;"><span>file size must be maximum 2 MB</span></div>
     	<label>Biographical page of passport</label> 
     	
     	
@@ -1050,7 +1051,7 @@ label#radiolabel {
     	 <div class="row" id="documentUploadFormId">
     	 <div class="col-sm-4" id="photographycolId">
     	<button type="button" class="btn btn-primary" id="biographicalButtonId">upload</button>
-    	<input type="file" id="biographicalFileId" hidden/>
+    	<input type="file" id="biographicalFileId" onchange="validateDocument();" hidden/>
     	 </div>
     	  <div class="col-sm-2">
     	 or
@@ -1059,18 +1060,19 @@ label#radiolabel {
     	  <button type="button" class="btn btn-primary">Take a photo</button>
     	 </div>
     	 <div class="col-sm-2">
-         <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
-         <div class="success-mark" id="phoneSucess" style="display:none;"><i class="icon-ok"></i></div>
+         <div class="error-mark" id="biographicalError" style="display:none;"><i class="icon-error"></i></div>
+         <div class="success-mark" id="biographicalSucess" style="display:none;"><i class="icon-ok"></i></div>
        </div>
     	</div>
-    	
+    	<div id="biographicalErrorContent" style="color:red; display: none;"><span>Please choose file or take photo</span></div>
+    	<div id="biographicalSizeError" style="color:red; display: none;"><span>file size must be maximum 2 MB</span></div>
     	<label>Hotel Booking</label> 
     
     	 <p></p>
     	 <div class="row" id="documentUploadFormId">
     	 <div class="col-sm-4" id="photographycolId">
     	<button type="button" class="btn btn-primary" id="hotelBookingButtonId">upload</button>
-    	<input type="file" id="hotelBookingFileId" hidden/>
+    	<input type="file" id="hotelBookingFileId" onchange="validateDocument();" hidden/>
     	 </div>
     	  <div class="col-sm-2">
     	 or
@@ -1079,17 +1081,18 @@ label#radiolabel {
     	  <button type="button" class="btn btn-primary">Take a photo</button>
     	 </div>
     	 <div class="col-sm-2">
-         <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
-         <div class="success-mark" id="phoneSucess" style="display:none;"><i class="icon-ok"></i></div>
+         <div class="error-mark" id="hotelBookingError" style="display:none;"><i class="icon-error"></i></div>
+         <div class="success-mark" id="hotelBookingSucess" style="display:none;"><i class="icon-ok"></i></div>
        </div>
     	</div>
-    	
+    	<div id="hotelBookingErrorContent" style="color:red; display: none;"><span>Please choose file or take photo</span></div>
+    	<div id="hotelBookingSizeError" style="color:red; display: none;"><span>file size must be maximum 2 MB</span></div>
     	<label>Residence proof or ID</label> 
      	<p></p>
     	 <div class="row" id="documentUploadFormId">
     	 <div class="col-sm-4" id="photographycolId">
     	<button type="button" class="btn btn-primary" id="residenceButtonId">upload</button>
-    	<input type="file" id="residencefileId" hidden/>
+    	<input type="file" id="residencefileId" onchange="validateDocument();" hidden/>
     	 </div>
     	  <div class="col-sm-2">
     	 or
@@ -1098,11 +1101,12 @@ label#radiolabel {
     	  <button type="button" class="btn btn-primary">Take a photo</button>
     	 </div>
     	 <div class="col-sm-2">
-         <div class="error-mark" id="phoneError" style="display:none;"><i class="icon-error"></i></div>
-         <div class="success-mark" id="phoneSucess" style="display:none;"><i class="icon-ok"></i></div>
+         <div class="error-mark" id="residenceError" style="display:none;"><i class="icon-error"></i></div>
+         <div class="success-mark" id="residenceSucess" style="display:none;"><i class="icon-ok"></i></div>
        </div>
     	</div>
-    	 
+    	<div id="residenceSucessErrorContent" style="color:red; display: none;"><span>Please choose file or take photo</span></div>
+    	 <div id="residenceSizeError" style="color:red; display: none;"><span>file size must be maximum 2 MB</span></div>
     	 
    </div>
    		
@@ -1212,9 +1216,16 @@ label#radiolabel {
     	var country = urlString[4];
     	var authUrl = window.location.href;
     	var authKey = authUrl.split('/')[5];
+    	var chedckstatus ;
+
+			if($('#accept-gdpr-track').prop('checked')==true){
+				uploadDocument();
+				chedckstatus = "WithDocument";
+			}else{
+				chedckstatus = "WithoutDocument";
+				}
+    	
 			if(validate()){
-				
-				
 				var url ="/addInfo/saveAddtionalInfo";
 				var dateofIssue = $('#dateIssueId').val()+'-'+$('#dayIssueMonthId').val()+'-'+$('#yearIssueId').val();
 				var dateofExpiry = $('#dateExpiryId').val()+'-'+$('#dateExpiryMonthId').val()+'-'+$('#dateExpiryYearId').val();
@@ -1261,7 +1272,7 @@ label#radiolabel {
 						"nameOfHotel":$('#nameHotelsId').val(),
 						"accomodationAddress":$('#accomAddress').val(),
 						"accomodationPhoneNo":$('#accomPhoneNoId').val(),
-						"checkVisaApplicationStatus":"WithoutDocument",
+						"checkVisaApplicationStatus":chedckstatus,
 						
 					}),
 					async : true,
@@ -1295,6 +1306,176 @@ label#radiolabel {
 	}
 
   	</script>
+  	
+  	
+  	<script type="text/javascript">
+
+  	function uploadDocument(){
+   	 var userId = $('#usersId').val();
+   	 var form = new FormData();
+   	 
+   	 var photographyfile = $('#photographyfileId')[0].files[0];
+
+   	 var biographicalFile = $('#biographicalFileId')[0].files[0];
+
+   	 var hotelBookingFile = $('#hotelBookingFileId')[0].files[0];
+
+   	 var residencefile = $('#residencefileId')[0].files[0];
+	
+  /*  	getFileSize(photographyfile.size);
+   	getFileSize(biographicalFile.size);
+   	getFileSize(hotelBookingFile.size);
+   	getFileSize(residencefile.size); */
+
+   	if(validateDocument()){
+   	   	
+   	form.append("files",photographyfile);
+   	form.append("files",biographicalFile);
+   	form.append("files",hotelBookingFile);
+   	form.append("files",residencefile);
+   	 
+        
+   	var settings = {
+   		  "url": "/addInfo/uploadDocument/"+userId,
+   		  "method": "POST",
+   		  "timeout": 0,
+   		  "headers": {
+   		    "files": "multipart/form-data"
+   		  },
+   		  "processData": false,
+   		  "mimeType": "multipart/form-data",
+   		  "contentType": false,
+   		  "data": form
+   		};
+
+   		$.ajax(settings).done(function (response) {
+   		  console.log(response);
+   		});
+
+   	}else{
+   		validateDocument();
+   	   	}
+    }
+
+
+	function validateDocument(){
+	var isValidated = true;
+			
+	if($('#photographyfileId').val() == ""){
+		$('#photogrphyErrorContent').show();
+		$('#photographyError').show();
+		$('#photographysucess').hide();
+		isvalidated =false;
+		return false;
+	}else{
+		$('#photogrphyErrorContent').hide();
+		var photographyfileSize = $('#photographyfileId')[0].files[0].size / 1024 / 1024;
+		if(photographyfileSize > 2){
+			$('#photographyError').show();
+			$('#photogrphySizeError').show();
+			$('#photographysucess').hide();
+			isvalidated =false;
+			return false;
+
+		}else{
+			$('#photogrphySizeError').hide();
+			$('#photographyError').hide();
+			$('#photographysucess').show();
+			isvalidated =true;
+		}
+	    
+	}
+	if($('#biographicalFileId').val() == ""){
+		$('#biographicalErrorContent').show();
+		$('#biographicalError').show();
+		$('#biographicalSucess').hide();
+		isvalidated =false;
+		return false;
+	}else{
+		$('#biographicalErrorContent').hide();
+		var biographicalFileSize = $('#biographicalFileId')[0].files[0].size / 1024 / 1024;
+		if(biographicalFileSize > 2){
+			$('#biographicalError').show();
+			$('#biographicalSizeError').show();
+			$('#biographicalSucess').hide();
+			isvalidated =false;
+			return false;
+			
+		}else{
+		$('#biographicalSizeError').hide();
+		$('#biographicalSucess').show();
+		$('#biographicalError').hide();
+	    isvalidated =true;
+		}
+	}
+	if($('#hotelBookingFileId').val() == ""){
+		$('#hotelBookingErrorContent').show();
+		$('#hotelBookingError').show();
+		$('#hotelBookingSucess').hide();
+		isvalidated =false;
+		return false;
+	}else{
+		$('#hotelBookingErrorContent').hide();
+		var hotelBookingFileSize = $('#hotelBookingFileId')[0].files[0].size / 1024 / 1024;
+		if(hotelBookingFileSize > 2){
+			$('#hotelBookingError').show();
+			$('#hotelBookingSucess').hide();
+			$('#hotelBookingSizeError').show();
+			isvalidated =false;
+			return false;
+		}else{
+			$('#hotelBookingError').hide();
+			$('#hotelBookingSizeError').hide();
+			$('#hotelBookingSucess').show();
+			isvalidated =true;
+		}
+	}
+	if($('#residencefileId').val() == ""){
+		$('#residenceSucessErrorContent').show();
+		$('#residenceError').show();
+		isvalidated =false;
+		return false;
+	}else{
+		$('#residenceSucessErrorContent').hide();
+		var residencefileSize = $('#residencefileId')[0].files[0].size / 1024 / 1024;
+		if(residencefileSize > 2){
+			
+			$('#residenceError').show();
+			$('#residenceSizeError').show();
+			$('#residenceSucess').hide();
+			isvalidated =false;
+			return false;
+			
+		}else{
+			$('#residenceError').hide();
+			$('#residenceSizeError').hide();
+			$('#residenceSucess').show();
+			isvalidated =false;
+			
+		}
+		
+	}
+	
+	return isvalidated;
+	}
+
+
+	function getFileSize(filesize){
+         var fSExt = new Array('Bytes', 'KB', 'MB', 'GB');
+         var i=0;
+         while(filesize>900){
+             
+             filesize/=1024;i++;
+             
+            }
+         var exactSize = (Math.round(filesize*100)/100)+' '+fSExt[i];
+             console.log('FILE SIZE = ',exactSize);
+
+             return exactSize;
+		}
+  	</script>
+  	
+  	
   	
   	<script>
 	function validate(){
@@ -1812,7 +1993,7 @@ label#radiolabel {
             console.log("getUserMedia not supported");
          }  
        }
-     
+
   	</script>
   	
   	

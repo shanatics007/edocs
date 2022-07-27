@@ -65,6 +65,14 @@
 
 
 </style>
+<style>
+select#card_expiry_mm {
+    margin-right: 2px;
+}
+select#card_expiry_yy {
+    margin-left: 2px;
+}
+</style>
 
 </head>
 <body>
@@ -380,14 +388,14 @@ window.onload = function () {
 		var isvalidated =true;
 		if($('#card_number').val()!=''){
 			
-			$('#card_number').css('border','none')
+			$('#card_number').css('border','1px solid black')
 		}else{
 			$('#card_number').css('border','1px solid red')
 			isvalidated = false;
 		}
 		if($('#card_expiry_mm').val()!=''){
 			
-			$('#card_expiry_mm').css('border','none')
+			$('#card_expiry_mm').css('border','1px solid black')
 		}else{
 			$('#card_expiry_mm').css('border','1px solid red')
 			isvalidated = false;
@@ -395,7 +403,7 @@ window.onload = function () {
 
 		if($('#card_expiry_yy').val()!=''){
 			
-			$('#card_expiry_yy').css('border','none')
+			$('#card_expiry_yy').css('border','1px solid black')
 		}else{
 			$('#card_expiry_yy').css('border','1px solid red')
 			isvalidated = false;
@@ -403,14 +411,14 @@ window.onload = function () {
 
 		if($('#card_cvv').val()!=''){
 			
-			$('#card_cvv').css('border','none')
+			$('#card_cvv').css('border','1px solid black')
 		}else{
 			$('#card_cvv').css('border','1px solid red')
 			isvalidated = false;
 		}
 		if($('#billing_address').val()!=''){
 			
-			$('#billing_address').css('border','none')
+			$('#billing_address').css('border','1px solid black')
 		}else{
 			$('#billing_address').css('border','1px solid red')
 			isvalidated = false;
@@ -418,28 +426,28 @@ window.onload = function () {
 		
 		if($('#billing_city').val()!=''){
 			
-			$('#billing_city').css('border','none')
+			$('#billing_city').css('border','1px solid black')
 		}else{
 			$('#billing_city').css('border','1px solid red')
 			isvalidated = false;
 		}
 		if($('#billing_state').val()!=''){
 			
-			$('#billing_state').css('border','none')
+			$('#billing_state').css('border','1px solid black')
 		}else{
 			$('#billing_state').css('border','1px solid red')
 			isvalidated = false;
 		}
 		if($('#billing_zipcode').val()!=''){
 			
-			$('#billing_zipcode').css('border','none')
+			$('#billing_zipcode').css('border','1px solid black')
 		}else{
 			$('#billing_zipcode').css('border','1px solid red')
 			isvalidated = false;
 		}
 		if($('#countrylist').val()!=''){
 			
-			$('#countrylist').css('border','none')
+			$('#countrylist').css('border','1px solid black')
 		}else{
 			$('#countrylist').css('border','1px solid red')
 			isvalidated = false;
