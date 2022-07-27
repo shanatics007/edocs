@@ -200,7 +200,7 @@
 
 							Swal.fire({
 								  title: "<img src='images/fail1234.png' style='width:150px;'>", 
-								  html: "Please Verify your Email on registered Email",  
+								  html: "Please confirm your email and password",  
 								  confirmButtonText: "Ok", 
 							});
 								  
