@@ -46,14 +46,14 @@ public class UserController {
 		HashMap<String, Object> loginDetails = userService.userSignIn(user);
 		session.setAttribute("userLogin", loginDetails);
 		UserModel userdetails = (UserModel)loginDetails.get("data");
-		
+		if(userdetails!=null) {
 		List<ApplicationForVisaModel> appDetails = applicationForVisaService.getApplicationByUserId(userdetails.getUserId());
 		ApplicationForVisaModel model=null;
 		if(appDetails.size()>0) {
 			model = appDetails.get(appDetails.size()-1);
 		}
 		session.setAttribute("AppDetailsByUser", model);
-		
+		}
 		return loginDetails;
 		
 		
