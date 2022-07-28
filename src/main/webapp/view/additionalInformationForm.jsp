@@ -116,6 +116,8 @@ if (request.getSession(false).getAttribute("userLogin") != null) {
        <script async="" src="/js/home.js"></script>
        <script async="" src="/js/tag.js"></script>
        <script async="" src="/js/vendor.js"></script>
+       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
+       
        
  <style>
        
@@ -1003,7 +1005,9 @@ label#radiolabel {
                               <div class="error-position"><span style="display: none;">0</span></div>
                               <div id="accept-gdpr" class="actual-input">
                                  <div class="checkbox-input"><label for="accept-gdpr-track" class="checkbox-label">
-                                 <span id="uploadDocLaterId">I will upload document later</span> <input type="checkbox" id="accept-gdpr-track" name="accept-gdpr"> <span class="checkmark"></span></label></div>
+                                 <span id="uploadDocLaterId">I will upload document later</span> 
+                                 <input type="checkbox" id="accept-gdpr-track" name="accept-gdpr" onclick="checkedDocument();"> 
+                                 <span class="checkmark"></span></label></div>
                               </div>
                            </div>
                         </div>
@@ -1030,7 +1034,7 @@ label#radiolabel {
     	 or
     	 </div>
     	 <div class="col-sm-4" id="photographycolId">
-    	  <button type="button" class="btn btn-primary" id="takephotoId" onclick="startWebcam();">Take a photo</button>
+    	  <button type="button" class="btn btn-primary" id="takephotoId">Take a photo</button>
     	 
 		    	  
     	 </div>
@@ -1099,6 +1103,10 @@ label#radiolabel {
     	 </div>
     	 <div class="col-sm-4" id="photographycolId">
     	  <button type="button" class="btn btn-primary">Take a photo</button>
+    	<input type=button value="Take Snapshot" onClick="take_snapshot()">
+ 	<div id="my_camera"></div>
+		<div id="results" ></div>
+    	
     	 </div>
     	 <div class="col-sm-2">
          <div class="error-mark" id="residenceError" style="display:none;"><i class="icon-error"></i></div>
@@ -1108,10 +1116,8 @@ label#radiolabel {
     	<div id="residenceSucessErrorContent" style="color:red; display: none;"><span>Please choose file or take photo</span></div>
     	 <div id="residenceSizeError" style="color:red; display: none;"><span>file size must be maximum 2 MB</span></div>
     	 
-   </div>
-   		
-
-                  </div>
+  			 </div>
+   		        </div>
                   <div>
                      <div>
                     
@@ -1218,7 +1224,7 @@ label#radiolabel {
     	var authKey = authUrl.split('/')[5];
     	var chedckstatus ;
 
-			if($('#accept-gdpr-track').prop('checked')==true){
+			if($('#accept-gdpr-track').prop('checked')==false){
 				uploadDocument();
 				chedckstatus = "WithDocument";
 			}else{
@@ -1369,7 +1375,9 @@ label#radiolabel {
 		return false;
 	}else{
 		$('#photogrphyErrorContent').hide();
-		var photographyfileSize = $('#photographyfileId')[0].files[0].size / 1024 / 1024;
+		var photographyfile = $('#photographyfileId')[0].files[0];
+		var photographyfileSize = photographyfile.size / 1024 / 1024;
+		
 		if(photographyfileSize > 2){
 			$('#photographyError').show();
 			$('#photogrphySizeError').show();
@@ -1416,8 +1424,11 @@ label#radiolabel {
 		return false;
 	}else{
 		$('#hotelBookingErrorContent').hide();
+		
 		var hotelBookingFileSize = $('#hotelBookingFileId')[0].files[0].size / 1024 / 1024;
+		
 		if(hotelBookingFileSize > 2){
+			
 			$('#hotelBookingError').show();
 			$('#hotelBookingSucess').hide();
 			$('#hotelBookingSizeError').show();
@@ -1965,9 +1976,19 @@ label#radiolabel {
        document.getElementById('residencefileId').click();
      }
 
+     function checkedDocument(){
+         if($('#accept-gdpr-track').prop('checked')==true){
+
+        	 	$('#documentsuploadsFormId').css('pointer-events','none');
+            }else{
+            	$('#documentsuploadsFormId').css('pointer-events','unset');
+                }
+         
+
+        }
 
      
-     function startWebcam() {
+     /* function startWebcam() {
          if (navigator.getUserMedia) {
             navigator.getUserMedia (
 
@@ -1993,8 +2014,35 @@ label#radiolabel {
             console.log("getUserMedia not supported");
          }  
        }
-
+ */
   	</script>
+  	
+  	<script type="JavaScript">
+	 Webcam.set({
+	     width: 320,
+	     height: 240,
+	     image_format: 'jpeg',
+	     jpeg_quality: 90
+	 });
+Webcam.reset( '#my_camera' );
+ 	Webcam.attach( '#my_camera' );
+// preload shutter audio clip
+ var shutter = new Audio();
+ shutter.autoplay = true;
+ shutter.src = navigator.userAgent.match(/Firefox/) ? 'shutter.ogg' : 'shutter.mp3';
+
+</script>
+<script type="text/javascript">
+function take_snapshot() {
+	 
+	 
+	   Webcam.snap( function(data_uri) {
+	      
+	       document.getElementById('results').innerHTML = 
+	        '<img src="'+data_uri+'"/>';
+	    } );
+	}
+</script>
   	
   	
   </body>
