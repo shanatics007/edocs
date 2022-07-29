@@ -40,7 +40,7 @@ h1#formheadrId {
     border-left: 0;
     width: 50%;
    }
-}
+
 
 div#taxIdentityNoId {
     display: none;
@@ -69,4 +69,46 @@ div#firstTitleHeaderForm::before {
 
 div#firstTitleHeaderForm::After {
 	background: white !important;
+}
+
+@media (max-width: 599px){
+	
+h1#passportDetailSectionId{
+    font-size: 20px;
+    color: #1d3367;
+    font-weight: 500;
+    margin-left: 20px;
+
+}
+.ee-form-container h1 {
+    font-size: 22px;
+    color: #1d3367;
+    font-weight: 500;
+    margin-left: 20px;
+}
+}
+
+#photoModalHeader{
+	display: block;
+}
+#my_camera > video,#my_camera > img{
+	width: 100% !important;
+	height:100% !important;
+}
+#my_camera{
+	width: 100% !important;
+	height:100% !important;
+}
+
+input.btn.btn-primary {
+    background-color: #2b1569;
+}
+#modelContentId{
+	background: #f0f1ed;
+}
+#uploadPhotoId{
+	display: none;
+}
+#resetPhotoId{
+	display: none;
 }

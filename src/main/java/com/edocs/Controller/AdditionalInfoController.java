@@ -37,6 +37,7 @@ public class AdditionalInfoController {
 
 	@PostMapping("/uploadDocument/{userId}")
 	public HashMap<Object, Object> uploadDocument(@PathVariable int userId,@RequestParam("files") MultipartFile [] files) throws IllegalStateException, IOException{
+		//filePath+=userId+"/";
 		if (files.length!=0) {   
                 if(! new File(filePath).exists())
                 {
