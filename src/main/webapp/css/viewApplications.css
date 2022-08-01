@@ -831,6 +831,10 @@ img {
 .account-page .application-view .application-status-container .application-status:not(.subsequent) .status-content, .feedbackPage .application-view .application-status-container .application-status:not(.subsequent) .status-content {
     transition: border-top 500ms ease-in-out;
     border-top: 1px solid #1c3367;
+    border-bottom: 1px solid #1c3367;
+}
+.application-status.expanded {
+    border-bottom: 1px solid #1c3367;
 }
 
 .account-page .application-view .application-status-container .application-status .status-content, .feedbackPage .application-view .application-status-container .application-status .status-content {

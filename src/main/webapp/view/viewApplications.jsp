@@ -73,10 +73,12 @@
 						<header class="main-header">Application Status</header>
 						<div class="statuses-wrapper">
 							<div class="statuses-expandable">
-								<div class="application-status expanded">
-									<div class="status-title active" id="unpaidStatus" href="#unpaid-status-link">
+								<div class="application-status expanded" >
+									<div class="status-title active">
 										<img src="">
-										<header id="cusorEvent;">Unpaid</header>
+										<a data-toggle="collapse" id="unpaidStatus" href="#unpaid-status-link" aria-expanded="false" aria-controls="multiCollapseExample1">
+										<header id="cusorEvent;">UNPAID</header>
+									</a>
 									</div>
 									<div class="status-content" id="unpaid-status-link" >
 										<div class="img-wrapper">
@@ -84,21 +86,35 @@
 												class="status-icon">
 										</div>
 										<div>
-											<header>Unpaid</header>
+											<header>UNPAID</header>
 											<p>Order is not paid.
 											<p>You can make a payment right now.</p>
 											</p>
 										</div>
 									</div>
 								</div>
-								<!---->
-								<!---->
-								<!---->
+								
 							</div>
 							<div class="application-status subsequent">
-								<a class="status-title" id="applicationReceivedStatus" href="#Application-status-link">
+							<div class="status-title">
+										<img src="">
+								<a data-toggle="collapse" id="applicationReceivedStatus" href="#Application-status-link">
 									<header id="cusorEvent;">Application received</header>
 								</a>
+								</div>
+								
+								<div class="status-content" id="Application-status-link" >
+										<div class="img-wrapper">
+											<img src="/img/icon/status/unpaid.svg" alt=""
+												class="status-icon">
+										</div>
+										<div>
+											<header>PAID</header>
+											<p>Order is not paid.
+											<p>You can make a payment right now.</p>
+											</p>
+										</div>
+									</div>
 								
 							</div>
 							<div class="application-status subsequent">

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.edocs.Model.AdditionalInfoModel;
+import com.edocs.Repository.ApplicationForVisaRepository;
 import com.edocs.Service.AdditionalInfoService;
 
 @RestController
@@ -23,6 +24,8 @@ public class AdditionalInfoController {
 	
 	@Autowired
 	private AdditionalInfoService additionalInfoService;
+	@Autowired
+	private ApplicationForVisaRepository applicationForVisaRepository;
 	
 	@Value("${document.file.path}")
 	private String filePath;
@@ -36,7 +39,7 @@ public class AdditionalInfoController {
 	
 
 	@PostMapping("/uploadDocument/{userId}")
-	public HashMap<Object, Object> uploadDocument(@PathVariable int userId,@RequestParam("files") MultipartFile [] files) throws IllegalStateException, IOException{
+	public HashMap<Object, Object> uploadDocument(@PathVariable int userId,@PathVariable long applicationId,@RequestParam("files") MultipartFile [] files) throws IllegalStateException, IOException{
 		String localfilePath=filePath+userId+'/';
 		try {
 		if (files.length!=0) {   
@@ -52,7 +55,9 @@ public class AdditionalInfoController {
             String filePath1 = localfilePath+ userId+"_"+orgName;
             File dest = new File(filePath1);
             multipartFile.transferTo(dest);
+            
 		}
+		
 		}catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -60,6 +65,34 @@ public class AdditionalInfoController {
 		return null;
 	}
 	
+	@PostMapping("/uploadDocumentfromUserAccount/{userId}/{applicationId}")
+	public HashMap<Object, Object> uploadDocumentFromUserAccount(@PathVariable int userId,@PathVariable int applicationId,@RequestParam("files") MultipartFile [] files) throws IllegalStateException, IOException{
+		String localfilePath=filePath+userId+'/';
+		try {
+		if (files.length!=0) {   
+                if(! new File(localfilePath).exists())
+                {
+                    new File(localfilePath).mkdir();
+                }
+            }
+		for (MultipartFile multipartFile : files) {
+			
+			System.out.println(multipartFile.getOriginalFilename());
+			String orgName = multipartFile.getOriginalFilename();
+            String filePath1 = localfilePath+ userId+"_"+orgName;
+            File dest = new File(filePath1);
+            multipartFile.transferTo(dest);
+            
+            
+		}
+		
+		applicationForVisaRepository.updateApplicationstatus("Application Received",applicationId);
+		}catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
 	
 	
 	

@@ -1318,7 +1318,7 @@ ul.drop-down-ul.display-none.display-block {
 
 	function getUploadDocumentPage(authKey){
 		var param = "?hash="+authKey;
-		window.location.href = "/en/upload-document/"+param
+		window.open("/en/upload-document/"+param);
 	}
 	
 
