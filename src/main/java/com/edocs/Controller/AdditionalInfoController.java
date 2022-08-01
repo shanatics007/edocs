@@ -37,20 +37,24 @@ public class AdditionalInfoController {
 
 	@PostMapping("/uploadDocument/{userId}")
 	public HashMap<Object, Object> uploadDocument(@PathVariable int userId,@RequestParam("files") MultipartFile [] files) throws IllegalStateException, IOException{
-		//filePath+=userId+"/";
+		String localfilePath=filePath+userId+'/';
+		try {
 		if (files.length!=0) {   
-                if(! new File(filePath).exists())
+                if(! new File(localfilePath).exists())
                 {
-                    new File(filePath).mkdir();
+                    new File(localfilePath).mkdir();
                 }
             }
 		for (MultipartFile multipartFile : files) {
 			
 			System.out.println(multipartFile.getOriginalFilename());
 			String orgName = multipartFile.getOriginalFilename();
-            String filePath1 = filePath +userId+"_"+orgName;
+            String filePath1 = localfilePath+ userId+"_"+orgName;
             File dest = new File(filePath1);
             multipartFile.transferTo(dest);
+		}
+		}catch (IOException e) {
+			e.printStackTrace();
 		}
 		
 		return null;

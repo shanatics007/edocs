@@ -1250,7 +1250,7 @@ label#radiolabel {
   </div>
 </div>
 
-  	<script>
+<script>
   	function submitApplicationAdditionalInfo(){
   	  	
   		var urlString  = window.location.href.split('/');
@@ -1568,7 +1568,10 @@ function take_snapshot() {
    		$.ajax(settings).done(function (response) {
    		  console.log(response);
    		checkDocstatus = true;
-   		});
+   		}).fail(function (response) {
+     		  console.log(response);
+     		checkDocstatus = false;
+     	});
 
    	}else{
    		validateDocument();
