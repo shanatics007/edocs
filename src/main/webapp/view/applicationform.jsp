@@ -421,7 +421,7 @@ label#radiolabel {
             <label> Given Name(s) </label> 
             <div class="row">
             <div class="col-sm-10">
-            <input type="text" name="firstname" id="firstNameID" size="15" required   onchange="validate();"/> 
+            <input type="text" name="firstname" id="firstNameID" size="15"  onkeydown="return /[a-z]/i.test(event.key)" required onchange="validate();"/> 
             
             </div>
              <div class="col-sm-2">
@@ -437,7 +437,7 @@ label#radiolabel {
             <label> Surname(s) </label> 
             <div class="row">
             <div class="col-sm-10">
-            <input type="text" name="lastName" id="lastNameID" size="15" required  onchange="validate();"/> 
+            <input type="text" name="lastName" id="lastNameID" size="15" onkeydown="return /[a-z]/i.test(event.key)" required onchange="validate();"/> 
             
             </div>
              <div class="col-sm-2">
@@ -1093,6 +1093,7 @@ label#radiolabel {
 			if(arrivalDate<=currentDate){
 			$('#datearrivalerror').text("The provided date is too early")
 			$('#dateofArrivalError').css('display','block');
+			$('#dateofArrivalSucess').css('display','none');
 			return false;
 				
 			}else{
@@ -1129,7 +1130,7 @@ label#radiolabel {
 					 
 				}
 			}
-
+			
 			if($('#firstNameID').val()=="" || $('#firstNameID').val().length==0){
 				 $('#firstNameError').css('display','block');
 				 $('#firstNameSucess').css('display','none');
@@ -1159,8 +1160,11 @@ label#radiolabel {
 					 $('#surnameeorr').css('display','none');
 					 
 					}
-			
+			/* 
 			if($('#dayDOB').val()!="Day" && $('#dayMonth').val()!="Month" && $('#yearlistdob').val()!="Year" ){
+				var birthdate = new Date($('#dayDOB').val()+'-'+$('#dayMonth').val()+'-'+$('#yearlistdob').val());
+				var currentDate = new Date();
+				if(birthdate <= currentDate){
 				 $('#dobSucess').css('display','block');
 				 $('#dobError').css('display','none');
 				 $('#doberrorr').css('display','none');
@@ -1172,7 +1176,30 @@ label#radiolabel {
 					 $('#doberrorr').css('display','block');
 					 isvalidated=false;
 					 return false;
-					}
+					} */
+					
+					if($('#dayDOB').val()!="Day" && $('#dayMonth').val()!="Month" && $('#yearlistdob').val()!="Year" ){
+						var birthdate = new Date($('#dayDOB').val()+'-'+$('#dayMonth').val()+'-'+$('#yearlistdob').val());
+						var currentDate = new Date();
+						if(birthdate >= currentDate){
+						$('#doberrorr').text("The provided date is too early")
+						$('#dobError').css('display','block');
+						$('#dobSucess').css('display','none');
+						
+						}
+						else{
+						 $('#dobSucess').css('display','block');
+						 $('#dobError').css('display','none');
+						 $('#doberrorr').css('display','none');
+						}
+						}else{
+
+							 $('#dobError').css('display','block');
+							 $('#dobSucess').css('display','none');
+							 $('#doberrorr').css('display','block');
+							 isvalidated=false;
+							 return false;
+							}
 			
 				var emailvalidate = $('#emailID').val();
 				

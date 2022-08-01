@@ -164,7 +164,7 @@ select#card_expiry_yy {
 			    <form id="ingenico-card-payment-form">
 			        <div class="input-group">
 			            <label>Credit card number</label>
-			            <input type="text" inputmode="numeric" id="card_number" minlength="10" maxlength="19" placeholder="0000 0000 0000 0000" autocomplete="off" onChange="validate();">
+			            <input type="text" inputmode="numeric" id="card_number" minlength="10" maxlength="19" placeholder="0000 0000 0000 0000" autocomplete="off" onChange="validate();" oninput="this.value= this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" >
 			            <div id="card_number_info" class="input-info"></div>
 			        </div>
 			        			        <div class="input-group row">
@@ -203,7 +203,7 @@ select#card_expiry_yy {
 			            </div>
 			            <div class="col-md-5 col-sm-11 cvv-box">
 			                <label>CVC / CVV / CCV2</label>
-			                <input type="text" inputmode="numeric"  placeholder="123" class="cvv-code" id="card_cvv" name="card_cvv_code" autocomplete="off" onChange="validate();">
+			                <input type="text" inputmode="numeric"  placeholder="123" class="cvv-code" id="card_cvv" name="card_cvv_code" autocomplete="off" onChange="validate();" oninput="this.value= this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
 			                <div id="card_cvv_info" class="input-info"></div>
 			            </div>
 			            <div class="hint" data-content="&lt;div&gt;The CVV/CVC code is 3 digits located on the back of your credit/debit card.&lt;/div&gt;&lt;img src=&#39;/assets/images/cvv.svg&#39; /&gt;&lt;div class=&#39;arrow&#39;&gt;&lt;/div&gt;" data-original-title="" title=""></div>
@@ -225,25 +225,25 @@ select#card_expiry_yy {
 			        
 			          <div class="input-group">
 			            <label>Address</label>
-			            <input type="text" inputmode="numeric" id="billing_address" minlength="10" maxlength="19" placeholder="Street,apt,address" autocomplete="off" onChange="validate();">
+			            <input type="text" id="billing_address" placeholder="Street,apt,address" autocomplete="off" onChange="validate();">
 			            
 			        </div>
 			        
 			          <div class="input-group">
 			            <label>City</label>
-			            <input type="text" inputmode="numeric" id="billing_city" minlength="10" maxlength="19" placeholder="City" autocomplete="off" onChange="validate();">
+			            <input type="text" id="billing_city" minlength="10" maxlength="19" placeholder="City" autocomplete="off" onChange="validate();" onkeydown="return /[a-z]/i.test(event.key)">
 			           
 			        </div>
 			        
 			         <div class="input-group row card-holders">
 			            <div class="col-md-6">
 			                <label>State</label>
-			                <input type="text" id="billing_state" placeholder="State" autocomplete="off"  required="" class="input-success" onChange="validate();">
+			                <input type="text" id="billing_state" placeholder="State" autocomplete="off"  required="" class="input-success" onChange="validate();" onkeydown="return /[a-z]/i.test(event.key)">
 			                <div class="input-info card_holder_info"></div>
 			            </div>
 			            <div class="col-md-6">
 			                <label>ZipCode</label>
-			                <input type="text" id="billing_zipcode" placeholder="Zip Code" minlength="5" maxlength="5" autocomplete="off"  onChange="validate();"class="input-success">
+			                <input type="text" id="billing_zipcode" placeholder="Zip Code" minlength="5" maxlength="5" autocomplete="off"  onChange="validate();"class="input-success" oninput="this.value= this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
 			                <div class="input-info card_holder_info"></div>
 			            </div>
 			        </div>	
@@ -386,13 +386,14 @@ window.onload = function () {
 
 	function validate(){
 		var isvalidated =true;
+		
 		if($('#card_number').val()!=''){
 			
 			$('#card_number').css('border','1px solid black')
 		}else{
 			$('#card_number').css('border','1px solid red')
 			isvalidated = false;
-		}
+		} 
 		if($('#card_expiry_mm').val()!=''){
 			
 			$('#card_expiry_mm').css('border','1px solid black')
