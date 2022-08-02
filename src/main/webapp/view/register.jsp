@@ -211,7 +211,7 @@
 			
           	if($('#terms').prop('checked') && $('#gdpr').prop('checked')){
       		
-      		if(validate()()){
+      		if(validate()){
       			
           	var url = "user/signup";	
           	var userEmail =$('#userEmail').val();
