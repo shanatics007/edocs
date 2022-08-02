@@ -211,7 +211,7 @@
 			
           	if($('#terms').prop('checked') && $('#gdpr').prop('checked')){
       		
-      		if(validate()){
+      		if(onSubmitValidate()){
       			
           	var url = "user/signup";	
           	var userEmail =$('#userEmail').val();
@@ -287,6 +287,7 @@
       		$('#cnfpassSucess').css('display','none')	
       		
     		var validRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    		
     		var emailvalidate = $('#userEmail').val();
     		
     		var pass= $('#userPass').val();
