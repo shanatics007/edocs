@@ -1362,7 +1362,17 @@ ul.drop-down-ul.display-none.display-block {
 										 +'</tr>'
 					
 										 )
-							}else{
+							}else if(element.checkApplicationStatus=="Application Received"){
+								$('#activetBody').append(
+										 '<tr><td>'+element.pkid+'</td><td>'+element.toCountry+'</td>'
+										 +'<td style="color:red;">'+element.checkApplicationStatus+'</td><td>'+element.firstName+' '+element.lastName+'</td>'
+										 +'<td>'+element.plannedDateOfTravel+'</td><td style="text-align:center;"><img src="/images/view.png" style="width:18px; height:18px; cursor: pointer;" onclick="getViewPage(\''+element.confirmAuthKey+'\');">'
+										 +'<img src="#" style="width:15px; height:15px; margin-left: 10px; cursor: pointer;"></td>'
+										 +'</tr>'
+					
+										 )
+									}
+							else{
 		
 								}
 				

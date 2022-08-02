@@ -278,7 +278,7 @@ label#radiolabel {
   
    <div class="container">
       <div class="row ee-form-container">
-         <div class="ee-form-actual">
+         <div class="ee-form-actual" id="mainSectionId">
             <div class="ee-form-steps">
                <div class="form-step active-step" id="firstTitleHeaderForm"><span class="form-step-number">
                   1
@@ -296,7 +296,7 @@ label#radiolabel {
             <div class="ee-form-inner">
                <div id="ee-form-step1">
                 <h1 id="formheadrId"> Personal details</h1> 
-               <div class="newform">
+               <div class="newform" id="sectionFirstId" >
              <input type="hidden" id="applicationVisaId">
              <input type="hidden" id="authKeyId">
              <input type="hidden" id="usersId">
@@ -377,7 +377,7 @@ label#radiolabel {
             </div>
             </div>
        <h1 id="passportDetailSectionId"> Passport details</h1>  
-            <div class="newform">
+            <div class="newform" id="passportSectionId">
             
             <label> Passport number </label> 
             <div class="row">
@@ -469,7 +469,7 @@ label#radiolabel {
 			</select>
             </div>
             
-             <div class="col-sm-4">
+             <div class="col-sm-4" id="monthSectionId">
              <select id="dayIssueMonthId" onchange="validate();">
 			<option value="Month">Month</option>
 			<option value="Jan">Jan</option>
@@ -544,7 +544,7 @@ label#radiolabel {
 			</select>
             </div>
             
-             <div class="col-sm-4">
+             <div class="col-sm-4"  id="expiryMonthSectionsId" >
              <select id="dateExpiryMonthId" onchange="validate();">
 			<option value="Month">Month</option>
 			<option value="Jan">Jan</option>
@@ -582,7 +582,7 @@ label#radiolabel {
             
             
        <h1 id="formheadrId"> Permanent Address Details</h1>  
-          <div class="newform">
+          <div class="newform" id="permanentSectionId">
            
            <label> House no/street </label> 
       
@@ -634,7 +634,7 @@ label#radiolabel {
             </div>
             </div>          
        <h1 id="vatInvoiceSection"> Vat invoice</h1>  
-          <div class="newform">
+          <div class="newform" id="vatInVoiceSectionId">
             
              <label> Do you want to receive a VAT invoice? </label> 
              <div class="row">
@@ -1031,7 +1031,7 @@ label#radiolabel {
     
      <label>Photography</label> 
     
-     <p>The photo should present a full face, front view, eyes open.
+     <p id="paragraphPhotoId">The photo should present a full face, front view, eyes open.
     		No black&white photos, no blurred photos.
     	 </p>
     	 <div class="row" id="documentUploadFormId">
@@ -1061,7 +1061,7 @@ label#radiolabel {
     	<label>Biographical page of passport</label> 
     	
     	
-	     <p>All four corners should be shown up on the final scanned image. 
+	     <p id="biographPhotoId" >All four corners should be shown up on the final scanned image. 
 	     The image must be clear and legible.
     	 </p>
     	 <div class="row" id="documentUploadFormId">
@@ -1136,7 +1136,7 @@ label#radiolabel {
                   <div>
                      <div>
                     
-                        <div class="input-box" type="SubmitInput" name="go-to-step-2" label="SEND APPLICATION" hint="" required="required" validations="" options="" reactions="[object Object]" possiblereactions="" possibledisablingreactions="" possibleemits="">
+                        <div class="input-box" id="submitSectionId" type="SubmitInput" name="go-to-step-2" label="SEND APPLICATION" hint="" required="required" validations="" options="" reactions="[object Object]" possiblereactions="" possibledisablingreactions="" possibleemits="">
                            <div class="input-box-bottom button-container submit-input-container">
                               <button class="btn" style="text-align: center;" onclick="submitApplicationAdditionalInfo();">SEND APPLICATION</button> <!---->
                            </div>
@@ -1155,7 +1155,7 @@ label#radiolabel {
                <div class="form-infobox-mobile form-infobox">
                   
                </div>
-               <div class="form-infobox">
+               <div class="form-infobox" id="lastSectionId">
                   <div class="form-info-header">
                      Summary
                   </div>
@@ -2001,76 +2001,81 @@ function take_snapshot() {
 		return false;
 
 	}
-	if($('#taxNumberId').val() == ""){
-		$('#taxIdentificationErrorId').show();
-		$('#taxNumberErrorId').show();
-		$('#taxNumberSuccessId').hide();
-		isvalidated=false;
-		return false;
+	if($('#vatYesId').prop('checked')==true){
+		if($('#taxNumberId').val() == ""){
+			$('#taxIdentificationErrorId').show();
+			$('#taxNumberErrorId').show();
+			$('#taxNumberSuccessId').hide();
+			isvalidated=false;
+			return false;
+		}else{
+			$('#taxIdentificationErrorId').hide();
+			$('#taxNumberErrorId').hide();
+			$('#taxNumberSuccessId').show();
+			isvalidated=false;
+		}
+		if($('#companyNameId').val() == ""){
+			$('#nameOfCompanyErrorId').show();
+			$('#companyNameErrorId').show();
+			$('#companyNameSuccessId').hide();
+			isvalidated=false;
+			return false;
+		}else{
+			$('#nameOfCompanyErrorId').hide();
+			$('#companyNameErrorId').hide();
+			$('#companyNameSuccessId').show();
+			isvalidated=true;
+		}
+		if($('#taxCompanyCountryList').val() == 'companyCountry') {
+			$('#companyCountryId').show();
+			$('#companyCountryErrorId').show();
+			$('#companycountrySucessId').hide();
+			isvalidated=false;
+			return false;
+		}else{
+			$('#companyCountryId').hide();
+			$('#companyCountryErrorId').hide();
+			$('#companycountrySucessId').show();
+			isvalidated=true;
+		}
+		if($('#cityNameId').val() == ""){
+			$('#companyCityErrorId').show();
+			$('#cityNameErrorId').show();
+			$('#cityNameSucessId').hide();
+			isvalidated=false;
+			return false;
+		}else{
+			$('#companyCityErrorId').hide();
+			$('#cityNameErrorId').hide();
+			$('#cityNameSucessId').show();
+			isvalidated=true;
+		}
+		if($('#companyPostalId').val() == ""){
+			$('#companyErrorId').show();
+			$('#companyPostalErrorId').show();
+			$('#companyPostalSucessId').hide();
+			isvalidated=false;
+			return false;
+		}else{
+			$('#companyErrorId').hide();
+			$('#companyPostalErrorId').hide();
+			$('#companyPostalSucessId').show();
+			isvalidated=true;
+		}
+		if($('#companyStreetId').val() == "") {
+			$('#companyStreetErrorId').show();
+			$('#companyStreetError').show();
+			$('#companyStreetSucess').hide();
+			isvalidated=false;
+			return false;
+		}else{
+			$('#companyStreetErrorId').hide();
+			$('#companyStreetError').hide();
+			$('#companyStreetSucess').show();
+			isvalidated=true;
+		}
+		
 	}else{
-		$('#taxIdentificationErrorId').hide();
-		$('#taxNumberErrorId').hide();
-		$('#taxNumberSuccessId').show();
-		isvalidated=false;
-	}
-	if($('#companyNameId').val() == ""){
-		$('#nameOfCompanyErrorId').show();
-		$('#companyNameErrorId').show();
-		$('#companyNameSuccessId').hide();
-		isvalidated=false;
-		return false;
-	}else{
-		$('#nameOfCompanyErrorId').hide();
-		$('#companyNameErrorId').hide();
-		$('#companyNameSuccessId').show();
-		isvalidated=true;
-	}
-	if($('#taxCompanyCountryList').val() == 'companyCountry') {
-		$('#companyCountryId').show();
-		$('#companyCountryErrorId').show();
-		$('#companycountrySucessId').hide();
-		isvalidated=false;
-		return false;
-	}else{
-		$('#companyCountryId').hide();
-		$('#companyCountryErrorId').hide();
-		$('#companycountrySucessId').show();
-		isvalidated=true;
-	}
-	if($('#cityNameId').val() == ""){
-		$('#companyCityErrorId').show();
-		$('#cityNameErrorId').show();
-		$('#cityNameSucessId').hide();
-		isvalidated=false;
-		return false;
-	}else{
-		$('#companyCityErrorId').hide();
-		$('#cityNameErrorId').hide();
-		$('#cityNameSucessId').show();
-		isvalidated=true;
-	}
-	if($('#companyPostalId').val() == ""){
-		$('#companyErrorId').show();
-		$('#companyPostalErrorId').show();
-		$('#companyPostalSucessId').hide();
-		isvalidated=false;
-		return false;
-	}else{
-		$('#companyErrorId').hide();
-		$('#companyPostalErrorId').hide();
-		$('#companyPostalSucessId').show();
-		isvalidated=true;
-	}
-	if($('#companyStreetId').val() == "") {
-		$('#companyStreetErrorId').show();
-		$('#companyStreetError').show();
-		$('#companyStreetSucess').hide();
-		isvalidated=false;
-		return false;
-	}else{
-		$('#companyStreetErrorId').hide();
-		$('#companyStreetError').hide();
-		$('#companyStreetSucess').show();
 		isvalidated=true;
 	}
 	if($('#employmentId').val() == 'EmployyeStatus'){

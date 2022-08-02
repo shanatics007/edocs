@@ -203,15 +203,15 @@
     
       
       <script type="text/javascript">
+      
       	function register(){
-          	
-
+          
       		 var userIp = '<%=ip%>';
 			
 			
           	if($('#terms').prop('checked') && $('#gdpr').prop('checked')){
       		
-      		if(onSubmitValidate()){
+      		if(validate()()){
       			
           	var url = "user/signup";	
           	var userEmail =$('#userEmail').val();
@@ -273,6 +273,8 @@
 				}
 			});
       	}
+          	validate();
+          	
           	}else{
           		$('#terms').blur();
           		 $('#gdpr').blur();
@@ -345,8 +347,9 @@
     	 	var accType= $("input[name='accountType']:checked ~ label").text().trim();
     		var fullName = $('#fullNameId').val();
     		var companyName = $('#companyNameId').val();
+    		var validRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     		
-    		if(email=="" || email.length==0){
+    		if(validRegex.test(email)==false && email.length ==0 ){
     			$('#userEmail').blur();
           		$('#userEmail').css('border',' 1px solid red');
           		isValidated = false;

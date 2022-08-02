@@ -44,9 +44,10 @@ public class UserController {
 	@PostMapping("/signin")
 	public HashMap<String, Object> customerSignIn(@RequestBody UserModel user,HttpSession session) {
 		HashMap<String, Object> loginDetails = userService.userSignIn(user);
-		session.setAttribute("userLogin", loginDetails);
+		
 		UserModel userdetails = (UserModel)loginDetails.get("data");
 		if(userdetails!=null) {
+			session.setAttribute("userLogin", loginDetails);
 		List<ApplicationForVisaModel> appDetails = applicationForVisaService.getApplicationByUserId(userdetails.getUserId());
 		ApplicationForVisaModel model=null;
 		if(appDetails.size()>0) {
@@ -54,6 +55,7 @@ public class UserController {
 		}
 		session.setAttribute("AppDetailsByUser", model);
 		}
+	
 		return loginDetails;
 		
 		

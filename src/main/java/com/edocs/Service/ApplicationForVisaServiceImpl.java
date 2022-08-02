@@ -98,5 +98,23 @@ public class ApplicationForVisaServiceImpl implements ApplicationForVisaService 
 		return applicationRepos.getApplicationByUserId(userId);
 	}
 
+	@Override
+	public HashMap<Object, Object> getApplicationForCheckStatus(int applicationId, String dateOfBirth,String surName) {
+		
+		HashMap<Object, Object> response = new HashMap<Object, Object>();
+		Optional<ApplicationForVisaModel> user = applicationRepos.getApplicationForCheckStatus(applicationId, dateOfBirth, surName);
+		
+			if(user.isPresent()) {
+				ApplicationForVisaModel model = user.get();
+				response.put("data", model);
+				response.put("status", true);
+				
+			}else {
+				response.put("status", false);
+			}
+		
+		return response;
+	}
+
 
 }

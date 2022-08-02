@@ -43,6 +43,8 @@ public interface ApplicationForVisaRepository extends JpaRepository<ApplicationF
 	@Query(nativeQuery = true,value = "SELECT * FROM edocs.ed_visa_application where pkid=?1")
 	public ApplicationForVisaModel getAppDetailsByApplicationId(int applicationId);
 	
+	@Query(nativeQuery = true,value = "SELECT * FROM edocs.ed_visa_application where pkid=?1 And date_of_birth=?2 And last_name=?3")
+	Optional<ApplicationForVisaModel> getApplicationForCheckStatus(int applicationId,String dateofBirth,String surname);
 	
 	
 }

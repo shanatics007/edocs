@@ -31,6 +31,10 @@ h1#formheadrId {
     width: 50%;
     vertical-align: middle;
 }
+div#necessaryDocId {
+	color: #1d3367;
+	
+}
 
 
 #columSecondId {
@@ -77,14 +81,71 @@ h1#passportDetailSectionId{
     font-size: 20px;
     color: #1d3367;
     font-weight: 500;
-    margin-left: 20px;
+    margin: 0px;
 
 }
 .ee-form-container h1 {
     font-size: 22px;
     color: #1d3367;
     font-weight: 500;
-    margin-left: 20px;
+    
+}
+div#sectionFirstId {
+    margin: 12px;
+}
+div#passportSectionId {
+    margin: 12px;
+}
+div#permanentSectionId {
+    margin: 12px;
+}
+div#vatInVoiceSectionId {
+    margin: 12px;
+}
+div#columfirstId {
+    width: auto;
+}
+div#columSecondId {
+    width: auto;
+    border: 1px solid;
+}
+div#employeeInformationId,div#visitId,div#necessaryDocId {
+    margin: 12px;
+}
+ p#biographPhotoId {
+	color: #1d3367;
+	margin-top: 10px;
+}
+span.checkmark {
+    top: 2px !important;
+    height: 20px !important;
+    width: 20px !important;
+}
+#uploadDocLaterId {
+    font-size: 16px;
+    font-weight: 500;
+}
+h1#formheadrId {
+    margin: 0px;
+}
+div#documentsuploadsFormId {
+    margin: 12px;
+}
+
+p#paragraphPhotoId {
+	color: #1d3367;
+}
+div#submitSectionId {
+    margin: 0px;
+}
+div#desktopViewId {
+    max-width: 86%;
+}
+div#monthSectionId {
+    width: 100% !important;
+}
+div#expiryMonthSectionsId {
+    width: 100% !important;
 }
 }
 
@@ -112,3 +173,22 @@ input.btn.btn-primary {
 #resetPhotoId{
 	display: none;
 }
+ /* @media (max-width: 449px){
+div#mainSectionId {
+   max-width: 84%;
+    margin-left: 0px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important; 
+}
+ div#desktopViewId {
+    max-width: 85%;
+}  
+} 
+@media (max-width: 399px){
+div#lastSectionId {
+	padding-left: 0px;
+    padding-right: 0px;
+}
+}
+ */
+

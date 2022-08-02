@@ -51,5 +51,13 @@ public class ApplicationforVisaController {
 		return applicationForVisaRepository.getAppDetailsByApplicationId(applicationId);
 		
 	}
+		
+	@GetMapping("/getApplicationStatus/{applicationId}/{dateOfBirth}/{surName}")
+	public HashMap<Object, Object> getApplicationForStatusCheck(@PathVariable int applicationId, @PathVariable String dateOfBirth, @PathVariable String surName){
+		
+		return applicationForVisaService.getApplicationForCheckStatus(applicationId, dateOfBirth, surName);
+		
+	}
+
 
 }

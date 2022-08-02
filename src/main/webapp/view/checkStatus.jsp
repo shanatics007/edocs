@@ -10,12 +10,14 @@
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Edocs Travel</title>
-<script src="/js/home.js"></script>
+
 <script src="/js/select2.min.js"></script>
 <link rel="stylesheet" href="/css/home.css" type="text/css">
 <link rel="stylesheet" href="/css/india.css" type="text/css">
 <link rel="stylesheet" href="/css/contact.css" type="text/css">
 <link rel="icon" href="/images/favicon-1.png" type="image/x-icon">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <style>
 
 
@@ -34,8 +36,6 @@ section#onlineapplysection {
  }
 	
 }
-
-
 
 p.description-steps-eta-planning {
 	font-size: 18px !important;
@@ -136,6 +136,7 @@ ul.toggle-box {
 .description-steps-h3 {
     color: #1d3367;
     text-align: center;
+     font-weight: 700;
 }
 ul#transieninfo {
     color: #1d3367;
@@ -160,29 +161,7 @@ ul {
 
 
 }
-@-webkit-keyframes glowing {
-  0% { background-color: #1d3367; -webkit-box-shadow: 0 0 3px #1d3367; }
-  50% { background-color: #FF0000; -webkit-box-shadow: 0 0 15px #FF0000; }
-  100% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
-}
 
-@-moz-keyframes glowing {
-  0% { background-color: #1d3367; -moz-box-shadow: 0 0 3px #1d3367; }
-  50% { background-color: #FF0000; -moz-box-shadow: 0 0 15px #FF0000; }
-  100% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
-}
-
-@-o-keyframes glowing {
-  0% { background-color: #1d3367; box-shadow: 0 0 3px #1d3367; }
-  50% { background-color: #FF0000; box-shadow: 0 0 15px #FF0000; }
-  100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
-}
-
-@keyframes glowing {
-  0% { background-color: #1d3367; box-shadow: 0 0 3px #1d3367; }
-  50% { background-color: #FF0000; box-shadow: 0 0 15px #FF0000; }
-  100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
-}
 .description-steps-text-main {
 	color: #1d3367;
 	margin-top: 10px;
@@ -218,6 +197,61 @@ span.description-steps-text-bottom {
 	margin-top: 15px;
 }
 
+select#dayDOB {
+    width: 100%;
+    height: 50px;
+    padding: 8px;
+    font-size: 18px;
+    background: #f0f1ed;
+}
+select#dayMonth{
+ 	width: 100%;
+    height: 50px;
+    padding: 8px;
+    font-size: 18px;
+    background: #f0f1ed;
+
+}
+select#yearlistdob{
+	width: 100%;
+    height: 50px;
+    padding: 8px;
+    font-size: 18px;
+    background: #f0f1ed;
+}
+input#name {
+    height: 50px;
+}
+input#nationality {
+    height: 50px;
+}
+.left-side {
+    width: 80%;
+    margin: auto;
+}
+h3#statusId {
+    text-align: justify;
+    font-size: 30px;
+    margin-left: 10px;
+}
+.visatstausdiv{
+display: flex;
+font-size: 30px;
+    color: #2b1569;
+    font-weight: 700;
+}
+.visadescriptiondiv{
+display: flex;
+font-size: 30px;
+    color: #2b1569;
+    font-weight: 700;
+}
+p#statusdescription {
+    font-size: 20px;
+    color: #2b1569;
+    margin-left: 10px;
+}
+
 </style>
 
 </head>
@@ -225,262 +259,142 @@ span.description-steps-text-bottom {
 	<div id="overlay" class="hidden mobileMenuOverlay"></div>
 	<%@include file="header.jsp"%>
 	<section class="main-site-content">
-		<div class="top-background" style="background-image: url('/images/banner_contact.jpg');"></div>
+		<div class="top-background" style="background-image: url('/images/banner_Entry-and-Travel-2.jpg');"></div>
 		<div class="container">
 			<div class="row">
 		
 				<div class="col-md-12">
 					<div class="top-content-text padding">
-						
-
 					</div>
-
-					<section class="description padding mobile-pt-0" style="padding:50px;">
-						<section class="privacy-policy-card">
-							<h1 class="contact-form-h1">Contact</h1>
-							<div class="text-black-22px" style="text-align: center;">If you need help, our expert
-								department is at your disposal:</div>
-							<div class="text-black-22px e-mail" style="text-align:center;">
-								<span style="color:black;">E-mail: </span><a class="insert-support-address" style="color:#1c3367;text-align:center;"
-									href="mailTo:support@edocs.travel">support@edocs.travel</a>
-							</div>
-							<div class="text-black-22px telephone">
-								 
-							</div>
-							<div class="text-white-14px">5 days a week from 8am to 4pm
-								(GMT+1)</div>
-						</section>
-					</section>
-					
-
 					<section class="gallery-big padding-rwd">
 						<div class="steps" id="typesetpedvisa" style="background-color: #ffffff;margin:50px 0 50px 0;">
 							<section class="contact-form padding">
 								<div class="left-side">
 									<h3 class="description-steps-h3">
-										<div class="small-line"></div>
-										Inquiries form
+										Check application status
+										
 									</h3>
 									<div class="contact-form-container" style="position: relative">
-										<form method="post" accept-charset="utf-8"
-											action="/ajax/form.json">
-											<div style="display: none;">
-												<input type="hidden" name="_method" value="POST">
+											<div class="row" style="margin-top: 3rem;">
+												<div class="col-sm-12">
+													<div class="input-container">
+														<label class="drop-down-label" for="name">Application ID</label>
+														<div class="input text">
+															<input type="text"
+																class="initial-input input-normal"
+															placeholder="Your Application ID" id="applicationId" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required onchange="validate();"/>
+										</div>
+									<span class="error-message" id="applicationErrorId" style="display: none; color: red;">Please take your application id</span>
+									</div>
+									</div>
 												
 											</div>
-											<div class="row">
-												<div class="col-sm-6">
-													<input type="hidden" name="username" id="username"><input
-														type="hidden" name="check" id="check"
-														value="5Ie3KCG6FsqFUPR5ha5g"><input type="hidden"
-														name="form" id="form" value="Contact Page">
+									<div class="row" style="margin-top: 3rem;"> 
+						              <div class="col-sm-4">
+						              <label class="drop-down-label" for="dayDOB">Day of birth</label>
+						             <select id="dayDOB" onchange="validate();">
+									<option value="Day">Day</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+									<option value="13">13</option>
+									<option value="14">14</option>
+									<option value="15">15</option>
+									<option value="16">16</option>
+									<option value="17">17</option>
+									<option value="18">18</option>
+									<option value="19">19</option>
+									<option value="20">20</option>
+									<option value="21">21</option>
+									<option value="22">22</option>
+									<option value="23">23</option>
+									<option value="24">24</option>
+									<option value="25">25</option>
+									<option value="26">26</option>
+									<option value="27">27</option>
+									<option value="28">28</option>
+									<option value="29">29</option>
+									<option value="30">30</option>
+									<option value="31">31</option>
+									</select>
+						            </div>
+						            
+					             <div class="col-sm-4">
+					               <label class="drop-down-label" for="dayMonth">Month of birth</label>
+					             <select id="dayMonth" onchange="validate();">
+								<option value="Month">Month</option>
+								<option value="Jan">Jan</option>
+								<option value="Feb">Feb</option>
+								<option value="March">March</option>
+								<option value="April">April</option>
+								<option value="May">May</option>
+								<option value="June">June</option>
+								<option value="July">July</option>
+								<option value="Aug">Aug</option>
+								<option value="Sept">Sept</option>
+								<option value="Oct">Oct</option>
+								<option value="Nov">Nov</option>
+								<option value="Dec">Dec</option>
+								</select>
+					            </div>
+		            
+						            <div class="col-sm-4">
+						             <label class="drop-down-label" for="yearlistdob">Year of birth</label>
+						              <select id="yearlistdob" onchange="validate();"> 
+									<option value="Year">Year</option>
+									
+									</select>
+						            </div>
+			            <!--  <div class="col-sm-2">
+			             
+			             <div class="error-mark" id="dobError" style="display:none;"><i class="icon-error"></i></div>
+			            <div class="success-mark" id="dobSucess" style="display:none;"><i class="icon-ok"></i></div>
+			            
+			            </div> -->
+			            <span class="error-message" id="doberrorr" style="display: none; color: red; margin-left:32px;">Please choose date of birth</span>
+         			   </div>
+											<div class="row" style="margin-top: 3rem;">
+												<div class="col-sm-12">
 													<div class="input-container">
-														<label class="drop-down-label" for="name">Name</label>
+														<label class="drop-down-label">Surname(s)</label>
 														<div class="input text">
-															<input type="text" name="name"
+															<input type="text" 
 																class="initial-input input-normal"
-																placeholder="Your name" id="name">
+																placeholder="Your Surname(s)" id="surnameId" onkeydown="return /^[a-zA-Z\s]*$/i.test(event.key)" required onchange="validate();"/>
 														</div>
-														<span class="error-message"></span>
-													</div>
-												</div>
-												<div class="col-sm-6">
-													<div class="input-container">
-														<label class="drop-down-label" for="email">E-mail</label>
-														<div class="input email">
-															<input type="email" name="email"
-																class="initial-input input-normal"
-																placeholder="Your e-mail address" id="email">
-														</div>
-														<span class="error-message"></span>
+														<span class="error-message" id="surnameErrorId" style="display: none; color: red;">Please take your surname</span>
 													</div>
 												</div>
 											</div>
-											<div class="row">
-												<div class="col-sm-6">
-													<div class="input-container">
-														<label class="drop-down-label" for="destination">Destination</label>
-														<div class="drop-down" style="margin-top: 0px;">
-															<input type="text" name="destination" id="destination"
-																placeholder="Select a country"
-																class="initial-input input-drop-down" autocomplete="no">
-															<ul class="drop-down-ul display-none"
-																id="destinationList" style="z-index: 1;">
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="armenia">Armenia</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="australia">Australia</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="azerbaijan">Azerbaijan</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="bahamas">Bahamas</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="bahrain">Bahrain</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="bangladesh">Bangladesh</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="benin">Benin</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="brazil">Brazil</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="cambodia">Cambodia</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="canada">Canada</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="colombia">Colombia</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="djibouti">Djibouti</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="east-africa">East
-																			Africa</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="egypt">Egypt</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="ethiopia">Ethiopia</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="europe">European
-																			Union</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="gabon">Gabon</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="georgia">Georgia</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="guinea">Guinea</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="india">India</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="iran">Iran</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="japan">Japan</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="kazakhstan">Kazakhstan</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="kenya">Kenya</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="kuwait">Kuwait</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="kyrgyzstan">Kyrgyzstan</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="laos">Laos</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="lesotho">Lesotho</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="madagascar">Madagascar</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="malawi">Malawi</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="malaysia">Malaysia</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="mexico">Mexico</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="moldova">Moldova</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="myanmar">Myanmar</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="nepal">Nepal</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="new-zealand">New
-																			Zealand</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="nigeria">Nigeria</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="oman">Oman</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="pakistan">Pakistan</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="qatar">Qatar</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="romania">Romania</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="russia">Russia</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="rwanda">Rwanda</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="saudi-arabia">Saudi
-																			Arabia</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="singapore">Singapore</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="south-korea">South
-																			Korea</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="sri-lanka">Sri
-																			Lanka</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="tajikistan">Tajikistan</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="tanzania">Tanzania</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="thailand">Thailand</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="turkey">Turkey</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="usa">USA</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="uganda">Uganda</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="ukraine">Ukraine</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span
-																		data-key="united-arab-emirates">United Arab
-																			Emirates</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="united-kingdom">United
-																			Kingdom</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="uzbekistan">Uzbekistan</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="vietnam">Vietnam</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="zambia">Zambia</span></a></li>
-																<li class="drop-down-ul-element"><a href="#"
-																	class="a-no-active"><span data-key="zimbabwe">Zimbabwe</span></a></li>
-															</ul>
-														</div>
-														<span class="error-message"></span>
-													</div>
-												</div>
-												<div class="col-sm-6">
-													<div class="input-container">
-														<label class="drop-down-label" for="nationality">Nationality
-															of your passport</label>
-														<div class="input text">
-															<input type="text" name="nationality"
-																class="initial-input input-normal"
-																placeholder="Type nationality" id="nationality">
-														</div>
-														<span class="error-message"></span>
-													</div>
-												</div>
-											</div>
-											<div class="input-container text-area-container">
-												<label class="drop-down-label" for="message">Message</label>
-												<div class="input textarea">
-													<textarea name="message"
-														class="initial-input contact-form-textarea input-normal"
-														placeholder="Please describe your issue" id="message"
-														rows="5" style="height:120px;"></textarea>
-												</div>
-												<span class="error-message"></span>
-											</div>
+											
 											<div class="row zero">
 												<div class="contact-button-wrapper">
 													<div class="button-container">
-														<button id="send-form" type="submit">SEND</button>
+														<button id="checkStstusButtonId"  onclick="checkApplicationStatus();">CHECK STATUS</button>
 													</div>
 												</div>
 											</div>
-										</form>
-										<div class="contact-form-loading">
-											<div>
-												<img src="https://edocs.travel/img/ajax-loader.gif">
-											</div>
-										</div>
 									</div>
 								</div>
 							</section>
 						</div>
-
+						<div class="response-message">
+										<div class="visatstausdiv">Your Visa Status:<h3 class="description-steps-h3" id="statusId">
+										</h3></div>
+										<p id="statusdescription"></p>
+										
+										<div class="buttonsforstatus">
+										</div>
+									</div>
 					</section>
 					
 				</div>
@@ -490,138 +404,123 @@ span.description-steps-text-bottom {
 
 
 	<%@include file="footer.jsp"%>
+	
 	<script>
-		document.querySelector('#select-country').addEventListener(
-				'change',
-				function() {
-					var destinationKey = this.getAttribute('data-key');
-					if (destinationKey !== null) {
-						window.location.href = '/en/india'.replace("india",
-								destinationKey);
-					}
-				});
-	</script>
-	<script>
-		function toggleExpandText(expand) {
-			if ($('.toexpand').hasClass('expanded')) {
-				expand.innerText = "READ LESS"
-			} else {
-				expand.innerText = "READ MORE"
+	window.onload = function () {
+		getYearList()
+	}
+	
+	
+
+	function getYearList(){
+		 var ddldobyears = document.getElementById("yearlistdob");	
+	        var currentYear = (new Date()).getFullYear();
+	        for (var i = 1950; i <= currentYear; i++) {
+		        
+	            var option = document.createElement("OPTION");
+	            option.innerHTML = i;
+	            option.value = i;
+	            ddldobyears.appendChild(option);
+	           
+	        }    
+
+	}
+
+	function checkApplicationStatus(){
+
+		var applicationId = $('#applicationId').val();
+			
+		var dateofBirth = $('#dayDOB').val()+'-'+$('#dayMonth').val()+'-'+$('#yearlistdob').val();
+		var surName = 	 $('#surnameId').val();
+
+		 $.ajax({
+				type : 'GET',
+				url : '/application/getApplicationStatus/'+applicationId+'/'+dateofBirth+'/'+surName,	
+				async : true,
+				success : function(data) {
+					if(data.status==true){
+						$('#statusId').text(data.data.checkApplicationStatus)
+						var Applicationstatus = data.data.checkApplicationStatus;
+						if(Applicationstatus=="Unpaid"){
+							$('#statusdescription').text("Your application is unpaid and cannot be processed until we receive a payment from you. Please use the following link to complete a payment:")
+
+						}else if(Applicationstatus == "Unfinished"){
+							$('#statusdescription').text("Your application is not finished. You can finished it now using following link:")
+							
+
+						}else if(Applicationstatus == "Missing documents"){
+							$('#statusdescription').text("The additional documents are required to fulfil your eVisa process. You can upload documents using the Upload Documents button. You can also provide them via email. Check your inbox and spam box for instructions.")
+							
+						}else if(Applicationstatus == "Application Received"){
+							$('#statusdescription').text("Your application has been received. It is currently under verification.")
+							
+
+						}
+						
+						
+					}else{
+						Swal.fire({
+							  title: "<img src='/images/fail1234.png' style='width:150px;'>", 
+							  html: "Application not found",  
+							  confirmButtonText: "Ok", 
+							 
+							});
+						
+						}
+						
+				},	
+				error : function(data) {
+					console.log("error when gettig data");
+				}
+			}); 
+			
+
+	}
+	function validate(){
+		var isvalidated =true;
+		
+		if($('#applicationId').val()==""){
+			
+		    $("#applicationErrorId").show();
+		    isvalidated =false;
+		    return false;  
+		} else{
+			$("#applicationErrorId").hide();
+					
+		}
+		if($('#dayDOB').val()!="Day" && $('#dayMonth').val()!="Month" && $('#yearlistdob').val()!="Year" ){
+			var birthdate = new Date($('#dayDOB').val()+'-'+$('#dayMonth').val()+'-'+$('#yearlistdob').val());
+			var currentDate = new Date();
+			if(birthdate >= currentDate){
+				
+			$('#doberrorr').text("The provided date is too early");
+			isvalidated =false;
+		    return false;  
 			}
+			else{
+				$('#doberrorr').hide();
+			}		
+		}else{
+			$('#doberrorr').show();
+			isvalidated =false;
+		    return false;
 		}
-		document
-				.addEventListener(
-						'DOMContentLoaded',
-						function() {
-							var suffix = document
-									.querySelector('.insert-number-with-suffix').dataset.suffix;
-							var insertNumberWithSuffix = document
-									.querySelectorAll('.insert-number-with-suffix');
-							for (var i = 0; i < insertNumberWithSuffix.length; i++) {
-								insertNumberWithSuffix[i].setAttribute('href',
-										'tel:+44 2031 293 603'
-												.replace(/ /g, ""));
-								insertNumberWithSuffix[i].innerHTML = '<span class="phone-lang-name">en</span> +44 2031 293 603 '
-										+ suffix;
-							}
-
-							var insertNumber = document
-									.querySelectorAll('.insert-number');
-							for (var i = 0; i < insertNumber.length; i++) {
-								insertNumber[i].setAttribute('href',
-										'tel:+44 2031 293 603'
-												.replace(/ /g, ""));
-								insertNumber[i].innerHTML = '<span class="phone-lang-name">en</span> +44 2031 293 603';
-							}
-
-							const req = new XMLHttpRequest();
-							req.open('POST', '/ajax/get-support-address.json',
-									true);
-							req.onreadystatechange = function(evt) {
-								if (req.readyState == 4) {
-									if (req.status == 200) {
-										var insertSupportAddress = document
-												.querySelectorAll('.insert-support-address');
-										for (var i = 0; i < insertSupportAddress.length; i++) {
-											insertSupportAddress[i].innerText = JSON
-													.parse(req.responseText).email
-													.replace('[]', '@');
-											insertSupportAddress[i]
-													.setAttribute(
-															'href',
-															'mailTo:'
-																	+ (JSON
-																			.parse(req.responseText).email
-																			.replace(
-																					'[]',
-																					'@')));
-										}
-									}
-								}
-							}
-							req.send();
-							var insertPhone = document
-									.querySelectorAll('.insert-phone-' + 1);
-							for (var i = 0; i < insertPhone.length; i++) {
-								insertPhone[i]
-										.setAttribute('href',
-												'tel:+49 30209930611'.replace(
-														/ /g, ""));
-								insertPhone[i].innerHTML = '<span class="phone-lang-name">de</span> +49 30209930611';
-							}
-							var insertPhone = document
-									.querySelectorAll('.insert-phone-' + 2);
-							for (var i = 0; i < insertPhone.length; i++) {
-								insertPhone[i].setAttribute('href',
-										'tel:+48 32 431 00 11'
-												.replace(/ /g, ""));
-								insertPhone[i].innerHTML = '<span class="phone-lang-name">pl</span> +48 32 431 00 11';
-							}
-							var insertPhone = document
-									.querySelectorAll('.insert-phone-' + 3);
-							for (var i = 0; i < insertPhone.length; i++) {
-								insertPhone[i].setAttribute('href',
-										'tel:+34  932 200 330'
-												.replace(/ /g, ""));
-								insertPhone[i].innerHTML = '<span class="phone-lang-name">es</span> +34  932 200 330';
-							}
-							var insertPhone = document
-									.querySelectorAll('.insert-phone-' + 4);
-							for (var i = 0; i < insertPhone.length; i++) {
-								insertPhone[i].setAttribute('href',
-										'tel:+86 10 852 41 270'.replace(/ /g,
-												""));
-								insertPhone[i].innerHTML = '<span class="phone-lang-name">cn</span> +86 10 852 41 270';
-							}
-						});
-	</script>
-
-	<script>
-		var languages = {
-			'en' : 'https://edocs.travel/',
-			'de' : 'https://edocs.travel/de',
-			'en' : 'https://edocs.travel/',
-			'pl' : 'https://edocs.travel/pl',
-			'en' : 'https://edocs.travel/',
-			'es' : 'https://edocs.travel/es',
-			'en' : 'https://edocs.travel/',
-			'cn' : 'https://edocs.travel/cn',
+		
+		if($('#surnameId').val()==""){
+			
+			$('#surnameErrorId').show();
+			isvalidated=false;
+			return false;
+		}else{
+			$('#surnameErrorId').hide();
+			
 		}
+		
+		return isvalidated;
+	}
+	
+	
 
-		window.onscroll = function() {
-			scrollFunction()
-		};
-
-		function scrollFunction() {
-
-			var mybutton = document.getElementById("applyhere");
-			if (document.body.scrollTop > 20
-					|| document.documentElement.scrollTop > 20) {
-				mybutton.style.display = "block";
-			} else {
-				mybutton.style.display = "none";
-			}
-		}
 	</script>
 </body>
 </html>
