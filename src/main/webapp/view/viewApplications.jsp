@@ -407,16 +407,15 @@
 	function uploadDocument(){
 		var authUrl = window.location.href;
 		var authKey = authUrl.split('=')[1];
-		var param = "?hash="+authKey;
-		window.open("/en/upload-document/"+param);
+		var param = "hash="+authKey;
+		window.open("/en/upload-document/?"+param);
 		
 	}
 
 	function continueYourApplication(){
 		var authUrl = window.location.href;
 		var authKey = authUrl.split('=')[1];
-		var param ="hash="+authKey;
-		window.open("/en/additional-information/"+param);
+		window.open("/en/additional-information/"+authKey);
 		
 	}
 	
