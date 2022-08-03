@@ -35,11 +35,11 @@
       		 
       <section class="main-site-content account-page height-max">
          <div class="container">
-            <div class="form-centered">
-               <div class="form-header">Registration form</div>
+            <div class="form-centered" autocomplete="off">
+               <div class="form-header" autocomplete="off">Registration form</div>
                <div class="form-content">
                   <!----> 
-                  <div class="form-condition-wrapper">
+                  <div class="form-condition-wrapper" autocomplete="off">
                      <div class="input-box">
                         <div class="input-box-top">
                            <div class="input-box-label">
@@ -49,7 +49,7 @@
                         <div class="input-box-bottom">
                            <div class="actual-input">
                               <div class="text-input-single">
-                              <input type="email" id="userEmail" onChange="validate();"></div>
+                              <input type="email" id="userEmail"  autocomplete="off" onChange="validate();"></div>
                              
                            </div>
                          
@@ -70,7 +70,7 @@
                         <div class="input-box-bottom">
                            <div class="actual-input">
                               <div class="text-input-single">
-                              <input type="password" id="userPass" onChange="validate();"></div>
+                              <input type="password" id="userPass" autocomplete="off" onChange="validate();"></div>
                              
                            </div>
                             <div class="error-mark" id="passError" style="display:none;"><i class="icon-error"></i></div>
@@ -211,7 +211,7 @@
 			
           	if($('#terms').prop('checked') && $('#gdpr').prop('checked')){
       		
-      		if(onSubmitValidate()){
+      		if(validate()){
       			
           	var url = "user/signup";	
           	var userEmail =$('#userEmail').val();
@@ -284,6 +284,7 @@
       	
       	
       	function validate(){
+      		var isvalidated=true;
       		$('#cnfpassSucess').css('display','none')	
       		
     		var validRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -306,7 +307,8 @@
     			 $('#emailerror').css('display','block');
     			 $('#invalidatEmail').css('display','block');
     			 $('#emailsucess').css('display','none');
-    			 return false;
+    			 isvalidated=true;
+    			 //return true;
     					 
     			 }
     		 
@@ -334,10 +336,10 @@
     			 $('#cnfpassSucess').css('display','none');
     			 $('#cnfpassError').css('display','block');
     			 $('#invalidatCnfPass').css('display','block');
-    			 return false;
+    		
     			 
     		 }
-		
+		return isvalidated;
     	}
       	
       	function onSubmitValidate(){

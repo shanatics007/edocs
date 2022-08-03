@@ -18,6 +18,9 @@
 <link rel="icon" href="/images/favicon-1.png" type="image/x-icon">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+      
 <style>
 
 
@@ -230,9 +233,10 @@ input#nationality {
     margin: auto;
 }
 h3#statusId {
-    text-align: justify;
+    
     font-size: 30px;
     margin-left: 10px;
+    padding-top: 20px;
 }
 .visatstausdiv{
 display: flex;
@@ -249,7 +253,22 @@ font-size: 30px;
 p#statusdescription {
     font-size: 20px;
     color: #2b1569;
-    margin-left: 10px;
+    padding: 40px;
+}
+a.button-no-arrow.button-green {
+    text-align: center;
+    font-weight: 700;
+}
+div#makependingPaymentButtonId {
+    width: 50%;
+    margin: auto;
+    margin-bottom: 50px;
+    text-align: center;
+}
+button.btn.btn-primary {
+    font-size: 18px;
+    height: auto;
+    text-align: center;
 }
 
 </style>
@@ -387,20 +406,36 @@ p#statusdescription {
 								</div>
 							</section>
 						</div>
-						<div class="response-message">
-										<div class="visatstausdiv">Your Visa Status:<h3 class="description-steps-h3" id="statusId">
-										</h3></div>
-										<p id="statusdescription"></p>
-										
-										<div class="buttonsforstatus">
-										</div>
-									</div>
+						
 					</section>
 					
 				</div>
 			</div>
 		</div>
 	</section>
+
+<div class="modal" tabindex="-1" data-backdrop="static" role="dialog" id="checkStatusModelId" style="display: none;">
+  <div class="modal-backdrop fade in" style="height: 887px; opacity: 0.5"></div>
+  <div class="modal-dialog" role="document" style="top: 5rem; z-index: 9999999;">
+    <div class="modal-content" id="modelContentId">
+      <div class="modal-header">
+        <h5 class="modal-title"></h5>
+        
+        <img src="/images/close.png" style="width: 20px; height: 20px; cursor: pointer;" onclick="closeModal();">
+        
+      </div>
+      <div class="response-message">
+		<h3 class="description-steps-h3" id="statusId">
+		</h3>
+	<p id="statusdescription"></p>
+										
+	<div class="buttonsforstatus">
+	</div>
+	</div>
+	
+    </div>
+  </div>
+</div>
 
 
 	<%@include file="footer.jsp"%>
@@ -443,20 +478,37 @@ p#statusdescription {
 						var Applicationstatus = data.data.checkApplicationStatus;
 						if(Applicationstatus=="Unpaid"){
 							$('#statusdescription').text("Your application is unpaid and cannot be processed until we receive a payment from you. Please use the following link to complete a payment:")
-
-						}else if(Applicationstatus == "Unfinished"){
-							$('#statusdescription').text("Your application is not finished. You can finished it now using following link:")
 							
+							$('.buttonsforstatus').append('<div class="input-box-bottom button-container" id="makependingPaymentButtonId">'
+										+'<button  type="button" class="btn btn-primary" onclick="makePendingPayment(\''+data.data.confirmAuthKey+'\');">MAKE PAYMENT</button>'
+									+'</div>'
+							
+								);
+
+
+							
+						}else if(Applicationstatus == "Unfinished"){
+							$('#statusdescription').text("Your application is not finished. You can finished it now using following link:");
+							$('.buttonsforstatus').append('<div class="input-box-bottom button-container" id="makependingPaymentButtonId">'
+									+'<button type="button" class="btn btn-primary" onclick="continueYourApplication(\''+data.data.confirmAuthKey+'\');">CONTINUE APPLICATION</button>'
+								+'</div>'
+						
+							);
 
 						}else if(Applicationstatus == "Missing documents"){
-							$('#statusdescription').text("The additional documents are required to fulfil your eVisa process. You can upload documents using the Upload Documents button. You can also provide them via email. Check your inbox and spam box for instructions.")
-							
+							$('#statusdescription').text("The additional documents are required to fulfil your eVisa process. You can upload documents using the Upload Documents button. You can also provide them via email. Check your inbox and spam box for instructions.");							$('.buttonsforstatus').append('<div class="input-box-bottom button-container" id="makependingPaymentButtonId">'
+									+'<button type="button" class="btn btn-primary" onclick="uploadDocument(\''+data.data.confirmAuthKey+'\');">UPLOAD DOCUMENTS</button>'
+								+'</div>'
+						
+							);
 						}else if(Applicationstatus == "Application Received"){
-							$('#statusdescription').text("Your application has been received. It is currently under verification.")
+							$('#statusdescription').text("Your application has been received. It is currently under verification.");
 							
 
 						}
 						
+
+						$('#checkStatusModelId').show();
 						
 					}else{
 						Swal.fire({
@@ -476,6 +528,24 @@ p#statusdescription {
 			
 
 	}
+
+
+	function makePendingPayment(authKey){
+		var param ="hash="+authKey;
+		window.open("/payment/?"+param);
+	}
+	function uploadDocument(authKey){
+		var param = "hash="+authKey;
+		window.open("/en/upload-document/?"+param);
+		
+	}
+
+	function continueYourApplication(authKey){
+		window.open("/en/additional-information/"+authKey);
+		
+	}
+	
+	
 	function validate(){
 		var isvalidated =true;
 		
@@ -518,7 +588,14 @@ p#statusdescription {
 		
 		return isvalidated;
 	}
-	
+
+
+	function closeModal(){
+		$('#checkStatusModelId').hide();
+		window.location.reload()
+		
+	}
+
 	
 
 	</script>

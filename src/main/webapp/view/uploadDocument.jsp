@@ -423,7 +423,7 @@ input.btn.btn-primary {
                     
                         <div class="input-box" type="SubmitInput" name="go-to-step-2" label="SEND AND PAY" hint="" required="required" validations="" options="" reactions="[object Object]" possiblereactions="" possibledisablingreactions="" possibleemits="">
                            <div class="input-box-bottom button-container submit-input-container">
-                              <button class="btn" style="text-align: center;" onclick="uploadDocument();">SEND AND DOCUMENT</button> <!---->
+                              <button class="btn" style="text-align: center;" onclick="uploadDocument();">UPLOAD DOCUMENTS</button> <!---->
                            </div>
                         </div>
                      </div>
@@ -721,7 +721,7 @@ function take_snapshot() {
    		$.ajax(settings).done(function (response) {
    		  console.log(response);
    			Swal.fire({
-			  title: "<img src='/images/fail1234.png' style='width:150px;'>", 
+			  title: "<img src='/images/sucess1234.png' style='width:150px;'>", 
 			  html: "Document uploaded successfully",  
 			  confirmButtonText: "Ok", 
 			}).then(function() {

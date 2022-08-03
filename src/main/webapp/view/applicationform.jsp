@@ -529,7 +529,7 @@ label#radiolabel {
                </div>
              <div class="row">
             <div class="col-sm-10">
-            <input type="text" name="email" id="emailID" size="15" required onchange="validate();" />
+            <input type="text" name="email" id="emailID" size="15" required onchange="validate();" oncut="return false" oncopy="return false" onpaste="return false"/>
             </div>
              <div class="col-sm-2">
               <div class="error-mark" id="emailError" style="display:none;"><i class="icon-error"></i></div>
@@ -547,7 +547,7 @@ label#radiolabel {
             
              <div class="row">
             <div class="col-sm-10">
-            <input type="text" name="connfirmEmail" id="cnfEmail" size="15" required onchange="validate();" />
+            <input type="text" name="connfirmEmail" id="cnfEmail" size="15" required onchange="validate();" oncut="return false" oncopy="return false" onpaste="return false" />
             </div>
              <div class="col-sm-2">
              
