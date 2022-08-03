@@ -201,6 +201,9 @@ select#card_expiry_yy {
 			                                    </select>
 			                <div id="card_expiry_info" class="input-info"></div>
 			            </div>
+			            <div class="errorExpiryDiv" style="color: red; margin-bottom: 10px; margin-top: 10px;">
+            <span id="deErrorr" style="display: none;">Please choose date of expiry</span>
+            </div>
 			            <div class="col-md-5 col-sm-11 cvv-box">
 			                <label>CVC / CVV / CCV2</label>
 			                <input type="text" inputmode="numeric"  placeholder="123" class="cvv-code" id="card_cvv" name="card_cvv_code" autocomplete="off" onChange="validate();" oninput="this.value= this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
@@ -225,7 +228,7 @@ select#card_expiry_yy {
 			        
 			          <div class="input-group">
 			            <label>Address</label>
-			            <input type="text" id="billing_address" placeholder="Street,apt,address" autocomplete="off" onChange="validate();">
+			            <input type="text" id="billing_address" placeholder="Street,apt,address" autocomplete="off" onChange="validate();" onkeydown="return /[0-9a-zA-Z]+$/i.test(event.key)">
 			            
 			        </div>
 			        
