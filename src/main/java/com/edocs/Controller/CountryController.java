@@ -11,8 +11,15 @@ public class CountryController {
 	@RequestMapping("/en")
 	public String home() {
 		
-		return "india";
+		return "index";
 	}
+	
+	@RequestMapping("/en/")
+	public String home1() {
+		
+		return "index";
+	}
+	
 	
 	@RequestMapping("/india")
 	public String indiaEvisa() {

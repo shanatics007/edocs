@@ -823,7 +823,7 @@ ul.drop-down-ul.display-none.display-block {
 										href="#finished"> finished <span id="finishedTotalId"></span>
 									</a></li>
 								</ul>
-							<div class="tab-content my-account-section" id="actived">
+						<!-- 	<div class="tab-content my-account-section" id="actived">
 								<div>
 									<table class="applications-table">
 										<thead>
@@ -842,27 +842,59 @@ ul.drop-down-ul.display-none.display-block {
 										
 									</table>
 								</div>
-							</div>
+							</div> -->
+							
+							
+							<div class="tab-content my-account-section" id="actived">
+    							<div>
+        							<table class="applications-table">
+            
+               					 <thead role="rowgroup">
+                    					<tr role="row">
+                     						 <th role="columnheader">ID</th>
+                      						 <th role="columnheader">COUNTRY</th>
+                      						 <th role="columnheader">STATUS</th>
+                                             <th role="columnheader">APPLICANT</th>
+                                             <th role="columnheader">DATE</th>
+                                             <th role="columnheader">ACTIONS</th>
+                      
+                                      </tr>
+                              </thead>
+                
+                               <tbody id="activetBody">
+                                
+                                   </tbody>
+            
+                     </table>
+             </div>
+   </div>
+							
+							
+							
+							
+							
 							<div class="tab-content my-account-section" id="finished" style="display: none;">
-								<div>
-									<table class="applications-table">
-										<thead>
-											<tr>
-												<th>ID</th>
-												<th class="pl-10"><span>COUNTRY</span></th>
-												<th><span>STATUS</span></th>
-												<th class="hide-465"><span>APPLICANT</span></th>
-												<th class="hide-465"><span>DATE</span></th>
-												<th class="hide-465"><span>ACTIONS</span></th>
-												
-											</tr>
-										</thead>
-										<tbody id="finishtBody">
-											
-										</tbody>
-										
-									</table>
-								</div>
+											<div>
+        							<table class="applications-table">
+            
+               					 <thead role="rowgroup">
+                    					<tr role="row">
+                     						 <th role="columnheader">ID</th>
+                      						 <th role="columnheader">COUNTRY</th>
+                      						 <th role="columnheader">STATUS</th>
+                                             <th role="columnheader">APPLICANT</th>
+                                             <th role="columnheader">DATE</th>
+                                             <th role="columnheader">ACTIONS</th>
+                      
+                                      </tr>
+                              </thead>
+                
+                               <tbody id="finishtBody">
+                                
+                                   </tbody>
+            
+                     </table>
+             </div>
 							</div>
 						</div>
 						<div class="new-application col-md-4">

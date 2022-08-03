@@ -62,9 +62,32 @@
 <style>
 
 
-@media ( max-width : 599px) {
-
-	
+@media ( max-width : 768px) {
+#styleSectionId {
+    font-size: 18px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+span#fristID {
+    display: none;
+}
+span.form-step-label {
+display: none !important;
+}
+a#anchorButton {
+    width: auto;
+}
+.input-box-bottom.button-container.submit-input-container {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#imgelogoId{
+display: block;
+width: 45%;
+margin: auto;
+margin-top: 40px;
+margin-bottom: 40px;
+}
 }
 @media ( min-width : 599px) {
 	background-image: url('/images/background 2.jpg');
@@ -294,10 +317,10 @@ margin: auto;
 margin-top: 40px;
 margin-bottom: 40px;
 }
-.description-steps {
+/* .description-steps {
     padding-right: 6rem;
     padding-left: 6rem;
-}
+} */
 
 
 </style>
@@ -341,7 +364,7 @@ margin-bottom: 40px;
 							Your edocs Should be ready in 72h and send your email.
 							 </p>
 						
-							<p class="description-steps-eta-planning" style="font-size:18px;">
+							<p class="description-steps-eta-planning" id="styleSectionId">
 								In some case processing time can take  longer.Waiting time  depends on the Government of <span id="visaCountry"></span></p>
 							<p class="description-steps-eta-planning" style="font-size:18px; margin-bottom: 4rem;">
 							<span id="ApplicationNumberForConfirmationForm">Application number   </span> 
